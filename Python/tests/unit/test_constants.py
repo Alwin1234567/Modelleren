@@ -9,3 +9,4 @@ def test_constants():
     assert c.tijdsduur_inladen_en_uitladen_instrumentensets == 0.0
     assert c.capaciteit_voertuig == 0
     assert c.tijdsduur_inladen_en_uitladen(100) == 0.0
+    assert c.rijkosten(100.0, 100.0) == 0.0

@@ -46,15 +46,15 @@ class Constants:
         """
         return self._capaciteit_voertuig
 
-    def tijdsduur_inladen_en_uitladen(self, aantal_instrumentensets):
+    def tijdsduur_inladen_en_uitladen(self, aantal_instrumentensets: int):
         """
         Bereken de tijd die nodig is voor het in- en uitladen van een aantal instrumentensets.
 
         Parameters:
-        aantal_instrumentensets (int): Het aantal instrumentensets dat in- en uitgeladen moet worden.
+            aantal_instrumentensets (int): Het aantal instrumentensets dat in- en uitgeladen moet worden.
 
         Returns:
-        float: De tijd die nodig is voor het in- en uitladen van de instrumentensets.
+            float: De tijd die nodig is voor het in- en uitladen van de instrumentensets.
         """
         return self._tijdsduur_inladen_en_uitladen_plat + (aantal_instrumentensets * self._tijdsduur_inladen_en_uitladen_instrumentensets)
 
@@ -63,10 +63,10 @@ class Constants:
         Bereken de rijkosten voor een rit.
         
         Parameters:
-        afstand (float): De afstand van de rit in kilometers.
-        tijd (float): De tijd van de rit in minuten.
+            afstand (float): De afstand van de rit in kilometers.
+            tijd (float): De tijd van de rit in minuten.
 
         Returns:
-        float: De rijkosten voor de rit.
+            float: De rijkosten voor de rit.
         """
         return afstand * self._prijs_per_km + tijd * self._prijs_per_uur_chauffeur
