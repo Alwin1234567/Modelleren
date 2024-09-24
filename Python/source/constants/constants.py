@@ -13,14 +13,14 @@ class Constants:
     @property
     def prijs_per_km(self):
         """
-        De prijs per kilometer van de auto in euro's.
+        De prijs per gereden kilometer van de auto in euro's.
         """
         return self._prijs_per_km
 
     @property
     def prijs_per_uur_chauffeur(self):
         """
-        De prijs per uur van de chauffeur in euro's.
+        uurloon van de chauffeur in euro's.
         """
         return self._prijs_per_uur_chauffeur
 
@@ -41,7 +41,7 @@ class Constants:
     @property
     def capaciteit_voertuig(self):
         """
-        De capaciteit van het voertuig in grote van de instrumentensets.
+        De capaciteit van het voertuig in grootte van de instrumentensets.
         De standaard grootte van een instrumentenset is 1000.
         """
         return self._capaciteit_voertuig
