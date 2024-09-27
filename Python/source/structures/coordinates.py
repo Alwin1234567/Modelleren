@@ -17,3 +17,7 @@ class Coordinates:
     @property
     def coordinates(self):
         return (self.lat, self.lon)
+
+    @property
+    def OSMR_str(self):
+        return f"point={self.lat},{self.lon}"

@@ -11,6 +11,9 @@ class Location:
         self._name = name
         self._type = type
     
+    def __str__(self) -> str:
+        return f"{self._name} ({self._coordinates})"
+    
     @property
     def coordinates(self):
         return self._coordinates

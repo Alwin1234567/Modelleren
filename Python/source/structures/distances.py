@@ -1,28 +1,45 @@
+from .status import Status
+from .coordinates import Coordinates
+from .maps import Maps_active
 from source.locations import Location
-from source.structures import Coordinates, Maps_active
+from source.constants import Constants
 from pandas import DataFrame
-from typing import Set, List
+from typing import Set, List, Tuple
 from enum import Enum, auto
 import numpy as np
 import requests
-
-class Status(Enum):
-    PREPARING = auto()
-    CALCULATING = auto()
-    FINISHED = auto()
+from warnings import warn
 
 class Distances:
+    """
+    Een class om afstanden tussen locaties te beheren en te berekenen.
+    """
     
     def __init__(self) -> None:
+        """
+        Initialiseer een nieuwe instantie van de Distances klasse.
+        """
         self._locations: Set[Location] = []
         self._distances = DataFrame()
         self._status = Status.PREPARING
 
 
     def add_location(self, location: Location) -> None:
+        """
+        Voeg een locatie toe aan de set van locaties.
+
+        Parameters:
+            location (Location): De locatie die moet worden toegevoegd.
+        """
         self._locations.add(location)
     
     def generate_distances(self) -> None:
+        """
+        Genereer de afstanden tussen alle toegevoegde locaties.
+
+        Raises:
+            Exception: Als de afstanden al worden berekend of al zijn berekend.
+        """
         if self._status == Status.CALCULATING:
             raise Exception("Distances are already being calculated")
         elif self._status == Status.FINISHED:
@@ -43,11 +60,26 @@ class Distances:
         self._status = Status.FINISHED
 
     def _load_stored_distances(self) -> None:
+        """
+        Laad opgeslagen afstanden uit een bestand.
+
+        Raises:
+            Exception: Als de afstanden niet worden berekend.
+        """
         if self._status != Status.CALCULATING:
             raise Exception("Distances are not being calculated")
         # Load stored distances from file
 
-    def _determine_missing_distances(self) -> List[(Location, Location)]:
+    def _determine_missing_distances(self) -> List[Tuple[Location, Location]]:
+        """
+        Bepaal de ontbrekende afstanden tussen locaties.
+    
+        Returns:
+            missing_distances (List[Tuple[Location, Location]]): Een lijst van ontbrekende afstanden.
+    
+        Raises:
+            Exception: Als de afstanden niet worden berekend.
+        """
         if self._status != Status.CALCULATING:
             raise Exception("Distances are not being calculated")
         missing_distances = self._distances.isna().stack()
@@ -55,12 +87,37 @@ class Distances:
         missing_distances = [(row, col) for row, col in missing_distances if row != col]
         return missing_distances
 
-    def _determine_distances(self, missing_distances: List[(Location, Location)]) -> None:
+    def _determine_distances(self, missing_distances: List[Tuple[Location, Location]]) -> None:
+        """
+        Bepaal de afstanden voor de ontbrekende locaties.
+
+        Parameters:
+            missing_distances (List[Tuple[Location, Location]]): Een lijst van ontbrekende afstanden.
+        """
         if not Maps_active.get_instance():
             self._activate_maps()
+        for start, end in missing_distances:
+            url = f"{Constants.MAPS_URL}?{start.coordinates.OSMR_str}&{end.coordinates.OSMR_str}&profile={Constants.MAPS_PARAMS['profile']}&locale={Constants.MAPS_PARAMS['locale']}&calc_points={Constants.MAPS_PARAMS['calc_points']}"
+            response = requests.get(url)
+            result = Distance_time(1e10, 1e10)
+            if response.status_code == 200:
+                data = response.json()
+                if 'paths' in data and len(data['paths']) > 0:
+                    path = data['paths'][0]
+                    distance: float = path['distance']/1000  # Distance in kilometers
+                    time: float = path['time']/1000/60  # Time in minutes
+                    result = Distance_time(distance, time)
+                else:
+                    warn(f"No route found between {start} and {end}")
+            self._distances.loc[start.name, end.name] = result
         
-
     def _check_complete(self) -> bool:
+        """
+        Controleer of alle afstanden zijn berekend.
+
+        Returns:
+            bool: True als alle afstanden zijn berekend, anders False.
+        """
         if self._status != Status.CALCULATING:
             raise Exception("Distances are not being calculated")
         # Mask the diagonal values
@@ -77,18 +134,40 @@ class Distances:
         pass
 
 
-class distance_time:
-    
+class Distance_time:
+    """
+    Een class om de afstand en tijd tussen twee locaties te beheren.
+    """
+
     def __init__(self, distance: float, time: float) -> None:
+        """
+        Initialiseer een nieuwe instantie van de Distance_time klasse.
+
+        Parameters:
+            distance (float): De afstand tussen twee locaties in kilometers.
+            time (float): De tijd tussen twee locaties in minuten.
+        """
         self._distance = distance
         self._time = time
-    
+
     @property
-    def distance(self):
+    def distance(self) -> float:
+        """
+        Haal de afstand op.
+
+        Returns:
+            float: De afstand tussen twee locaties in kilometers.
+        """
         return self._distance
-    
+
     @property
-    def time(self):
+    def time(self) -> float:
+        """
+        Haal de tijd op.
+
+        Returns:
+            float: De tijd tussen twee locaties in minuten.
+        """
         return self._time
 
     
