@@ -14,3 +14,4 @@ class Constants:
         'locale': 'en',
         'calc_points': 'false'
     }
+    STARTUP_WAIT_TIME = 5
