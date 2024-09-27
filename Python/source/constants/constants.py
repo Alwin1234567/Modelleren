@@ -1,3 +1,5 @@
+from pathlib import Path
+
 class Constants:
     """
     Een class die de constante waarden van de simulatie bevat.
@@ -15,3 +17,5 @@ class Constants:
         'calc_points': 'false'
     }
     STARTUP_WAIT_TIME = 5
+    CACHE_PATH = Path(__file__).resolve().parents[2] / 'cache'
+    GRAPHHOPPER_PATH = Path(__file__).resolve().parents[2] / 'graphhopper'

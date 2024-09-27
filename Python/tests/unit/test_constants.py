@@ -13,6 +13,7 @@ def test_constants():
         'locale': 'en',
         'calc_points': 'false'
     }
+    assert Constants.STARTUP_WAIT_TIME == 5
 
 # Run the test
 if __name__ == "__main__":

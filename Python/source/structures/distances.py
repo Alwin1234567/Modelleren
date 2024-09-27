@@ -5,7 +5,6 @@ from source.locations import Location
 from source.constants import Constants
 from pandas import DataFrame
 from typing import Set, List, Tuple
-from enum import Enum, auto
 import numpy as np
 import requests
 from warnings import warn
