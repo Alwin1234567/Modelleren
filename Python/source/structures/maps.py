@@ -5,33 +5,19 @@ import signal
 class Maps:
     _instance = None
     _process = None
+    _enabled = False
 
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super(Maps, cls).__new__(cls)
-            cls._instance.value = False
         return cls._instance
-
-    @classmethod
-    def get_instance(cls):
-        if cls._instance is None:
-            cls._instance = cls()
-        return cls._instance.value
-
-    @classmethod
-    def set_instance(cls, value):
-        if value not in [True, False]:
-            raise ValueError("Maps_active can only be True or False")
-        if cls._instance is None:
-            cls._instance = cls()
-        cls._instance.value = value
 
     @classmethod
     def enable_maps(cls):
         """
         Schakel de routemaker in door een subprocess te starten.
         """
-        if cls._process is None:
+        if not cls._enabled:
             # Bepaal de juiste werkmap
             root_folder = os.path.dirname(os.path.abspath(__file__))
             graphhopper_folder = os.path.join(root_folder, '..', 'graphhopper')
@@ -43,7 +29,7 @@ class Maps:
                 preexec_fn=os.setsid,
                 cwd=graphhopper_folder  # Stel de werkmap in
             )
-            cls.set_instance(True)
+            cls._enabled = True
             print("Maps enabled")
 
     @classmethod
@@ -51,8 +37,25 @@ class Maps:
         """
         Schakel de kaarten uit door het subprocess te stoppen.
         """
-        if cls._process is not None:
+        if cls._enabled and cls._process is not None:
             os.killpg(os.getpgid(cls._process.pid), signal.SIGTERM)
             cls._process = None
-            cls.set_instance(False)
+            cls._enabled = False
             print("Maps disabled")
+
+    @classmethod
+    def is_enabled(cls):
+        """
+        Controleer of de kaarten zijn ingeschakeld.
+
+        Returns:
+            bool: True als de kaarten zijn ingeschakeld, anders False.
+        """
+        return cls._enabled
+
+# Usage
+# Maps.enable_maps()
+# print(Maps.is_enabled())  # Output: True
+
+# Maps.disable_maps()
+# print(Maps.is_enabled())  # Output: False

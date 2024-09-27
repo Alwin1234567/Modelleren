@@ -1,6 +1,6 @@
 from .status import Status
 from .coordinates import Coordinates
-from .maps import Maps_active
+from .maps import Maps
 from source.locations import Location
 from source.constants import Constants
 from pandas import DataFrame
@@ -94,7 +94,7 @@ class Distances:
         Parameters:
             missing_distances (List[Tuple[Location, Location]]): Een lijst van ontbrekende afstanden.
         """
-        if not Maps_active.get_instance():
+        if not Maps.is_enabled():
             self._activate_maps()
         for start, end in missing_distances:
             url = f"{Constants.MAPS_URL}?{start.coordinates.OSMR_str}&{end.coordinates.OSMR_str}&profile={Constants.MAPS_PARAMS['profile']}&locale={Constants.MAPS_PARAMS['locale']}&calc_points={Constants.MAPS_PARAMS['calc_points']}"
