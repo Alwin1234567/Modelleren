@@ -29,6 +29,7 @@ class Distances:
         
         # Construct the full URL with parameters
         url = f"{self.base_url}?{coord_str}&profile={params['profile']}&locale={params['locale']}&calc_points={params['calc_points']}"
+        print(url)
         
         # Print the URL for debugging
         print(f"Request URL: {url}")

@@ -95,7 +95,7 @@ class Distances:
             missing_distances (List[Tuple[Location, Location]]): Een lijst van ontbrekende afstanden.
         """
         if not Maps.is_enabled():
-            self._activate_maps()
+            Maps.enable_maps()
         for start, end in missing_distances:
             url = f"{Constants.MAPS_URL}?{start.coordinates.OSMR_str}&{end.coordinates.OSMR_str}&profile={Constants.MAPS_PARAMS['profile']}&locale={Constants.MAPS_PARAMS['locale']}&calc_points={Constants.MAPS_PARAMS['calc_points']}"
             response = requests.get(url)
@@ -126,12 +126,6 @@ class Distances:
 
         # Check for None values excluding the diagonal
         return masked_distances.isna().any().any()
-    
-    def _activate_maps(self) -> None:
-        pass
-
-    def _deactivate_maps(self) -> None:
-        pass
 
 
 class Distance_time:
