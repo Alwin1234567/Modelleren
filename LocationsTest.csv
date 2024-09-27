@@ -1,5 +1,5 @@
-Naam	Locatie_Plaats	Locatie_Straat	Locatie_Huisnummer	Locatie_Postcode	lat_lon
-Andros Clinics	Rijswijk	Madam Curielaan	10	2289CA	52.0484169,4.3451929
-Bergen op Zoom	Bergen op Zoom	Dubbelstraat	90		
-Haaglanden		Nieuwe Parklaan	10		
-Flex clinics					
+Naam;Locatie_Plaats;Locatie_Straat;Locatie_Huisnummer;Locatie_Postcode;lat_lon
+Andros Clinics;Rijswijk;Madam Curielaan;10;2289CA;
+Bergen op Zoom;Bergen op Zoom;Dubbelstraat;90;;
+"Haaglanden	";;Nieuwe Parklaan;10;;
+"Flex clinics					";;;;;
