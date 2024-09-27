@@ -1,8 +1,10 @@
 from source.locations import Location
+from source.structures import Coordinates, Maps_active
 from pandas import DataFrame
 from typing import Set, List
 from enum import Enum, auto
 import numpy as np
+import requests
 
 class Status(Enum):
     PREPARING = auto()
@@ -54,8 +56,9 @@ class Distances:
         return missing_distances
 
     def _determine_distances(self, missing_distances: List[(Location, Location)]) -> None:
-        # use OSRM to determine distances
-        pass
+        if not Maps_active.get_instance():
+            self._activate_maps()
+        
 
     def _check_complete(self) -> bool:
         if self._status != Status.CALCULATING:
@@ -66,13 +69,26 @@ class Distances:
 
         # Check for None values excluding the diagonal
         return masked_distances.isna().any().any()
+    
+    def _activate_maps(self) -> None:
+        pass
+
+    def _deactivate_maps(self) -> None:
+        pass
 
 
 class distance_time:
     
-    def __init__(self) -> None:
-        self.distance = None
-        self.time = None
+    def __init__(self, distance: float, time: float) -> None:
+        self._distance = distance
+        self._time = time
+    
+    @property
+    def distance(self):
+        return self._distance
+    
+    @property
+    def time(self):
+        return self._time
 
-    def get_distance(self, coordinates) -> None:
-        pass
+    
