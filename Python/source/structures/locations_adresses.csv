@@ -1,8 +1,8 @@
 Naam;Locatie_Plaats;Locatie_Straat;Locatie_Huisnummer;Locatie_Postcode;overeenkomst
 Andros Clinics;Rijswijk;Madam Curielaan;10;2289 CA;
 Bergen op Zoom;Bergen op Zoom;Dubbelstraat;90;;
-"Haaglanden	";;Nieuwe Parklaan;10;;
-"Flex clinics					";;;;;
+Haaglanden;;Nieuwe Parklaan;10;;
+Flex clinics;;;;;
 A Klinieken;;;;;
 Andros Clinics Rijswijk;;;;;Andros Clinics
 Annadal kliniek;;;;;Annadal kliniek
@@ -87,5 +87,3 @@ Straumann NL;;;;;
 Terneuzen;Terneuzen;Zuidlandstraat;34;;
 VSM;;;;;
 Zierikzee VK;Zierikzee;Koning Gustaafweg;;;
-;;;;;
-;;;;;
