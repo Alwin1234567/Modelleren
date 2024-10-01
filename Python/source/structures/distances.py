@@ -124,8 +124,12 @@ class Distances:
         # Merge the new data with the existing data
         updated_df = pd.concat([existing_df, new_df]).drop_duplicates(subset=['from', 'to'], keep='last')
 
-        # Write the updated DataFrame back to the CSV file
-        updated_df.to_csv(csv_file_path, index=False)
+        # Write the separator declaration at the start of the file
+        with open(csv_file_path, 'w') as f:
+            f.write('sep=;\n')
+
+        # Append the DataFrame to the file
+        updated_df.to_csv(csv_file_path, mode='a', index=False, sep=';')
 
     def _determine_missing_distances(self) -> List[Tuple[Location, Location]]:
         """

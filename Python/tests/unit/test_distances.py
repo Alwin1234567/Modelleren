@@ -4,6 +4,9 @@ from source.locations import Location, Location_type
 from source.constants import Constants
 
 def test_distance_calculation():
+    csv_file_path = Constants.CACHE_PATH / 'distance_time.csv'
+    if csv_file_path.exists():
+        csv_file_path.unlink()
     location1 = Location(Coordinates(52.076929, 5.107445), "A", Location_type.HUB)
     location2 = Location(Coordinates(52.366253, 4.873986), "B", Location_type.ZIEKENHUIS)
     location3 = Location(Coordinates(52.252094, 4.797082), "C", Location_type.ZIEKENHUIS)
