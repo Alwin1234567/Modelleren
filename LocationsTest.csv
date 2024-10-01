@@ -1,58 +1,92 @@
-Naam;Locatie_Plaats;Locatie_Straat;Locatie_Huisnummer;Locatie_Postcode;overeenkomst;vraag bekend;;;naam fout;naam goed;vraag bekend;;;;locaties bekend in vraagdataset
-A Klinieken;Huis Ter Heide;Dolderseweg;2F;3712 BP;;ja;;;Andros Clinics Rijswijk;Andros Clinics;;;;;A Klinieken
-Andros Clinics;Rijswijk;Madam Curielaan;10;2289 CA;;ja;;;Bergman Arnhem;Bergman Cl. Arnhem;;;;;Andros Clinics Rijswijk
-Annadal kliniek;Maastricht;Brouwersweg;100;6216 EG;Annadal normaal;ja;;;Haaglanden;Haaglanden Clinics;;;;;Annadal kliniek
-Annadal kliniek Poli;Maastricht;Brouwersweg;100;6216 EG;Annadal spoed;ja;;;;;;;;;Annadal kliniek Poli
-Annatommie Amstelveen;Amstelveen;Burgemeester Haspelslaan;131;1181 NC;;ja;;;;;;;;;Annatommie Amstelveen
-Annatommie utrecht;Utrecht;Janssoniuslaan;71;3528 AH;;ja;;;Annatommie Amstelveen;Xpert Clinics Orthopedie Amstelven;;;;;Annatommie Utrecht
-Arthrex;Utrecht;Papendorpseweg;75;3528 BJ;fabrikant medische technologie ?;ja;;;Annatommie utrecht;Xpert Clinics Orthopedie Utrecht;;;;;Arthrex
-Bergman Cl. Arnhem;Arnhem;E.N. van Kleffenstraat;14;6842 CV;;ja;;;;;;;;;Bergman Cl. Arnhem
-Cosmed Bosch en Duin OK;Bosch en Duin;Biltseweg;14;3735 ME;permanent gesloten volgens internet? - verder onder naam Sandstep Healthcare?;ja;;;Cosmed Bosch en Duin OK;;;;;;Cosmed Bosch en Duin OK
-Cosmed Bosch en Duin Poli;Bosch en Duin;Biltseweg;14;3735 ME;permanent gesloten volgens internet? - verder onder naam Sandstep Healthcare?;ja;;;Cosmed Bosch en Duin Poli;;;;;;Cosmed Bosch en Duin Poli
-Denticien;Rijswijk;Herenstraat;24;2282 BT;;ja;;;Doctors at soap;;;;;;Denticien
-Dermaclinic Utrecht;Utrecht;Nachtegaalstraat;46;3581 AK;overgenomen door De Huidkliniek Utrecht;ja;;;Dr Ali;?;;;;;Dermaclinic Utrecht
-Doctors at soap;;;;;meerdere locaties in NL;ja;;;Dr de Jong;?;;;;;Doctors at soap
-Dr Ali;Amsterdam;Jan van Goyenkade;12 t/m 1;1075 HP;APS by Ali Pirayes (APS = amsterdam plastic surgery);ja;;;Dr Vuyk;?;;;;;Dr. Ali
-Dr. Vuyk & Faris;Bussum;Parklaan;2;1406 KL;Vuyk & Faris MC;ja;;;Dr. Ali;?;;;;;Dr. Vuyk & Faris
-EQEI - Xpert Orthopedie Schijndel;Schijndel;Steeg;6;5482 WN;mogelijk locatie in Schijndel onderdeel van Equip Eindhoven?;nee;;;Dr. Vuyk & Faris;?;;;;;EQA - Velthuis Kliniek Amsterdam
-Equip Amsterdam;Amsterdam;Laarderhooftweg;12;1101 EA;;ja;;;Eguipe Amsterdam;Equipe Amsterdam;;;;;EQA - Xpert Clinic Hand Amsterdam
-Equipe Den Haag;Den Haag;Parkstraat;83;2514 DH;;nee;;;Eguipe Enschede ;Equipe Enschede;;;;;EQA - Xpert Clinic Proctologie Amsterdam
-Equipe Eindhoven;Eindhoven;Dr. Holtroplaan;3;5652 XR;;ja;;;EQA - Velthuis Kliniek Amsterdam;Equipe Amsterdam;ja;;;;EQA - Xpert Orthopedie Amsterdam
-Equipe Enschede;Enschede;Capitool;7;7521 PL;;ja;;;EQA - Xpert Clinic Hand Amsterdam;Equipe Amsterdam;ja;;;;EQEI - Velthuis Kliniek Eindhoven
-Equipe Gorinchem;Gorinchem;Spijksedijk;14B;4207 GN;;nee;;;EQA - Xpert Clinic Proctologie Amsterdam;Equipe Amsterdam;ja;;;;EQEI - Xpert Clinic Hand Eindhoven
-Equipe Rotterdam;Rotterdam;K.P. van der  Mandelelaan;10;3062 MB;;ja;;;EQA - Xpert Orthopedie Amsterdam;Equipe Amsterdam;ja;;;;EQEI - Xpert Clinic Proctologie Eindhoven
-Equipe Rozendaal;Rozendaal;Rosendaalselaan;30;6891 DG;;ja;;;EQEI - Velthuis Kliniek Eindhoven;Equipe Eindhoven;ja;;;;EQEI - Xpert Orthopedie Eindhoven
-Equipe Velp/Tegelen;Tegelen;Bongerdstraat;227;5931 NE;;ja;;;EQEI - Xpert Clinic Hand Eindhoven;Equipe Eindhoven;ja;;;;EQEI - Xpert Orthopedie Schijndel
-Equipe Zeist Normaal;Zeist;Huis ter heideweg;44;3705 LZ;;ja;;;EQEI - Xpert Clinic Proctologie Eindhoven;Equipe Eindhoven;ja;;;;EQEN - Velthuis Kliniek Enschede
-EQV - Velthuis Kliniek Velp;Rozendaal;Rosendaalselaan;30;6891 DG;Zelfde als Equipe Rozendaal? - Velp ligt tegen Rozendaal;ja;;;EQEI - Xpert Orthopedie Eindhoven;Equipe Eindhoven;ja;;;;EQEN - Xpert Clinic Hand Enschede
-EQZW - Xpert Clinic Hand Zwolle;Zwolle;Dokter Slolteweg;74;8025 AZ;;ja;;;EQEI - Xpert Orthopedie Schijndel;;ja;;;;EQEN - Xpert Clinic Proctologie Enschede
-Esser Clinics;Gouda;Harderwijkweg;3A;2803 PW;;ja;;;EQEN - Velthuis Kliniek Enschede;Equipe Enschede;ja;;;;EQR - Velthuis Kliniek Rotterdam
-Flex clinics;Utrecht;Soestwetering;12;3543 AZ;;ja;;;EQEN - Xpert Clinic Hand Enschede;Equipe Enschede;ja;;;;EQR - Xpert Clinic Hand Rotterdam
-Haaglanden Clinics;Den Haag;Nieuwe Parklaan;11;2597 LA;nr 11 i.p.v. 10 uit dataset?;ja;;;EQEN - Xpert Clinic Proctologie Enschede;Equipe Enschede;ja;;;;EQR - Xpert Clinic Proctologie Rotterdam
-Kazem;Schiphol-Rijk;Boeing Avenue;203;1119 PD;;ja;;;EQR - Velthuis Kliniek Rotterdam;Equipe Rotterdam;ja;;;;EQR - Xpert Orthopedie Rotterdam
-KNO de Jong;Vleuten;Nieuwe Vaart;1;3451 AH;;ja;;;EQR - Xpert Clinic Hand Rotterdam;Equipe Rotterdam;ja;;;;EQRZD - Hand pols Rozendaal
-Koning Kliniek;;;;;niet gevonden;ja;;;EQR - Xpert Clinic Proctologie Rotterdam;Equipe Rotterdam;ja;;;;EQRZD - Orthopedie Rozendaal
-Medcentric MWCZ;Goes;Piet Heinstraat;13;4461 GL;;ja;;;EQR - Xpert Orthopedie Rotterdam;Equipe Rotterdam;ja;;;;Equip Amsterdam
-Medtronic;Eindhoven;Schimmelt;2 t/m 16;5611 ZX;fabrikant van medische apparatuur?;ja;;;EQRZD - Hand pols Rozendaal;Equipe Rozendaal;ja;;;;Equipe Enschede
-MKA groep ADRZ;Goes;s Gravenpolderseweg;114;4462 RA;admiraal de ruyter ziekenhuis?;ja;;;EQRZD - Orthopedie Rozendaal;Equipe Rozendaal;ja;;;;EQV - Velthuis Kliniek Velp
-MKA groep KA;Bergen op Zoom;Dubbelstraat;90;4611 GM;klein arsenaal?;ja;;;Equipe venlo /Tegelen ;Equipe venlo/Tegelen ;;;;;EQV - Xpert Clinic Hand Velp
-MKA groep MPS;Middelburg;Poelendaelesingel;12;4335 JA;poelendaelesingel?;ja;;;EQV - Velthuis Kliniek Velp;;ja;Equipe Rozendaal??;;;EQV - Xpert Clinic Proctologie Velp
-MKA groep Roosendaal;Roosendaal;Onyxdijk;199;4706 LL;Onyxdijk;ja;;;EQV - Xpert Clinic Hand Velp;Equipe Velp/Tegelen;ja;;;;EQZ - Xpert Clinic Oogzorg Zeist
-MKA groep Terneuzen;Terneuzen;Zuidlandstraat;34;4532 CL;Zuidlandstraat;ja;;;EQV - Xpert Clinic Proctologie Velp;Equipe Velp/Tegelen;ja;;;;EQZW - Xpert Clinic Hand Zwolle
-MKA groep VKZ;Rotterdam;Kleiweg;500;3045 PM;victoriakliniek Zierikzee?;ja;;;EQZ - Xpert Clinic Oogzorg Zeist;Equipe Zeist Normaal;ja;;;;Esser Clinics
-Orthoparc Rozendaal;Rozendaal;Rosendaalselaan;30;6891 DG;nu: Xpert Clinics Orthopedie Rozendaal - zelfde locatie als EQV Velthuis Kliniek Velp;ja;;;EQZW - Xpert Clinic Hand Zwolle;;ja;;;;Flex Clinics
-Pro-Motion;Zwijndrecht;Daltonstraat;13;3335 LR;groothandelaar medical;ja;;;;;;;;;Haaglanden Clinics
-Retina eye care;Driebergen-Rijsenburg;Traaij;42;3971 GP;;ja;;;Retina;Retina eye care;;;;;Kazem
-Straumann BE;Zaventem;Belgicastraat;1;1930;Belgie erbij?;nee;;;Straumann BE;Belgie erbij?;;;;;KNO de Jong
-Straumann NL;Ijselstein;Einsteinweg;15;3404 LE;winkel tandheelkundige benodigdheden?;nee;;;Straumann NL;;;;;;Koning Kliniek
-Zierikzee VK;Zierikzee;Koning Gustaafweg;2;4201 NP;victoriakliniek?;nee;;;Medcentric Goes;Medcentric MWCZ;;;;;Medcentric MWCZ
-;;;;;;;;;Goes ADRZ;MKA groep ADRZ;;;;;Medtronic
-;;;;;;;;;Bergen op Zoom;MKA groep KA;;Klein arsenaal?;;;MKA groep ADRZ
-;;;;;;;;;Annadal normaal;Annadal kliniek;;??;;;MKA groep KA
-;;;;;;;;;Annadal spoed;Annadal kliniek Poli;;??;;;MKA groep MPS
-;;;;;;;;;Equipe Rozendaal;Xpert Clinics Orthopedie Rozendaal?;;zelfde??;;;MKA groep Roosendaal
-;;;;;;;;;EQV - Velthuis Kliniek Velp;Xpert Clinics Orthopedie Rozendaal?;;zelfde??;;;MKA groep Terneuzen
-;;;;;;;;;Orthoparc Rozendaal;Xpert Clinics Orthopedie Rozendaal?;;zelfde??;;;MKA groep VKZ
-;;;;;;;;;;;;;;;Orthoparc Rozendaal
-;;;;;;;;;;;;;;;Pro-Motion
-;;;;;;;;;;;;;;;Retina eye care
+Naam;Locatie_Plaats;Locatie_Straat;Locatie_Huisnummer;Locatie_Postcode;overeenkomst;vraag bekend;;;naam fout;naam goed;vraag bekend;;;;locaties bekend in vraagdataset;;;;;EQEI - Xpert Orthopedie Schijndel;Schijndel;Steeg;6;5482 WN;mogelijk locatie in Schijndel onderdeel van Equip Eindhoven?;nee
+A Klinieken;Huis Ter Heide;Dolderseweg;2F;3712 BP;;ja;;;Andros Clinics Rijswijk;Andros Clinics;;;;;A Klinieken;;;;;Equipe Den Haag;Den Haag;Parkstraat;83;2514 DH;;nee
+Andros Kliniek;Rijswijk;Madam Curielaan;10;2289 CA;;ja;;;Bergman Arnhem;Bergman Cl. Arnhem;;;;;Andros Clinics Rijswijk;;;;;Equipe Gorinchem;Gorinchem;Spijksedijk;14B;4207 GN;;nee
+Annadal kliniek;Maastricht;Brouwersweg;100;6216 EG;Annadal normaal;ja;;;Haaglanden;Haaglanden Clinics;;;;;Annadal kliniek;;;;;Straumann BE;Zaventem;Belgicastraat;1;1930;Belgie erbij?;nee
+Annadal kliniek Poli;Maastricht;Brouwersweg;100;6216 EG;Annadal spoed;ja;;;;;;;;;Annadal kliniek Poli;;;;;Straumann NL;Ijselstein;Einsteinweg;15;3404 LE;winkel tandheelkundige benodigdheden?;nee
+Annatommie Amstelveen;Amstelveen;Burgemeester Haspelslaan;131;1181 NC;;ja;;;;;;;;;Annatommie Amstelveen;;;;;Zierikzee VK;Zierikzee;Koning Gustaafweg;2;4201 NP;victoriakliniek?;nee
+Annatommie utrecht;Utrecht;Janssoniuslaan;71;3528 AH;;ja;;;Annatommie Amstelveen;Xpert Clinics Orthopedie Amstelven;;;;;Annatommie Utrecht;;;;;;;;;;;
+Arthrex;Utrecht;Papendorpseweg;75;3528 BJ;fabrikant medische technologie ?;ja;;;Annatommie utrecht;Xpert Clinics Orthopedie Utrecht;;;;;Arthrex;;;;;;;;;;;
+Bergman Cl. Arnhem;Arnhem;E.N. van Kleffenstraat;14;6842 CV;;ja;;;;;;;;;Bergman Cl. Arnhem;;;;;;;;;;;
+Cosmed Bosch en Duin OK;Bosch en Duin;Biltseweg;14;3735 ME;permanent gesloten volgens internet? - verder onder naam Sandstep Healthcare?;niet actief;;;Cosmed Bosch en Duin OK;;;;;;Cosmed Bosch en Duin OK;;;;;;;;;;;
+Cosmed Bosch en Duin Poli;Bosch en Duin;Biltseweg;14;3735 ME;permanent gesloten volgens internet? - verder onder naam Sandstep Healthcare?;niet actief;;;Cosmed Bosch en Duin Poli;;;;;;Cosmed Bosch en Duin Poli;;;;;;;;;;;
+Denticien;Rijswijk;Herenstraat;24;2282 BT;;ja;;;Doctors at soap;;;;;;Denticien;;;;;;;;;;;
+Dermaclinic Utrecht;Utrecht;Nachtegaalstraat;46;3581 AK;overgenomen door De Huidkliniek Utrecht;ja;;;Dr Ali;?;;;;;Dermaclinic Utrecht;;;;;;;;;;;
+Doctors at soap;Utrecht;Oudkerkhof;48;3512 GL;meerdere locaties in NL (Utrecht gekozen);ja;;;Dr de Jong;?;;;;;Doctors at soap;;;;;;;;;;;
+Dr Ali;Amsterdam;Jan van Goyenkade;12 t/m 1;1075 HP;APS by Ali Pirayes (APS = amsterdam plastic surgery);ja;;;Dr Vuyk;?;;;;;Dr. Ali;;;;;;;;;;;
+Dr. Vuyk & Faris;Bussum;Parklaan;2;1406 KL;Vuyk & Faris MC;ja;;;Dr. Ali;?;;;;;Dr. Vuyk & Faris;;;;;;;;;;;
+EQEI - Xpert Orthopedie Schijndel;Schijndel;Steeg;6;5482 WN;andere naam? Ortus.nu;ja;;;Dr. Vuyk & Faris;?;;;;;EQA - Velthuis Kliniek Amsterdam;;;;;;;;;;;
+Equip Amsterdam;Amsterdam;Laarderhooftweg;12;1101 EA;;ja;;;Eguipe Amsterdam;Equipe Amsterdam;;;;;EQA - Xpert Clinic Hand Amsterdam;;;;;;;;;;;
+Equipe Eindhoven;Eindhoven;Dr. Holtroplaan;3;5652 XR;;ja;;;Eguipe Enschede ;Equipe Enschede;;;;;EQA - Xpert Clinic Proctologie Amsterdam;;;;;;;;;;;
+Equipe Enschede;Enschede;Capitool;7;7521 PL;;ja;;;EQA - Velthuis Kliniek Amsterdam;Equipe Amsterdam;ja;;;;EQA - Xpert Orthopedie Amsterdam;;;;;;;;;;;
+Equipe Rotterdam;Rotterdam;K.P. van der  Mandelelaan;10;3062 MB;;ja;;;EQA - Xpert Clinic Hand Amsterdam;Equipe Amsterdam;ja;;;;EQEI - Velthuis Kliniek Eindhoven;;;;;;;;;;;
+Equipe Rozendaal;Rozendaal;Rosendaalselaan;30;6891 DG;;ja;;;EQA - Xpert Clinic Proctologie Amsterdam;Equipe Amsterdam;ja;;;;EQEI - Xpert Clinic Hand Eindhoven;;;;;;;;;;;
+Equipe Velp/Tegelen;Tegelen;Bongerdstraat;227;5931 NE;;ja;;;EQA - Xpert Orthopedie Amsterdam;Equipe Amsterdam;ja;;;;EQEI - Xpert Clinic Proctologie Eindhoven;;;;;;;;;;;
+Equipe Zeist Normaal;Zeist;Huis ter heideweg;44;3705 LZ;;ja;;;EQEI - Velthuis Kliniek Eindhoven;Equipe Eindhoven;ja;;;;EQEI - Xpert Orthopedie Eindhoven;;;;;;;;;;;
+EQV - Velthuis Kliniek Velp;Rozendaal;Rosendaalselaan;30;6891 DG;Zelfde als Equipe Rozendaal? - Velp ligt tegen Rozendaal;ja;;;EQEI - Xpert Clinic Hand Eindhoven;Equipe Eindhoven;ja;;;;EQEI - Xpert Orthopedie Schijndel;;;;;;;;;;;
+EQV - Xpert Clinic Hand Velp;Velp;Middellaan;8A;6881 RP;;ja;;;EQEI - Xpert Clinic Proctologie Eindhoven;Equipe Eindhoven;ja;;;;EQEN - Velthuis Kliniek Enschede;;;;;;;;;;;
+EQV - Xpert Clinic Proctologie Velp;Rozendaal;Rosendaalselaan;30;6891 DG;;ja;;;EQEI - Xpert Orthopedie Eindhoven;Equipe Eindhoven;ja;;;;EQEN - Xpert Clinic Hand Enschede;;;;;;;;;;;
+EQZW - Xpert Clinic Hand Zwolle;Zwolle;Dokter Slolteweg;74;8025 AZ;;ja;;;EQEI - Xpert Orthopedie Schijndel;;ja;;;;EQEN - Xpert Clinic Proctologie Enschede;;;;;;;;;;;
+Esser Clinics;Gouda;Harderwijkweg;3A;2803 PW;;ja;;;EQEN - Velthuis Kliniek Enschede;Equipe Enschede;ja;;;;EQR - Velthuis Kliniek Rotterdam;;;;;;;;;;;
+Flex clinics;Utrecht;Soestwetering;12;3543 AZ;;ja;;;EQEN - Xpert Clinic Hand Enschede;Equipe Enschede;ja;;;;EQR - Xpert Clinic Hand Rotterdam;;;;;;;;;;;
+Haaglanden Clinics;Den Haag;Nieuwe Parklaan;11;2597 LA;nr 11 i.p.v. 10 uit dataset?;ja;;;EQEN - Xpert Clinic Proctologie Enschede;Equipe Enschede;ja;;;;EQR - Xpert Clinic Proctologie Rotterdam;;;;;;;;;;;
+Kazem;Schiphol-Rijk;Boeing Avenue;203;1119 PD;;ja;;;EQR - Velthuis Kliniek Rotterdam;Equipe Rotterdam;ja;;;;EQR - Xpert Orthopedie Rotterdam;;;;;;;;;;;
+KNO de Jong;Vleuten;Nieuwe Vaart;1;3451 AH;;ja;;;EQR - Xpert Clinic Hand Rotterdam;Equipe Rotterdam;ja;;;;EQRZD - Hand pols Rozendaal;;;;;;;;;;;
+Koning Kliniek;;;;;niet gevonden;ja;;;EQR - Xpert Clinic Proctologie Rotterdam;Equipe Rotterdam;ja;;;;EQRZD - Orthopedie Rozendaal;;;;;;;;;;;
+Medcentric MWCZ;Goes;Piet Heinstraat;13;4461 GL;;ja;;;EQR - Xpert Orthopedie Rotterdam;Equipe Rotterdam;ja;;;;Equip Amsterdam;;;;;;;;;;;
+Medtronic;Eindhoven;Schimmelt;2 t/m 16;5611 ZX;fabrikant van medische apparatuur?;ja;;;EQRZD - Hand pols Rozendaal;Equipe Rozendaal;ja;;;;Equipe Enschede;;;;;;;;;;;
+MKA groep ADRZ;Goes;s Gravenpolderseweg;114;4462 RA;admiraal de ruyter ziekenhuis?;ja;;;EQRZD - Orthopedie Rozendaal;Equipe Rozendaal;ja;;;;EQV - Velthuis Kliniek Velp;;;;;;;;;;;
+MKA groep KA;Bergen op Zoom;Dubbelstraat;90;4611 GM;klein arsenaal?;ja;;;Equipe venlo /Tegelen ;Equipe venlo/Tegelen ;;;;;EQV - Xpert Clinic Hand Velp;;;;;;;;;;;
+MKA groep MPS;Middelburg;Poelendaelesingel;12;4335 JA;poelendaelesingel?;ja;;;EQV - Velthuis Kliniek Velp;;ja;Equipe Rozendaal??;;;EQV - Xpert Clinic Proctologie Velp;;;;;;;;;;;
+MKA groep Roosendaal;Roosendaal;Onyxdijk;199;4706 LL;Onyxdijk;ja;;;EQV - Xpert Clinic Hand Velp;Equipe Velp/Tegelen;ja;;;;EQZ - Xpert Clinic Oogzorg Zeist;;;;;;;;;;;
+MKA groep Terneuzen;Terneuzen;Zuidlandstraat;34;4532 CL;Zuidlandstraat;ja;;;EQV - Xpert Clinic Proctologie Velp;Equipe Velp/Tegelen;ja;;;;EQZW - Xpert Clinic Hand Zwolle;;;;;;;;;;;
+MKA groep VKZ;Rotterdam;Kleiweg;500;3045 PM;victoriakliniek Zierikzee?;ja;;;EQZ - Xpert Clinic Oogzorg Zeist;Equipe Zeist Normaal;ja;;;;Esser Clinics;;;;;;;;;;;
+Orthoparc Rozendaal;Rozendaal;Rosendaalselaan;30;6891 DG;nu: Xpert Clinics Orthopedie Rozendaal - zelfde locatie als EQV Velthuis Kliniek Velp;ja;;;EQZW - Xpert Clinic Hand Zwolle;;ja;;;;Flex Clinics;;;;;;;;;;;
+Pro-Motion;Zwijndrecht;Daltonstraat;13;3335 LR;groothandelaar medical;ja;;;;;;;;;Haaglanden Clinics;;;;;;;;;;;
+Retina eye care;Driebergen-Rijsenburg;Traaij;42;3971 GP;;ja;;;Retina;Retina eye care;;;;;Kazem;;;;;;;;;;;
+;;;;;;;;;Straumann BE;Belgie erbij?;;;;;KNO de Jong;;;;;;;;;;;
+;;;;;;;;;Straumann NL;;;;;;Koning Kliniek;;;;;;;;;;;
+;;;;;;;;;Medcentric Goes;Medcentric MWCZ;;;;;Medcentric MWCZ;;;;;;;;;;;
+;;;;;;;;;Goes ADRZ;MKA groep ADRZ;;;;;Medtronic;;;;;;;;;;;
+;;;;;;;;;Bergen op Zoom;MKA groep KA;;Klein arsenaal?;;;MKA groep ADRZ;;;;;;;;;;;
+;;;;;;;;;Annadal normaal;Annadal kliniek;;??;;;MKA groep KA;;;;;;;;;;;
+;;;;;;;;;Annadal spoed;Annadal kliniek Poli;;??;;;MKA groep MPS;;;;;;;;;;;
+;;;;;;;;;Equipe Rozendaal;Xpert Clinics Orthopedie Rozendaal?;;zelfde??;;;MKA groep Roosendaal;;;;;;;;;;;
+;;;;;;;;;EQV - Velthuis Kliniek Velp;Xpert Clinics Orthopedie Rozendaal?;;zelfde??;;;MKA groep Terneuzen;;;;;;;;;;;
+;;;;;;;;;Orthoparc Rozendaal;Xpert Clinics Orthopedie Rozendaal?;;zelfde??;;;MKA groep VKZ;;;;;;;;;;;
+;;;;;;;;;;;;;;;Orthoparc Rozendaal;;;;;;;;;;;
+;;;;;;;;;;;;;;;Pro-Motion;;;;;;;;;;;
+;;;;;;;;;;;;;;;Retina eye care;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
