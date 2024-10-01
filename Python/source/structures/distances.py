@@ -8,6 +8,7 @@ from typing import Set, List, Tuple
 import numpy as np
 import requests
 from warnings import warn
+import pandas as pd
 
 class Distances:
     """
@@ -67,7 +68,62 @@ class Distances:
         """
         if self._status != Status.CALCULATING:
             raise Exception("Distances are not being calculated")
-        # Load stored distances from file
+        
+        # Define the CSV file path
+        csv_file_path = Constants.CACHE_PATH / 'distance_time.csv'
+
+        # Check if the CSV file exists
+        if csv_file_path.exists():
+            # Read the CSV file into a DataFrame
+            stored_df = pd.read_csv(csv_file_path)
+
+            # Iterate over the DataFrame and populate self._distances
+            for _, row in stored_df.iterrows():
+                from_loc = row['from']
+                to_loc = row['to']
+                distance = row['distance']
+                time = row['time']
+                if from_loc in self._distances.index and to_loc in self._distances.columns:
+                    self._distances.loc[from_loc, to_loc] = Distance_time(distance, time)
+    
+    def _store_distances(self) -> None:
+        """
+        Sla de afstanden op in een csv bestand.
+        """
+        if self._status != Status.CALCULATING:
+            raise Exception("Distances are not being calculated")
+        
+        # Define the CSV file path
+        csv_file_path = Constants.CACHE_PATH / 'distance_time.csv'
+
+        # Read the existing CSV file if it exists
+        if csv_file_path.exists():
+            existing_df = pd.read_csv(csv_file_path)
+        else:
+            existing_df = pd.DataFrame(columns=['from', 'to', 'distance', 'time'])
+
+        # Convert the self._distances matrix to a stacked format using pandas.stack
+        stacked_df = self._distances.stack().reset_index()
+        stacked_df.columns = ['from', 'to', 'distance_time']
+
+        # Filter out diagonal elements and NaN values
+        stacked_df = stacked_df[stacked_df['from'] != stacked_df['to']]
+        stacked_df = stacked_df.dropna(subset=['distance_time'])
+
+        # Extract distance and time from the distance_time object
+        stacked_df['distance'] = stacked_df['distance_time'].apply(lambda x: x.distance)
+        stacked_df['time'] = stacked_df['distance_time'].apply(lambda x: x.time)
+
+        # Drop the distance_time column
+        stacked_df = stacked_df.drop(columns=['distance_time'])
+
+        new_df = stacked_df[['from', 'to', 'distance', 'time']]
+
+        # Merge the new data with the existing data
+        updated_df = pd.concat([existing_df, new_df]).drop_duplicates(subset=['from', 'to'], keep='last')
+
+        # Write the updated DataFrame back to the CSV file
+        updated_df.to_csv(csv_file_path, index=False)
 
     def _determine_missing_distances(self) -> List[Tuple[Location, Location]]:
         """
@@ -162,5 +218,3 @@ class Distance_time:
             float: De tijd tussen twee locaties in minuten.
         """
         return self._time
-
-    
