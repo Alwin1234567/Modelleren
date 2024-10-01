@@ -178,11 +178,14 @@ class Distances:
         if self._status != Status.CALCULATING:
             raise Exception("Distances are not being calculated")
         # Mask the diagonal values
-        mask = np.eye(self._distances.shape[0], dtype=bool)
-        masked_distances = self._distances.mask(mask)
+        # Convert the DataFrame to a NumPy array
+        distances_array = self._distances.isna().to_numpy()
+
+        # Fill the diagonal with a specific value (e.g., 0)
+        np.fill_diagonal(distances_array, False)
 
         # Check for None values excluding the diagonal
-        return masked_distances.isna().any().any()
+        return distances_array.sum() == 0
     
     def get_distance_time(self, start: Location, end: Location) -> Distance_time:
         """
