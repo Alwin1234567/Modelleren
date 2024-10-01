@@ -95,6 +95,7 @@ class Distances:
         
         # Define the CSV file path
         csv_file_path = Constants.CACHE_PATH / 'distance_time.csv'
+        csv_file_path.parent.mkdir(parents=True, exist_ok=True)
 
         # Read the existing CSV file if it exists
         if csv_file_path.exists():
