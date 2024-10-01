@@ -1,10 +1,10 @@
 from .status import Status
-from .coordinates import Coordinates
 from .maps import Maps
+from .distance_time import Distance_time
 from source.locations import Location
 from source.constants import Constants
 from pandas import DataFrame
-from typing import Set, List, Tuple
+from typing import Dict, List, Tuple
 import numpy as np
 import requests
 from warnings import warn
@@ -19,7 +19,7 @@ class Distances:
         """
         Initialiseer een nieuwe instantie van de Distances klasse.
         """
-        self._locations: Set[Location] = []
+        self._locations: Dict[str, Location] = dict()
         self._distances = DataFrame()
         self._status = Status.PREPARING
 
@@ -31,7 +31,7 @@ class Distances:
         Parameters:
             location (Location): De locatie die moet worden toegevoegd.
         """
-        self._locations.add(location)
+        self._locations[location.name] = location
     
     def generate_distances(self) -> None:
         """
@@ -48,7 +48,7 @@ class Distances:
             raise Exception("Distances are in an unknown state")
         self._status = Status.CALCULATING
 
-        location_names = [location.name for location in self._locations]
+        location_names = self._locations.keys()
         self._distances = DataFrame(index=location_names, columns=location_names)
         self._load_stored_distances()
         missing_distances = self._determine_missing_distances()
@@ -57,6 +57,7 @@ class Distances:
         
         if not self._check_complete():
             raise Exception("Distances are not complete")
+        self._store_distances()
         self._status = Status.FINISHED
 
     def _load_stored_distances(self) -> None:
@@ -140,7 +141,7 @@ class Distances:
             raise Exception("Distances are not being calculated")
         missing_distances = self._distances.isna().stack()
         missing_distances = missing_distances[missing_distances].index.tolist()
-        missing_distances = [(row, col) for row, col in missing_distances if row != col]
+        missing_distances = [(self._locations[row], self._locations[col]) for row, col in missing_distances if row != col]
         return missing_distances
 
     def _determine_distances(self, missing_distances: List[Tuple[Location, Location]]) -> None:
@@ -182,40 +183,46 @@ class Distances:
 
         # Check for None values excluding the diagonal
         return masked_distances.isna().any().any()
-
-
-class Distance_time:
-    """
-    Een class om de afstand en tijd tussen twee locaties te beheren.
-    """
-
-    def __init__(self, distance: float, time: float) -> None:
+    
+    def get_distance_time(self, start: Location, end: Location) -> Distance_time:
         """
-        Initialiseer een nieuwe instantie van de Distance_time klasse.
+        Haal de afstand en tijd op tussen twee locaties.
 
         Parameters:
-            distance (float): De afstand tussen twee locaties in kilometers.
-            time (float): De tijd tussen twee locaties in minuten.
-        """
-        self._distance = distance
-        self._time = time
-
-    @property
-    def distance(self) -> float:
-        """
-        Haal de afstand op.
+            start (Location): De startlocatie.
+            end (Location): De eindlocatie.
 
         Returns:
-            float: De afstand tussen twee locaties in kilometers.
+            Distance_time: De afstand en tijd tussen de locaties.
         """
-        return self._distance
+        return self._distances.loc[start.name, end.name]
 
     @property
-    def time(self) -> float:
+    def status(self) -> Status:
         """
-        Haal de tijd op.
+        Haal de status op.
 
         Returns:
-            float: De tijd tussen twee locaties in minuten.
+            Status: De status van de afstanden.
         """
-        return self._time
+        return self._status
+    
+    @property
+    def locations(self) -> Dict[str, Location]:
+        """
+        Haal de locaties op.
+
+        Returns:
+            Set[Location]: De locaties.
+        """
+        return self._locations
+    
+    @property
+    def distances(self) -> DataFrame:
+        """
+        Haal de afstanden op.
+
+        Returns:
+            DataFrame: De afstanden tussen locaties.
+        """
+        return self._distances

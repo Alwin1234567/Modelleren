@@ -1,4 +1,5 @@
 from .coordinates import Coordinates
 from .maps import Maps
 from .status import Status
-from .distances import Distances, Distance_time
+from .distance_time import Distance_time
+from .distances import Distances
