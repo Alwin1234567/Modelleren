@@ -2,6 +2,11 @@
 non-git/
 ~$*
 .vscode/
+graphhopper/
+cache/
+
+!graphhopper/config.yml
+!graphhopper/setup-guide.md
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
