@@ -158,7 +158,7 @@ class Distances:
         if not Maps.is_enabled():
             Maps.enable_maps()
         for start, end in missing_distances:
-            url = f"{Constants.MAPS_URL}?{start.coordinates.OSMR_str}&{end.coordinates.OSMR_str}&profile={Constants.MAPS_PARAMS['profile']}&locale={Constants.MAPS_PARAMS['locale']}&calc_points={Constants.MAPS_PARAMS['calc_points']}"
+            url = f"{Constants.MAPS_URL}?{start.coordinates.OSRM_str}&{end.coordinates.OSRM_str}&profile={Constants.MAPS_PARAMS['profile']}&locale={Constants.MAPS_PARAMS['locale']}&calc_points={Constants.MAPS_PARAMS['calc_points']}"
             response = requests.get(url)
             result = Distance_time(1e10, 1e10)
             if response.status_code == 200:

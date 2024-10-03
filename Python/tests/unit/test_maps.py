@@ -19,7 +19,7 @@ def test_maps_calculating():
         Maps.enable_maps()
     assert Maps.is_enabled()
     
-    url = f"{Constants.MAPS_URL}?{coordinates1.OSMR_str}&{coordinates2.OSMR_str}&profile={Constants.MAPS_PARAMS['profile']}&locale={Constants.MAPS_PARAMS['locale']}&calc_points={Constants.MAPS_PARAMS['calc_points']}"
+    url = f"{Constants.MAPS_URL}?{coordinates1.OSRM_str}&{coordinates2.OSRM_str}&profile={Constants.MAPS_PARAMS['profile']}&locale={Constants.MAPS_PARAMS['locale']}&calc_points={Constants.MAPS_PARAMS['calc_points']}"
     assert url == "http://localhost:8989/route?point=52.078828,5.150504&point=52.354679,4.887852&profile=car&locale=en&calc_points=false"
 
     response = requests.get(url)

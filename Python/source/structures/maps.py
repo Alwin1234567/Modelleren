@@ -30,7 +30,6 @@ class Maps:
                 cwd=Constants.GRAPHHOPPER_PATH  # Stel de werkmap in
             )
             cls._enabled = True
-            print("Maps enabled")
 
             # Register the cleanup function to be called on script exit
             atexit.register(cls.cleanup)
@@ -40,14 +39,13 @@ class Maps:
             while time.time() - start_time < Constants.STARTUP_WAIT_TIME:
                 try:
                     response = requests.get("http://localhost:8989")
+                    # als de status code 200 is, is de service online
                     if response.status_code == 200:
-                        print("Maps service is online")
                         return
                 except requests.ConnectionError:
                     pass
                 time.sleep(0.5)  # Wait for 0.5 seconds before retrying
 
-            print(f"Maps service did not come online within {Constants.STARTUP_WAIT_TIME} seconds")
             cls.disable_maps()  # Clean up if the service did not start
 
     @classmethod
@@ -76,7 +74,6 @@ class Maps:
             finally:
                 cls._process = None
                 cls._enabled = False
-            print("Maps disabled")
 
     @classmethod
     def cleanup(cls):
@@ -104,7 +101,6 @@ class Maps:
             finally:
                 cls._process = None
                 cls._enabled = False
-            print("Maps cleaned up")
 
     @classmethod
     def is_enabled(cls):
