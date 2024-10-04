@@ -19,3 +19,4 @@ class Constants:
     STARTUP_WAIT_TIME = 5
     CACHE_PATH = Path(__file__).resolve().parents[2] / 'cache'
     GRAPHHOPPER_PATH = Path(__file__).resolve().parents[2] / 'graphhopper'
+    LOCATIONS_PATH = Path(__file__).resolve().parents[2] / 'locations_data'
