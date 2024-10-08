@@ -7,3 +7,4 @@ class Status(Enum):
     PREPARING = auto()
     CALCULATING = auto()
     FINISHED = auto()
+    MODIFYING = auto()
