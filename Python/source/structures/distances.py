@@ -203,6 +203,44 @@ class Distances:
             Distance_time: De afstand en tijd tussen de locaties.
         """
         return self._distances.loc[start.name, end.name]
+    
+    def get_distance(self, start: Location, end: Location) -> float:
+        """
+        Haal de afstand op tussen twee locaties.
+
+        Parameters:
+            start (Location): De startlocatie.
+            end (Location): De eindlocatie.
+
+        Returns:
+            float: De afstand tussen de locaties.
+        """
+        return self.get_distance_time(start, end).distance
+    
+    def get_time(self, start: Location, end: Location) -> float:
+        """
+        Haal de tijd op tussen twee locaties.
+
+        Parameters:
+            start (Location): De startlocatie.
+            end (Location): De eindlocatie.
+
+        Returns:
+            float: De tijd tussen de locaties.
+        """
+        return self.get_distance_time(start, end).time
+    
+    def has_location(self, location: Location) -> bool:
+        """
+        Controleer of een locatie aanwezig is in de afstanden.
+
+        Parameters:
+            location (Location): De locatie die moet worden gecontroleerd.
+
+        Returns:
+            bool: True als de locatie aanwezig is, anders False.
+        """
+        return location.name in self._locations.keys()
 
     @property
     def status(self) -> Status:

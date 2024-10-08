@@ -1,5 +1,5 @@
 from enum import Enum, auto
-from source.structures import Coordinates
+from source.structures import Coordinates, ID
 from source.constants import Constants
 from geopy.geocoders import Nominatim
 import pandas as pd
@@ -13,6 +13,7 @@ class Location:
         self._name = name
         self._type = type
         self._coordinates = self.name_to_coordinates()
+        self._id = ID()
     
     def __str__(self) -> str:
         return f"{self._name} ({self._coordinates})"
@@ -68,3 +69,7 @@ class Location:
     @property
     def type(self):
         return self._type
+    
+    @property
+    def id(self):
+        return self._id

@@ -1,3 +1,6 @@
+from datetime import time
+from constants import Constants
+
 class Distance_time:
     """
     Een class om de afstand en tijd tussen twee locaties te beheren.
@@ -13,6 +16,18 @@ class Distance_time:
         """
         self._distance = distance
         self._time = time
+    
+    def cost(self, start_time: time) -> float:
+        """
+        Bereken de kosten van de afstand en tijd.
+
+        Parameters:
+            overtime (float): Percentage van de tijd dat in de nacht valt.
+
+        Returns:
+            float: De kosten van de afstand en tijd.
+        """
+        pass
 
     @property
     def distance(self) -> float:
