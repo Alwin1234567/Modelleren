@@ -1,14 +1,16 @@
 from .status import Status
 from .maps import Maps
 from .distance_time import Distance_time
-from source.locations import Location
 from source.constants import Constants
 from pandas import DataFrame
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, TYPE_CHECKING
 import numpy as np
 import requests
 from warnings import warn
 import pandas as pd
+
+if TYPE_CHECKING:
+    from source.locations import Location
 
 class Distances:
     """
@@ -19,12 +21,12 @@ class Distances:
         """
         Initialiseer een nieuwe instantie van de Distances klasse.
         """
-        self._locations: Dict[str, Location] = dict()
+        self._locations: Dict[str, "Location"] = dict()
         self._distances = DataFrame()
         self._status = Status.PREPARING
 
 
-    def add_location(self, location: Location) -> None:
+    def add_location(self, location: "Location") -> None:
         """
         Voeg een locatie toe aan de set van locaties.
 
@@ -131,7 +133,7 @@ class Distances:
         # Append the DataFrame to the file
         updated_df.to_csv(csv_file_path, mode='a', index=False, sep=';')
 
-    def _determine_missing_distances(self) -> List[Tuple[Location, Location]]:
+    def _determine_missing_distances(self) -> List[Tuple["Location", "Location"]]:
         """
         Bepaal de ontbrekende afstanden tussen locaties.
     
@@ -148,7 +150,7 @@ class Distances:
         missing_distances = [(self._locations[row], self._locations[col]) for row, col in missing_distances if row != col]
         return missing_distances
 
-    def _determine_distances(self, missing_distances: List[Tuple[Location, Location]]) -> None:
+    def _determine_distances(self, missing_distances: List[Tuple["Location", "Location"]]) -> None:
         """
         Bepaal de afstanden voor de ontbrekende locaties.
 
@@ -191,7 +193,7 @@ class Distances:
         # Check for None values excluding the diagonal
         return distances_array.sum() == 0
     
-    def get_distance_time(self, start: Location, end: Location) -> Distance_time:
+    def get_distance_time(self, start: "Location", end: "Location") -> Distance_time:
         """
         Haal de afstand en tijd op tussen twee locaties.
 
@@ -204,7 +206,7 @@ class Distances:
         """
         return self._distances.loc[start.name, end.name]
     
-    def get_distance(self, start: Location, end: Location) -> float:
+    def get_distance(self, start: "Location", end: "Location") -> float:
         """
         Haal de afstand op tussen twee locaties.
 
@@ -217,7 +219,7 @@ class Distances:
         """
         return self.get_distance_time(start, end).distance
     
-    def get_time(self, start: Location, end: Location) -> float:
+    def get_time(self, start: "Location", end: "Location") -> float:
         """
         Haal de tijd op tussen twee locaties.
 
@@ -230,7 +232,7 @@ class Distances:
         """
         return self.get_distance_time(start, end).time
     
-    def has_location(self, location: Location) -> bool:
+    def has_location(self, location: "Location") -> bool:
         """
         Controleer of een locatie aanwezig is in de afstanden.
 
@@ -253,7 +255,7 @@ class Distances:
         return self._status
     
     @property
-    def locations(self) -> Dict[str, Location]:
+    def locations(self) -> Dict[str, "Location"]:
         """
         Haal de locaties op.
 

@@ -1,5 +1,4 @@
 from datetime import time
-from constants import Constants
 
 class Distance_time:
     """
