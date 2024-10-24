@@ -1,4 +1,5 @@
 from datetime import time
+from .cost import Cost
 
 class Distance_time:
     """
@@ -26,7 +27,10 @@ class Distance_time:
         Returns:
             float: De kosten van de afstand en tijd.
         """
-        pass
+        distance_cost = Cost.calculate_cost_distance(self._distance)
+        time_cost = Cost.calculate_cost_time(start_time, self._time)
+        return distance_cost + time_cost
+        
 
     @property
     def distance(self) -> float:

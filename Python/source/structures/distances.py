@@ -77,8 +77,16 @@ class Distances:
 
         # Check if the CSV file exists
         if csv_file_path.exists():
-            # Read the CSV file into a DataFrame
-            stored_df = pd.read_csv(csv_file_path)
+            # Open the CSV file and read the first line to check for a separator
+            with open(csv_file_path, 'r') as file:
+                first_line = file.readline().strip()
+                if first_line.startswith('sep='):
+                    separator = first_line.split('=')[1]
+                    # Read the CSV file into a DataFrame, skipping the first line
+                    stored_df = pd.read_csv(csv_file_path, sep=separator, skiprows=1)
+                else:
+                    # Default separator if no sep= is found
+                    stored_df = pd.read_csv(csv_file_path, sep=';')
 
             # Iterate over the DataFrame and populate self._distances
             for _, row in stored_df.iterrows():
