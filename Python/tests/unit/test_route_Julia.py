@@ -8,9 +8,9 @@ import datetime
 def test_route_maken():
     # distances object maken
     hub1 = Hub("Hub", Coordinates(52.076929, 5.107445))
-    ziekenhuis1 = Ziekenhuis("B", Coordinates(52.366253, 4.873986), [4, 9, 0, 0, 2, 0, 0], [2, 9, 0, 0, 2, 0, 0])
-    ziekenhuis2 = Ziekenhuis("C", Coordinates(52.252094, 4.797082), [5, 9, 0, 0, 2, 0, 0], [9, 9, 0, 0, 2, 0, 0])
-    ziekenhuis3 = Ziekenhuis("D", Coordinates(52.215939, 5.174737), [7, 9, 0, 0, 2, 0, 0], [5, 9, 0, 0, 2, 0, 0])
+    ziekenhuis1 = Ziekenhuis("B", Coordinates(52.366253, 4.873986), [4, 9, 0, 0, 2, 0, 0], [9, 9, 0, 0, 2, 0, 0])
+    ziekenhuis2 = Ziekenhuis("C", Coordinates(52.252094, 4.797082), [8, 9, 0, 0, 2, 0, 0], [7, 9, 0, 0, 2, 0, 0])
+    ziekenhuis3 = Ziekenhuis("D", Coordinates(52.215939, 5.174737), [4, 9, 0, 0, 2, 0, 0], [2, 9, 0, 0, 2, 0, 0])
     distances_object = Distances()
     distances_object.add_location(hub1)
     distances_object.add_location(ziekenhuis1)
@@ -18,8 +18,8 @@ def test_route_maken():
     distances_object.add_location(ziekenhuis3)
     distances_object.generate_distances()
     Maps.disable_maps()
-    print(distances_object.locations)
-    print(distances_object.distances)
+    #print(distances_object.locations)
+    #print(distances_object.distances)
 
     toe_te_voegen_ziekenhuizen = [ziekenhuis1, ziekenhuis2, ziekenhuis3]
 
