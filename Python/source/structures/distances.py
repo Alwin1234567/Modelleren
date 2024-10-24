@@ -3,11 +3,12 @@ from .maps import Maps
 from .distance_time import Distance_time
 from source.constants import Constants
 from pandas import DataFrame
-from typing import Dict, List, Tuple, TYPE_CHECKING
+from typing import Dict, List, Tuple, TYPE_CHECKING, Generator, Any
 import numpy as np
 import requests
 from warnings import warn
 import pandas as pd
+from datetime import time
 
 if TYPE_CHECKING:
     from source.locations import Location
@@ -251,6 +252,30 @@ class Distances:
             bool: True als de locatie aanwezig is, anders False.
         """
         return location.name in self._locations.keys()
+    
+    def available_locations(self, location: "Location", skip_locations: list["Location"], start_time: time) -> Generator[Tuple["Location", Distance_time], Any, None]:
+        """
+        Krijg een generator die locaties en hun afstandstijd ophaalt, gesorteerd op kosten.
+
+        Parameters:
+            location (Location): De locatie om vanuit te vertrekken.
+            skip_locations (list): Een lijst van locaties om over te slaan.
+
+        Yields:
+            tuple: Een tuple met de locatie en de afstandstijd.
+        """
+        # Filter out the locations to skip
+        remaining_locations = [loc for loc in self.locations.values() if loc not in skip_locations and loc != location]
+
+        # Retrieve the distance times for the remaining locations
+        distance_times = [(loc, self.get_distance_time(location, loc)) for loc in remaining_locations]
+
+        # Sort the list by cost
+        sorted_distance_times = sorted(distance_times, key=lambda x: x[1].cost(start_time))
+
+        # Yield each location and its distance time
+        for loc, distance_time in sorted_distance_times:
+            yield loc, distance_time
 
     @property
     def status(self) -> Status:
