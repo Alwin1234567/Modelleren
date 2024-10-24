@@ -72,14 +72,16 @@ class Route:
         lading_startpunt: float = 0
         al_geprobeerde_ziekenhuizen: List[Ziekenhuis] = []
 
-        i = -1 #testvariabele
+        i = 0 #testvariabele
 
-        while t < t_max and len(toe_te_voegen_ziekenhuizen) > 0 and i < (len(toe_te_voegen_ziekenhuizen)-1):
+        while t < t_max and len(toe_te_voegen_ziekenhuizen) > 0 and i < (len(toe_te_voegen_ziekenhuizen)):
             print('while start', len(toe_te_voegen_ziekenhuizen), i)
-            i += 1
+            
+            huidige_locatie: Location = self._start
             # controleer of er nog tijd is om naar een ander ziekenhuis te gaan
-            distance_closest_ziekenhuis = 10 # minimale afstand naar nieuw ziekenhuis vanaf huidige ziekenhuis 
-            distance_closest_ziekenhuis_to_hub = 12 # afstand van nieuwe ziekenhuis in bovenstaande variabele naar hub
+            distance_closest_ziekenhuis = self._distances.get_distance(huidige_locatie, toe_te_voegen_ziekenhuizen[i]) # minimale afstand naar nieuw ziekenhuis vanaf huidige ziekenhuis 
+            print(distance_closest_ziekenhuis)
+            distance_closest_ziekenhuis_to_hub = self._distances.get_distance(toe_te_voegen_ziekenhuizen[i], self._start) # afstand van nieuwe ziekenhuis in bovenstaande variabele naar hub
             distance_closest_to_hub = 9 # minimale afstand van nieuw ziekenhuis naar hub
             distance_closest_to_hub_to_ziekenhuis = 12 # afstand van huidige ziekenhuis naar nieuwe ziekenhuis in bovenstaande variabele
             if t + distance_closest_ziekenhuis + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT + distance_closest_ziekenhuis_to_hub > t_max:
@@ -92,33 +94,41 @@ class Route:
             toevoeg_ziekenhuis = toe_te_voegen_ziekenhuizen[i] # moet dichtsbijzijndste ziekenhuis worden
             
             # constraints controleren
-            reistijd_toevoeg_ziekenhuis = 10 # reistijd naar het nieuwe ziekenhuis
-            reistijd_toevoeg_ziekenhuis_to_hub = 10 # reistijd van nieuwe ziekenhuis naar hub
-            brenghoeveelheid_toevoeg_ziekenhuis = 10 # hoveelheid instrumentensets die afgeleverd moeten worden
-            ophaalhoeveelheid_toevoeg_ziekenhuis = 10 # hoeveelheid instrumentensets die opgehaald moet worden
+            reistijd_toevoeg_ziekenhuis = self._distances.get_time(huidige_locatie, toe_te_voegen_ziekenhuizen[i]) # reistijd naar het nieuwe ziekenhuis
+            reistijd_toevoeg_ziekenhuis_to_hub = self._distances.get_time(toe_te_voegen_ziekenhuizen[i], self._start) # reistijd van nieuwe ziekenhuis naar hub
             tijdvak_toevoeg_ziekenhuis = (time(6, 0), time(20, 0)) # tijdvak waarin ziekenhuis beschikbaar is
             if t + reistijd_toevoeg_ziekenhuis + reistijd_toevoeg_ziekenhuis_to_hub + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT > t_max:
+                i += 1
                 print('continue1')
                 # toevoegen van ziekenhuis overschrijdt de maximale tijdsduur van de route
                 continue
-            print(lading_startpunt, brenghoeveelheid_toevoeg_ziekenhuis, capaciteit)
-            if lading_startpunt + brenghoeveelheid_toevoeg_ziekenhuis > capaciteit:
+            print("startlading, weg, cap:", lading_startpunt, toevoeg_ziekenhuis.vraag_wegbrengen.monday, capaciteit)
+            if lading_startpunt + toevoeg_ziekenhuis.vraag_wegbrengen.monday > capaciteit:
+                i += 1
                 print('continue2 ', i)
                 # toevoegen van ziekenhuis overschrijdt de capaciteit van het voertuig op het beginpunt
                 continue
-            print(vertreklading_huidige_punt, brenghoeveelheid_toevoeg_ziekenhuis, ophaalhoeveelheid_toevoeg_ziekenhuis, capaciteit)
-            if vertreklading_huidige_punt - brenghoeveelheid_toevoeg_ziekenhuis + ophaalhoeveelheid_toevoeg_ziekenhuis > capaciteit:
+            if huidige_locatie == self._start and lading_startpunt - toevoeg_ziekenhuis.vraag_wegbrengen.monday + toevoeg_ziekenhuis.vraag_ophalen.monday > capaciteit:
+                i += 1
                 print('continue3')
                 # toevoegen van ziekenhuis overschrijdt de capaciteit van het voertuig bij het vertrekken vanaf dit ziekenhuis
                 continue
-            print(tijdvak_toevoeg_ziekenhuis, tijdvak_toevoeg_ziekenhuis[0], tijdvak_toevoeg_ziekenhuis[1], current_time.time())
-            if tijdvak_toevoeg_ziekenhuis != None and current_time.time() < tijdvak_toevoeg_ziekenhuis[0] and current_time.time() > tijdvak_toevoeg_ziekenhuis[1]:
+            print("huidiglading, weg, haal, cap:", vertreklading_huidige_punt, toevoeg_ziekenhuis.vraag_wegbrengen.monday, toevoeg_ziekenhuis.vraag_ophalen.monday, capaciteit)
+            if huidige_locatie != self._start and vertreklading_huidige_punt - toevoeg_ziekenhuis.vraag_wegbrengen.monday + toevoeg_ziekenhuis.vraag_ophalen.monday > capaciteit:
+                i += 1
                 print('continue4')
+                # toevoegen van ziekenhuis overschrijdt de capaciteit van het voertuig bij het vertrekken vanaf dit ziekenhuis
+                continue
+            print("tijdvakken:", tijdvak_toevoeg_ziekenhuis, tijdvak_toevoeg_ziekenhuis[0], tijdvak_toevoeg_ziekenhuis[1], current_time.time())
+            if tijdvak_toevoeg_ziekenhuis != None and current_time.time() < tijdvak_toevoeg_ziekenhuis[0] and current_time.time() > tijdvak_toevoeg_ziekenhuis[1]:
+                i += 1
+                print('continue5')
                 # ziekenhuis wordt bezocht buiten het toegezegde tijdvak
                 continue
             print('constraints voldaan ', i)
             # constraints zijn voldaan
             self.add_location(toevoeg_ziekenhuis)
+            huidige_locatie = toevoeg_ziekenhuis
             print('actie')
             reistijd_wachttijd = reistijd_toevoeg_ziekenhuis + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT # in minuten
             print('actie')
@@ -126,13 +136,15 @@ class Route:
             print('actie')
             current_time = current_time + datetime.timedelta(minutes=reistijd_wachttijd) 
             print('actie')
-            lading_startpunt += brenghoeveelheid_toevoeg_ziekenhuis
+            lading_startpunt += toevoeg_ziekenhuis.vraag_wegbrengen.monday
             print('actie')
-            vertreklading_huidige_punt += (ophaalhoeveelheid_toevoeg_ziekenhuis - brenghoeveelheid_toevoeg_ziekenhuis)
+            vertreklading_huidige_punt += (toevoeg_ziekenhuis.vraag_ophalen.monday - toevoeg_ziekenhuis.vraag_wegbrengen.monday)
             # toevoeg_ziekenhuis verwijderen uit toe_te_voegen_ziekenhuizen
             toe_te_voegen_ziekenhuizen.remove(toevoeg_ziekenhuis)
             print(len(toe_te_voegen_ziekenhuizen))
             print('eind loop ', i)
+            # weer vanaf eerste index kijken
+            i = 0
 
         print('klaar, niks kan meer worden toegevoegd')
 

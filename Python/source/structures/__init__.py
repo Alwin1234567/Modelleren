@@ -5,3 +5,4 @@ from .id import ID
 from .distance_time import Distance_time
 from .distances import Distances
 from .cost import Cost
+from .vraag import Vraag
