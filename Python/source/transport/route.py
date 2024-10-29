@@ -56,7 +56,7 @@ class Route:
         new_route._status = self._status
         return new_route
 
-    def make_route(self, skip_locations: list["Location"]) -> None:
+    def make_route(self, skip_locations: list["Location"], dag: str) -> None:
         """
         Maak een startoplossing voor de route.
         Vult self._locations met ziekenhuizen in de volgorde waarop ze in de route voorkomen.
@@ -91,9 +91,9 @@ class Route:
                     print('tijd overschreden')
                     continue # met het toevoegen van dit ziekenhuis wordt de maximale tijd overschreden -> volgende proberen
                 # capaciteit controleren
-                print('max, weg, eind, halen: ', maximale_lading, nieuw_ziekenhuis.vraag_wegbrengen.monday, lading_eindpunt, nieuw_ziekenhuis.vraag_ophalen.monday)
-                print('max nieuw, cap: ', max(maximale_lading + nieuw_ziekenhuis.vraag_wegbrengen.monday, lading_eindpunt + nieuw_ziekenhuis.vraag_ophalen.monday), self._capaciteit)
-                if max(maximale_lading + nieuw_ziekenhuis.vraag_wegbrengen.monday, lading_eindpunt + nieuw_ziekenhuis.vraag_ophalen.monday) > self._capaciteit:
+                print('max, weg, eind, halen: ', maximale_lading, getattr(nieuw_ziekenhuis.vraag_wegbrengen, dag), lading_eindpunt, getattr(nieuw_ziekenhuis.vraag_ophalen, dag))
+                print('max nieuw, cap: ', max(maximale_lading + getattr(nieuw_ziekenhuis.vraag_wegbrengen, dag), lading_eindpunt + getattr(nieuw_ziekenhuis.vraag_ophalen, dag)), self._capaciteit)
+                if max(maximale_lading + getattr(nieuw_ziekenhuis.vraag_wegbrengen, dag), lading_eindpunt + getattr(nieuw_ziekenhuis.vraag_ophalen, dag)) > self._capaciteit:
                     print('capaciteit ergens overschreden')
                     continue # toevoegen van ziekenhuis overschrijdt ergens op de route de lading
                 # tijdvak controleren
@@ -124,9 +124,9 @@ class Route:
                     # ochtendroute, dus terug in de tijd
                     current_time = current_time - timedelta(minutes=reistijd_wachttijd) 
                 # lading updaten
-                maximale_lading = max(maximale_lading + nieuw_ziekenhuis.vraag_wegbrengen.monday, lading_eindpunt + nieuw_ziekenhuis.vraag_ophalen.monday)
-                lading_startpunt += nieuw_ziekenhuis.vraag_wegbrengen.monday
-                lading_eindpunt += nieuw_ziekenhuis.vraag_ophalen.monday
+                maximale_lading = max(maximale_lading + getattr(nieuw_ziekenhuis.vraag_wegbrengen, dag), lading_eindpunt + getattr(nieuw_ziekenhuis.vraag_ophalen, dag))
+                lading_startpunt += getattr(nieuw_ziekenhuis.vraag_wegbrengen, dag)
+                lading_eindpunt += getattr(nieuw_ziekenhuis.vraag_ophalen, dag)
 
                 # controlestukje
                 for huidig_naar_nieuw in toe_te_voegen_routes:

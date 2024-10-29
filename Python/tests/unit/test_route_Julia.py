@@ -30,7 +30,7 @@ def test_route_maken():
     print('cost', route_object.total_cost)
 
     #route maken
-    route_object.make_route([])
+    route_object.make_route([], 'monday')
     print('route', route_object.locations)
     print('distance', route_object.total_distance)
     print('time', route_object.total_time)
@@ -39,14 +39,13 @@ def test_route_maken():
 
     route_object_ochtend = Route(Route_type.OCHTEND, hub1, distances_object, 19)
     #route maken
-    route_object_ochtend.make_route([])
+    route_object_ochtend.make_route([], 'monday')
     print('route', route_object_ochtend.locations)
     print('distance', route_object_ochtend.total_distance)
     print('time', route_object_ochtend.total_time)
     print('cost', route_object_ochtend.total_cost)
     print('departuretimes', route_object_ochtend.departure_times)  
     
-
 # Run the test
 if __name__ == "__main__":
     pytest.main()
