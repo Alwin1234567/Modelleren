@@ -2,7 +2,7 @@ from enum import Enum, auto
 from source.locations import Location, Ziekenhuis, Hub
 from source.structures import Status, Distances, ID
 from warnings import warn
-from typing import List
+from typing import List, Tuple
 from datetime import time, datetime, timedelta
 from source.constants import Constants
 
@@ -13,12 +13,13 @@ class Route_type(Enum):
 class Route:
 
     # destances will be a reference to the relevant distances object
-    def __init__(self, route_type: Route_type, start: Hub, distances: Distances) -> None:
+    def __init__(self, route_type: Route_type, start: Hub, distances: Distances, capaciteit: int) -> None:
         self._distances = distances
         if self._distances.status != Status.FINISHED: 
             raise ValueError("Distances object is not finished")
         self._route_type = route_type
         self._start = start
+        self._capaciteit = capaciteit
         self._locations: List[Ziekenhuis] = []
         self._status = Status.PREPARING
         self._id = ID()
@@ -54,82 +55,78 @@ class Route:
         new_route._locations = self._locations.copy()
         new_route._status = self._status
         return new_route
-    
-    def make_route(self, toe_te_voegen_ziekenhuizen: List[Ziekenhuis]) -> None:
+
+    def make_route(self, skip_locations: list["Location"]) -> None:
         """
         Maak een startoplossing voor de route.
         Vult self._locations met ziekenhuizen in de volgorde waarop ze in de route voorkomen.
 
         Parameters:
-            toe_te_voegen_ziekenhuizen (List[Location]): lijst met ziekenhuizen die nog niet in een route zitten
+            skip_locations (List[Location]): lijst met locaties die al in een route zitten
         """
-        capaciteit: float = 20  # voor nu capaciteit hierin, maar moet aan object worden meegegeven vanuit auto
         t_max: float = 14*60   # aantal minuten die de route maximaal mag duren
-        t: float = 0   # tijdsduur huidige route in minuten(self.total_time?)
-        huidige_locatie: Location = self._start
+        t: float = 0   # tijdsduur huidige route in minuten
         current_time: datetime = datetime(1900,1,1, self.start_tijd.hour, self.start_tijd.minute, self.start_tijd.second) # huidige tijd in de route
         lading_startpunt: float = 0
         lading_eindpunt: float = 0
         maximale_lading: float = 0
-        al_geprobeerde_ziekenhuizen: List[Ziekenhuis] = []
 
-        i = 0 #testvariabele
-
-        while t < t_max and len(toe_te_voegen_ziekenhuizen) > 0 and i < (len(toe_te_voegen_ziekenhuizen)):
-            print('while start', len(toe_te_voegen_ziekenhuizen), i)
+        skip_locations.append(self._start)
+        
+        stop: bool = False
+        while stop == False:
+            # routes van huidige locatie naar nog toe te voegen ziekenhuizen sorteren van goedkoop naar duur
+            if self.total_distance == 0:
+                toe_te_voegen_routes = self._distances.available_locations(self._start, skip_locations, current_time.time())
+            else:
+                toe_te_voegen_routes = self._distances.available_locations(self.locations[-1], skip_locations, current_time.time())
             
-            # controleer of er nog tijd is om naar een ander ziekenhuis te gaan
-            time_closest_ziekenhuis = self._distances.get_time(huidige_locatie, toe_te_voegen_ziekenhuizen[i]) # minimale afstand naar nieuw ziekenhuis vanaf huidige ziekenhuis 
-            print(time_closest_ziekenhuis)
-            time_closest_ziekenhuis_to_hub = self._distances.get_time(toe_te_voegen_ziekenhuizen[i], self._start) # afstand van nieuwe ziekenhuis in bovenstaande variabele naar hub
-            time_closest_to_hub = 9 # minimale afstand van nieuw ziekenhuis naar hub
-            time_closest_to_hub_to_ziekenhuis = 12 # afstand van huidige ziekenhuis naar nieuwe ziekenhuis in bovenstaande variabele
-            if t + time_closest_ziekenhuis + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT + time_closest_ziekenhuis_to_hub > t_max:
-                print('break1')
-                break # met het toevoegen van het dichtsbijzijnde ziekenhuis wordt de maximale tijd overschreden
-            if t + time_closest_to_hub + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT + time_closest_to_hub_to_ziekenhuis > t_max:
-                print('break2')
-                break # met het toevoegen van het ziekenhuis dat het dichts bij de hub ligt wordt de maximale tijd overschreden
-            print('nog tijd voor extra ziekenhuis')
-            toevoeg_ziekenhuis = toe_te_voegen_ziekenhuizen[i] # moet dichtsbijzijndste ziekenhuis worden
-            
-            # capaciteit controleren
-            print('max, weg, eind, halen: ', maximale_lading, toevoeg_ziekenhuis.vraag_wegbrengen.monday, lading_eindpunt, toevoeg_ziekenhuis.vraag_ophalen.monday)
-            print('max nieuw, cap: ', max(maximale_lading + toevoeg_ziekenhuis.vraag_wegbrengen.monday, lading_eindpunt + toevoeg_ziekenhuis.vraag_ophalen.monday), capaciteit)
-            if max(maximale_lading + toevoeg_ziekenhuis.vraag_wegbrengen.monday, lading_eindpunt + toevoeg_ziekenhuis.vraag_ophalen.monday) > capaciteit:
-                i += 1
-                print('capaciteit ergens overschreden')
-                # toevoegen van ziekenhuis overschrijdt ergens op de route de lading
-                continue
-            # tijdvak controleren
-            tijdvak_toevoeg_ziekenhuis = toevoeg_ziekenhuis.tijdvak # tijdvak waarin ziekenhuis beschikbaar is
-            print("tijdvakken:", tijdvak_toevoeg_ziekenhuis, tijdvak_toevoeg_ziekenhuis[0], tijdvak_toevoeg_ziekenhuis[1], current_time.time())
-            if tijdvak_toevoeg_ziekenhuis != None and current_time.time() < tijdvak_toevoeg_ziekenhuis[0] and current_time.time() > tijdvak_toevoeg_ziekenhuis[1]:
-                i += 1
-                print('tijdvak overschreden')
-                # ziekenhuis wordt bezocht buiten het toegezegde tijdvak
-                continue
-            print('constraints voldaan ', i)
-            # constraints zijn voldaan
-            self.add_location(toevoeg_ziekenhuis)
-            huidige_locatie = toevoeg_ziekenhuis
-            reistijd_wachttijd = time_closest_ziekenhuis + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT # in minuten
-            t += reistijd_wachttijd # (self.total_time?)
-            current_time = current_time + timedelta(minutes=reistijd_wachttijd) 
-            # lading updaten
-            maximale_lading = max(maximale_lading + toevoeg_ziekenhuis.vraag_wegbrengen.monday, lading_eindpunt + toevoeg_ziekenhuis.vraag_ophalen.monday)
-            lading_startpunt += toevoeg_ziekenhuis.vraag_wegbrengen.monday
-            lading_eindpunt += toevoeg_ziekenhuis.vraag_ophalen.monday
-            print('lading: start, eind, max: ', lading_startpunt, lading_eindpunt, maximale_lading)
-            # toevoeg_ziekenhuis verwijderen uit toe_te_voegen_ziekenhuizen
-            toe_te_voegen_ziekenhuizen.remove(toevoeg_ziekenhuis)
-            print('aantal toe te voegen ziekenhuizen', len(toe_te_voegen_ziekenhuizen))
-            print('eind loop ', i)
-            # weer vanaf eerste index kijken
-            i = 0
+            toegevoegd: bool = False
+            for huidig_naar_nieuw in toe_te_voegen_routes:
+                # van goedkoopste naar duurste, alle routes naar toe te voegen ziekenhuizen controleren tot ziekenhuis kan worden toegevoegd
+                nieuw_ziekenhuis: Ziekenhuis = huidig_naar_nieuw[0]
+                print(nieuw_ziekenhuis, huidig_naar_nieuw[1].cost(current_time.time()), huidig_naar_nieuw[1].distance, huidig_naar_nieuw[1].time)
+                # maximale tijd controleren
+                if t + huidig_naar_nieuw[1].time + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT + self._distances.get_time(nieuw_ziekenhuis, self._start) > t_max:
+                    print('tijd overschreden')
+                    continue # met het toevoegen van dit ziekenhuis wordt de maximale tijd overschreden -> volgende proberen
+                # capaciteit controleren
+                print('max, weg, eind, halen: ', maximale_lading, nieuw_ziekenhuis.vraag_wegbrengen.monday, lading_eindpunt, nieuw_ziekenhuis.vraag_ophalen.monday)
+                print('max nieuw, cap: ', max(maximale_lading + nieuw_ziekenhuis.vraag_wegbrengen.monday, lading_eindpunt + nieuw_ziekenhuis.vraag_ophalen.monday), self._capaciteit)
+                if max(maximale_lading + nieuw_ziekenhuis.vraag_wegbrengen.monday, lading_eindpunt + nieuw_ziekenhuis.vraag_ophalen.monday) > self._capaciteit:
+                    print('capaciteit ergens overschreden')
+                    continue # toevoegen van ziekenhuis overschrijdt ergens op de route de lading
+                # tijdvak controleren
+                tijdvak_toevoeg_ziekenhuis = nieuw_ziekenhuis.tijdvak # tijdvak waarin ziekenhuis beschikbaar is
+                print("tijdvakken:", tijdvak_toevoeg_ziekenhuis, tijdvak_toevoeg_ziekenhuis[0], tijdvak_toevoeg_ziekenhuis[1], current_time.time())
+                if tijdvak_toevoeg_ziekenhuis != None and current_time.time() < tijdvak_toevoeg_ziekenhuis[0] and current_time.time() > tijdvak_toevoeg_ziekenhuis[1]:
+                    print('tijdvak overschreden')
+                    continue # ziekenhuis wordt bezocht buiten het toegezegde tijdvak
 
-        print('klaar, niks kan meer worden toegevoegd')
+                # aan alle controles is voldaan, dus ziekenhuis wordt toegevoegd aan route
+                print('alle controles voldoen. Ziekenhuis toevoegen aan route')
+                toegevoegd = True
+                skip_locations.append(nieuw_ziekenhuis)
+                self.add_location(nieuw_ziekenhuis)
+                # tijden updaten
+                reistijd_wachttijd = huidig_naar_nieuw[1].time + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT # in minuten
+                t += reistijd_wachttijd 
+                current_time = current_time + timedelta(minutes=reistijd_wachttijd) 
+                # lading updaten
+                maximale_lading = max(maximale_lading + nieuw_ziekenhuis.vraag_wegbrengen.monday, lading_eindpunt + nieuw_ziekenhuis.vraag_ophalen.monday)
+                lading_startpunt += nieuw_ziekenhuis.vraag_wegbrengen.monday
+                lading_eindpunt += nieuw_ziekenhuis.vraag_ophalen.monday
 
+                # controlestukje
+                for huidig_naar_nieuw in toe_te_voegen_routes:
+                    print(huidig_naar_nieuw[0], huidig_naar_nieuw[1].cost(current_time.time()), huidig_naar_nieuw[1].distance, huidig_naar_nieuw[1].time)
+                break
+
+            if toegevoegd == False:
+                print('alle ziekenhuizen bekeken, geen kon worden toegevoegd')
+                # geen van de ziekenhuizen kan worden toegevoegd
+                stop = True 
+        return toe_te_voegen_routes
 
     @property
     def start_tijd(self) -> time:
@@ -164,10 +161,11 @@ class Route:
             float: De totale afstand van de route.
         """
         total_distance = 0
-        total_distance += self._distances.get_distance(self._start, self._locations[0])
-        for i in range(len(self._locations) - 1):
-            total_distance += self._distances.get_distance(self._locations[i], self._locations[i + 1])
-        total_distance += self._distances.get_distance(self._locations[-1], self._start)
+        if self._locations != []:
+            total_distance += self._distances.get_distance(self._start, self._locations[0])
+            for i in range(len(self._locations) - 1):
+                total_distance += self._distances.get_distance(self._locations[i], self._locations[i + 1])
+            total_distance += self._distances.get_distance(self._locations[-1], self._start)
         return total_distance
 
     @property
@@ -179,10 +177,11 @@ class Route:
             float: De totale tijd van de route.
         """
         total_time = 0
-        total_time += self._distances.get_time(self._start, self._locations[0])
-        for i in range(len(self._locations) - 1):
-            total_time += self._distances.get_time(self._locations[i], self._locations[i + 1])
-        total_time += self._distances.get_time(self._locations[-1], self._start)
+        if self._locations != []:
+            total_time += self._distances.get_time(self._start, self._locations[0])
+            for i in range(len(self._locations) - 1):
+                total_time += self._distances.get_time(self._locations[i], self._locations[i + 1])
+            total_time += self._distances.get_time(self._locations[-1], self._start)
         return total_time
 
     @property
@@ -190,11 +189,37 @@ class Route:
         return self._id
     
     @property
-    def cost(self) -> float:
+    def total_cost(self) -> float:
         """
         Bereken de kosten van de route.
         
         Returns:
             float: De kosten van de route.
         """
-        return 0.0
+        total_cost = 0
+        if self._locations != []:
+            total_cost += self._distances.get_distance_time(self._start, self._locations[0]).cost(self.start_tijd)
+            for i in range(len(self._locations) - 1):
+                total_cost += self._distances.get_distance_time(self._locations[i], self._locations[i + 1]).cost(self.departure_times[i][1])
+            total_cost += self._distances.get_distance_time(self._locations[-1], self._start).cost(self.departure_times[-1][1])
+        return total_cost
+        
+    @property
+    def departure_times(self) -> List[Tuple[Ziekenhuis, time]]:
+        """
+        Bepaal de vertrektijden bij elk ziekenhuis
+
+        Returns:
+            List[Tuple[Ziekenhuis, time]]: de vertrektijden bij de ziekenhuizen in de route
+        """
+        departure_times = []
+        current_time: datetime = datetime(1900,1,1, self.start_tijd.hour, self.start_tijd.minute, self.start_tijd.second) # huidige tijd in de route
+        if self._locations != []:
+            travel_wait_time = self._distances.get_time(self._start, self._locations[0]) + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT
+            current_time = current_time + timedelta(minutes=travel_wait_time)
+            departure_times.append((self._locations[0], current_time.time()))
+            for i in range(len(self._locations) - 1):
+                travel_wait_time = self._distances.get_time(self._locations[i], self._locations[i + 1]) + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT
+                current_time = current_time + timedelta(minutes=travel_wait_time)
+                departure_times.append((self._locations[i+1], current_time.time()))
+        return departure_times
