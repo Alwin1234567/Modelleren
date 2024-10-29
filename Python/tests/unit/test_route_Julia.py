@@ -19,7 +19,7 @@ def test_route_maken():
     distances_object.generate_distances()
     Maps.disable_maps()
 
-    route_object = Route(Route_type.AVOND, hub1, distances_object)
+    route_object = Route(Route_type.AVOND, hub1, distances_object, 11)
     assert route_object.route_type == Route_type.AVOND
     
     print('starttijd', route_object.start_tijd)

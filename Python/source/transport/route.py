@@ -98,8 +98,10 @@ class Route:
                     continue # toevoegen van ziekenhuis overschrijdt ergens op de route de lading
                 # tijdvak controleren
                 tijdvak_toevoeg_ziekenhuis = nieuw_ziekenhuis.tijdvak # tijdvak waarin ziekenhuis beschikbaar is
-                print("tijdvakken:", tijdvak_toevoeg_ziekenhuis, tijdvak_toevoeg_ziekenhuis[0], tijdvak_toevoeg_ziekenhuis[1], current_time.time())
-                if tijdvak_toevoeg_ziekenhuis != None and current_time.time() < tijdvak_toevoeg_ziekenhuis[0] and current_time.time() > tijdvak_toevoeg_ziekenhuis[1]:
+                aankomst_ziekenhuis = current_time + timedelta(minutes=huidig_naar_nieuw[1].time) 
+                vertrek_ziekenhuis = aankomst_ziekenhuis + timedelta(minutes=Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT) 
+                print('current time = ', current_time, 'aankomsttijd = ', aankomst_ziekenhuis, 'vertrektijd = ', vertrek_ziekenhuis, "tijdvakken:", tijdvak_toevoeg_ziekenhuis)
+                if tijdvak_toevoeg_ziekenhuis != None and (aankomst_ziekenhuis.time() <= tijdvak_toevoeg_ziekenhuis[0] or vertrek_ziekenhuis.time() >= tijdvak_toevoeg_ziekenhuis[1]):
                     print('tijdvak overschreden')
                     continue # ziekenhuis wordt bezocht buiten het toegezegde tijdvak
 
@@ -127,7 +129,7 @@ class Route:
                 # geen van de ziekenhuizen kan worden toegevoegd
                 stop = True 
         return toe_te_voegen_routes
-
+ 
     @property
     def start_tijd(self) -> time:
         if self._route_type == Route_type.AVOND:
