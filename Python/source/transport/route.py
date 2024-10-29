@@ -98,8 +98,13 @@ class Route:
                     continue # toevoegen van ziekenhuis overschrijdt ergens op de route de lading
                 # tijdvak controleren
                 tijdvak_toevoeg_ziekenhuis = nieuw_ziekenhuis.tijdvak # tijdvak waarin ziekenhuis beschikbaar is
-                aankomst_ziekenhuis = current_time + timedelta(minutes=huidig_naar_nieuw[1].time) 
-                vertrek_ziekenhuis = aankomst_ziekenhuis + timedelta(minutes=Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT) 
+                if self.route_type == Route_type.AVOND:
+                    aankomst_ziekenhuis: datetime = current_time + timedelta(minutes=huidig_naar_nieuw[1].time) 
+                    vertrek_ziekenhuis: datetime = aankomst_ziekenhuis + timedelta(minutes=Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT) 
+                else: 
+                    # ochtendroute, dus terug in de tijd
+                    vertrek_ziekenhuis: datetime = current_time - timedelta(minutes=huidig_naar_nieuw[1].time) 
+                    aankomst_ziekenhuis: datetime = vertrek_ziekenhuis - timedelta(minutes=Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT) 
                 print('current time = ', current_time, 'aankomsttijd = ', aankomst_ziekenhuis, 'vertrektijd = ', vertrek_ziekenhuis, "tijdvakken:", tijdvak_toevoeg_ziekenhuis)
                 if tijdvak_toevoeg_ziekenhuis != None and (aankomst_ziekenhuis.time() <= tijdvak_toevoeg_ziekenhuis[0] or vertrek_ziekenhuis.time() >= tijdvak_toevoeg_ziekenhuis[1]):
                     print('tijdvak overschreden')
@@ -111,9 +116,13 @@ class Route:
                 skip_locations.append(nieuw_ziekenhuis)
                 self.add_location(nieuw_ziekenhuis)
                 # tijden updaten
-                reistijd_wachttijd = huidig_naar_nieuw[1].time + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT # in minuten
+                reistijd_wachttijd: float = huidig_naar_nieuw[1].time + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT # in minuten
                 t += reistijd_wachttijd 
-                current_time = current_time + timedelta(minutes=reistijd_wachttijd) 
+                if self.route_type == Route_type.AVOND:
+                    current_time = current_time + timedelta(minutes=reistijd_wachttijd) 
+                else:
+                    # ochtendroute, dus terug in de tijd
+                    current_time = current_time - timedelta(minutes=reistijd_wachttijd) 
                 # lading updaten
                 maximale_lading = max(maximale_lading + nieuw_ziekenhuis.vraag_wegbrengen.monday, lading_eindpunt + nieuw_ziekenhuis.vraag_ophalen.monday)
                 lading_startpunt += nieuw_ziekenhuis.vraag_wegbrengen.monday
@@ -128,8 +137,12 @@ class Route:
                 print('alle ziekenhuizen bekeken, geen kon worden toegevoegd')
                 # geen van de ziekenhuizen kan worden toegevoegd
                 stop = True 
+        if self.route_type == Route_type.OCHTEND:
+            # route moet worden omgedraaid, omdat hij in omgekeerde volgorde wordt gereden dan hij is gemaakt
+            self._locations.reverse()
+
         return toe_te_voegen_routes
- 
+    
     @property
     def start_tijd(self) -> time:
         if self._route_type == Route_type.AVOND:
@@ -217,7 +230,7 @@ class Route:
         departure_times = []
         current_time: datetime = datetime(1900,1,1, self.start_tijd.hour, self.start_tijd.minute, self.start_tijd.second) # huidige tijd in de route
         if self._locations != []:
-            travel_wait_time = self._distances.get_time(self._start, self._locations[0]) + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT
+            travel_wait_time: float = self._distances.get_time(self._start, self._locations[0]) + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT
             current_time = current_time + timedelta(minutes=travel_wait_time)
             departure_times.append((self._locations[0], current_time.time()))
             for i in range(len(self._locations) - 1):

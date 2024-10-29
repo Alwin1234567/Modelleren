@@ -36,6 +36,15 @@ def test_route_maken():
     print('time', route_object.total_time)
     print('cost', route_object.total_cost)
     print('departuretimes', route_object.departure_times)  
+
+    route_object_ochtend = Route(Route_type.OCHTEND, hub1, distances_object, 19)
+    #route maken
+    route_object_ochtend.make_route([])
+    print('route', route_object_ochtend.locations)
+    print('distance', route_object_ochtend.total_distance)
+    print('time', route_object_ochtend.total_time)
+    print('cost', route_object_ochtend.total_cost)
+    print('departuretimes', route_object_ochtend.departure_times)  
     
 
 # Run the test
