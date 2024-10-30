@@ -91,8 +91,8 @@ class Route:
                     print('tijd overschreden')
                     continue # met het toevoegen van dit ziekenhuis wordt de maximale tijd overschreden -> volgende proberen
                 # capaciteit controleren
-                print('max, weg, eind, halen: ', maximale_lading, getattr(nieuw_ziekenhuis.vraag_wegbrengen, dag), lading_eindpunt, getattr(nieuw_ziekenhuis.vraag_ophalen, dag))
-                print('max nieuw, cap: ', max(maximale_lading + getattr(nieuw_ziekenhuis.vraag_wegbrengen, dag), lading_eindpunt + getattr(nieuw_ziekenhuis.vraag_ophalen, dag)), self._capaciteit)
+                print('max, weg, eind, halen:', maximale_lading, getattr(nieuw_ziekenhuis.vraag_wegbrengen, dag), lading_eindpunt, getattr(nieuw_ziekenhuis.vraag_ophalen, dag), 
+                      '  max nieuw, cap:', max(maximale_lading + getattr(nieuw_ziekenhuis.vraag_wegbrengen, dag), lading_eindpunt + getattr(nieuw_ziekenhuis.vraag_ophalen, dag)), self._capaciteit)
                 if max(maximale_lading + getattr(nieuw_ziekenhuis.vraag_wegbrengen, dag), lading_eindpunt + getattr(nieuw_ziekenhuis.vraag_ophalen, dag)) > self._capaciteit:
                     print('capaciteit ergens overschreden')
                     continue # toevoegen van ziekenhuis overschrijdt ergens op de route de lading
@@ -105,13 +105,13 @@ class Route:
                     # ochtendroute, dus terug in de tijd
                     vertrek_ziekenhuis: datetime = current_time - timedelta(minutes=huidig_naar_nieuw[1].time) 
                     aankomst_ziekenhuis: datetime = vertrek_ziekenhuis - timedelta(minutes=Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT) 
-                print('current time = ', current_time, 'aankomsttijd = ', aankomst_ziekenhuis, 'vertrektijd = ', vertrek_ziekenhuis, "tijdvakken:", tijdvak_toevoeg_ziekenhuis)
+                print('current time:', current_time.time(), ' aankomsttijd:', aankomst_ziekenhuis.time(), ' vertrektijd:', vertrek_ziekenhuis.time(), "\ntijdvakken:", tijdvak_toevoeg_ziekenhuis)
                 if tijdvak_toevoeg_ziekenhuis != None and (aankomst_ziekenhuis.time() <= tijdvak_toevoeg_ziekenhuis[0] or vertrek_ziekenhuis.time() >= tijdvak_toevoeg_ziekenhuis[1]):
                     print('tijdvak overschreden')
                     continue # ziekenhuis wordt bezocht buiten het toegezegde tijdvak
 
                 # aan alle controles is voldaan, dus ziekenhuis wordt toegevoegd aan route
-                print('alle controles voldoen. Ziekenhuis toevoegen aan route')
+                print('alle controles voldoen. Ziekenhuis toevoegen aan route\n')
                 toegevoegd = True
                 skip_locations.append(nieuw_ziekenhuis)
                 self.add_location(nieuw_ziekenhuis)
@@ -121,21 +121,16 @@ class Route:
                 if self.route_type == Route_type.AVOND:
                     current_time = current_time + timedelta(minutes=reistijd_wachttijd) 
                 else:
-                    # ochtendroute, dus terug in de tijd
                     current_time = current_time - timedelta(minutes=reistijd_wachttijd) 
                 # lading updaten
                 maximale_lading = max(maximale_lading + getattr(nieuw_ziekenhuis.vraag_wegbrengen, dag), lading_eindpunt + getattr(nieuw_ziekenhuis.vraag_ophalen, dag))
                 lading_startpunt += getattr(nieuw_ziekenhuis.vraag_wegbrengen, dag)
                 lading_eindpunt += getattr(nieuw_ziekenhuis.vraag_ophalen, dag)
-
-                # controlestukje
-                for huidig_naar_nieuw in toe_te_voegen_routes:
-                    print(huidig_naar_nieuw[0], huidig_naar_nieuw[1].cost(current_time.time()), huidig_naar_nieuw[1].distance, huidig_naar_nieuw[1].time)
-                break
+                break # nieuwe routes berekenen vanaf toegevoegde ziekenhuis
 
             if toegevoegd == False:
                 print('alle ziekenhuizen bekeken, geen kon worden toegevoegd')
-                # geen van de ziekenhuizen kan worden toegevoegd
+                # geen van de ziekenhuizen kon worden toegevoegd
                 stop = True 
         if self.route_type == Route_type.OCHTEND:
             # route moet worden omgedraaid, omdat hij in omgekeerde volgorde wordt gereden dan hij is gemaakt
