@@ -24,39 +24,34 @@ class Location:
         Returns:
             coordinate (Coordinates): Een Coordinates object met de latitude en longitude
         """
-        # Define the CSV file path
+        # csv inladen
         csv_locations_data_path = Constants.LOCATIONS_PATH / 'locations_data.csv'
-        
-        #csv inladen
         csv_locations = pd.read_csv(csv_locations_data_path, sep = ';', header = 0, keep_default_na=False)
 
-        #controleer of gevraagde naam voorkomt in de dataset
+        # controleer of gevraagde naam voorkomt in de dataset
         if self._name not in set(csv_locations["Naam"].values):
             raise Exception("Deze locatie is niet bekend.")
 
-        #namen van ziekenhuizen als index plaatsen
+        # namen van ziekenhuizen als index plaatsen
         csv_locations.set_index('Naam', inplace=True) 
-
-        #postcode nemen op index met juiste locatienaam
         self._postcode = csv_locations["Locatie_Postcode"][self._name]
         
-        #controleren of er een postcode bij de locatie is opgeslagen
+        # controleren of er een postcode bij de locatie is opgeslagen
         if self._postcode == "":
             raise Exception("Van deze locatie is geen postcode bekend.")
 
         # calling the Nominatim tool and create Nominatim class
         loc = Nominatim(user_agent="Geopy Library")
 
-        #postcode invoeren
+        # postcode invoeren
         getLoc = loc.geocode(self._postcode)
         
-        #controleren of er een locatie met de gegeven postcode is gevonden
+        # controleren of er een locatie met de gegeven postcode is gevonden
         if getLoc is None:
             raise Exception("Deze locatie is niet correct of ligt niet in Nederland.")
         
-        #controleren of de gevonden locatie in Nederland ligt
         if getLoc.address.endswith("Nederland"):
-            #Coordinates object aanmaken
+            # Coordinates object aanmaken
             coordinate = Coordinates(getLoc.latitude, getLoc.longitude)
             return coordinate
         else:
