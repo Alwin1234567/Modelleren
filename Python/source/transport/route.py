@@ -56,7 +56,7 @@ class Route:
         new_route._status = self._status
         return new_route
 
-    def make_route(self, skip_locations: list["Location"], dag: str) -> None:
+    def maak_route(self, skip_locations: list["Location"], dag: str) -> None:
         """
         Maak een startoplossing voor de route.
         Vult self._locations met ziekenhuizen in de volgorde waarop ze in de route voorkomen.
@@ -64,6 +64,9 @@ class Route:
         Parameters:
             skip_locations (List[Location]): lijst met locaties die al in een route zitten
         """
+        if self._status == Status.FINISHED:
+            raise ValueError("Route is not in preparing state")
+        
         t_max: float = 14*60   # aantal minuten die de route maximaal mag duren
         t: float = 0   # tijdsduur huidige route in minuten
         current_time: datetime = datetime(1900,1,1, self.start_tijd.hour, self.start_tijd.minute, self.start_tijd.second) # huidige tijd in de route
@@ -140,6 +143,7 @@ class Route:
             # route moet worden omgedraaid, omdat hij in omgekeerde volgorde wordt gereden dan hij is gemaakt
             self._locations.reverse()
 
+        self._status = Status.FINISHED
         return toe_te_voegen_routes
     
     @property

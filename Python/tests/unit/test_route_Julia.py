@@ -30,7 +30,7 @@ def test_avondroute_maken():
     assert route_avond.total_cost == 0
 
     # route maken
-    route_avond.make_route([], 'monday')
+    route_avond.maak_route([], 'monday')
     assert 30 < route_avond.total_distance < 40
     assert 30 < route_avond.total_time < 40
     assert 10 < route_avond.total_cost < 20
@@ -59,7 +59,7 @@ def test_ochtendroute_maken():
     assert route_ochtend.route_type == Route_type.OCHTEND
     assert route_ochtend.start_tijd == time(7,0)
     
-    route_ochtend.make_route([], 'monday')
+    route_ochtend.maak_route([], 'monday')
     assert 30 < route_ochtend.total_distance < 40
     assert 30 < route_ochtend.total_time < 40
     assert 10 < route_ochtend.total_cost < 20
