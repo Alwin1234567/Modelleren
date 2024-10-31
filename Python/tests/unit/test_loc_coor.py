@@ -4,7 +4,7 @@ from source.locations import Location, Location_type
 def test_location_2():
     bestaand_ziekenhuis = 'A Klinieken'
     nietbestaand_ziekenhuis = 'Niet-bestaand Ziekenhuis'
-    postcode_onbekend_ziekenhuis = 'Koning Kliniek'
+    postcode_onbekend_hub = 'Delft'
     coordinaten = Location(bestaand_ziekenhuis, Location_type.ZIEKENHUIS).name_to_coordinates()
     
     assert 52.10 <= coordinaten.lat <= 52.12
@@ -12,7 +12,7 @@ def test_location_2():
     with pytest.raises(Exception, match="Deze locatie is niet bekend."):
         Location(nietbestaand_ziekenhuis, Location_type.ZIEKENHUIS).name_to_coordinates()
     with pytest.raises(Exception, match="Van deze locatie is geen postcode bekend."):
-        Location(postcode_onbekend_ziekenhuis, Location_type.ZIEKENHUIS).name_to_coordinates()
+        Location(postcode_onbekend_hub, Location_type.HUB).name_to_coordinates()
 
 # Run the test
 if __name__ == "__main__":

@@ -4,8 +4,8 @@ from datetime import time
 
 class Ziekenhuis(Location):
     
-    def __init__(self, name: str, coordinates: Coordinates, wegbrengen: list, ophalen: list) -> None:
-        super().__init__(coordinates, name, Location_type.ZIEKENHUIS)
+    def __init__(self, name: str, wegbrengen: list, ophalen: list) -> None:
+        super().__init__(name, Location_type.ZIEKENHUIS)
         self._vraag_ophalen = Vraag(ophalen)
         self._vraag_wegbrengen = Vraag(wegbrengen)
     
