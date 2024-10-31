@@ -9,21 +9,25 @@ class Location_type(Enum):
     ZIEKENHUIS = auto()
 
 class Location:
-    def __init__(self, name: str, type: Location_type) -> None:
+    def __init__(self, name: str, type: Location_type, postcode = "", **kwargs) -> None:
         self._name = name
         self._type = type
-        self._coordinates = self.name_to_coordinates()
+        if postcode == "": 
+            self._postcode = self.get_postcode()
+        else:
+            self._postcode = postcode
+        self._coordinates = self.postcode_to_coordinates()
         self._id = ID()
     
     def __str__(self) -> str:
         return f"{self._name} ({self._coordinates})"
     
-    def name_to_coordinates(self) -> Coordinates:
+    def get_postcode(self) -> str:
         """
-        Genereer een Coordinates object aan de hand van een klinieknaam
+        Haal de postcode van de locatie op
 
         Returns:
-            coordinate (Coordinates): Een Coordinates object met de latitude en longitude
+            postcode (str): De postcode van de locatie
         """
         # csv inladen
         csv_locations_data_path = Constants.LOCATIONS_PATH / 'locations_data.csv'
@@ -35,12 +39,21 @@ class Location:
 
         # namen van ziekenhuizen als index plaatsen
         csv_locations.set_index('Naam', inplace=True) 
-        self._postcode = csv_locations["Locatie_Postcode"][self._name]
+        postcode = csv_locations["Locatie_Postcode"][self._name]
         
         # controleren of er een postcode bij de locatie is opgeslagen
-        if self._postcode == "":
+        if postcode == "":
             raise Exception("Van deze locatie is geen postcode bekend.")
 
+        return postcode
+    
+    def postcode_to_coordinates(self) -> Coordinates:
+        """
+        Genereer een Coordinates object aan de hand van een postcode
+
+        Returns:
+            coordinate (Coordinates): Een Coordinates object met de latitude en longitude
+        """
         # calling the Nominatim tool and create Nominatim class
         loc = Nominatim(user_agent="Geopy Library")
 
