@@ -12,7 +12,7 @@ class Route_type(Enum):
 
 class Route:
 
-    # destances will be a reference to the relevant distances object
+    # distances will be a reference to the relevant distances object
     def __init__(self, route_type: Route_type, start: Hub, distances: Distances, capaciteit: int) -> None:
         self._distances = distances
         if self._distances.status != Status.FINISHED: 
@@ -73,18 +73,22 @@ class Route:
 
         skip_locations.append(self._start)
         
-        stop: bool = False
-        while stop == False:
+        stop = False
+        while not stop:
             # routes van huidige locatie naar nog toe te voegen ziekenhuizen sorteren van goedkoop naar duur
             if self.total_distance == 0:
                 toe_te_voegen_routes = self._distances.available_locations(self._start, skip_locations, current_time.time())
             else:
                 toe_te_voegen_routes = self._distances.available_locations(self.locations[-1], skip_locations, current_time.time())
             
-            toegevoegd: bool = False
+            toegevoegd = False
             for huidig_naar_nieuw in toe_te_voegen_routes:
                 # van goedkoopste naar duurste, alle routes naar toe te voegen ziekenhuizen controleren tot ziekenhuis kan worden toegevoegd
-                nieuw_ziekenhuis: Ziekenhuis = huidig_naar_nieuw[0]
+                nieuw_locatie = huidig_naar_nieuw[0]
+                if not isinstance(nieuw_locatie, Ziekenhuis):
+                    warn(f'{nieuw_locatie.name} is geen ziekenhuis')
+                    continue
+                nieuw_ziekenhuis = nieuw_locatie
                 print(nieuw_ziekenhuis, huidig_naar_nieuw[1].cost(current_time.time()), huidig_naar_nieuw[1].distance, huidig_naar_nieuw[1].time)
                 # maximale tijd controleren
                 if t + huidig_naar_nieuw[1].time + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT + self._distances.get_time(nieuw_ziekenhuis, self._start) > t_max:
@@ -170,12 +174,14 @@ class Route:
         Returns:
             float: De totale afstand van de route.
         """
+        if not self._locations:
+            return 0
+        
         total_distance = 0
-        if self._locations != []:
-            total_distance += self._distances.get_distance(self._start, self._locations[0])
-            for i in range(len(self._locations) - 1):
-                total_distance += self._distances.get_distance(self._locations[i], self._locations[i + 1])
-            total_distance += self._distances.get_distance(self._locations[-1], self._start)
+        total_distance += self._distances.get_distance(self._start, self._locations[0])
+        for i in range(len(self._locations) - 1):
+            total_distance += self._distances.get_distance(self._locations[i], self._locations[i + 1])
+        total_distance += self._distances.get_distance(self._locations[-1], self._start)
         return total_distance
 
     @property
@@ -186,12 +192,14 @@ class Route:
         Returns:
             float: De totale tijd van de route.
         """
+        if not self._locations:
+            return 0
+        
         total_time = 0
-        if self._locations != []:
-            total_time += self._distances.get_time(self._start, self._locations[0])
-            for i in range(len(self._locations) - 1):
-                total_time += self._distances.get_time(self._locations[i], self._locations[i + 1])
-            total_time += self._distances.get_time(self._locations[-1], self._start)
+        total_time += self._distances.get_time(self._start, self._locations[0])
+        for i in range(len(self._locations) - 1):
+            total_time += self._distances.get_time(self._locations[i], self._locations[i + 1])
+        total_time += self._distances.get_time(self._locations[-1], self._start)
         return total_time
 
     @property
@@ -206,15 +214,19 @@ class Route:
         Returns:
             float: De kosten van de route.
         """
-        total_cost = 0
-        if self._locations != []:
-            total_cost += self._distances.get_distance_time(self._start, self._locations[0]).cost(self.start_tijd)
-            for i in range(len(self._locations) - 1):
-                total_cost += self._distances.get_distance_time(self._locations[i], self._locations[i + 1]).cost(self.departure_times[i][1])
-            total_cost += self._distances.get_distance_time(self._locations[-1], self._start).cost(self.departure_times[-1][1])
-        return total_cost
+        if not self._locations:
+            return 0
         
-    @property
+        total_cost = 0
+        total_cost += self._distances.get_distance_time(self._start, self._locations[0]).cost(self.start_tijd)
+        departure_times = self.departure_times
+
+        for i in range(len(self._locations) - 1):
+            total_cost += self._distances.get_distance_time(self._locations[i], self._locations[i + 1]).cost(departure_times[i][1])
+        total_cost += self._distances.get_distance_time(self._locations[-1], self._start).cost(departure_times[-1][1])
+        return total_cost
+
+    @property   
     def departure_times(self) -> List[Tuple[Ziekenhuis, time]]:
         """
         Bepaal de vertrektijden bij elk ziekenhuis
@@ -222,14 +234,17 @@ class Route:
         Returns:
             List[Tuple[Ziekenhuis, time]]: de vertrektijden bij de ziekenhuizen in de route
         """
+        if not self._locations:
+            return []
+        
         departure_times = []
         current_time: datetime = datetime(1900,1,1, self.start_tijd.hour, self.start_tijd.minute, self.start_tijd.second) # huidige tijd in de route
-        if self._locations != []:
-            travel_wait_time: float = self._distances.get_time(self._start, self._locations[0]) + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT
+        travel_wait_time: float = self._distances.get_time(self._start, self._locations[0]) + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT
+        current_time = current_time + timedelta(minutes=travel_wait_time)
+
+        departure_times.append((self._locations[0], current_time.time()))
+        for i in range(len(self._locations) - 1):
+            travel_wait_time = self._distances.get_time(self._locations[i], self._locations[i + 1]) + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT
             current_time = current_time + timedelta(minutes=travel_wait_time)
-            departure_times.append((self._locations[0], current_time.time()))
-            for i in range(len(self._locations) - 1):
-                travel_wait_time = self._distances.get_time(self._locations[i], self._locations[i + 1]) + Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT
-                current_time = current_time + timedelta(minutes=travel_wait_time)
-                departure_times.append((self._locations[i+1], current_time.time()))
+            departure_times.append((self._locations[i+1], current_time.time()))
         return departure_times
