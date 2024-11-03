@@ -2,7 +2,7 @@ from source.constants import Constants
 from source.locations import Location, Ziekenhuis, Hub
 import pandas as pd
 from warnings import warn
-from source.structures import Status
+from source.structures import Status, Timeslot
 
 class Create_locations:
     """
@@ -52,11 +52,14 @@ class Create_locations:
             self._hubs.append(hub)
             linked_ziekenhuizen: pd.DataFrame = ziekenhuizen_data[ziekenhuizen_data['hub_voorkeur'] == hub_series['naam']]
             for _, ziekenhuis_series in linked_ziekenhuizen.iterrows():
+                timeslots = self.get_ziekenhuis_timeslots(ziekenhuis_series)
                 vraag, aanbod = self.get_ziekenhuis_vraag_aanbod(ziekenhuis_series)
                 ziekenhuis = Ziekenhuis(ziekenhuis_series['naam'], vraag, aanbod, postcode=ziekenhuis_series['postcode'])
                 hub.add_ziekenhuis(ziekenhuis)
             hub.finish_creation()
     
+    def get_ziekenhuis_timeslots(self, ziekenhuis: pd.Series) -> list[Timeslot]:
+        pass
 
     def get_ziekenhuis_vraag_aanbod(self,ziekenhuis: pd.Series) -> tuple:
         """
