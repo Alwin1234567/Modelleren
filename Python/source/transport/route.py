@@ -1,10 +1,12 @@
 from enum import Enum, auto
-from source.locations import Location, Ziekenhuis, Hub
 from source.structures import Status, Distances, ID
 from warnings import warn
-from typing import List, Tuple
+from typing import List, Tuple, TYPE_CHECKING
 from datetime import time, datetime, timedelta
 from source.constants import Constants
+
+if TYPE_CHECKING:    
+    from source.locations import Location, Ziekenhuis, Hub
 
 class Route_type(Enum):
     AVOND = auto()
@@ -13,18 +15,18 @@ class Route_type(Enum):
 class Route:
 
     # distances will be a reference to the relevant distances object
-    def __init__(self, route_type: Route_type, start: Hub, distances: Distances, capaciteit: int) -> None:
+    def __init__(self, route_type: Route_type, start: "Hub", distances: Distances, capaciteit: int) -> None:
         self._distances = distances
         if self._distances.status != Status.FINISHED: 
             raise ValueError("Distances object is not finished")
         self._route_type = route_type
         self._start = start
         self._capaciteit = capaciteit
-        self._locations: List[Ziekenhuis] = []
+        self._locations: List["Ziekenhuis"] = []
         self._status = Status.PREPARING
         self._id = ID()
     
-    def add_location(self, location: Ziekenhuis) -> None:
+    def add_location(self, location: "Ziekenhuis") -> None:
         """
         Voeg een ziekenhuis toe aan de route.
         
@@ -85,7 +87,7 @@ class Route:
             for huidig_naar_nieuw in toe_te_voegen_routes:
                 # van goedkoopste naar duurste, alle routes naar toe te voegen ziekenhuizen controleren tot ziekenhuis kan worden toegevoegd
                 nieuw_locatie = huidig_naar_nieuw[0]
-                if not isinstance(nieuw_locatie, Ziekenhuis):
+                if not isinstance(nieuw_locatie, "Ziekenhuis"):
                     warn(f'{nieuw_locatie.name} is geen ziekenhuis')
                     continue
                 nieuw_ziekenhuis = nieuw_locatie
@@ -155,7 +157,7 @@ class Route:
         return self._status
     
     @property
-    def locations(self) -> List[Ziekenhuis]:
+    def locations(self) -> List["Ziekenhuis"]:
         return self._locations
     
     @property
@@ -163,7 +165,7 @@ class Route:
         return self._route_type
     
     @property
-    def start(self) -> Hub:
+    def start(self) -> "Hub":
         return self._start
     
     @property
@@ -227,7 +229,7 @@ class Route:
         return total_cost
 
     @property   
-    def departure_times(self) -> List[Tuple[Ziekenhuis, time]]:
+    def departure_times(self) -> List[Tuple["Ziekenhuis", time]]:
         """
         Bepaal de vertrektijden bij elk ziekenhuis
 

@@ -6,3 +6,6 @@ from .distance_time import Distance_time
 from .distances import Distances
 from .cost import Cost
 from .vraag import Vraag
+from .long_time import Long_time
+from .tijdslot import Tijdslot
+from .taak import Taak

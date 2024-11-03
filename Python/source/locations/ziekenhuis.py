@@ -1,5 +1,5 @@
 from .location import Location, Coordinates, Location_type
-from source.structures import Vraag
+from source.structures import Vraag, Tijdslot
 from datetime import time
 
 class Ziekenhuis(Location):
