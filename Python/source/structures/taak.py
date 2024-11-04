@@ -60,12 +60,12 @@ class Taak:
             if taak.has_ingeplande_tijd:
                 if earliest_time > taak.begintijd_taak:
                     return np.inf
-                time_cost = Cost.calculate_cost_time(self.eindtijd_taak, self.eindtijd_taak.difference(taak.begintijd_taak))
+                time_cost = Cost.calculate_cost_time(self.eindtijd_taak.tijd, self.eindtijd_taak.difference(taak.begintijd_taak))
             else:
                 if earliest_time > taak.tijdslot.eindtijd - taak.laadtijd:
                     return np.inf
                 earliest_time = max(earliest_time, taak.tijdslot.starttijd)
-                time_cost = Cost.calculate_cost_time(self.eindtijd_taak, self.eindtijd_taak.difference(earliest_time))
+                time_cost = Cost.calculate_cost_time(self.eindtijd_taak.tijd, self.eindtijd_taak.difference(earliest_time))
         else:
             distance = distances.get_distance(taak.ziekenhuis, self.ziekenhuis)
             time = distances.get_time(taak.ziekenhuis, self.ziekenhuis)
@@ -73,12 +73,12 @@ class Taak:
             if taak.has_ingeplande_tijd:
                 if latest_time < taak.eindtijd_taak:
                     return np.inf
-                time_cost = Cost.calculate_cost_time(taak.eindtijd_taak, taak.eindtijd_taak.difference(self.begintijd_taak))
+                time_cost = Cost.calculate_cost_time(taak.eindtijd_taak.tijd, taak.eindtijd_taak.difference(self.begintijd_taak))
             else:
                 if latest_time < taak.tijdslot.starttijd + taak.laadtijd:
                     return np.inf
                 latest_time = min(latest_time, taak.tijdslot.eindtijd)
-                time_cost = Cost.calculate_cost_time(latest_time, latest_time.difference(self.begintijd_taak))
+                time_cost = Cost.calculate_cost_time(latest_time.tijd, latest_time.difference(self.begintijd_taak))
 
         distance_cost = distance * Constants.PRIJS_PER_KM
         return distance_cost + time_cost
