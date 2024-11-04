@@ -18,7 +18,7 @@ class Taak:
                  ziekenhuis: "Ziekenhuis",
                  brengen: int = 0,
                  halen: int = 0,
-                 ) -> None:
+                 returntijd: Optional[Tijdslot] = None) -> None:
         """
         Creëer een nieuwe taak.
         """
@@ -31,6 +31,9 @@ class Taak:
         self._ziekenhuis = ziekenhuis
         self._brengen = brengen
         self._halen = halen
+        if not tijdslot.is_in_tijdvak(tijdslot.starttijd + self.laadtijd):
+            raise ValueError("Het tijdslot moet lang genoeg zijn om te kunnen in- en uitladen")
+        self._returntijd = returntijd
         self._id = ID()
     
 
@@ -153,6 +156,12 @@ class Taak:
         """
         return self._ingeplande_tijd
     
+    def set_begintijd_taak(self, geplande_tijd: Long_time):
+        """
+        De begintijd van de taak inplannen.
+        """
+        self._ingeplande_tijd = geplande_tijd
+
     @property
     def eindtijd_taak(self) -> Optional[Long_time]:
         """
@@ -175,3 +184,10 @@ class Taak:
         Controleer of de taak een ingeplande tijd heeft.
         """
         return self._ingeplande_tijd is not None
+    
+    @property
+    def returntijd(self):
+        """
+        Geeft het tijdvak waarin de opgehaalde instrumenten schoon terug bij het ziekenhuis moeten zijn.
+        """
+        return self._returntijd

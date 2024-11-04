@@ -3,6 +3,7 @@ from source.structures import Coordinates, ID
 from source.constants import Constants
 from geopy.geocoders import Nominatim
 import pandas as pd
+from geopy.exc import GeocoderTimedOut
 
 class Location_type(Enum):
     HUB = auto()
@@ -57,6 +58,20 @@ class Location:
         # calling the Nominatim tool and create Nominatim class
         loc = Nominatim(user_agent="Geopy Library")
 
+        attempt = False
+        count = 0
+        while attempt == False and count < 5:
+            print('attempt', count)
+            attempt = True
+            try:
+                getLoc = loc.geocode(self._postcode)
+                print('gelukt?')
+            except GeocoderTimedOut:
+                attempt = False
+                count += 1
+                print('failed', count)
+        
+        print('5 tests gedaan')
         # postcode invoeren
         getLoc = loc.geocode(self._postcode)
         

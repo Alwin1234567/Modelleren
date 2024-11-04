@@ -1,7 +1,7 @@
 from enum import Enum, auto
 from source.structures import Status, Distances, ID, Taak, Long_time
 from warnings import warn
-from typing import List, Tuple, TYPE_CHECKING
+from typing import List, Tuple, TYPE_CHECKING, Optional
 from datetime import time, datetime, timedelta
 from source.constants import Constants
 
@@ -148,7 +148,7 @@ class Route:
 
         return toe_te_voegen_routes
     
-    def maak_route_2(self, starttaak: Taak, taken) -> None:
+    def maak_route_2(self, starttaak: Taak, taken: list) -> None:
         """
         Maak een startoplossing voor de route.
         Vult self._taken met ziekenhuizen in de volgorde waarop ze in de route voorkomen.
@@ -159,10 +159,126 @@ class Route:
         """
         if self._status == Status.FINISHED:
             raise ValueError("Route is not in preparing state")
-        pass
+        
+        self.add_taak(starttaak)
+        starttaak.set_begintijd_taak(starttaak.tijdslot.starttijd) # starttijd van toegestane tijdslot nemen als begintijd van de taak
+        startlading = starttaak.brengen
+        eindlading = starttaak.halen
+        max_lading = max(startlading, eindlading)
+        if starttaak.returntijd == None:
+            t_max = Long_time(7*24*60) # eindtijd van gehele planning
+        else: 
+            t_max = starttaak.returntijd.starttijd - 6 # tijd dat het terug moet zijn min schoonmaaktijd en algemene reistijd?
+        
+
+        # loop
+        max_wegbrengen = self._capaciteit - max_lading
+        max_ophalen = self._capaciteit - eindlading
+        vooraan_taak = self.vooraan_toe_te_voegen(taken, self._taken[0], self._taken[-1], max_wegbrengen, max_ophalen)
+        achteraan_taak = self.achteraan_toe_te_voegen(taken, self._taken[-1], max_wegbrengen, max_ophalen, t_max)
+        toevoeg_taken = []
+        if vooraan_taak == None and achteraan_taak == None:
+            print('geen taken meer toe te voegen')
+            # stoppen met route maken
+            pass
+        if vooraan_taak != None:
+            taak = vooraan_taak[0]
+            max_eindtijd = vooraan_taak[1] + vooraan_taak[0].laadtijd
+            if max_eindtijd > vooraan_taak[0].tijdslot.eindtijd:
+                # tijdvak eindigd voor maximale eindttijd, dus eindtijd tijdslot wordt eindtijd
+                starttijd = vooraan_taak[0].tijdslot.eindtijd - vooraan_taak[0].laadtijd
+            starttijd = vooraan_taak[1]
+            kosten = self._taken[0].cost_with_taak(vooraan_taak[0], self._distances, False)
+            toevoeg_taken.append([taak, False, starttijd, kosten])
+        if achteraan_taak != None:
+            kosten = self._taken[-1].cost_with_taak(achteraan_taak[0], self._distances, True)
+            toevoeg_taken.append([achteraan_taak[0], True, achteraan_taak[1], kosten])
+
+        if len(toevoeg_taken) == 2:
+            # taken sorteren op kosten
+            toevoeg_taken.sort(key = lambda taak: taak[-1])
+            print('kosten van toevoegtaken:', toevoeg_taken[0][-1], toevoeg_taken[1][-1])
+        
+        # taak met laagste kosten (of enige taak) toevoegen
+        taak = toevoeg_taken[0][0]
+        if not isinstance(taak, "Taak"):
+            warn(f'{taak} is geen taak')
+        
+        self.add_taak(taak, toevoeg_taken[0][1])
+        taak.set_begintijd_taak(toevoeg_taken[0][2])
+        startlading += taak.brengen
+        eindlading += taak.halen
+        max_lading = max(max_lading + taak.brengen, eindlading)
+        if taak.returntijd != None and taak.returntijd < t_max:
+            t_max = taak.returntijd.starttijd - 6 # tijd dat het terug moet zijn min schoonmaaktijd en algemene reistijd?
+        
+
+        # taak weghalen uit taken
+        taken.remove(taak)
+
+        return self._taken
+
+    def vooraan_toe_te_voegen(self, taken: list[Taak], eerste_taak: Taak, laatste_taak: Taak, max_wegbrengen: int, max_ophalen: int) -> Optional[list[Taak, Long_time]]:
+        # alleen taken voor eerste_taak en met toegestane hoeveelheid brengen en ophalen
+        gefilterd = list(filter(lambda taak: taak.tijdslot.starttijd < eerste_taak.begintijd_taak and taak.brengen <= max_wegbrengen and taak.halen <= max_ophalen, taken))
+        print('gefilterd')
+        # sorteren op kosten van toevoegen taak voor eerste_taak
+        gefilterd.sort(key = lambda taak: eerste_taak.cost_with_taak(taak, self._distances, False))
+        print('len gefilterd =', len(gefilterd))
+        tijd_terug_hub = laatste_taak.eindtijd_taak + self._distances.get_time(laatste_taak.ziekenhuis, self._start)
+        for taak in gefilterd:
+            reistijd = self._distances.get_time(taak.ziekenhuis, eerste_taak.ziekenhuis)
+            max_starttijd = eerste_taak.begintijd_taak - reistijd - taak.laadtijd
+            if taak.tijdslot.starttijd > max_starttijd:
+                # starttijd van taak moet voor maximale tijdslot liggen
+                print('starttijd te laat')
+                continue # volgende taak bekijken
+            if taak.returntijd.starttijd - 6 < tijd_terug_hub:
+                # route moet optijd terug zijn om genoeg tijd te geven voor schoonmaak
+                print('route te laat klaar')
+                continue # volgende taak bekijken
+            # taak voldoet aan alle criteria
+            taak_vooraan = taak
+            return [taak_vooraan, max_starttijd]
+        return None
+
+    def achteraan_toe_te_voegen(self, taken: list[Taak], laatste_taak: Taak, max_wegbrengen: int, max_ophalen: int, t_max: Long_time) -> Optional[list[Taak, Long_time]]:
+        # alleen taken voor eerste_taak en met toegestane hoeveelheid brengen en ophalen
+        gefilterd = list(filter(lambda taak: taak.tijdslot.starttijd > laatste_taak.eindtijd_taak and taak.brengen <= max_wegbrengen and taak.halen <= max_ophalen, taken))
+        print('gefilterd')
+        # sorteren op kosten van toevoegen taak voor eerste_taak
+        gefilterd.sort(key = lambda taak: laatste_taak.cost_with_taak(taak, self._distances, True))
+        print('len gefilterd =', len(gefilterd))
+        for taak in gefilterd:
+            reistijd = self._distances.get_time(laatste_taak.ziekenhuis, taak.ziekenhuis)
+            min_eindtijd = laatste_taak.eindtijd_taak + reistijd + taak.laadtijd
+            starttijd = laatste_taak.eindtijd_taak + reistijd
+            if taak.tijdslot.starttijd < min_eindtijd:
+                # starttijd van taak moet voor maximale tijdslot liggen
+                print('eindtijd te vroeg')
+                continue # volgende taak bekijken
+            reistijd_terug_hub = self._distances.get_time(taak.ziekenhuis, self._start)
+            if taak.returntijd.starttijd - 6 < reistijd_terug_hub + min_eindtijd:
+                # route moet optijd terug zijn om genoeg tijd te geven voor schoonmaak
+                print('route te laat klaar')
+                continue # volgende taak bekijken
+            if taak.tijdslot.starttijd > min_eindtijd - taak.laadtijd:
+                # start tijdslot ligt na minimale starttijd -> starttijd wordt start tijdslot
+                starttijd = taak.tijdslot.starttijd
+                tijd_terug_hub = taak.tijdslot.starttijd + taak.laadtijd + reistijd_terug_hub 
+                if taak.returntijd.starttijd - 6 < tijd_terug_hub:
+                    # route moet optijd tuerg izjn om genoeg tijd te geven voor schoonmaak
+                    print('route te laat klaar (tijdslot starttijd)')
+                    continue
+            if starttijd + taak.laadtijd > t_max:
+                # toevoegen zorgt dat instrumenten van route niet op tijd terug zijn om schoongemaakt te worden
+                continue
+            # taak voldoet aan alle criteria
+            return [taak, starttijd]
+        return None
 
     @property
-    def start_tijd(self) -> Long_time:
+    def start_tijd(self) -> Optional[Long_time]:
         if not self._taken:
             return None
         reistijd_vanaf_hub = self._distances.get_time(self._start, self._taken[0].ziekenhuis)
@@ -224,7 +340,7 @@ class Route:
         
         total_time = self.eind_tijd - self.start_tijd
         if total_time < 0:
-            ValueError('De route eindigd op een eerder tijdstip dan deze begint')
+            raise ValueError('De route eindigd op een eerder tijdstip dan deze begint')
         return total_time
 
     @property

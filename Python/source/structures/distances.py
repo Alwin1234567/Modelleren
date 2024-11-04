@@ -226,6 +226,8 @@ class Distances:
         Returns:
             float: De afstand tussen de locaties.
         """
+        if start == end:
+            return 0
         return self.get_distance_time(start, end).distance
     
     def get_time(self, start: "Location", end: "Location") -> float:
@@ -239,6 +241,8 @@ class Distances:
         Returns:
             float: De tijd tussen de locaties.
         """
+        if start == end:
+            return 0
         return self.get_distance_time(start, end).time
     
     def has_location(self, location: "Location") -> bool:
