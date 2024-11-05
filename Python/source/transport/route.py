@@ -169,7 +169,7 @@ class Route:
         if starttaak.returntijd == None:
             t_max = Long_time(7*24*60) # eindtijd van gehele planning
         else: 
-            t_max = starttaak.returntijd.starttijd - 6 # tijd dat het terug moet zijn min schoonmaaktijd en algemene reistijd?
+            t_max = starttaak.returntijd.starttijd - 6 # tijd dat het terug moet zijn min schoonmaaktijd en algemene reistijd? (- 6 uur schoonmaken - reistijd van hub naar ziekenhuis)?
         
         stop = False
         while not stop:
@@ -219,6 +219,8 @@ class Route:
             
             # taak weghalen uit taken
             nog_te_plannen_taken.remove(taak)
+        
+        self._status = Status.FINISHED
 
     def vooraan_toe_te_voegen(self, nog_te_plannen_taken: list[Taak], eerste_taak: Taak, laatste_taak: Taak, max_wegbrengen: int, max_ophalen: int) -> Optional[list[Taak, Long_time]]:
         """
