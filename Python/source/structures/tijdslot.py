@@ -40,14 +40,14 @@ class Tijdslot:
         """
         return self.is_in_tijdvak(tijdslot.starttijd) or self.is_in_tijdvak(tijdslot.eindtijd)
 
-    def __len__(self) -> float:
+    def __len__(self) -> int:
         """
         Bereken de lengte van het tijdslot in uren.
         
         Returns:
             float: De lengte van het tijdslot in uren.
         """
-        return Long_time(float(self._eind) - float(self._start))
+        return int(float(self._eind) - float(self._start))
 
 
     @property
@@ -63,5 +63,5 @@ class Tijdslot:
         return self._dag
     
     @property
-    def length(self):
-        return len(self)
+    def length(self) -> float:
+        return float(self._eind) - float(self._start)

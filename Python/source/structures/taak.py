@@ -18,7 +18,8 @@ class Taak:
                  ziekenhuis: "Ziekenhuis",
                  brengen: int = 0,
                  halen: int = 0,
-                 returntijd: Optional[Tijdslot] = None) -> None:
+                 returntijd: Optional[Tijdslot] = None
+                 ) -> None:
         """
         Creëer een nieuwe taak.
         """

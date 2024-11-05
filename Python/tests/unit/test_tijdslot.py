@@ -43,6 +43,13 @@ def test_overlap():
     # Test non-overlapping slots
     assert tijdslot1.overlap(tijdslot4) == False
 
+def test_len():
+    start = Long_time(480)  # 480 minutes (8 hours)
+    eind = Long_time(600)   # 600 minutes (10 hours)
+    tijdslot = Tijdslot(start=start, eind=eind)
+    assert len(tijdslot) == 120
+    assert tijdslot.length == 120
+
 
 if __name__ == '__main__':
     pytest.main()

@@ -4,6 +4,7 @@ from source.constants import Constants
 from geopy.geocoders import Nominatim
 import pandas as pd
 from geopy.exc import GeocoderTimedOut
+from typing import Optional, Coroutine, Any, Union
 
 class Location_type(Enum):
     HUB = auto()
@@ -58,22 +59,19 @@ class Location:
         # calling the Nominatim tool and create Nominatim class
         loc = Nominatim(user_agent="Geopy Library")
 
-        attempt = False
+        succes = False
         count = 0
-        while attempt == False and count < 5:
-            print('attempt', count)
-            attempt = True
+        getLoc: Optional[Union[Coroutine, Any]] = None
+        while not succes and count < 5:
             try:
-                getLoc = loc.geocode(self._postcode)
-                print('gelukt?')
-            except GeocoderTimedOut:
-                attempt = False
+                getLoc = loc.geocode(self._postcode, timeout=2)
+                succes = True
+            except TimeoutError:
                 count += 1
-                print('failed', count)
-        
-        print('5 tests gedaan')
-        # postcode invoeren
-        getLoc = loc.geocode(self._postcode)
+            except Exception as e:
+                raise Exception(e)
+        if not succes:
+            raise Exception("Het is Geopy niet gelukt de locatie te vinden. CHeck je internet connectie")
         
         # controleren of er een locatie met de gegeven postcode is gevonden
         if getLoc is None:
