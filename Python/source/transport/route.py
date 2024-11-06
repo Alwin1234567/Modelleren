@@ -87,7 +87,6 @@ class Route:
             toevoeg_taken = []
             
             if vooraan_taak == None and achteraan_taak == None:
-                print('geen taken meer toe te voegen')
                 # stoppen met route maken
                 break
             
@@ -100,11 +99,9 @@ class Route:
                     starttijd = vooraan_max_starttijd
                 kosten = self._taken[0].cost_with_taak(vooraan_taak, self._distances, False)
                 toevoeg_taken.append([vooraan_taak, False, starttijd, t_max_taak_voor, kosten])
-                print('vooraan', vooraan_taak.ziekenhuis, vooraan_taak.brengen, t_max_taak_voor.tijd, 'kosten:', kosten)
             if achteraan_taak != None:
                 kosten = self._taken[-1].cost_with_taak(achteraan_taak, self._distances, True)
                 toevoeg_taken.append([achteraan_taak, True, achteraan_starttijd, t_max_taak_achter, kosten])
-                print('achteraan', achteraan_taak.ziekenhuis, achteraan_taak.brengen, t_max_taak_achter.tijd, 'kosten:', kosten)
 
             # taken sorteren op kosten
             toevoeg_taken.sort(key = lambda taak: taak[-1])
