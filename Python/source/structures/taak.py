@@ -18,7 +18,7 @@ class Taak:
                  ziekenhuis: "Ziekenhuis",
                  brengen: int = 0,
                  halen: int = 0,
-                 returntijd: Optional[Tijdslot] = None
+                 returntijd: Tijdslot = Tijdslot(Long_time(7*24*60), Long_time(7*24*60))
                  ) -> None:
         """
         Creëer een nieuwe taak.
