@@ -6,9 +6,9 @@ from source.locations import Hub, Ziekenhuis
 def test_route_maken():
     # distances object maken
     hub1 = Hub("De Meern")
-    ziekenhuis1 = Ziekenhuis("A Klinieken", [4, 9, 0, 0, 2, 0, 0], [9, 9, 0, 0, 2, 0, 0], postcode = "3712 BP")
-    ziekenhuis2 = Ziekenhuis("Andros Clinics Rijswijk", [8, 5, 0, 0, 2, 0, 0], [7, 3, 0, 0, 2, 0, 0], postcode = "2289 CA")
-    ziekenhuis3 = Ziekenhuis("Annadal kliniek", [4, 9, 0, 0, 2, 0, 0], [2, 9, 0, 0, 2, 0, 0], postcode = "6216 EG")
+    ziekenhuis1 = Ziekenhuis("A Klinieken", postcode = "3712 BP")
+    ziekenhuis2 = Ziekenhuis("Andros Clinics Rijswijk", postcode = "2289 CA")
+    ziekenhuis3 = Ziekenhuis("Annadal kliniek", postcode = "6216 EG")
     distances_object = Distances()
     distances_object.add_location(hub1)
     distances_object.add_location(ziekenhuis1)
@@ -44,9 +44,9 @@ def test_route_maken():
 def test_route_maken_uitproberen():
     # distances object maken
     hub1 = Hub("De Meern")
-    ziekenhuis1 = Ziekenhuis("A Klinieken", [4, 9, 0, 0, 2, 0, 0], [9, 9, 0, 0, 2, 0, 0], postcode = "3712 BP")
-    ziekenhuis2 = Ziekenhuis("Andros Clinics Rijswijk", [8, 5, 0, 0, 2, 0, 0], [7, 3, 0, 0, 2, 0, 0], postcode = "2289 CA")
-    ziekenhuis3 = Ziekenhuis("Annadal kliniek", [4, 9, 0, 0, 2, 0, 0], [2, 9, 0, 0, 2, 0, 0], postcode = "6216 EG")
+    ziekenhuis1 = Ziekenhuis("A Klinieken", postcode = "3712 BP")
+    ziekenhuis2 = Ziekenhuis("Andros Clinics Rijswijk", postcode = "2289 CA")
+    ziekenhuis3 = Ziekenhuis("Annadal kliniek", postcode = "6216 EG")
     distances_object = Distances()
     distances_object.add_location(hub1)
     distances_object.add_location(ziekenhuis1)

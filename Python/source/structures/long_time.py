@@ -1,5 +1,5 @@
 from typing import Union, Tuple
-from datetime import time, timedelta
+from datetime import time
 from warnings import warn
 
 class Long_time:
@@ -12,8 +12,15 @@ class Long_time:
         Creëer een nieuw tijdslot.
         """
         self._tijd, self._dag = self._tijd_interpreteren(tijd, dag)
-        if self._dag > 5:
-            warn("De dag van de long_time is groter dan 5.", RuntimeWarning)
+
+    def __str__(self) -> str:
+        """
+        Zet de long_time om naar een string.
+
+        Returns:
+            str: De long_time als string.
+        """
+        return f"{self.dag} dagen, {self.tijd}"
     
     def _tijd_interpreteren(self, tijd: Union[time, float, int], dag: int = 0) -> Tuple[time, int]:
         """
@@ -184,8 +191,38 @@ class Long_time:
         return self._tijd
     
     @property
+    def time(self) -> time:
+        """
+        De tijd van de long_time.
+        """
+        return self.tijd
+    
+    @property
     def dag(self) -> int:
         """
         De dag van de long_time.
         """
         return self._dag
+    
+    @dag.setter
+    def dag(self, value: int) -> None:
+        """
+        Verander de dag van de long_time.
+        """
+        if value > 4:
+            warn("De dag van de long_time is groter dan 4.", RuntimeWarning)
+        self._dag = value
+    
+    @property
+    def day(self) -> int:
+        """
+        De dag van de long_time.
+        """
+        return self.dag
+    
+    @day.setter
+    def day(self, value: int) -> None:
+        """
+        Verander de dag van de long_time.
+        """
+        self.dag = value
