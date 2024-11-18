@@ -79,25 +79,28 @@ class Distances:
 
         # Check if the CSV file exists
         if csv_file_path.exists():
-            # Open the CSV file and read the first line to check for a separator
-            with open(csv_file_path, 'r') as file:
-                first_line = file.readline().strip()
-                if first_line.startswith('sep='):
-                    separator = first_line.split('=')[1]
-                    # Read the CSV file into a DataFrame, skipping the first line
-                    stored_df = pd.read_csv(csv_file_path, sep=separator, skiprows=1)
-                else:
-                    # Default separator if no sep= is found
-                    stored_df = pd.read_csv(csv_file_path, sep=';')
+            try:
+                # Open the CSV file and read the first line to check for a separator
+                with open(csv_file_path, 'r') as file:
+                    first_line = file.readline().strip()
+                    if first_line.startswith('sep='):
+                        separator = first_line.split('=')[1]
+                        # Read the CSV file into a DataFrame, skipping the first line
+                        stored_df = pd.read_csv(csv_file_path, sep=separator, skiprows=1)
+                    else:
+                        # Default separator if no sep= is found
+                        stored_df = pd.read_csv(csv_file_path, sep=';')
 
-            # Iterate over the DataFrame and populate self._distances
-            for _, row in stored_df.iterrows():
-                from_loc = row['from']
-                to_loc = row['to']
-                distance = row['distance']
-                time = row['time']
-                if from_loc in self._distances.index and to_loc in self._distances.columns:
-                    self._distances.loc[from_loc, to_loc] = Distance_time(distance, time)
+                # Iterate over the DataFrame and populate self._distances
+                for _, row in stored_df.iterrows():
+                    from_loc = row['from']
+                    to_loc = row['to']
+                    distance = row['distance']
+                    time = row['time']
+                    if from_loc in self._distances.index and to_loc in self._distances.columns:
+                        self._distances.loc[from_loc, to_loc] = Distance_time(distance, time)
+            except Exception as e:
+                warn(f"Failed to load stored distances: {e}", RuntimeWarning)
     
     def _store_distances(self) -> None:
         """

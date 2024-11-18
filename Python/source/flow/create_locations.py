@@ -3,6 +3,7 @@ from source.locations import Ziekenhuis, Hub
 import pandas as pd
 from warnings import warn
 from source.structures import Status, Taak, Long_time, Tijdslot, Maps
+from datetime import time
 
 class Create_locations:
     """
@@ -18,7 +19,7 @@ class Create_locations:
         Maps.disable_maps()
         self.add_taken()
         self._finish_creation()
-        self.status = Status.FINISHED
+        self._status = Status.FINISHED
     
     def load_data(self) -> tuple[pd.DataFrame, pd.DataFrame]:
         """
@@ -122,6 +123,9 @@ class Create_locations:
                 ophalen_start = Long_time(df_ziekenhuis_taak['begin tijdvak ophalen'], day_index)
                 ophalen_end = Long_time(df_ziekenhuis_taak['eind tijdvak ophalen'], day_index)
 
+                if ophalen_end < ophalen_start and ophalen_end.time == time(0, 0):
+                    ophalen_end.day = (ophalen_end.day + 1)
+                
                 if ophalen_end < ophalen_start:
                     warn(f"Eind tijd voor ophalen is voor begin tijd voor ziekenhuis {ziekenhuis.name} start: {ophalen_start}, end: {ophalen_end}", RuntimeWarning)
                     continue
@@ -131,7 +135,7 @@ class Create_locations:
                 
                 retour_start: Long_time = ophalen_start + retour_start_duration
                 retour_end: Long_time = ophalen_start + retour_end_duration
-                if retour_start.day >6 and retour_start.day > 6:
+                if retour_start.day > 6 and retour_start.day > 6:
                     retour_start.day = retour_start.day % 7
                     retour_end.day = retour_end.day % 7
                     if retour_end < retour_start:
@@ -153,13 +157,17 @@ class Create_locations:
                 tijdslot_ophalen = Tijdslot(ophalen_start, ophalen_end)
                 tijdslot_brengen = Tijdslot(retour_start, retour_end)
 
-                returntijd = Long_time(7*24*60)
+                returntijd = Tijdslot(Long_time(7*24*60), Long_time(7*24*60))
                 if retour_start > ophalen_end:
-                    returntijd = retour_start
+                    returntijd = tijdslot_brengen
 
                 # Create Taak instances for ophalen and brengen
-                taak_ophalen = Taak(tijdslot_ophalen, ziekenhuis, halen=hoeveelheid_sets, returntijd=returntijd)
-                taak_brengen = Taak(tijdslot_brengen, ziekenhuis, brengen=hoeveelheid_sets)
+                try:
+                    taak_ophalen = Taak(tijdslot_ophalen, ziekenhuis, halen=hoeveelheid_sets, returntijd=returntijd)
+                    taak_brengen = Taak(tijdslot_brengen, ziekenhuis, brengen=hoeveelheid_sets)
+                except ValueError as e:
+                    warn(f"Error: {e} for ziekenhuis {ziekenhuis.name}. Continuing with the next taak.", RuntimeWarning)
+                    continue
 
                 taken.append(taak_ophalen)
                 taken.append(taak_brengen)

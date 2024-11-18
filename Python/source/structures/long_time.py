@@ -209,8 +209,6 @@ class Long_time:
         """
         Verander de dag van de long_time.
         """
-        if value > 4:
-            warn("De dag van de long_time is groter dan 4.", RuntimeWarning)
         self._dag = value
     
     @property
