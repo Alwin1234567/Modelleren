@@ -1,6 +1,6 @@
 from .location import Location, Location_type
 from .ziekenhuis import Ziekenhuis
-from source.structures import Status, Distances, Taak
+from source.structures import Status, Distances, Taak, Auto_type, Bak_kar_voorkeur
 from source.transport import Route, Auto
 import pandas as pd
 from tqdm import tqdm
@@ -50,7 +50,8 @@ class Hub(Location):
         while remaining_taken:
             initial_length = len(remaining_taken)
             
-            route = Route(self, self._distances)
+            # Bij de startoplossing alle voertuigen bakwagens
+            route = Route(self, self._distances, Auto_type.BAKWAGEN)
             starttaak = self._choose_starttaak(remaining_taken)
             remaining_taken.remove(starttaak)
             route.maak_route(starttaak, remaining_taken)
@@ -101,7 +102,8 @@ class Hub(Location):
         nog_te_plannen_routes.sort(key = lambda route: route.start_tijd)
 
         # eerste auto toevoegen aan hub met daarin eerste route
-        self._autos.append(Auto()) 
+        auto_type = Auto_type.BAKWAGEN
+        self._autos.append(Auto(auto_type)) 
         self._autos[0].add_route(nog_te_plannen_routes[0])
 
         for route in nog_te_plannen_routes[1:]:
@@ -116,7 +118,7 @@ class Hub(Location):
             
             if not ingepland:
                 # route in nieuwe auto plaatsen
-                nieuwe_auto = Auto()
+                nieuwe_auto = Auto(auto_type)
                 nieuwe_auto.add_route(route)
                 self._autos.append(nieuwe_auto) 
 
@@ -160,6 +162,6 @@ class Hub(Location):
         Voeg een route toe aan de hub
 
         Parameters:
-            route [Route]: Een route object dat aan de hub moet worden toegevoegd
+            route (Route): Een route object dat aan de hub moet worden toegevoegd
         """
         self._routes = route

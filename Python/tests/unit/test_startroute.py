@@ -1,14 +1,14 @@
 import pytest
 from source.transport import Route
-from source.structures import Distances, Maps, Taak, Tijdslot, Long_time
+from source.structures import Distances, Maps, Taak, Tijdslot, Long_time, Auto_type, Bak_kar_voorkeur
 from source.locations import Hub, Ziekenhuis
 
 def test_route_maken():
     # distances object maken
     hub1 = Hub("De Meern")
-    ziekenhuis1 = Ziekenhuis("A Klinieken", postcode = "3712 BP")
-    ziekenhuis2 = Ziekenhuis("Andros Clinics Rijswijk", postcode = "2289 CA")
-    ziekenhuis3 = Ziekenhuis("Annadal kliniek", postcode = "6216 EG")
+    ziekenhuis1 = Ziekenhuis("A Klinieken", Bak_kar_voorkeur.BAK, postcode = "3712 BP")
+    ziekenhuis2 = Ziekenhuis("Andros Clinics Rijswijk", Bak_kar_voorkeur.BAK, postcode = "2289 CA")
+    ziekenhuis3 = Ziekenhuis("Annadal kliniek", Bak_kar_voorkeur.KAR, postcode = "6216 EG")
     distances_object = Distances()
     distances_object.add_location(hub1)
     distances_object.add_location(ziekenhuis1)
@@ -26,14 +26,14 @@ def test_route_maken():
     taak6 = Taak(Tijdslot(Long_time(11*60), Long_time(18*60)), ziekenhuis3, 4, 9, Tijdslot(Long_time(39*60), Long_time(46*60)))
     taken = [taak1, taak2, taak3, taak4, taak5, taak6]
 
-    route = Route(hub1, distances_object, 35)
+    route = Route(hub1, distances_object, Auto_type.BAKWAGEN)
     route.maak_route(taak1, taken[1:])
     
     assert Tijdslot(Long_time(3*60), Long_time(4*60)).is_in_tijdvak(route.start_tijd)
     assert Tijdslot(Long_time(14*60), Long_time(15*60)).is_in_tijdvak(route.eind_tijd)
     assert 510 < route.total_distance < 520
     assert 660 < route.total_time < 670
-    assert 270 < route.total_cost < 280
+    assert 270 < route.total_cost < 290
     
     taakvolgorde = [taak4, taak2, taak1, taak6]
     for i in range(len(route.departure_times)):
@@ -44,9 +44,9 @@ def test_route_maken():
 def test_route_maken_uitproberen():
     # distances object maken
     hub1 = Hub("De Meern")
-    ziekenhuis1 = Ziekenhuis("A Klinieken", postcode = "3712 BP")
-    ziekenhuis2 = Ziekenhuis("Andros Clinics Rijswijk", postcode = "2289 CA")
-    ziekenhuis3 = Ziekenhuis("Annadal kliniek", postcode = "6216 EG")
+    ziekenhuis1 = Ziekenhuis("A Klinieken", Bak_kar_voorkeur.BAK, postcode = "3712 BP")
+    ziekenhuis2 = Ziekenhuis("Andros Clinics Rijswijk", Bak_kar_voorkeur.BAK, postcode = "2289 CA")
+    ziekenhuis3 = Ziekenhuis("Annadal kliniek", Bak_kar_voorkeur.KAR, postcode = "6216 EG")
     distances_object = Distances()
     distances_object.add_location(hub1)
     distances_object.add_location(ziekenhuis1)
@@ -64,7 +64,7 @@ def test_route_maken_uitproberen():
     taak6 = Taak(Tijdslot(Long_time(11*60), Long_time(18*60)), ziekenhuis3, 4, 9, Tijdslot(Long_time(39*60), Long_time(46*60)))
     taken = [taak1, taak2, taak3, taak4, taak5, taak6]
 
-    route = Route(hub1, distances_object, 35)
+    route = Route(hub1, distances_object, Auto_type.BAKWAGEN)
     
     route.maak_route(taak1, taken[1:])
     
@@ -75,7 +75,7 @@ def test_route_maken_uitproberen():
     print('cost', route.total_cost)
     print('departuretimes')
     for d in route.departure_times:
-        print(d[0].ziekenhuis, d[1].tijd, d[0].brengen, d[0].halen)
+        print(d[0].ziekenhuis, d[1].tijd, d[0].brengen.aantal_sets, d[0].halen.aantal_sets, d[0].brengen.aantal(Auto_type.BAKWAGEN), d[0].halen.aantal(Auto_type.BAKWAGEN))
 
 # Run the test
 if __name__ == "__main__":

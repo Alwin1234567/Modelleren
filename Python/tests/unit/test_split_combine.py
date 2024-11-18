@@ -1,13 +1,13 @@
 import pytest
 from source.transport import Route
-from source.structures import Distances, Maps, Taak, Tijdslot, Long_time
+from source.structures import Distances, Maps, Taak, Tijdslot, Long_time, Bak_kar_voorkeur
 from source.locations import Hub, Ziekenhuis
 
 def test_routes_splitsen():
     # locaties maken
     hub = Hub("De Meern")
-    ziekenhuis1 = Ziekenhuis("Equip Amsterdam")
-    ziekenhuis2 = Ziekenhuis("Annadal kliniek")
+    ziekenhuis1 = Ziekenhuis("Equip Amsterdam", Bak_kar_voorkeur.BAK)
+    ziekenhuis2 = Ziekenhuis("Annadal kliniek", Bak_kar_voorkeur.KAR)
     # taken maken
     taak_1 = Taak(Tijdslot(Long_time(5*60), Long_time(13*60)), ziekenhuis1, 28, 0)
     taak_2 = Taak(Tijdslot(Long_time(10*60), Long_time(17*60)), ziekenhuis1, 17, 0)
