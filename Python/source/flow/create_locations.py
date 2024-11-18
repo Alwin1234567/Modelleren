@@ -131,7 +131,7 @@ class Create_locations:
                     continue
                 # Calculate retour times based on the duration after the begin tijdvak
                 retour_start_duration = df_ziekenhuis_taak['retour vroegst na begin ophaaltijdvak'] * 60  # Convert hours to minutes
-                retour_end_duration = df_ziekenhuis_taak['retour binnen (uur-uur) na begin ophaaltijdvak'] * 60  # Convert hours to minutes
+                retour_end_duration = df_ziekenhuis_taak['retour binnen (uur) na begin ophaaltijdvak'] * 60  # Convert hours to minutes
                 
                 retour_start: Long_time = ophalen_start + retour_start_duration
                 retour_end: Long_time = ophalen_start + retour_end_duration
