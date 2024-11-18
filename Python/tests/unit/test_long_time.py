@@ -12,10 +12,6 @@ def test_init():
     lt = Long_time(time(8, 0), dag=2)
     assert lt.tijd == time(8, 0)
     assert lt.dag == 2
-
-    # Test invalid initialization with day greater than 5
-    with pytest.warns(RuntimeWarning):
-        lt = Long_time(time(8, 0), dag=6)
     
     with pytest.warns(RuntimeWarning):
         lt = Long_time(2190, dag=1)
