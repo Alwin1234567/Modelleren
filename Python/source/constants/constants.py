@@ -20,6 +20,10 @@ class Constants:
     CAPACITEIT_BESTELBUS = 22 # bakken
     TIJDSDUUR_SCHOONMAAK = 4 * 60
     WACHTTIJD_TUSSEN_ROUTES = 30 # half uur wachten tussen twee routes voor opvangen vertraging voorgaande routes
+
+    CAPACITEIT_KAR = 18 # sets per kar
+    CAPACITEIT_BAK = 4 # sets per bak
+    BAKKEN_PER_KAR = 8 # aantal bakken die op de plek van één kar in een bakwagen passen
     
     MAPS_URL = "http://localhost:8989/route"
     MAPS_PARAMS = {

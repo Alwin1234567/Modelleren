@@ -48,8 +48,8 @@ class Lading_bak_kar():
         if self._voorkeur == Bak_kar_voorkeur.KAR:
             raise ValueError("Een ziekenhuis met een kar-voorkeur, kan geen levering in bakken krijgen")
         if self._orthopedic:
-            return math.ceil(self._aantal_sets/2)
-        return math.ceil(self._aantal_sets/4)
+            return math.ceil(self._aantal_sets/(Constants.CAPACITEIT_BAK/2))
+        return math.ceil(self._aantal_sets/Constants.CAPACITEIT_BAK)
     
     @property
     def aantal_karren(self) -> int:
@@ -58,10 +58,10 @@ class Lading_bak_kar():
         Bij een voorkeur voor bakken, wordt het aantal kar-plekken dat ingenomen wordt door het aantal bakken gegeven.
         """
         if self._voorkeur == Bak_kar_voorkeur.BAK:
-            return math.ceil(self.aantal_bakken/15)
+            return math.ceil(self.aantal_bakken/Constants.BAKKEN_PER_KAR)
         if self._orthopedic:
-            return math.ceil(self._aantal_sets/18)
-        return math.ceil(self._aantal_sets/18)
+            return math.ceil(self._aantal_sets/Constants.CAPACITEIT_KAR)
+        return math.ceil(self._aantal_sets/Constants.CAPACITEIT_KAR)
     
     @property
     def laadtijd(self) -> float:

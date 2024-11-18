@@ -1,6 +1,6 @@
 import pytest
 from datetime import time
-from source.structures import Taak, Tijdslot, Long_time, Distances, Cost
+from source.structures import Taak, Tijdslot, Long_time, Distances, Cost, Auto_type
 from source.constants import Constants
 from unittest.mock import MagicMock
 import numpy as np
@@ -28,9 +28,9 @@ def taak(tijdslot, mock_ziekenhuis):
 def test_init(taak, tijdslot, mock_ziekenhuis):
     assert taak.tijdslot == tijdslot
     assert taak.ziekenhuis == mock_ziekenhuis
-    assert taak.brengen == 5
-    assert taak.halen == 3
-    assert taak.halen_brengen == 8
+    assert taak.brengen.aantal_sets == 5
+    assert taak.halen.aantal_sets == 3
+    assert taak.halen_brengen_sets == 8
 
 def test_cost_with_taak(taak, mock_distances, tijdslot, mock_ziekenhuis):
     # Create another task to compare with
@@ -44,11 +44,11 @@ def test_cost_with_taak(taak, mock_distances, tijdslot, mock_ziekenhuis):
     Cost.calculate_cost_time = MagicMock(return_value=50)  # Example time cost
 
     # Test cost calculation with end=True
-    cost = taak.cost_with_taak(other_taak, mock_distances, end=True)
-    assert cost == 10 * Constants.PRIJS_PER_KM + 50
+    cost = taak.cost_with_taak(other_taak, mock_distances, Auto_type.BAKWAGEN, end=True)
+    assert cost == 10 * Constants.PRIJS_PER_KM_BAKWAGEN + 50
 
     # Test cost calculation with end=False
-    cost = taak.cost_with_taak(other_taak, mock_distances, end=False)
+    cost = taak.cost_with_taak(other_taak, mock_distances, Auto_type.BAKWAGEN, end=False)
     assert cost == np.inf
 
 def test_invalid_cost_with_taak(taak, mock_distances, tijdslot, mock_ziekenhuis):
@@ -57,7 +57,7 @@ def test_invalid_cost_with_taak(taak, mock_distances, tijdslot, mock_ziekenhuis)
 
     # Test without scheduled time
     with pytest.raises(ValueError):
-        taak.cost_with_taak(other_taak, mock_distances)
+        taak.cost_with_taak(other_taak, mock_distances, Auto_type.BAKWAGEN)
 
     # Set the current task's scheduled time
     taak._ingeplande_tijd = Long_time(480)  # 8:00
@@ -65,7 +65,7 @@ def test_invalid_cost_with_taak(taak, mock_distances, tijdslot, mock_ziekenhuis)
     # Test with unknown location
     mock_distances.has_location.return_value = False
     with pytest.raises(ValueError):
-        taak.cost_with_taak(other_taak, mock_distances)
+        taak.cost_with_taak(other_taak, mock_distances, Auto_type.BAKWAGEN)
 
 if __name__ == '__main__':
     pytest.main()

@@ -77,13 +77,13 @@ class Hub(Location):
             taken (list[Taak]): De lijst van taken waaruit de starttaak gekozen moet worden.
     
         Returns:
-            Taak: De starttaak met de hoogste halen_brengen waarde en de kortste tijdslot bij gelijke halen_brengen.
+            Taak: De starttaak met de hoogste halen_brengen_sets waarde en de kortste tijdslot bij gelijke halen_brengen_sets.
         """
         if not taken:
             raise ValueError("De lijst van taken is leeg.")
     
-        # Sort the taken list by halen_brengen in descending order and by tijdslot duration in ascending order
-        taken.sort(key=lambda taak: (-taak.halen_brengen, len(taak.tijdslot)))
+        # Sort the taken list by halen_brengen_sets in descending order and by tijdslot duration in ascending order
+        taken.sort(key=lambda taak: (-taak.halen_brengen_sets, len(taak.tijdslot)))
     
         return taken[0]
     

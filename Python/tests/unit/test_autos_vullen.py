@@ -8,11 +8,11 @@ def test_autos_vullen():
     ziekenhuis1 = Ziekenhuis("Equip Amsterdam", Bak_kar_voorkeur.BAK)
     ziekenhuis2 = Ziekenhuis("Annadal kliniek", Bak_kar_voorkeur.KAR)
     # taken maken
-    taak_1 = Taak(Tijdslot(Long_time(5*60), Long_time(13*60)), ziekenhuis1, 28, 0)
-    taak_2 = Taak(Tijdslot(Long_time(10*60), Long_time(17*60)), ziekenhuis1, 17, 0)
-    taak_3 = Taak(Tijdslot(Long_time(4*60), Long_time(8*60)), ziekenhuis2, 21, 0)
-    taak_4 = Taak(Tijdslot(Long_time(7*60), Long_time(12*60)), ziekenhuis2, 15, 0)
-    taak_5 = Taak(Tijdslot(Long_time(14*60), Long_time(20*60)), ziekenhuis2, 26, 0)
+    taak_1 = Taak(Tijdslot(Long_time(5*60), Long_time(13*60)), ziekenhuis1, 230, 0)
+    taak_2 = Taak(Tijdslot(Long_time(10*60), Long_time(17*60)), ziekenhuis1, 130, 0)
+    taak_3 = Taak(Tijdslot(Long_time(4*60), Long_time(8*60)), ziekenhuis2, 90, 0)
+    taak_4 = Taak(Tijdslot(Long_time(7*60), Long_time(12*60)), ziekenhuis2, 60, 0)
+    taak_5 = Taak(Tijdslot(Long_time(14*60), Long_time(20*60)), ziekenhuis2, 120, 0)
 
     # taken aan ziekenhuizen toevoegen
     ziekenhuis1.add_taak(taak_1)
