@@ -2,6 +2,7 @@ from datetime import time
 from typing import Union, Tuple
 from warnings import warn
 from .long_time import Long_time
+import numpy as np
 
 class Tijdslot:
     """
@@ -39,6 +40,20 @@ class Tijdslot:
             bool: True als de tijdsloten overlappen, anders False.
         """
         return self.is_in_tijdvak(tijdslot.starttijd) or self.is_in_tijdvak(tijdslot.eindtijd)
+    
+    def tijdverschil(self, tijdslot: 'Tijdslot') -> int:
+        """
+        Bereken het tijdverschil tussen twee tijdsloten.
+        
+        Parameters:
+            tijdslot (Tijdslot): Het tijdslot waarvan het tijdverschil moet worden berekend.
+        
+        Returns:
+            int: Het tijdverschil in minuten tussen de twee tijdsloten.
+        """
+        if self.overlap(tijdslot):
+            return np.inf
+        return min(abs(self._start - tijdslot.eindtijd), abs(self._eind - tijdslot.starttijd))
 
     def __len__(self) -> int:
         """

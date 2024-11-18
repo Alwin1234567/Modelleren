@@ -12,6 +12,22 @@ if TYPE_CHECKING:
     from source.locations import Ziekenhuis
 
 class Taak:
+    """
+    Een class die een taak voorstelt die uitgevoerd moet worden door een voertuig.
+
+    Properties:
+        Tijdslot: De tijdslot van de taak.
+        Ziekenhuis: Het ziekenhuis van de taak.
+        Brengen: Het aantal instrumenten dat gebracht moet worden.
+        Halen: Het aantal instrumenten dat gehaald moet worden.
+        Halen_brengen: Het totaal aantal instrumenten dat gehaald en gebracht moet worden.
+        Laadtijd: De laadtijd van de taak.
+        Begintijd_taak: De begintijd van de taak.
+        Eindtijd_taak: De eindtijd van de taak.
+        ID: Het id van de taak.
+        Has_ingeplande_tijd: Controleer of de taak een ingeplande tijd heeft.
+        Returntijd: Het tijdvak waarin de opgehaalde instrumenten schoon terug bij het ziekenhuis moeten zijn.
+    """
 
     def __init__(self,
                  tijdslot: Tijdslot,
@@ -83,6 +99,14 @@ class Taak:
 
         distance_cost = distance * Constants.PRIJS_PER_KM
         return distance_cost + time_cost
+    
+    def __eq__(self, value: object) -> bool:
+        """
+        Controleer of twee taken gelijk zijn.
+        """
+        if not isinstance(value, Taak):
+            return False
+        return self.id == value.id
 
 
     @property

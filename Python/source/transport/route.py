@@ -1,20 +1,17 @@
 from enum import Enum, auto
-from source.structures import Status, Distances, ID, Taak, Long_time, Cost
+from source.structures import Status, Distances, ID, Taak, Long_time, Cost, Tijdslot
 from warnings import warn
 from typing import List, Tuple, TYPE_CHECKING, Optional
 from source.constants import Constants
+from source.constants import Constants
 
 if TYPE_CHECKING:    
-    from source.locations import Location, Ziekenhuis, Hub
-
-class Route_type(Enum):
-    AVOND = auto()
-    OCHTEND = auto()
+    from source.locations import Hub
 
 class Route:
 
     # distances will be a reference to the relevant distances object
-    def __init__(self, start_hub: "Hub", distances: Distances, capaciteit: int) -> None:
+    def __init__(self, start_hub: "Hub", distances: Distances, capaciteit: int = Constants.CAPACITEIT_VOERTUIG) -> None:
         self._distances = distances
         if self._distances.status != Status.FINISHED: 
             raise ValueError("Distances object is not finished")
@@ -41,7 +38,7 @@ class Route:
             raise ValueError("Route is not in preparing state")
         if not self._distances.has_location(taak.ziekenhuis):
             raise ValueError("Location is not in distances object")
-        if taak in set(self._taken):
+        if taak in self._taken:
             warn("Taak is already in route")
         if end:
             self._taken.append(taak)
@@ -183,7 +180,7 @@ class Route:
         # alleen taken voor eerste_taak en met toegestane hoeveelheid brengen en ophalen
         # gefilterd = list(filter(lambda taak: taak.tijdslot.starttijd > laatste_taak.eindtijd_taak and taak.brengen <= max_wegbrengen and taak.halen <= max_ophalen, nog_te_plannen_taken))
 
-        gefilterd = [taak for taak in nog_te_plannen_taken if taak.tijdslot.starttijd > laatste_taak.eindtijd_taak and taak.brengen <= max_wegbrengen and taak.halen <= max_ophalen]
+        gefilterd = [taak for taak in nog_te_plannen_taken if taak.tijdslot.eindtijd > laatste_taak.eindtijd_taak and taak.brengen <= max_wegbrengen and taak.halen <= max_ophalen]
         
         # sorteren op kosten van toevoegen taak voor eerste_taak
         gefilterd.sort(key = lambda taak: laatste_taak.cost_with_taak(taak, self._distances, True))
@@ -229,6 +226,12 @@ class Route:
         reistijd_naar_hub = self._distances.get_time(self._taken[-1].ziekenhuis, self._start_hub)
         eind_tijd = self._taken[-1].eindtijd_taak + reistijd_naar_hub
         return eind_tijd
+    
+    @property
+    def tijdslot(self) -> Tijdslot:
+        if not self._taken:
+            return None
+        return Tijdslot(self.start_tijd, self.eind_tijd)
 
     @property
     def status(self) -> Status:
