@@ -9,6 +9,7 @@ import requests
 from warnings import warn
 import pandas as pd
 from datetime import time
+from tqdm import tqdm
 
 if TYPE_CHECKING:
     from source.locations import Location
@@ -78,25 +79,28 @@ class Distances:
 
         # Check if the CSV file exists
         if csv_file_path.exists():
-            # Open the CSV file and read the first line to check for a separator
-            with open(csv_file_path, 'r') as file:
-                first_line = file.readline().strip()
-                if first_line.startswith('sep='):
-                    separator = first_line.split('=')[1]
-                    # Read the CSV file into a DataFrame, skipping the first line
-                    stored_df = pd.read_csv(csv_file_path, sep=separator, skiprows=1)
-                else:
-                    # Default separator if no sep= is found
-                    stored_df = pd.read_csv(csv_file_path, sep=';')
+            try:
+                # Open the CSV file and read the first line to check for a separator
+                with open(csv_file_path, 'r') as file:
+                    first_line = file.readline().strip()
+                    if first_line.startswith('sep='):
+                        separator = first_line.split('=')[1]
+                        # Read the CSV file into a DataFrame, skipping the first line
+                        stored_df = pd.read_csv(csv_file_path, sep=separator, skiprows=1)
+                    else:
+                        # Default separator if no sep= is found
+                        stored_df = pd.read_csv(csv_file_path, sep=';')
 
-            # Iterate over the DataFrame and populate self._distances
-            for _, row in stored_df.iterrows():
-                from_loc = row['from']
-                to_loc = row['to']
-                distance = row['distance']
-                time = row['time']
-                if from_loc in self._distances.index and to_loc in self._distances.columns:
-                    self._distances.loc[from_loc, to_loc] = Distance_time(distance, time)
+                # Iterate over the DataFrame and populate self._distances
+                for _, row in stored_df.iterrows():
+                    from_loc = row['from']
+                    to_loc = row['to']
+                    distance = row['distance']
+                    time = row['time']
+                    if from_loc in self._distances.index and to_loc in self._distances.columns:
+                        self._distances.loc[from_loc, to_loc] = Distance_time(distance, time)
+            except Exception as e:
+                warn(f"Failed to load stored distances: {e}", RuntimeWarning)
     
     def _store_distances(self) -> None:
         """
@@ -111,7 +115,12 @@ class Distances:
 
         # Read the existing CSV file if it exists
         if csv_file_path.exists():
-            existing_df = pd.read_csv(csv_file_path)
+            with open(csv_file_path, 'r') as file:
+                first_line = file.readline().strip()
+                if first_line.startswith('sep='):
+                    existing_df = pd.read_csv(csv_file_path, sep=';', skiprows=1)
+                else:
+                    existing_df = pd.read_csv(csv_file_path)
         else:
             existing_df = pd.DataFrame(columns=['from', 'to', 'distance', 'time'])
 
@@ -168,6 +177,10 @@ class Distances:
         """
         if not Maps.is_enabled():
             Maps.enable_maps()
+        
+        # Initialize the progress bar
+        progress_bar = tqdm(total=len(missing_distances), desc="Determining distances", unit="distance")
+
         for start, end in missing_distances:
             url = f"{Constants.MAPS_URL}?{start.coordinates.OSRM_str}&{end.coordinates.OSRM_str}&profile={Constants.MAPS_PARAMS['profile']}&locale={Constants.MAPS_PARAMS['locale']}&calc_points={Constants.MAPS_PARAMS['calc_points']}"
             response = requests.get(url)
@@ -182,6 +195,12 @@ class Distances:
                 else:
                     warn(f"No route found between {start} and {end}")
             self._distances.loc[start.name, end.name] = result
+            
+            # Update the progress bar
+            progress_bar.update(1)
+        
+        # Close the progress bar
+        progress_bar.close()
         
     def _check_complete(self) -> bool:
         """
@@ -213,6 +232,8 @@ class Distances:
         Returns:
             Distance_time: De afstand en tijd tussen de locaties.
         """
+        if start == end:
+            return Distance_time(0, 0)
         return self._distances.loc[start.name, end.name]
     
     def get_distance(self, start: "Location", end: "Location") -> float:

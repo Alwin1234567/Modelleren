@@ -1,22 +1,16 @@
 from .location import Location, Coordinates, Location_type
-from source.structures import Vraag
+from source.structures import Taak
 from datetime import time
 
 class Ziekenhuis(Location):
     
-    def __init__(self, name: str, wegbrengen = [], ophalen = [], **kwargs) -> None:
+    def __init__(self, name: str, **kwargs) -> None:
         super().__init__(name, Location_type.ZIEKENHUIS, **kwargs)
-        self._vraag_ophalen = Vraag(ophalen)
-        self._vraag_wegbrengen = Vraag(wegbrengen)
-    
+        self._taken: list[Taak] = []
+
+    def add_taak(self, taak: Taak):
+        self._taken.append(taak)
+
     @property
-    def vraag_ophalen(self):
-        return self._vraag_ophalen
-    
-    @property
-    def vraag_wegbrengen(self):
-        return self._vraag_wegbrengen 
-    
-    @property
-    def tijdvak(self):
-        return (time(6, 0), time(20, 0))
+    def taken(self):
+        return self._taken

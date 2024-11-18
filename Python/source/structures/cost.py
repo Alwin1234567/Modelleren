@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta, time
 from source.constants import Constants
 from typing import Tuple
+from .tijdslot import Tijdslot
 
 class Cost:
     

@@ -1,2 +1,2 @@
-from .route import Route, Route_type
+from .route import Route
 from .auto import Auto
