@@ -97,12 +97,29 @@ class Hub(Location):
             # auto's legen en opnieuw vullen
             self._autos = []
         
+        # beide soorten auto's vullen met routes van dat type auto
+        self._fill_autos_type(Auto_type.BAKWAGEN)
+        self._fill_autos_type(Auto_type.BESTELBUS)
+        
+    
+    def _fill_autos_type(self, auto_type: Auto_type) -> bool:
+        """
+        Vult routes met specifiek type auto in die auto's.
+
+        Parameters:
+            auto_type (Auto_type): Het type auto dat gevuld moet worden.
+        
+        Returns:
+            bool: True als auto's zijn toegevoegd, False als er geen routes waren om aan auto's toe te voegen
+        """
         # sorteer routes op starttijd 
-        nog_te_plannen_routes = self._routes
+        nog_te_plannen_routes = [route for route in self._routes if route.auto_type == auto_type]
+        if len(nog_te_plannen_routes) == 0:
+            # geen routes met dit type auto
+            return False
         nog_te_plannen_routes.sort(key = lambda route: route.start_tijd)
 
         # eerste auto toevoegen aan hub met daarin eerste route
-        auto_type = Auto_type.BAKWAGEN
         self._autos.append(Auto(auto_type)) 
         self._autos[0].add_route(nog_te_plannen_routes[0])
 
@@ -121,6 +138,7 @@ class Hub(Location):
                 nieuwe_auto = Auto(auto_type)
                 nieuwe_auto.add_route(route)
                 self._autos.append(nieuwe_auto) 
+        return True
 
     @property
     def ziekenhuizen(self) -> list[Ziekenhuis]:

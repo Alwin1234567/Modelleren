@@ -2,6 +2,7 @@ from datetime import datetime, timedelta, time
 from source.constants import Constants
 from typing import Tuple
 from .tijdslot import Tijdslot
+from .lading import Auto_type
 
 class Cost:
     
@@ -107,14 +108,18 @@ class Cost:
         return total_cost
 
     @staticmethod
-    def calculate_cost_distance(distance_km: float) -> float:
+    def calculate_cost_distance(distance_km: float, auto_type: Auto_type) -> float:
         """
         Calculate the cost based on the distance given.
         
         Parameters:
             distance_km (float): The distance in kilometers.
+            auto_type (Auto_type): The type of car.
         
         Returns:
             float: The total cost based on the distance.
         """
-        return distance_km * Constants.PRIJS_PER_KM
+        if auto_type == Auto_type.BAKWAGEN:
+            return distance_km * Constants.PRIJS_PER_KM_BAKWAGEN
+        else:
+            return distance_km * Constants.PRIJS_PER_KM_BESTELBUS

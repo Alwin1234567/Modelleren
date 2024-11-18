@@ -1,5 +1,6 @@
 from datetime import time
 from .cost import Cost
+from .lading import Auto_type
 
 class Distance_time:
     """
@@ -17,17 +18,18 @@ class Distance_time:
         self._distance = distance
         self._time = time
     
-    def cost(self, start_time: time) -> float:
+    def cost(self, start_time: time, auto_type: Auto_type) -> float:
         """
         Bereken de kosten van de afstand en tijd.
 
         Parameters:
             overtime (float): Percentage van de tijd dat in de nacht valt.
+            auto_type (Auto_type): Het type auto waarmee wordt gereden.
 
         Returns:
             float: De kosten van de afstand en tijd.
         """
-        distance_cost = Cost.calculate_cost_distance(self._distance)
+        distance_cost = Cost.calculate_cost_distance(self._distance, auto_type)
         time_cost = Cost.calculate_cost_time(start_time, self._time)
         return distance_cost + time_cost
         

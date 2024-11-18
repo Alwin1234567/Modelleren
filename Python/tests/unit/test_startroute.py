@@ -33,7 +33,7 @@ def test_route_maken():
     assert Tijdslot(Long_time(14*60), Long_time(15*60)).is_in_tijdvak(route.eind_tijd)
     assert 510 < route.total_distance < 520
     assert 660 < route.total_time < 670
-    assert 270 < route.total_cost < 290
+    assert 340 < route.total_cost < 350
     
     taakvolgorde = [taak4, taak2, taak1, taak6]
     for i in range(len(route.departure_times)):

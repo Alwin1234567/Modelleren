@@ -267,6 +267,23 @@ class Route:
         Geeft het type voertuig waarin de route gereden wordt.
         """
         return self._auto_type
+    
+    @property
+    def fits_bestelbus(self) -> bool:
+        """
+        Kijkt of de route in een bestelbus past.
+        """
+        for taak in self.taken:
+            if taak.ziekenhuis.voorkeur_bak_kar == Bak_kar_voorkeur.KAR:
+                # een taak in de route heeft voorkeur voor karren, dus bestelbus kan niet
+                return False
+        
+        max_brenglading, max_haallading = self.max_lading(Auto_type.BESTELBUS)
+        if max(max_brenglading, max_haallading) > Constants.CAPACITEIT_BESTELBUS:
+            # de lading van de route overschrijdt de capaciteit van een bestelbus
+            return False
+        
+        return True
 
     def set_auto_type(self, auto_type: Auto_type) -> None:
         """
@@ -276,18 +293,15 @@ class Route:
             auto_type (Auto_type): Het type auto waarin de route gereden moet worden.
 
         Raises:
-            ValueError: Als de route niet in de preparing status is.
-            ValueError: Als de locatie niet in de distances object zit.
+            ValueError: Als de route niet in het gekozen auto-type kan.
         """
         if auto_type == Auto_type.BAKWAGEN:
             self._auto_type = auto_type
             return None
-        # controleren of lading in een bestelbus past
-        # if max_lading > Constants.CAPACITEIT_BESTELBUS:
-        #     raise ValueError("De huidige lading van de route past niet in een bestelbus")
-        for taak in self.taken:
-            if taak.ziekenhuis.voorkeur_bak_kar == Bak_kar_voorkeur.KAR:
-                raise ValueError("Een taak heeft een kar-voorkeur, dus kan de route niet in een bestelbus")
+        elif self.fits_bestelbus == False:
+            raise ValueError("Een taak heeft een kar-voorkeur of de lading is te groot, dus kan de route niet in een bestelbus")
+        else:
+            self._auto_type = auto_type
 
     @property
     def total_distance(self) -> float:
@@ -340,7 +354,7 @@ class Route:
         if not self._taken:
             return 0
         
-        distance_cost = Cost.calculate_cost_distance(self.total_distance)
+        distance_cost = Cost.calculate_cost_distance(self.total_distance, self._auto_type)
         time_cost = Cost.calculate_cost_time(self.start_tijd.tijd, self.total_time)
         
         return distance_cost + time_cost
@@ -361,3 +375,81 @@ class Route:
             departure_times.append([self._taken[i], self._taken[i].eindtijd_taak])
 
         return departure_times
+            
+    @property
+    def arrival_times(self) -> List[Tuple["Taak", Long_time]]:
+        """
+        Bepaal de aankomsttijden bij het ziekenhuis van elke taak (niet per se de tijd dat taak wordt gestart)
+
+        Returns:
+            List[Tuple[Taak, Long_time]]: de aankomsttijden bij de ziekenhuizen van de taken in de route
+        """
+        if not self._taken:
+            return []
+        
+        arrival_times = []
+        arrival_times.append([self._taken[0], self.start_tijd + self._distances.get_time(self._start_hub, self._taken[0].ziekenhuis)])
+        for i in range(len(self._taken) - 1):
+            traveltime = self._distances.get_time(self._taken[i].ziekenhuis, self._taken[i + 1].ziekenhuis)
+            arrival_times.append([self._taken[i + 1], self._taken[i].eindtijd_taak + traveltime])
+
+        return arrival_times
+    
+    @property
+    def waiting_time(self) -> Long_time:
+        """
+        Bepaal de wachttijd van de chauffeur voor hij aan de geplande taak kan beginnen nadat hij is gearriveerd
+
+        Returns:
+            Long_time: de totale wachttijd van de chauffeur
+        """
+        if not self._taken:
+            return Long_time(0)
+        
+        waiting_time = Long_time(0)
+        for taak, arrival_time in self.arrival_times:
+            waiting_time += taak.begintijd_taak - arrival_time
+        return waiting_time
+    
+    def max_lading_vrij(self, auto_type: Auto_type) -> Tuple[int, int]:
+        """
+        Bepaal de maximale ruimte die vrij is tijdens de route, oftewel maximale lading die nog aan route toegevoegd kan worden
+
+        Returns:
+            Tuple[int, int]: de maximale vrije ruimte voor wegbrengen, de maximale vrije ruimte voor ophalen
+        """
+        if not self._taken:
+            return self._capaciteit, self._capaciteit
+        
+        startlading: int = 0
+        eindlading: int = 0
+        max_lading: int = 0
+        for taak in self._taken:
+            startlading += taak.brengen.aantal(auto_type)
+            eindlading += taak.halen.aantal(auto_type)
+            max_lading = max(max_lading + taak.brengen.aantal(auto_type), eindlading)
+            max_wegbrengen = self._capaciteit - max_lading
+            max_ophalen = self._capaciteit - eindlading
+
+        return max_wegbrengen, max_ophalen
+    
+    def max_lading(self, auto_type: Auto_type) -> Tuple[int, int]:
+        """
+        Bepaal de maximale lading tijdens de route
+
+        Returns:
+            Tuple[int, int]: de maximale hoeveelheid die weggebracht wordt, de maximale hoeveelheid die opgehaald wordt
+        """
+        max_lading_vrij = self.max_lading_vrij(auto_type)
+        return self._capaciteit - max_lading_vrij[0], self._capaciteit - max_lading_vrij[1]
+    
+    @property
+    def max_eindtijd(self) -> Long_time:
+        """
+        Bepaal de maximale eindtijd van de route, waarop de route op het laatst terug op de hub moet zijn
+
+        Returns:
+            Long_time: de maximale eindtijd
+        """
+        max_eindttijd = max([taak.returntijd.eindtijd for taak in self._taken])
+        return max_eindttijd

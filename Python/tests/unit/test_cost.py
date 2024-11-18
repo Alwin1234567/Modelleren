@@ -1,6 +1,6 @@
 import pytest
 from datetime import time
-from source.structures import Cost
+from source.structures import Cost, Auto_type
 from source.constants import Constants
 from datetime import timedelta, datetime
 
@@ -31,8 +31,8 @@ def test_calculate_cost_time():
 
 def test_calculate_cost_distance():
     distance_km = 100  # 100 kilometers
-    expected_cost = 100 * Constants.PRIJS_PER_KM
-    assert Cost.calculate_cost_distance(distance_km) == pytest.approx(expected_cost)
+    expected_cost = 100 * Constants.PRIJS_PER_KM_BAKWAGEN
+    assert Cost.calculate_cost_distance(distance_km, Auto_type.BAKWAGEN) == pytest.approx(expected_cost)
 
 def test_no_overlap_between_periods():
     """

@@ -10,6 +10,7 @@ from warnings import warn
 import pandas as pd
 from datetime import time
 from tqdm import tqdm
+from .lading import Auto_type
 
 if TYPE_CHECKING:
     from source.locations import Location
@@ -274,7 +275,7 @@ class Distances:
         """
         return location.name in self._locations.keys()
     
-    def available_locations(self, location: "Location", skip_locations: list["Location"], start_time: time) -> Generator[Tuple["Location", Distance_time], Any, None]:
+    def available_locations(self, location: "Location", skip_locations: list["Location"], start_time: time, auto_type: Auto_type) -> Generator[Tuple["Location", Distance_time], Any, None]:
         """
         Krijg een generator die locaties en hun afstandstijd ophaalt, gesorteerd op kosten.
 
@@ -292,7 +293,7 @@ class Distances:
         distance_times = [(loc, self.get_distance_time(location, loc)) for loc in remaining_locations]
 
         # Sort the list by cost
-        sorted_distance_times = sorted(distance_times, key=lambda x: x[1].cost(start_time))
+        sorted_distance_times = sorted(distance_times, key=lambda x: x[1].cost(start_time, auto_type))
 
         # Yield each location and its distance time
         for loc, distance_time in sorted_distance_times:
