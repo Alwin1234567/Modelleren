@@ -7,11 +7,20 @@ class Constants:
     """
 
     PRIJS_PER_KM = 0.0  #bakwagen: 7.2 L/100km, bestelbus: 6.8 L/100km
-    PRIJS_PER_UUR_CHAUFFEUR = 0.0 #06:00-20:00 - 22.75, 20:00-00:00 - 29,575, 00:00-06:00 - 34,125
     TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT = 5.0 #5 tot 10 min
     TIJDSDUUR_INLADEN_EN_UITLADEN_INSTRUMENTENSETS = 0.0
     TIJDSDUUR_SCHOONMAAK = 6*60
     CAPACITEIT_VOERTUIG = 35
+    BRANDSTOFPRIJS = 1.80
+    PRIJS_PER_KM_BAKWAGEN = BRANDSTOFPRIJS * 7.2 * 100 # bakwagen: 7.2 L/100km
+    PRIJS_PER_KM_BESTELBUS = BRANDSTOFPRIJS * 6.8 * 100  # bestelbus: 6.8 L/100km
+    TIJDSDUUR_INLADEN_EN_UITLADEN_BAKWAGEN = 0.5
+    TIJDSDUUR_INLADEN_EN_UITLADEN_BESTELBUS = 0.3
+    CAPACITEIT_BAKWAGEN = 9 # karren
+    CAPACITEIT_BESTELBUS = 22 # bakken
+    TIJDSDUUR_SCHOONMAAK = 4 * 60
+    WACHTTIJD_TUSSEN_ROUTES = 30 # half uur wachten tussen twee routes voor opvangen vertraging voorgaande routes
+    
     MAPS_URL = "http://localhost:8989/route"
     MAPS_PARAMS = {
         'profile': 'car',

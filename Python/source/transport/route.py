@@ -1,4 +1,3 @@
-from enum import Enum, auto
 from source.structures import Status, Distances, ID, Taak, Long_time, Cost, Tijdslot
 from warnings import warn
 from typing import List, Tuple, TYPE_CHECKING, Optional
@@ -239,6 +238,7 @@ class Route:
     
     @property
     def taken(self) -> List["Taak"]:
+        self._taken.sort(key = lambda taak: taak.begintijd_taak)
         return self._taken
     
     @property

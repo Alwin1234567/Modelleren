@@ -9,3 +9,4 @@ from .vraag import Vraag
 from .long_time import Long_time
 from .tijdslot import Tijdslot
 from .taak import Taak
+from .lading import Lading_bak_kar, Auto_type, Bak_kar_voorkeur

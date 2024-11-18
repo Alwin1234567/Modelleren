@@ -1,9 +1,11 @@
 from .location import Location, Location_type
 from .ziekenhuis import Ziekenhuis
 from source.structures import Status, Distances, Taak
-from source.transport import Route
+from source.transport import Route, Auto
 import pandas as pd
 from tqdm import tqdm
+from warnings import warn
+from source.constants import Constants
 
 class Hub(Location):
 
@@ -13,7 +15,7 @@ class Hub(Location):
         self._distances = Distances()
         self._distances.add_location(self)
         self._routes: list[Route] = []
-    
+        self._autos: list[Auto] = []
 
     def add_ziekenhuis(self, ziekenhuis: Ziekenhuis) -> None:
         """
@@ -83,6 +85,40 @@ class Hub(Location):
         taken.sort(key=lambda taak: (-taak.halen_brengen, len(taak.tijdslot)))
     
         return taken[0]
+    
+    def fill_autos(self) -> None:
+        if not self._routes:
+            # geen routes in de hub
+            warn("Er kunnen geen auto's worden gevuld als er geen routes in de hub zijn.", RuntimeWarning)
+            return None
+        
+        if self._autos:
+            # auto's legen en opnieuw vullen
+            self._autos = []
+        
+        # sorteer routes op starttijd 
+        nog_te_plannen_routes = self._routes
+        nog_te_plannen_routes.sort(key = lambda route: route.start_tijd)
+
+        # eerste auto toevoegen aan hub met daarin eerste route
+        self._autos.append(Auto()) 
+        self._autos[0].add_route(nog_te_plannen_routes[0])
+
+        for route in nog_te_plannen_routes[1:]:
+            ingepland = False
+            self._autos.sort(key = lambda auto: auto.routes[-1].eind_tijd)
+            for auto in self._autos:
+                if auto.routes[-1].eind_tijd + Constants.WACHTTIJD_TUSSEN_ROUTES <= route.start_tijd:
+                    # route toevoegen aan auto
+                    auto.add_route(route)
+                    ingepland = True
+                    break
+            
+            if not ingepland:
+                # route in nieuwe auto plaatsen
+                nieuwe_auto = Auto()
+                nieuwe_auto.add_route(route)
+                self._autos.append(nieuwe_auto) 
 
     @property
     def ziekenhuizen(self) -> list[Ziekenhuis]:
@@ -104,3 +140,26 @@ class Hub(Location):
         Geef de status van de hub.
         """
         return self._status   
+    
+    @property
+    def routes(self) -> list[Route]:
+        """
+        Geef de routes die aan de hub zijn toegevoegd.
+        """
+        return self._routes
+    
+    @property
+    def autos(self) -> list[Auto]:
+        """
+        Geef de auto's die aan de hub zijn toegevoegd.
+        """
+        return self._autos
+    
+    def add_routes(self, route: Route) -> None:
+        """
+        Voeg een route toe aan de hub
+
+        Parameters:
+            route [Route]: Een route object dat aan de hub moet worden toegevoegd
+        """
+        self._routes = route

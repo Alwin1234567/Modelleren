@@ -1,6 +1,6 @@
 from .route import Route
 from source.structures import ID, Tijdslot
-from typing import Dict, List
+from typing import List
 import numpy as np
 
 class Auto:
@@ -15,7 +15,7 @@ class Auto:
         self._id = ID()
         self._routes: list[Route] = []
 
-    def heeft_route_overlap(self, route) -> bool:
+    def heeft_route_overlap(self, route: Route) -> bool:
         """
         Check of de auto een bepaald route type heeft.
         
@@ -83,3 +83,14 @@ class Auto:
             ID: Het ID van de auto.
         """
         return self._id
+        
+    @property
+    def routes(self) -> list[Route]:
+        """
+        De routes van de auto gesorteerd op vertrektijd.
+        
+        Returns:
+            List[Route]: De routes van de auto.
+        """
+        self._routes.sort(key = lambda route: route.start_tijd)
+        return self._routes
