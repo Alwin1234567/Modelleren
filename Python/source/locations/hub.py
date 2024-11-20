@@ -1,11 +1,12 @@
 from .location import Location, Location_type
 from .ziekenhuis import Ziekenhuis
-from source.structures import Status, Distances, Taak, Auto_type, Bak_kar_voorkeur
+from source.structures import Status, Distances, Taak, Auto_type, Bak_kar_voorkeur, Cost, Long_time
 from source.transport import Route, Auto
 import pandas as pd
 from tqdm import tqdm
 from warnings import warn
 from source.constants import Constants
+from datetime import time
 
 class Hub(Location):
 
@@ -86,7 +87,65 @@ class Hub(Location):
         taken.sort(key=lambda taak: (-taak.halen_brengen_sets, len(taak.tijdslot)))
     
         return taken[0]
-    
+     
+    def split_routes(self) -> None:
+        """
+        Splits routes in twee als dit goedkoper is
+        """
+        if not self._routes:
+            # geen routes in de hub
+            warn("Er zijn geen routes om te splitsen.", RuntimeWarning)
+            return None 
+        
+        for route in self.routes:
+            sorted_waittime = route.waiting_times
+            sorted_waittime.sort(key = lambda taak_time: taak_time[1], reverse = True)
+            if sorted_waittime[0][1] < Long_time(time(second = 5)):
+                # grootste wachttijd is korter dan 5 seconden, door afrondcorrectie of door één taak in route
+                continue
+            
+            # taak met langste wachttijd en taak daarvoor zoeken (hiertussen komt mogelijk de splitsing)
+            taak_B = sorted_waittime[0][0]
+            index_longest_waittime = route.taken.index(taak_B)
+            taak_A = route.taken[index_longest_waittime - 1]
+            gap = taak_B.begintijd_taak - taak_A.eindtijd_taak
+            
+            # kosten van huidige routestuk A - B
+            distance_cost_A_B = Cost.calculate_cost_distance(self._distances.get_distance(taak_A.ziekenhuis, taak_B.ziekenhuis), route.auto_type)
+            time_cost_A_B = Cost.calculate_cost_time(taak_A.eindtijd_taak.tijd, float(gap))
+            cost_A_B = distance_cost_A_B + time_cost_A_B
+            
+            # reistijd van A-Hub en Hub-B
+            cost_A_hub = self._distances.get_distance_time(taak_A.ziekenhuis, self).cost(taak_A.eindtijd_taak.tijd, route.auto_type)
+            distancetime_hub_B = self._distances.get_distance_time(self, taak_B.ziekenhuis)
+            cost_hub_B = distancetime_hub_B.cost((taak_B.begintijd_taak - distancetime_hub_B.time).tijd, route.auto_type)
+            cost_A_hub_B = cost_A_hub + cost_hub_B
+            
+            if cost_A_hub_B < cost_A_B: # of met bepaalde kans verslechteringen toestaan
+                # goedkoper om te splitsen, dus splitsing uitvoeren
+                # huidige route kopiëren en toevoegen aan hub
+                new_route = route.copy()
+                self.add_routes(new_route)
+
+                taken = route.taken
+                for i in range(len(route.taken)):
+                    if i < index_longest_waittime:
+                        # alle taken t/m taak_A verwijderen uit gekopieerde route
+                        new_route.remove_taak(taken[i])
+                    else:
+                        # alle taken vanaf taak_B verwijderen uit originele route
+                        route.remove_taak(taken[i])
+
+    def combine_routes(self) -> None:
+        """
+        Plak routes aan elkaar als dit goedkoper is
+        """
+        # kijken of routes aan elkaar kunnen (capaciteit/lading, tijdvakken, maximale tijdsduur/maximale eindtijd)
+        # kosten originele losse routes en kosten nieuwe route berekenen
+        # als goedkoper toestaan of met bepaalde kans verslechteringen toestaan -> uitvoeren
+            # route B aan route A toevoegen en dan route B verwijderen uit hub
+        pass
+
     def empty_autos(self) -> None:
         if self._autos:
             warn(f"De autos van hub {self.name} worden geleegd. Dit waren {len(self._autos)} auto's", RuntimeWarning)
@@ -190,4 +249,4 @@ class Hub(Location):
         Parameters:
             route (Route): Een route object dat aan de hub moet worden toegevoegd
         """
-        self._routes = route
+        self._routes.append(route)

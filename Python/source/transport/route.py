@@ -48,6 +48,24 @@ class Route:
         else:
             self._taken.insert(0, taak)
     
+    def remove_taak(self, taak: "Taak") -> None:
+        """
+        Verwijder een taak uit de route.
+        
+        Parameters:
+            taak (Taak): De taak die moet worden toegevoegd.
+        
+        Raises:
+            ValueError: Als de route niet in de finished status is.
+            ValueError: Als de locatie niet in de distances object zit.
+            Warning: Als de taak al in de route zit.
+        """
+        if self._status != Status.FINISHED:
+            raise ValueError("Route is not in preparing state")
+        if taak not in self._taken:
+            warn("Taak is not in route")
+        self._taken.remove(taak)
+    
     def copy(self) -> 'Route':
         """
         Maak een kopie van de route.
@@ -392,9 +410,25 @@ class Route:
         return arrival_times
     
     @property
-    def waiting_time(self) -> Long_time:
+    def waiting_times(self) -> List[Tuple["Taak", Long_time]]:
         """
         Bepaal de wachttijd van de chauffeur voor hij aan de geplande taak kan beginnen nadat hij is gearriveerd
+
+        Returns:
+            List[Tuple["Taak", Long_time]]: de wachttijd van de chauffeur bij elke taak
+        """
+        if not self._taken:
+            return []
+        
+        waiting_times = []
+        for taak, arrival_time in self.arrival_times:
+            waiting_times.append([taak, taak.begintijd_taak - arrival_time])
+        return waiting_times
+    
+    @property
+    def total_waiting_time(self) -> Long_time:
+        """
+        Bepaal de totale wachttijd van de chauffeur voor hij aan de geplande taken kan beginnen nadat hij is gearriveerd
 
         Returns:
             Long_time: de totale wachttijd van de chauffeur
@@ -402,10 +436,8 @@ class Route:
         if not self._taken:
             return Long_time(0)
         
-        waiting_time = Long_time(0)
-        for taak, arrival_time in self.arrival_times:
-            waiting_time += taak.begintijd_taak - arrival_time
-        return waiting_time
+        waiting_time = sum([float(waittime) for _, waittime in self.waiting_times])
+        return Long_time(waiting_time).tijd
     
     def max_lading_vrij(self, auto_type: Auto_type) -> Tuple[int, int]:
         """
