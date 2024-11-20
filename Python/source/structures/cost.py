@@ -119,7 +119,4 @@ class Cost:
         Returns:
             float: The total cost based on the distance.
         """
-        if auto_type == Auto_type.BAKWAGEN:
-            return distance_km * Constants.PRIJS_PER_KM_BAKWAGEN
-        else:
-            return distance_km * Constants.PRIJS_PER_KM_BESTELBUS
+        return distance_km * Constants.prijs_per_km(auto_type)

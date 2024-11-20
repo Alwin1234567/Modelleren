@@ -11,7 +11,15 @@ class Bak_kar_voorkeur(Enum):
     KAR = auto()
 
 class Lading_bak_kar():
-    def __init__(self, aantal_sets: int, voorkeur: Bak_kar_voorkeur = Bak_kar_voorkeur.KAR, orthopedic = False):
+    """
+    Een class die de lading in de benodigde vorm (sets, bakken of karren) teruggeeft.
+
+    Properties:
+        aantal_sets: De lading in het aantal instrumentensets.
+        voorkeur: De voorkeur van het ziekenhuis voor een levering in bakken of karren.
+        orthopedic: Het soort instrumenten. Orthopedische instrumentesets zijn groter dan andere sets.
+    """
+    def __init__(self, aantal_sets: int, voorkeur: Bak_kar_voorkeur, orthopedic = False):
         self._aantal_sets = aantal_sets
         self._voorkeur = voorkeur
         self._orthopedic = orthopedic
@@ -21,7 +29,7 @@ class Lading_bak_kar():
         Stelt de voorkeur voor bakken of karren in.
 
         Parameters:
-            voorkeur (Bak_kar_voorkeur): De voorkeur voor bakken of karren van het ziekenhuis.
+            auto_type (Auto_type): De auto waarmee gereden wordt.
 
         Returns:
             int: Het aantal bakken of karren dat nodig is voor het aantal instrumentensets afhankelijk van het type auto
@@ -48,8 +56,8 @@ class Lading_bak_kar():
         if self._voorkeur == Bak_kar_voorkeur.KAR:
             raise ValueError("Een ziekenhuis met een kar-voorkeur, kan geen levering in bakken krijgen")
         if self._orthopedic:
-            return math.ceil(self._aantal_sets/(Constants.CAPACITEIT_BAK/2))
-        return math.ceil(self._aantal_sets/Constants.CAPACITEIT_BAK)
+            return math.ceil(self._aantal_sets/(Constants.capaciteit_bak_kar(self._voorkeur)/2))
+        return math.ceil(self._aantal_sets/Constants.capaciteit_bak_kar(self._voorkeur))
     
     @property
     def aantal_karren(self) -> int:
@@ -59,9 +67,7 @@ class Lading_bak_kar():
         """
         if self._voorkeur == Bak_kar_voorkeur.BAK:
             return math.ceil(self.aantal_bakken/Constants.BAKKEN_PER_KAR)
-        if self._orthopedic:
-            return math.ceil(self._aantal_sets/Constants.CAPACITEIT_KAR)
-        return math.ceil(self._aantal_sets/Constants.CAPACITEIT_KAR)
+        return math.ceil(self._aantal_sets/Constants.capaciteit_bak_kar(self._voorkeur))
     
     @property
     def laadtijd(self) -> float:
@@ -69,11 +75,9 @@ class Lading_bak_kar():
         Geeft de tijd die het kost om het aantal karren of bakken uit te laden.
         """
         if self._voorkeur == Bak_kar_voorkeur.KAR:
-            return Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_BAKWAGEN * self.aantal_karren
+            return Constants.tijdsduur_in_en_uitladen(self._voorkeur) * self.aantal_karren
         elif self._voorkeur == Bak_kar_voorkeur.BAK:
-            return Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_BESTELBUS * self.aantal_bakken
-        else:
-            raise ValueError(f"De bak_kar voorkeur is onbekend.")
+            return Constants.tijdsduur_in_en_uitladen(self._voorkeur) * self.aantal_bakken
     
     @property
     def voorkeur_bak_kar(self):

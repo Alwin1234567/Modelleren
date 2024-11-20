@@ -1,30 +1,55 @@
 from pathlib import Path
 from datetime import time
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from source.structures import Auto_type, Bak_kar_voorkeur
 
 class Constants:
     """
     Een class die de constante waarden van de simulatie bevat.
     """
 
-    PRIJS_PER_KM = 0.0  #bakwagen: 7.2 L/100km, bestelbus: 6.8 L/100km
     TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT = 5.0 #5 tot 10 min
-    TIJDSDUUR_INLADEN_EN_UITLADEN_INSTRUMENTENSETS = 0.0
-    TIJDSDUUR_SCHOONMAAK = 6*60
-    CAPACITEIT_VOERTUIG = 35
-    BRANDSTOFPRIJS = 1.80
-    PRIJS_PER_KM_BAKWAGEN = (BRANDSTOFPRIJS * 7.2) / 100 # bakwagen: 7.2 L/100km
-    PRIJS_PER_KM_BESTELBUS = (BRANDSTOFPRIJS * 6.8) / 100  # bestelbus: 6.8 L/100km
-    TIJDSDUUR_INLADEN_EN_UITLADEN_BAKWAGEN = 0.5
-    TIJDSDUUR_INLADEN_EN_UITLADEN_BESTELBUS = 0.3
-    CAPACITEIT_BAKWAGEN = 9 # karren
-    CAPACITEIT_BESTELBUS = 22 # bakken
     TIJDSDUUR_SCHOONMAAK = 4 * 60
     WACHTTIJD_TUSSEN_ROUTES = 30 # half uur wachten tussen twee routes voor opvangen vertraging voorgaande routes
-
-    CAPACITEIT_KAR = 18 # sets per kar
-    CAPACITEIT_BAK = 4 # sets per bak
     BAKKEN_PER_KAR = 8 # aantal bakken die op de plek van één kar in een bakwagen passen
+
+    @staticmethod
+    def prijs_per_km(auto_type: Auto_type) -> float:
+        BRANDSTOFPRIJS = 1.80
+        if auto_type == Auto_type.BAKWAGEN:
+            # 7.2 L/100 km
+            return (BRANDSTOFPRIJS * 7.2) / 100
+        elif auto_type == Auto_type.BESTELBUS:
+            # 6.8 L/100 km
+            return (BRANDSTOFPRIJS * 6.8) / 100
     
+    @staticmethod
+    def capaciteit_auto(auto_type: Auto_type) -> int:
+        if auto_type == Auto_type.BAKWAGEN:
+            # 9 karren per bakwagen
+            return 9
+        elif auto_type == Auto_type.BESTELBUS:
+            # 22 bakken per bestelbus
+            return 22
+    
+    @staticmethod
+    def capaciteit_bak_kar(bak_kar_voorkeur: Bak_kar_voorkeur) -> int:
+        if bak_kar_voorkeur == Bak_kar_voorkeur.KAR:
+            # 18 sets per kar
+            return 18
+        elif bak_kar_voorkeur == Bak_kar_voorkeur.BAK:
+            # 4 sets per bak
+            return 4
+
+    @staticmethod
+    def tijdsduur_in_en_uitladen(bak_kar_voorkeur: Bak_kar_voorkeur) -> float:
+        if bak_kar_voorkeur == Bak_kar_voorkeur.KAR:
+            return 0.5
+        elif bak_kar_voorkeur == Bak_kar_voorkeur.BAK:
+            return 0.3
+
     MAPS_URL = "http://localhost:8989/route"
     MAPS_PARAMS = {
         'profile': 'car',

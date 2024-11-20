@@ -16,10 +16,7 @@ class Route:
             raise ValueError("Distances object is not finished")
         self._start_hub = start_hub
         self._auto_type = auto_type
-        if self._auto_type == Auto_type.BAKWAGEN:
-            self._capaciteit = Constants.CAPACITEIT_BAKWAGEN
-        else:
-            self._capaciteit = Constants.CAPACITEIT_BESTELBUS
+        self._capaciteit = Constants.capaciteit_auto(self._auto_type)
         self._taken: List["Taak"] = []
         self._status = Status.PREPARING
         self._id = ID()
@@ -279,7 +276,7 @@ class Route:
                 return False
         
         max_brenglading, max_haallading = self.max_lading(Auto_type.BESTELBUS)
-        if max(max_brenglading, max_haallading) > Constants.CAPACITEIT_BESTELBUS:
+        if max(max_brenglading, max_haallading) > Constants.capaciteit_auto(Auto_type.BESTELBUS):
             # de lading van de route overschrijdt de capaciteit van een bestelbus
             return False
         
@@ -297,7 +294,6 @@ class Route:
         """
         if auto_type == Auto_type.BAKWAGEN:
             self._auto_type = auto_type
-            return None
         elif self.fits_bestelbus == False:
             raise ValueError("Een taak heeft een kar-voorkeur of de lading is te groot, dus kan de route niet in een bestelbus")
         else:

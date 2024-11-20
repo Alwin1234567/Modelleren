@@ -87,7 +87,15 @@ class Hub(Location):
     
         return taken[0]
     
+    def empty_autos(self) -> None:
+        if self._autos:
+            warn(f"De autos van hub {self.name} worden geleegd. Dit waren {len(self._autos)} auto's", RuntimeWarning)
+        self._autos = []
+
     def fill_autos(self) -> None:
+        """
+        Plaatst alle routes van de hub in auto's.
+        """
         if not self._routes:
             # geen routes in de hub
             warn("Er kunnen geen auto's worden gevuld als er geen routes in de hub zijn.", RuntimeWarning)
@@ -95,7 +103,7 @@ class Hub(Location):
         
         if self._autos:
             # auto's legen en opnieuw vullen
-            self._autos = []
+            self.empty_autos()
         
         # beide soorten auto's vullen met routes van dat type auto
         self._fill_autos_type(Auto_type.BAKWAGEN)
@@ -104,7 +112,7 @@ class Hub(Location):
     
     def _fill_autos_type(self, auto_type: Auto_type) -> bool:
         """
-        Vult routes met specifiek type auto in die auto's.
+        Vult auto's met routes met dat specifieke type auto.
 
         Parameters:
             auto_type (Auto_type): Het type auto dat gevuld moet worden.
