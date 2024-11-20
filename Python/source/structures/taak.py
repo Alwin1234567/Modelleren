@@ -98,10 +98,7 @@ class Taak:
                 latest_time = min(latest_time, taak.tijdslot.eindtijd)
                 time_cost = Cost.calculate_cost_time(latest_time.tijd, latest_time.difference(self.begintijd_taak))
 
-        if auto_type == Auto_type.BAKWAGEN:
-            distance_cost = distance * Constants.PRIJS_PER_KM_BAKWAGEN
-        else:
-            distance_cost = distance * Constants.PRIJS_PER_KM_BESTELBUS
+        distance_cost = distance * Constants.prijs_per_km(auto_type)
         return distance_cost + time_cost
     
     def __eq__(self, value: object) -> bool:

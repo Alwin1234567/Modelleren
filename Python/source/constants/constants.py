@@ -16,38 +16,38 @@ class Constants:
     BAKKEN_PER_KAR = 8 # aantal bakken die op de plek van één kar in een bakwagen passen
 
     @staticmethod
-    def prijs_per_km(auto_type: Auto_type) -> float:
+    def prijs_per_km(auto_type: "Auto_type") -> float:
         BRANDSTOFPRIJS = 1.80
-        if auto_type == Auto_type.BAKWAGEN:
+        if str(auto_type) == "Auto_type.BAKWAGEN":
             # 7.2 L/100 km
             return (BRANDSTOFPRIJS * 7.2) / 100
-        elif auto_type == Auto_type.BESTELBUS:
+        elif str(auto_type) == "Auto_type.BESTELBUS":
             # 6.8 L/100 km
             return (BRANDSTOFPRIJS * 6.8) / 100
     
     @staticmethod
-    def capaciteit_auto(auto_type: Auto_type) -> int:
-        if auto_type == Auto_type.BAKWAGEN:
+    def capaciteit_auto(auto_type: "Auto_type") -> int:
+        if str(auto_type) == "Auto_type.BAKWAGEN":
             # 9 karren per bakwagen
             return 9
-        elif auto_type == Auto_type.BESTELBUS:
+        elif str(auto_type) == "Auto_type.BESTELBUS":
             # 22 bakken per bestelbus
             return 22
     
     @staticmethod
-    def capaciteit_bak_kar(bak_kar_voorkeur: Bak_kar_voorkeur) -> int:
-        if bak_kar_voorkeur == Bak_kar_voorkeur.KAR:
+    def capaciteit_bak_kar(bak_kar_voorkeur: "Bak_kar_voorkeur") -> int:
+        if str(bak_kar_voorkeur) == "Bak_kar_voorkeur.KAR":
             # 18 sets per kar
             return 18
-        elif bak_kar_voorkeur == Bak_kar_voorkeur.BAK:
+        elif str(bak_kar_voorkeur) == "Bak_kar_voorkeur.BAK":
             # 4 sets per bak
             return 4
 
     @staticmethod
-    def tijdsduur_in_en_uitladen(bak_kar_voorkeur: Bak_kar_voorkeur) -> float:
-        if bak_kar_voorkeur == Bak_kar_voorkeur.KAR:
+    def tijdsduur_in_en_uitladen(bak_kar_voorkeur: "Bak_kar_voorkeur") -> float:
+        if str(bak_kar_voorkeur) == "Bak_kar_voorkeur.KAR":
             return 0.5
-        elif bak_kar_voorkeur == Bak_kar_voorkeur.BAK:
+        elif str(bak_kar_voorkeur) == "Bak_kar_voorkeur.BAK":
             return 0.3
 
     MAPS_URL = "http://localhost:8989/route"
