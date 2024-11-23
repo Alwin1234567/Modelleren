@@ -7,6 +7,7 @@ from tqdm import tqdm
 from warnings import warn
 from source.constants import Constants
 from datetime import time
+import random
 
 class Hub(Location):
 
@@ -17,6 +18,7 @@ class Hub(Location):
         self._distances.add_location(self)
         self._routes: list[Route] = []
         self._autos: list[Auto] = []
+        self._auto_status = Status.PREPARING
 
     def add_ziekenhuis(self, ziekenhuis: Ziekenhuis) -> None:
         """
@@ -87,10 +89,31 @@ class Hub(Location):
         taken.sort(key=lambda taak: (-taak.halen_brengen_sets, len(taak.tijdslot)))
     
         return taken[0]
-     
-    def split_routes(self) -> None:
+    
+    def add_route(self, route: Route) -> None:
         """
-        Splits routes in twee als dit goedkoper is
+        Voeg een route toe aan de hub
+
+        Parameters:
+            route (Route): Een route object dat aan de hub moet worden toegevoegd
+        """
+        self._routes.append(route)
+
+    def remove_route(self, route: Route) -> None:
+        """
+        Verwijderd een route uit de hub
+
+        Parameters:
+            route (Route): Een route object dat uit de hub moet worden verwijderd
+        """
+        if route.taken:
+            # staan nog taken in route, dus waarschuwing geven bij verwijderen route
+            warn("Er wordt een route verwijderd waar nog taken in staan.", RuntimeWarning)
+        self._routes.remove(route)
+    
+    def split_routes_waittime(self) -> None:
+        """
+        Splits routes in twee op de langste wachttijd als dit goedkoper is
         """
         if not self._routes:
             # geen routes in de hub
@@ -123,33 +146,215 @@ class Hub(Location):
             
             if cost_A_hub_B < cost_A_B: # of met bepaalde kans verslechteringen toestaan
                 # goedkoper om te splitsen, dus splitsing uitvoeren
-                # huidige route kopiëren en toevoegen aan hub
-                new_route = route.copy()
-                self.add_routes(new_route)
+                self.split_route(index_longest_waittime, route)
 
-                taken = route.taken
-                for i in range(len(route.taken)):
-                    if i < index_longest_waittime:
-                        # alle taken t/m taak_A verwijderen uit gekopieerde route
-                        new_route.remove_taak(taken[i])
-                    else:
-                        # alle taken vanaf taak_B verwijderen uit originele route
-                        route.remove_taak(taken[i])
+    def split_routes_distance(self) -> None:
+        """
+        Splits routes in twee op de langste reisafstand als dit goedkoper is
+        """
+        if not self._routes:
+            # geen routes in de hub
+            warn("Er zijn geen routes om te splitsen.", RuntimeWarning)
+            return None 
+        
+        for route in self.routes:
+            if len(route.taken) < 2:
+                # route met maar één taak is niet te splitsen
+                continue
+            travel_distances = route.travel_distances
+            travel_distances.sort(key = lambda taak_distance: taak_distance[2], reverse = True)
 
+            if travel_distances[0][2] < 1:
+                # kortste afstand is minder dan 1 meter, dus splitsen niet nodig
+                continue
+            
+            # taken met langste reistijd ertussen zoeken (hiertussen komt mogelijk de splitsing)
+            taak_A = travel_distances[0][0]
+            taak_B = travel_distances[0][1]
+            gap = taak_B.begintijd_taak - taak_A.eindtijd_taak
+            
+            # kosten van huidige routestuk A - B
+            distance_cost_A_B = Cost.calculate_cost_distance(travel_distances[0][2], route.auto_type)
+            time_cost_A_B = Cost.calculate_cost_time(taak_A.eindtijd_taak.tijd, float(gap))
+            cost_A_B = distance_cost_A_B + time_cost_A_B
+            
+            # reistijd van A-Hub en Hub-B
+            cost_A_hub = self._distances.get_distance_time(taak_A.ziekenhuis, self).cost(taak_A.eindtijd_taak.tijd, route.auto_type)
+            distancetime_hub_B = self._distances.get_distance_time(self, taak_B.ziekenhuis)
+            cost_hub_B = distancetime_hub_B.cost((taak_B.begintijd_taak - distancetime_hub_B.time).tijd, route.auto_type)
+            cost_A_hub_B = cost_A_hub + cost_hub_B
+            
+            if cost_A_hub_B < cost_A_B: # of met bepaalde kans verslechteringen toestaan
+                # goedkoper om te splitsen, dus splitsing uitvoeren
+                self.split_route(route.taken.index(taak_B), route)
+
+    def split_route(self, split_index: int, route: Route) -> None:
+        """
+        Splits een route in 2 voor de taak met de meegegeven index.
+
+        Parameters:
+            split_index (int): De index van de taak waarvoor de splitsing plaatsvindt.
+        """
+        new_route = route.copy()
+        self.add_route(new_route)
+
+        taken = route.taken.copy()
+        for i, taak in enumerate(taken):
+            if i < split_index:
+                # alle taken t/m taak_A verwijderen uit gekopieerde route
+                new_route.remove_taak(taak)
+            else:
+                # alle taken vanaf taak_B verwijderen uit originele route
+                route.remove_taak(taak)
+    
     def combine_routes(self) -> None:
         """
         Plak routes aan elkaar als dit goedkoper is
         """
-        # kijken of routes aan elkaar kunnen (capaciteit/lading, tijdvakken, maximale tijdsduur/maximale eindtijd)
-        # kosten originele losse routes en kosten nieuwe route berekenen
-        # als goedkoper toestaan of met bepaalde kans verslechteringen toestaan -> uitvoeren
-            # route B aan route A toevoegen en dan route B verwijderen uit hub
-        pass
+        te_combineren_routes = self.routes.copy()
+
+        while len(te_combineren_routes) > 1:
+            # zolang er twee routes over zijn
+            # random route kiezen om aan te plakken
+            huidige_route = random.choice(te_combineren_routes) 
+            te_combineren_routes.remove(huidige_route)
+            
+            # vooraan en achteraan toe te voegen routes opvragen
+            vooraan = self.combine_before(huidige_route, te_combineren_routes)
+            achteraan = self.combine_after(huidige_route, te_combineren_routes)
+            passende_routes = vooraan + [route for route in achteraan if route not in vooraan]
+            
+            if not passende_routes:
+                # geen routes die geplakt kunnen worden aan huidige
+                continue
+
+            toegevoegd = False
+            while len(passende_routes) > 0 and not toegevoegd:
+                # route random kiezen uit passende routes
+                plak_route = random.choice(passende_routes)
+                if plak_route in vooraan:
+                    voorste_route = plak_route
+                    achterste_route = huidige_route
+                else:
+                    voorste_route = huidige_route
+                    achterste_route = plak_route
+                   
+                distance_time_routes = self._distances.get_distance_time(voorste_route.taken[-1].ziekenhuis, achterste_route.taken[0].ziekenhuis)
+
+                # plaatsing van routes bepalen, zodat ze zo goed mogelijk op elkaar aansluiten
+                originele_eindtijd_voorste = voorste_route.taken[-1].eindtijd_taak
+                originele_starttijd_achterste = achterste_route.taken[0].begintijd_taak
+                eind_voorste = (originele_eindtijd_voorste - voorste_route.verschuiven[0]) + distance_time_routes.time
+                start_achterste = max(eind_voorste, (originele_starttijd_achterste - achterste_route.verschuiven[0]))
+                eind_voorste = min(start_achterste, (originele_eindtijd_voorste + voorste_route.verschuiven[1]) + distance_time_routes.time)
+
+                # negatieve verschuiving = eerder in de tijd, positieve verschuiving = later in de tijd
+                verschuiving_voorste = eind_voorste - distance_time_routes.time - originele_eindtijd_voorste
+                verschuiving_achterste = start_achterste - originele_starttijd_achterste
+
+                # controleren maximale routetijd en maximale eindtijd
+                duur_nieuwe_route = (achterste_route.eind_tijd + verschuiving_achterste) - (voorste_route.start_tijd + verschuiving_voorste)
+                if duur_nieuwe_route > Constants.MAX_TIJDSDUUR_ROUTE:
+                    # opnieuw route kiezen om met deze samen te voegen
+                    passende_routes.remove(plak_route)
+                    continue
+                elif achterste_route.eind_tijd > achterste_route.max_eindtijd or achterste_route.eind_tijd > voorste_route.max_eindtijd:
+                    # maximale eindttijd van een van beide routes wordt overschreden
+                    passende_routes.remove(plak_route)
+                    continue
+
+                # kosten berekenen van originele en samengevoegde routes
+                cost_oude_routes = voorste_route.total_cost + achterste_route.total_cost
+                distance_cost = Cost.calculate_cost_distance(voorste_route.total_distance + achterste_route.total_distance + distance_time_routes.distance, voorste_route.auto_type)
+                time_cost = Cost.calculate_cost_time((voorste_route.start_tijd + verschuiving_voorste).tijd, float(duur_nieuwe_route))
+                cost_nieuwe_route = distance_cost + time_cost
+                
+                # als goedkoper toestaan of met bepaalde kans verslechteringen toestaan -> uitvoeren
+                if cost_nieuwe_route < cost_oude_routes or random.random() < 0.8:
+                    print('samenvoegen goedkoper:', cost_nieuwe_route < cost_oude_routes)
+                    # voorste route verschuiven
+                    for taak in voorste_route.taken:
+                        taak.set_begintijd_taak(taak.begintijd_taak + verschuiving_voorste)
+                    # taken uit achterste route toevoegen aan voorste route (en begintijd taak aanpassen)
+                    for taak in achterste_route.taken:
+                        taak.set_begintijd_taak(taak.begintijd_taak + verschuiving_achterste)
+                        voorste_route.add_taak(taak)
+                        achterste_route.remove_taak(taak)
+                    # achterste (lege) route verwijderen en nieuwe samengevoegde route behouden
+                    self.remove_route(achterste_route)
+                    te_combineren_routes.remove(plak_route)
+                    toegevoegd = True
+                    
+                else:
+                    # de plak_route wordt niet geplakt
+                    passende_routes.remove(plak_route)
+                    continue
+                    # of break?
+
+    def combine_before(self, huidige_route: Route, te_combineren_routes: list[Route]) -> list[Route]:
+        voor_schuiven, achter_schuiven = huidige_route.verschuiven
+        laatste_starttijd = huidige_route.taken[0].begintijd_taak + achter_schuiven # zonder reis van hub naar ziekenhuis, omdat andere route ervoor geplaatst wordt
+        vroegste_eindtijd = huidige_route.eind_tijd - voor_schuiven # met reis van ziekenhuis naar hub, omdat andere route ervoor geplaatst wordt
+        
+        # filteren op: zelfde autotype, gezamelijke lading past in voertuig, maximale eindttijd niet overschreden, gezamelijke routelengte kleiner dan max
+        gefilterd_1: list[Route] = [nieuwe_route for nieuwe_route in te_combineren_routes if nieuwe_route.auto_type == huidige_route.auto_type and \
+                       nieuwe_route.max_lading(nieuwe_route.auto_type)[0] <= huidige_route.max_lading_vrij(huidige_route.auto_type)[0] and \
+                       nieuwe_route.max_lading(nieuwe_route.auto_type)[1] <= huidige_route.max_lading_vrij(huidige_route.auto_type)[1] and \
+                       vroegste_eindtijd <= nieuwe_route.max_eindtijd and \
+                       (huidige_route.eind_tijd - huidige_route.taken[0].begintijd_taak) + (nieuwe_route.taken[-1].eindtijd_taak - nieuwe_route.start_tijd) <= Long_time(Constants.MAX_TIJDSDUUR_ROUTE)]
+        if not gefilterd_1:
+            return []
+        
+        # route-object, laatste starttijd, vroegste eindtijd, reistijd
+        # gefilterd_2: list[list[Route, Long_time, Long_time, float]] = [[nieuwe_route, nieuwe_route.start_tijd + nieuwe_route.verschuiven[1], nieuwe_route.taken[-1].eindtijd_taak - nieuwe_route.verschuiven[0], self._distances.get_time(nieuwe_route.taken[-1].ziekenhuis, huidige_route.taken[0].ziekenhuis)] for nieuwe_route in gefilterd_1]
+        gefilterd_2: list[list[Route, Long_time, Long_time, float]] = []
+        for nieuwe_route in gefilterd_1:
+            nieuw_laatste_starttijd: Long_time = nieuwe_route.start_tijd + nieuwe_route.verschuiven[1]
+            nieuw_vroegste_eindtijd: Long_time = nieuwe_route.taken[-1].eindtijd_taak - nieuwe_route.verschuiven[0]
+            reistijd: float = self._distances.get_time(nieuwe_route.taken[-1].ziekenhuis, huidige_route.taken[0].ziekenhuis)
+            gefilterd_2.append([nieuwe_route, nieuw_laatste_starttijd, nieuw_vroegste_eindtijd, reistijd])
+
+        # filteren op: samen mogelijk zonder overlap, minimale routeduur kleiner dan max, gezamelijke routelengte met reistijd kleiner dan max
+        gefilterd_3 = [nieuwe_route for nieuwe_route, nieuw_laatste_starttijd, nieuw_vroegste_eindtijd, reistijd in gefilterd_2 if \
+                       nieuw_vroegste_eindtijd + reistijd <= laatste_starttijd and \
+                       vroegste_eindtijd - nieuw_laatste_starttijd <= Long_time(Constants.MAX_TIJDSDUUR_ROUTE) and \
+                       (huidige_route.eind_tijd - huidige_route.taken[0].begintijd_taak) + (nieuwe_route.taken[-1].eindtijd_taak - nieuwe_route.start_tijd) + reistijd <= Long_time(Constants.MAX_TIJDSDUUR_ROUTE)]
+        return gefilterd_3
+
+    def combine_after(self, huidige_route: Route, te_combineren_routes: list[Route]) -> list[Route]:
+        voor_schuiven, achter_schuiven = huidige_route.verschuiven
+        laatste_starttijd = huidige_route.start_tijd + achter_schuiven # zonder reis van hub naar ziekenhuis, omdat andere route ervoor geplaatst wordt
+        vroegste_eindtijd = huidige_route.taken[-1].eindtijd_taak - voor_schuiven # met reis van ziekenhuis naar hub, omdat andere route ervoor geplaatst wordt
+        
+        # filteren op: zelfde autotype, gezamelijke lading past in voertuig, maximale eindttijd niet overschreden, gezamelijke routelengte kleiner dan max
+        gefilterd_1: list[Route] = [nieuwe_route for nieuwe_route in te_combineren_routes if nieuwe_route.auto_type == huidige_route.auto_type and \
+                       nieuwe_route.max_lading(nieuwe_route.auto_type)[0] <= huidige_route.max_lading_vrij(huidige_route.auto_type)[0] and \
+                       nieuwe_route.max_lading(nieuwe_route.auto_type)[1] <= huidige_route.max_lading_vrij(huidige_route.auto_type)[1] and \
+                       nieuwe_route.taken[-1].eindtijd_taak - nieuwe_route.verschuiven[0] <= huidige_route.max_eindtijd and \
+                       (huidige_route.eind_tijd - huidige_route.taken[0].begintijd_taak) + (nieuwe_route.taken[-1].eindtijd_taak - nieuwe_route.start_tijd) <= Long_time(Constants.MAX_TIJDSDUUR_ROUTE)]
+        if not gefilterd_1:
+            return []
+        
+        # route-object, laatste starttijd, vroegste eindtijd, reistijd
+        gefilterd_2: list[list[Route, Long_time, Long_time, float]] = []
+        for nieuwe_route in gefilterd_1:
+            nieuw_laatste_starttijd: Long_time = nieuwe_route.start_tijd + nieuwe_route.verschuiven[1]
+            nieuw_vroegste_eindtijd: Long_time = nieuwe_route.taken[-1].eindtijd_taak - nieuwe_route.verschuiven[0]
+            reistijd: float = self._distances.get_time(huidige_route.taken[-1].ziekenhuis, nieuwe_route.taken[0].ziekenhuis)
+            gefilterd_2.append([nieuwe_route, nieuw_laatste_starttijd, nieuw_vroegste_eindtijd, reistijd])
+
+        # filteren op: samen mogelijk zonder overlap, minimale routeduur kleiner dan max, gezamelijke routelengte met reistijd kleiner dan max
+        gefilterd_3 = [nieuwe_route for nieuwe_route, nieuw_laatste_starttijd, nieuw_vroegste_eindtijd, reistijd in gefilterd_2 if \
+                       nieuw_laatste_starttijd - reistijd >= vroegste_eindtijd and \
+                       nieuw_vroegste_eindtijd - laatste_starttijd <= Long_time(Constants.MAX_TIJDSDUUR_ROUTE) and \
+                       (nieuwe_route.eind_tijd - nieuwe_route.taken[0].begintijd_taak) + (huidige_route.taken[-1].eindtijd_taak - huidige_route.start_tijd) + reistijd <= Long_time(Constants.MAX_TIJDSDUUR_ROUTE)]
+        return gefilterd_3
 
     def empty_autos(self) -> None:
         if self._autos:
             warn(f"De autos van hub {self.name} worden geleegd. Dit waren {len(self._autos)} auto's", RuntimeWarning)
         self._autos = []
+        self._auto_status = Status.PREPARING
 
     def fill_autos(self) -> None:
         """
@@ -164,9 +369,12 @@ class Hub(Location):
             # auto's legen en opnieuw vullen
             self.empty_autos()
         
+        self._auto_status = Status.CALCULATING
         # beide soorten auto's vullen met routes van dat type auto
         self._fill_autos_type(Auto_type.BAKWAGEN)
         self._fill_autos_type(Auto_type.BESTELBUS)
+
+        self._auto_status = Status.FINISHED
         
     
     def _fill_autos_type(self, auto_type: Auto_type) -> bool:
@@ -240,13 +448,7 @@ class Hub(Location):
         """
         Geef de auto's die aan de hub zijn toegevoegd.
         """
+        if self._auto_status != Status.FINISHED:
+            # auto's vullen is nog niet gebeurd, dus eerst uitvoeren
+            self.fill_autos()
         return self._autos
-    
-    def add_routes(self, route: Route) -> None:
-        """
-        Voeg een route toe aan de hub
-
-        Parameters:
-            route (Route): Een route object dat aan de hub moet worden toegevoegd
-        """
-        self._routes.append(route)
