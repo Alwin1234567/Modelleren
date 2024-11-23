@@ -21,7 +21,7 @@ class Constants:
         if str(auto_type) == "Auto_type.BAKWAGEN":
             # 7.2 L/100 km
             return (BRANDSTOFPRIJS * 7.2) / 100
-        elif str(auto_type) == "Auto_type.BESTELBUS":
+        else:
             # 6.8 L/100 km
             return (BRANDSTOFPRIJS * 6.8) / 100
     
@@ -30,7 +30,7 @@ class Constants:
         if str(auto_type) == "Auto_type.BAKWAGEN":
             # 9 karren per bakwagen
             return 9
-        elif str(auto_type) == "Auto_type.BESTELBUS":
+        else:
             # 22 bakken per bestelbus
             return 22
     
@@ -39,7 +39,7 @@ class Constants:
         if str(bak_kar_voorkeur) == "Bak_kar_voorkeur.KAR":
             # 18 sets per kar
             return 18
-        elif str(bak_kar_voorkeur) == "Bak_kar_voorkeur.BAK":
+        else:
             # 4 sets per bak
             return 4
 
@@ -47,7 +47,7 @@ class Constants:
     def tijdsduur_in_en_uitladen(bak_kar_voorkeur: "Bak_kar_voorkeur") -> float:
         if str(bak_kar_voorkeur) == "Bak_kar_voorkeur.KAR":
             return 0.5
-        elif str(bak_kar_voorkeur) == "Bak_kar_voorkeur.BAK":
+        else:
             return 0.3
 
     MAPS_URL = "http://localhost:8989/route"
