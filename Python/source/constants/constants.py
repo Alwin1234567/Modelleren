@@ -12,6 +12,7 @@ class Constants:
 
     TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT = 5.0 #5 tot 10 min
     TIJDSDUUR_SCHOONMAAK = 4 * 60
+    MAX_TIJDSDUUR_ROUTE = 8 * 60
     WACHTTIJD_TUSSEN_ROUTES = 30 # half uur wachten tussen twee routes voor opvangen vertraging voorgaande routes
     BAKKEN_PER_KAR = 8 # aantal bakken die op de plek van één kar in een bakwagen passen
 
