@@ -373,6 +373,9 @@ class Hub(Location):
         """
         Wisselt het auto_type van routes.
         """
+        # na het switchen moeten de auto's opnieuw ingedeeld worden
+        self._auto_status = Status.PREPARING
+
         for route in self._routes:
             if route.auto_type == Auto_type.BAKWAGEN:
                 if not route.fits_bestelbus:
@@ -434,13 +437,15 @@ class Hub(Location):
         nog_te_plannen_routes.sort(key = lambda route: route.start_tijd)
 
         # eerste auto toevoegen aan hub met daarin eerste route
-        self._autos.append(Auto(auto_type)) 
-        self._autos[0].add_route(nog_te_plannen_routes[0])
+        nieuwe_auto = Auto(auto_type)
+        nieuwe_auto.add_route(nog_te_plannen_routes[0])
+        self._autos.append(nieuwe_auto) 
 
         for route in nog_te_plannen_routes[1:]:
             ingepland = False
-            self._autos.sort(key = lambda auto: auto.routes[-1].eind_tijd)
-            for auto in self._autos:
+            autos_dit_type = [auto for auto in self._autos if auto.auto_type == auto_type]
+            autos_dit_type.sort(key = lambda auto: auto.routes[-1].eind_tijd)
+            for auto in autos_dit_type:
                 if auto.routes[-1].eind_tijd + Constants.WACHTTIJD_TUSSEN_ROUTES <= route.start_tijd:
                     # route toevoegen aan auto
                     auto.add_route(route)

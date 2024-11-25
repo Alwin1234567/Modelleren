@@ -431,7 +431,7 @@ class Route:
         Bepaal de reisafstanden tussen de ziekenhuizen van elke taak 
 
         Returns:
-            List[Tuple[Taak, Long_time]]: de reisafstanden tussen de ziekenhuizen van de taken in de route
+            List[Tuple[Taak, taak, Long_time]]: de reisafstanden tussen de ziekenhuizen van de taken in de route
         """
         if not self._taken:
             return []
