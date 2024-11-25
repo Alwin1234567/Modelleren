@@ -74,6 +74,7 @@ def test_route_maken_uitproberen():
     print('distance', route.total_distance)
     print('time', route.total_time)
     print('cost', route.total_cost)
+    print('fits bestelbus', route.fits_bestelbus)
     print('departuretimes')
     for d in route.departure_times:
         print(d[0].ziekenhuis, d[1].tijd, d[0].brengen.aantal_sets, d[0].halen.aantal_sets, d[0].brengen.aantal(Auto_type.BAKWAGEN), d[0].halen.aantal(Auto_type.BAKWAGEN))

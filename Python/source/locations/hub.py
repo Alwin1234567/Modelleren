@@ -111,7 +111,7 @@ class Hub(Location):
             warn("Er wordt een route verwijderd waar nog taken in staan.", RuntimeWarning)
         self._routes.remove(route)
     
-    def split_routes_waittime(self) -> None:
+    def split_routes_waittime(self, kans: float = 0) -> None:
         """
         Splits routes in twee op de langste wachttijd als dit goedkoper is
         """
@@ -144,11 +144,11 @@ class Hub(Location):
             cost_hub_B = distancetime_hub_B.cost((taak_B.begintijd_taak - distancetime_hub_B.time).tijd, route.auto_type)
             cost_A_hub_B = cost_A_hub + cost_hub_B
             
-            if cost_A_hub_B < cost_A_B: # of met bepaalde kans verslechteringen toestaan
+            if cost_A_hub_B < cost_A_B or random.random() < kans:
                 # goedkoper om te splitsen, dus splitsing uitvoeren
-                self.split_route(index_longest_waittime, route)
+                self._split_route(index_longest_waittime, route)
 
-    def split_routes_distance(self) -> None:
+    def split_routes_distance(self, kans: float = 0) -> None:
         """
         Splits routes in twee op de langste reisafstand als dit goedkoper is
         """
@@ -184,17 +184,20 @@ class Hub(Location):
             cost_hub_B = distancetime_hub_B.cost((taak_B.begintijd_taak - distancetime_hub_B.time).tijd, route.auto_type)
             cost_A_hub_B = cost_A_hub + cost_hub_B
             
-            if cost_A_hub_B < cost_A_B: # of met bepaalde kans verslechteringen toestaan
+            if cost_A_hub_B < cost_A_B or random.random() < kans:
                 # goedkoper om te splitsen, dus splitsing uitvoeren
-                self.split_route(route.taken.index(taak_B), route)
+                self._split_route(route.taken.index(taak_B), route)
 
-    def split_route(self, split_index: int, route: Route) -> None:
+    def _split_route(self, split_index: int, route: Route) -> None:
         """
         Splits een route in 2 voor de taak met de meegegeven index.
 
         Parameters:
             split_index (int): De index van de taak waarvoor de splitsing plaatsvindt.
         """
+        # na het splitsen moeten de auto's opnieuw ingedeeld worden
+        self._auto_status = Status.PREPARING
+        
         new_route = route.copy()
         self.add_route(new_route)
 
@@ -207,10 +210,13 @@ class Hub(Location):
                 # alle taken vanaf taak_B verwijderen uit originele route
                 route.remove_taak(taak)
     
-    def combine_routes(self) -> None:
+    def combine_routes(self, kans: float = 0) -> None:
         """
         Plak routes aan elkaar als dit goedkoper is
         """
+        # na het combineren moeten de auto's opnieuw ingedeeld worden
+        self._auto_status = Status.PREPARING
+
         te_combineren_routes = self.routes.copy()
 
         while len(te_combineren_routes) > 1:
@@ -270,7 +276,7 @@ class Hub(Location):
                 cost_nieuwe_route = distance_cost + time_cost
                 
                 # als goedkoper toestaan of met bepaalde kans verslechteringen toestaan -> uitvoeren
-                if cost_nieuwe_route < cost_oude_routes or random.random() < 0.8:
+                if cost_nieuwe_route < cost_oude_routes or random.random() < kans:
                     print('samenvoegen goedkoper:', cost_nieuwe_route < cost_oude_routes)
                     # voorste route verschuiven
                     for taak in voorste_route.taken:
@@ -286,12 +292,18 @@ class Hub(Location):
                     toegevoegd = True
                     
                 else:
-                    # de plak_route wordt niet geplakt
+                    # de plak_route wordt niet geplakt, verder met nieuwe huidige_route
                     passende_routes.remove(plak_route)
-                    continue
-                    # of break?
+                    break
 
     def combine_before(self, huidige_route: Route, te_combineren_routes: list[Route]) -> list[Route]:
+        """
+        Geeft routes die voor huidige_route geplaatst kunnen worden (na plaatsing nog wel maximale routeduur controleren)
+
+        Parameters:
+            huidige_route (Route): De route waarvoor een route geplakt moet worden.
+            te_combineren_routes (list[Route]): Lijst met routes die nog gecombineerd kunnen worden.
+        """
         voor_schuiven, achter_schuiven = huidige_route.verschuiven
         laatste_starttijd = huidige_route.taken[0].begintijd_taak + achter_schuiven # zonder reis van hub naar ziekenhuis, omdat andere route ervoor geplaatst wordt
         vroegste_eindtijd = huidige_route.eind_tijd - voor_schuiven # met reis van ziekenhuis naar hub, omdat andere route ervoor geplaatst wordt
@@ -322,6 +334,13 @@ class Hub(Location):
         return gefilterd_3
 
     def combine_after(self, huidige_route: Route, te_combineren_routes: list[Route]) -> list[Route]:
+        """
+        Geeft routes die na huidige_route geplaatst kunnen worden (na plaatsing nog wel maximale routeduur controleren)
+
+        Parameters:
+            huidige_route (Route): De route waarna een route geplakt moet worden.
+            te_combineren_routes (list[Route]): Lijst met routes die nog gecombineerd kunnen worden.
+        """
         voor_schuiven, achter_schuiven = huidige_route.verschuiven
         laatste_starttijd = huidige_route.start_tijd + achter_schuiven # zonder reis van hub naar ziekenhuis, omdat andere route ervoor geplaatst wordt
         vroegste_eindtijd = huidige_route.taken[-1].eindtijd_taak - voor_schuiven # met reis van ziekenhuis naar hub, omdat andere route ervoor geplaatst wordt
@@ -349,6 +368,26 @@ class Hub(Location):
                        nieuw_vroegste_eindtijd - laatste_starttijd <= Long_time(Constants.MAX_TIJDSDUUR_ROUTE) and \
                        (nieuwe_route.eind_tijd - nieuwe_route.taken[0].begintijd_taak) + (huidige_route.taken[-1].eindtijd_taak - huidige_route.start_tijd) + reistijd <= Long_time(Constants.MAX_TIJDSDUUR_ROUTE)]
         return gefilterd_3
+
+    def switch_auto_type(self, kans: float = 0) -> None:
+        """
+        Wisselt het auto_type van routes.
+        """
+        for route in self._routes:
+            if route.auto_type == Auto_type.BAKWAGEN:
+                if not route.fits_bestelbus:
+                    continue
+                type_nieuw = Auto_type.BESTELBUS
+            else:
+                type_nieuw = Auto_type.BAKWAGEN
+            
+            # alleen reiskosten vergelijken, omdat tijdsduur niet veranderd
+            distance = route.total_distance
+            distance_cost_oud = Cost.calculate_cost_distance(distance, route.auto_type)
+            distance_cost_nieuw = Cost.calculate_cost_distance(distance, type_nieuw)
+            # andere type goedkoper of met bepaalde kans -> type wisselen
+            if distance_cost_oud > distance_cost_nieuw or random.random() < kans:
+                route.set_auto_type(type_nieuw)
 
     def empty_autos(self) -> None:
         if self._autos:
