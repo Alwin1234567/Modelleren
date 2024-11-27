@@ -511,3 +511,34 @@ class Hub(Location):
         De totale kosten van de hub.
         """
         return sum([route.total_cost for route in self._routes])
+    
+    @property
+    def gereden_kilometers(self) -> float:
+        gereden_kilometers = sum([route.total_distance for route in self._routes])
+        return gereden_kilometers
+    
+    @property
+    def totale_tijd(self) -> float:
+        """
+        Totale tijd van alle routes samen in minuten
+        """
+        totale_tijd = sum([route.total_time for route in self._routes])
+        return totale_tijd
+    
+    @property
+    def totale_wachttijd(self) -> float:
+        """
+        Totale wachttijdtijd van alle routes samen in minuten
+        """
+        wachttijd = sum([float(route.total_waiting_time) for route in self._routes])
+        return wachttijd
+    
+    @property
+    def kilometerkosten(self) -> float:
+        kilometerkosten = sum([Cost.calculate_cost_distance(route.total_distance, route._auto_type) for route in self._routes])
+        return kilometerkosten
+    
+    @property
+    def personeelskosten(self) -> float:
+        personeelskosten = sum([Cost.calculate_cost_time(route.start_tijd.tijd, route.total_time) for route in self._routes])
+        return personeelskosten

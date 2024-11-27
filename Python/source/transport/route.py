@@ -354,7 +354,7 @@ class Route:
     @property
     def total_time(self) -> float:
         """
-        Bereken de totale tijd van de route.
+        Bereken de totale tijd van de route in minuten.
         
         Returns:
             float: De totale tijd van de route.
