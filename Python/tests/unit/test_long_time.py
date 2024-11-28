@@ -114,5 +114,18 @@ def test_difference():
     assert lt2.difference(lt1) == 750  # 1440 - 2190 = 750 minutes (absolute value)
     assert lt3.difference(lt1) == 150  # 2340 - 2190 = 150 minutes
 
+def test_negative():
+    lt1 = Long_time(2190)  # 2190 minutes (36 hours and 30 minutes)
+    lt2 = Long_time(1440)  # 1440 minutes (24 hours)
+
+    # Test negative result
+    with pytest.warns(RuntimeWarning):
+        lt3 = lt2 - lt1
+    assert float(lt3) == -750
+
+    # Test negative result without warning
+    lt4 = lt1 - lt2
+    assert float(lt4) == 750
+
 if __name__ == '__main__':
     pytest.main()
