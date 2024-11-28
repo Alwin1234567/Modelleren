@@ -42,8 +42,8 @@ class Long_time:
             minuten = int(tijd % 60)
             uren = int((tijd // 60) % 24)
             tempdag = int(tijd // 1440)  # 1440 minutes in a day
-            if tempdag > 0:
-                if dag > 0:
+            if tempdag != 0:
+                if dag != 0:
                     warn("er is beide een dag en een float groter dan 1440 meegegeven, de dag wordt genegeerd.", RuntimeWarning)
                 dag = tempdag
             return time(uren, minuten, seconden), dag

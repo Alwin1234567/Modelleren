@@ -1,17 +1,56 @@
 from pathlib import Path
 from datetime import time
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from source.structures import Auto_type, Bak_kar_voorkeur
 
 class Constants:
     """
     Een class die de constante waarden van de simulatie bevat.
     """
 
-    PRIJS_PER_KM = 0.0  #bakwagen: 7.2 L/100km, bestelbus: 6.8 L/100km
-    PRIJS_PER_UUR_CHAUFFEUR = 0.0 #06:00-20:00 - 22.75, 20:00-00:00 - 29,575, 00:00-06:00 - 34,125
     TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT = 5.0 #5 tot 10 min
-    TIJDSDUUR_INLADEN_EN_UITLADEN_INSTRUMENTENSETS = 0.0
-    TIJDSDUUR_SCHOONMAAK = 6*60
-    CAPACITEIT_VOERTUIG = 35
+    TIJDSDUUR_SCHOONMAAK = 4 * 60
+    MAX_TIJDSDUUR_ROUTE = 8 * 60
+    WACHTTIJD_TUSSEN_ROUTES = 30 # half uur wachten tussen twee routes voor opvangen vertraging voorgaande routes
+    BAKKEN_PER_KAR = 8 # aantal bakken die op de plek van één kar in een bakwagen passen
+
+    @staticmethod
+    def prijs_per_km(auto_type: "Auto_type") -> float:
+        BRANDSTOFPRIJS = 1.80
+        if str(auto_type) == "Auto_type.BAKWAGEN":
+            # 7.2 L/100 km
+            return (BRANDSTOFPRIJS * 7.2) / 100
+        else:
+            # 6.8 L/100 km
+            return (BRANDSTOFPRIJS * 6.8) / 100
+    
+    @staticmethod
+    def capaciteit_auto(auto_type: "Auto_type") -> int:
+        if str(auto_type) == "Auto_type.BAKWAGEN":
+            # 9 karren per bakwagen
+            return 9
+        else:
+            # 22 bakken per bestelbus
+            return 22
+    
+    @staticmethod
+    def capaciteit_bak_kar(bak_kar_voorkeur: "Bak_kar_voorkeur") -> int:
+        if str(bak_kar_voorkeur) == "Bak_kar_voorkeur.KAR":
+            # 18 sets per kar
+            return 18
+        else:
+            # 4 sets per bak
+            return 4
+
+    @staticmethod
+    def tijdsduur_in_en_uitladen(bak_kar_voorkeur: "Bak_kar_voorkeur") -> float:
+        if str(bak_kar_voorkeur) == "Bak_kar_voorkeur.KAR":
+            return 0.5
+        else:
+            return 0.3
+
     MAPS_URL = "http://localhost:8989/route"
     MAPS_PARAMS = {
         'profile': 'car',
@@ -22,6 +61,7 @@ class Constants:
     CACHE_PATH = Path(__file__).resolve().parents[2] / 'cache'
     GRAPHHOPPER_PATH = Path(__file__).resolve().parents[2] / 'graphhopper'
     LOCATIONS_PATH = Path(__file__).resolve().parents[2] / 'locations_data'
+    RESULTS_PATH = Path(__file__).resolve().parents[2] / 'results'
     
     PRIJS_PER_UUR_CHAUFFEUR = 22.75
     EXTRA_AVOND = 0.3

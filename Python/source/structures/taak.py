@@ -7,6 +7,7 @@ from datetime import time
 from .id import ID
 from source.constants import Constants
 import numpy as np
+from .lading import Lading_bak_kar, Auto_type
 
 if TYPE_CHECKING:
     from source.locations import Ziekenhuis
@@ -46,15 +47,15 @@ class Taak:
         self._tijdslot = tijdslot
         self._ingeplande_tijd: Optional[Long_time] = None
         self._ziekenhuis = ziekenhuis
-        self._brengen = brengen
-        self._halen = halen
+        self._brengen = Lading_bak_kar(brengen, ziekenhuis.voorkeur_bak_kar)
+        self._halen = Lading_bak_kar(halen, ziekenhuis.voorkeur_bak_kar)
         if not tijdslot.is_in_tijdvak(tijdslot.starttijd + self.laadtijd):
             raise ValueError("Het tijdslot moet lang genoeg zijn om te kunnen in- en uitladen")
         self._returntijd = returntijd
         self._id = ID()
     
 
-    def cost_with_taak(self, taak: "Taak", distances: Distances, end = True) -> int:
+    def cost_with_taak(self, taak: "Taak", distances: Distances, auto_type: Auto_type = Auto_type.BAKWAGEN, end = True) -> int:
         """
         Bereken de kosten van een taak tenopzichte van deze taak.
 
@@ -97,7 +98,7 @@ class Taak:
                 latest_time = min(latest_time, taak.tijdslot.eindtijd)
                 time_cost = Cost.calculate_cost_time(latest_time.tijd, latest_time.difference(self.begintijd_taak))
 
-        distance_cost = distance * Constants.PRIJS_PER_KM
+        distance_cost = distance * Constants.prijs_per_km(auto_type)
         return distance_cost + time_cost
     
     def __eq__(self, value: object) -> bool:
@@ -124,39 +125,39 @@ class Taak:
         return self._ziekenhuis
     
     @property
-    def brengen(self) -> int:
+    def brengen(self) -> Lading_bak_kar:
         """
         Het aantal instrumenten dat gebracht moet worden.
         """
         return self._brengen
     
     @property
-    def halen(self) -> int:
+    def halen(self) -> Lading_bak_kar:
         """
         Het aantal instrumenten dat gehaald moet worden.
         """
         return self._halen
     
     @property
-    def halen_brengen(self) -> int:
+    def halen_brengen_sets(self) -> int:
         """
         Het totaal aantal instrumenten dat gehaald en gebracht moet worden.
         """
-        return self._brengen + self._halen
+        return self._brengen.aantal_sets + self._halen.aantal_sets
     
     @property
     def has_brengen(self) -> bool:
         """
         Controleer of er instrumenten gebracht moeten worden.
         """
-        return self._brengen > 0
+        return self._brengen.aantal_sets > 0
     
     @property
     def has_halen(self) -> bool:
         """
         Controleer of er instrumenten gehaald moeten worden.
         """
-        return self._halen > 0
+        return self._halen.aantal_sets > 0
     
     @property
     def has_halen_brengen(self) -> bool:
@@ -166,13 +167,12 @@ class Taak:
         return self.has_brengen() and self.has_halen()
     
     @property
-    def laadtijd(self) -> time:
+    def laadtijd(self) -> Long_time:
         """
         De laadtijd van de taak.
         """
-        tijd_plat = Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT
-        tijd_instrumenten = Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_INSTRUMENTENSETS * self.halen_brengen
-        return tijd_plat + tijd_instrumenten
+        tijd = Constants.TIJDSDUUR_INLADEN_EN_UITLADEN_PLAT + self._halen.laadtijd + self._brengen.laadtijd
+        return Long_time(tijd)
     
     @property
     def begintijd_taak(self) -> Optional[Long_time]:

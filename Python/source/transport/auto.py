@@ -1,6 +1,6 @@
 from .route import Route
-from source.structures import ID, Tijdslot
-from typing import Dict, List
+from source.structures import ID, Tijdslot, Auto_type
+from typing import List
 import numpy as np
 
 class Auto:
@@ -8,14 +8,15 @@ class Auto:
     Een auto die routes kan rijden.
     """
 
-    def __init__(self) -> None:
+    def __init__(self, auto_type: Auto_type) -> None:
         """
         Maak een nieuwe auto aan.
         """
+        self._auto_type = auto_type
         self._id = ID()
         self._routes: list[Route] = []
 
-    def heeft_route_overlap(self, route) -> bool:
+    def heeft_route_overlap(self, route: Route) -> bool:
         """
         Check of de auto een bepaald route type heeft.
         
@@ -30,7 +31,7 @@ class Auto:
                 return True
         return False
     
-    def tijdverschil(self, route) -> int:
+    def tijdverschil(self, route: Route) -> int:
         """
         Bereken het minimale tijdverschil tussen de gegeven route en de routes van de auto.
 
@@ -75,6 +76,16 @@ class Auto:
         return [route.tijdslot for route in self._routes]
     
     @property
+    def auto_type(self):
+        """
+        Het type auto.
+
+        Returns:
+            Auto_type: Het type auto.
+        """
+        return self._auto_type
+
+    @property
     def id(self) -> ID:
         """
         Het ID van de auto.
@@ -83,3 +94,14 @@ class Auto:
             ID: Het ID van de auto.
         """
         return self._id
+        
+    @property
+    def routes(self) -> list[Route]:
+        """
+        De routes van de auto gesorteerd op vertrektijd.
+        
+        Returns:
+            List[Route]: De routes van de auto.
+        """
+        self._routes.sort(key = lambda route: route.start_tijd)
+        return self._routes

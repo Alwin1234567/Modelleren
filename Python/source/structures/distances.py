@@ -10,6 +10,7 @@ from warnings import warn
 import pandas as pd
 from datetime import time
 from tqdm import tqdm
+from .lading import Auto_type
 
 if TYPE_CHECKING:
     from source.locations import Location
@@ -86,10 +87,20 @@ class Distances:
                     if first_line.startswith('sep='):
                         separator = first_line.split('=')[1]
                         # Read the CSV file into a DataFrame, skipping the first line
-                        stored_df = pd.read_csv(csv_file_path, sep=separator, skiprows=1)
+                        stored_df = pd.read_csv(csv_file_path, sep=separator, skiprows=1, header=0)
                     else:
                         # Default separator if no sep= is found
-                        stored_df = pd.read_csv(csv_file_path, sep=';')
+                        stored_df = pd.read_csv(csv_file_path, sep=';', header=0)
+                
+                # Convert distance and time columns to numeric, coercing errors to NaN if necessary
+                if stored_df['distance'].dtype != float or stored_df['time'].dtype != float:
+                    stored_df['distance'] = pd.to_numeric(stored_df['distance'], errors='coerce')
+                    stored_df['time'] = pd.to_numeric(stored_df['time'], errors='coerce')
+                    stored_df.dropna(inplace=True)
+                    warn("distance and time columns contain non-numeric values", RuntimeWarning)
+
+                # Drop rows with NaN values in distance or time columns
+                stored_df = stored_df.dropna(subset=['distance', 'time'])
 
                 # Iterate over the DataFrame and populate self._distances
                 for _, row in stored_df.iterrows():
@@ -118,9 +129,9 @@ class Distances:
             with open(csv_file_path, 'r') as file:
                 first_line = file.readline().strip()
                 if first_line.startswith('sep='):
-                    existing_df = pd.read_csv(csv_file_path, sep=';', skiprows=1)
+                    existing_df = pd.read_csv(csv_file_path, sep=';', skiprows=1, header=0)
                 else:
-                    existing_df = pd.read_csv(csv_file_path)
+                    existing_df = pd.read_csv(csv_file_path, sep=';', header=0)
         else:
             existing_df = pd.DataFrame(columns=['from', 'to', 'distance', 'time'])
 
@@ -274,7 +285,7 @@ class Distances:
         """
         return location.name in self._locations.keys()
     
-    def available_locations(self, location: "Location", skip_locations: list["Location"], start_time: time) -> Generator[Tuple["Location", Distance_time], Any, None]:
+    def available_locations(self, location: "Location", skip_locations: list["Location"], start_time: time, auto_type: Auto_type) -> Generator[Tuple["Location", Distance_time], Any, None]:
         """
         Krijg een generator die locaties en hun afstandstijd ophaalt, gesorteerd op kosten.
 
@@ -292,7 +303,7 @@ class Distances:
         distance_times = [(loc, self.get_distance_time(location, loc)) for loc in remaining_locations]
 
         # Sort the list by cost
-        sorted_distance_times = sorted(distance_times, key=lambda x: x[1].cost(start_time))
+        sorted_distance_times = sorted(distance_times, key=lambda x: x[1].cost(start_time, auto_type))
 
         # Yield each location and its distance time
         for loc, distance_time in sorted_distance_times:

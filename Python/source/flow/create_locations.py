@@ -2,7 +2,7 @@ from source.constants import Constants
 from source.locations import Ziekenhuis, Hub
 import pandas as pd
 from warnings import warn
-from source.structures import Status, Taak, Long_time, Tijdslot, Maps
+from source.structures import Status, Taak, Long_time, Tijdslot, Maps, Bak_kar_voorkeur
 from datetime import time
 
 class Create_locations:
@@ -67,7 +67,10 @@ class Create_locations:
             linked_ziekenhuizen: pd.DataFrame = ziekenhuizen_data[ziekenhuizen_data['Hub_Voorkeur'] == hub_series['Naam']]
             for _, ziekenhuis_series in linked_ziekenhuizen.iterrows():
                 try:
-                    ziekenhuis = Ziekenhuis(ziekenhuis_series['Naam'], postcode=ziekenhuis_series['Locatie_Postcode'])
+                    if ziekenhuis_series['Kar_Bak_Voorkeur'] == 'bak':
+                        ziekenhuis = Ziekenhuis(ziekenhuis_series['Naam'], Bak_kar_voorkeur.BAK, postcode=ziekenhuis_series['Locatie_Postcode'])
+                    else:
+                        ziekenhuis = Ziekenhuis(ziekenhuis_series['Naam'], Bak_kar_voorkeur.KAR, postcode=ziekenhuis_series['Locatie_Postcode'])
                 except ValueError as e:
                     if str(e) == "Deze locatie is niet correct of ligt niet in Nederland.":
                         warn(f"Warning: {e} for ziekenhuis {ziekenhuis_series['Naam']}. Continuing with the next ziekenhuis.", RuntimeWarning)
@@ -151,7 +154,7 @@ class Create_locations:
                     retour_start = Long_time(retour_start.tijd, 0)
                     retour_end = Long_time(retour_end.tijd, 0)
                     if retour_end < retour_start:
-                        retour_start = Long_time(0)
+                        retour_end.day += 1
 
                 # Create Tijdslot instances
                 tijdslot_ophalen = Tijdslot(ophalen_start, ophalen_end)
@@ -160,6 +163,9 @@ class Create_locations:
                 returntijd = Tijdslot(Long_time(7*24*60), Long_time(7*24*60))
                 if retour_start > ophalen_end:
                     returntijd = tijdslot_brengen
+
+                if hoeveelheid_sets <= 0:
+                    continue
 
                 # Create Taak instances for ophalen and brengen
                 try:

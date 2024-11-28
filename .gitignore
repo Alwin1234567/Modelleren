@@ -4,6 +4,7 @@ non-git/
 .vscode/
 graphhopper/
 cache/
+results/
 
 !graphhopper/config.yml
 !graphhopper/setup-guide.md

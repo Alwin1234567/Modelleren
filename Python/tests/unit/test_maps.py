@@ -4,6 +4,7 @@ from source.constants import Constants
 import requests
 
 def test_maps_enabling():
+    Maps.disable_maps()
     assert not Maps.is_enabled()
     Maps.enable_maps()
     assert Maps.is_enabled()
@@ -14,6 +15,7 @@ def test_maps_calculating():
     coordinates1 = Coordinates(52.078828, 5.150504)
     coordinates2 = Coordinates(52.354679, 4.887852)
 
+    Maps.disable_maps()
     assert not Maps.is_enabled()
     if not Maps.is_enabled():
         Maps.enable_maps()
