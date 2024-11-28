@@ -121,7 +121,10 @@ class Hub(Location):
             return None 
         
         for route in self.routes:
-            sorted_waittime = route.waiting_times
+            if len(route.taken) < 2:
+                # route met maar één taak is niet te splitsen
+                continue
+            sorted_waittime = route.waiting_times[1:]
             sorted_waittime.sort(key = lambda taak_time: taak_time[1], reverse = True)
             if sorted_waittime[0][1] < Long_time(time(second = 5)):
                 # grootste wachttijd is korter dan 5 seconden, door afrondcorrectie of door één taak in route
@@ -197,6 +200,11 @@ class Hub(Location):
         """
         # na het splitsen moeten de auto's opnieuw ingedeeld worden
         self._auto_status = Status.PREPARING
+
+        if split_index == 0 or split_index == len(route.taken):
+            # splitsen op eerste of laatste taak is niet mogelijk
+            warn("Een route kan niet gesplitst worden op de eerste of laatste taak.", RuntimeWarning)
+            return None
         
         new_route = route.copy()
         self.add_route(new_route)
@@ -277,12 +285,12 @@ class Hub(Location):
                 
                 # als goedkoper toestaan of met bepaalde kans verslechteringen toestaan -> uitvoeren
                 if cost_nieuwe_route < cost_oude_routes or random.random() < kans:
-                    print('samenvoegen goedkoper:', cost_nieuwe_route < cost_oude_routes)
                     # voorste route verschuiven
                     for taak in voorste_route.taken:
                         taak.set_begintijd_taak(taak.begintijd_taak + verschuiving_voorste)
                     # taken uit achterste route toevoegen aan voorste route (en begintijd taak aanpassen)
-                    for taak in achterste_route.taken:
+                    achterste_taken = achterste_route.taken.copy()
+                    for taak in achterste_taken:
                         taak.set_begintijd_taak(taak.begintijd_taak + verschuiving_achterste)
                         voorste_route.add_taak(taak)
                         achterste_route.remove_taak(taak)
@@ -496,3 +504,41 @@ class Hub(Location):
             # auto's vullen is nog niet gebeurd, dus eerst uitvoeren
             self.fill_autos()
         return self._autos
+    
+    @property
+    def cost(self):
+        """
+        De totale kosten van de hub.
+        """
+        return sum([route.total_cost for route in self._routes])
+    
+    @property
+    def gereden_kilometers(self) -> float:
+        gereden_kilometers = sum([route.total_distance for route in self._routes])
+        return gereden_kilometers
+    
+    @property
+    def totale_tijd(self) -> float:
+        """
+        Totale tijd van alle routes samen in minuten
+        """
+        totale_tijd = sum([route.total_time for route in self._routes])
+        return totale_tijd
+    
+    @property
+    def totale_wachttijd(self) -> float:
+        """
+        Totale wachttijdtijd van alle routes samen in minuten
+        """
+        wachttijd = sum([float(route.total_waiting_time) for route in self._routes])
+        return wachttijd
+    
+    @property
+    def kilometerkosten(self) -> float:
+        kilometerkosten = sum([Cost.calculate_cost_distance(route.total_distance, route._auto_type) for route in self._routes])
+        return kilometerkosten
+    
+    @property
+    def personeelskosten(self) -> float:
+        personeelskosten = sum([Cost.calculate_cost_time(route.start_tijd.tijd, route.total_time) for route in self._routes])
+        return personeelskosten

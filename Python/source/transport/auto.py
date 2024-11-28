@@ -31,7 +31,7 @@ class Auto:
                 return True
         return False
     
-    def tijdverschil(self, route) -> int:
+    def tijdverschil(self, route: Route) -> int:
         """
         Bereken het minimale tijdverschil tussen de gegeven route en de routes van de auto.
 
