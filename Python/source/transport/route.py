@@ -354,7 +354,7 @@ class Route:
     @property
     def total_time(self) -> float:
         """
-        Bereken de totale tijd van de route.
+        Bereken de totale tijd van de route in minuten.
         
         Returns:
             float: De totale tijd van de route.
@@ -471,7 +471,7 @@ class Route:
             return Long_time(0)
         
         waiting_time = sum([float(waittime) for _, waittime in self.waiting_times])
-        return Long_time(waiting_time).tijd
+        return Long_time(waiting_time)
     
     def max_lading_vrij(self, auto_type: Auto_type) -> Tuple[int, int]:
         """
