@@ -4,9 +4,11 @@ from source.structures import Status
 from copy import deepcopy
 import time
 from tqdm import tqdm
+from .metrieken import Metrieken
+from typing import Optional
 
 class Verbeteringen:
-    def __init__(self, hubs: list[Hub], initial_heat: float = 1, heat_reduction: float = 0.95, cooling_interval:int = 100) -> None:
+    def __init__(self, hubs: list[Hub], initial_heat: float = 1, heat_reduction: float = 0.95, cooling_interval:int = 100, metrieken: Optional[Metrieken] = None) -> None:
         """
         Initialiseer de Verbeteringen class en controleer de status en routes van de hubs.
 
@@ -25,6 +27,7 @@ class Verbeteringen:
         self._heat = initial_heat
         self._heat_reduction = heat_reduction
         self._cooling_interval = cooling_interval
+        self._metrieken = metrieken
         self._iteration = 0
 
     def check_hubs_status(self, hubs: list[Hub]) -> None:
@@ -92,6 +95,7 @@ class Verbeteringen:
                 current_cost = hub.cost
                 if current_cost < best_cost:
                     best_cost = current_cost
+                    tqdm.write(f"Hub {hub.name} improved to {current_cost}")
                     best_iteration = self._iteration
                     best_hub = deepcopy(hub)
                 
@@ -122,6 +126,8 @@ class Verbeteringen:
         self._iteration += 1
         if self._iteration % self._cooling_interval == 0:
             self._heat *= self._heat_reduction
+        if self._metrieken:
+            self._metrieken.add_iteratie()
 
 
     @property

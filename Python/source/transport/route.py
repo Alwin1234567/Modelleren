@@ -471,7 +471,7 @@ class Route:
             return Long_time(0)
         
         waiting_time = sum([float(waittime) for _, waittime in self.waiting_times])
-        return Long_time(waiting_time).tijd
+        return Long_time(waiting_time)
     
     def max_lading_vrij(self, auto_type: Auto_type) -> Tuple[int, int]:
         """

@@ -3,6 +3,9 @@ from source.constants import Constants
 from source.transport import Route
 from datetime import time, timedelta, datetime
 from warnings import warn
+import pandas as pd
+from source.constants import Constants
+import os
 
 class Metrieken:
     def __init__(self, hubs: list[Hub]) -> None:
@@ -20,12 +23,14 @@ class Metrieken:
         self._kilometerkosten: list[float] = []
         self._personeelskosten: list[float] = []
         self._totale_kosten: list[float] = []
+        self.add_iteratie()
     
     def alle_routes(self) -> None:
         # alle routes samenvoegen
         alle_routes = []
         for hub in self._hubs:
             alle_routes.extend(hub.routes)
+        self._alle_routes = alle_routes
 
     def add_iteratie(self) -> None:
         self.alle_routes()
@@ -35,32 +40,65 @@ class Metrieken:
         self._aantal_kilometers.append(sum([hub.gereden_kilometers for hub in self._hubs]))
         aantal_werkuren = sum([hub.totale_tijd for hub in self._hubs])/60
         self._aantal_werkuren.append(aantal_werkuren) # totale tijd is in minuten
-        self._wachttijd_uren.append(sum([hub.totale_wachttijd for hub in self._hubs])/60) # totale wachttijd is in minuten
+        # self._wachttijd_uren.append(sum([hub.totale_wachttijd for hub in self._hubs])/60) # totale wachttijd is in minuten
 
         dagdienst_uren, avonddienst_uren, nachtdienst_uren = self.uren_per_period(self._alle_routes)
         self._dagdienst_uren.append(dagdienst_uren)
         self._avonddienst_uren.append(avonddienst_uren)
         self._nachtdienst_uren.append(nachtdienst_uren)
-        if round(sum(dagdienst_uren, avonddienst_uren, nachtdienst_uren), 0) != round(aantal_werkuren, 0):
+        if round(sum([dagdienst_uren, avonddienst_uren, nachtdienst_uren]), 0) != round(aantal_werkuren, 0):
             warn("het aantal uren dagdienst, avonddienst en nachtdienst samen zijn niet gelijk aan het totaal aantal werkuren", RuntimeWarning)
 
         totale_kilometerkosten = sum([hub.kilometerkosten for hub in self._hubs])
         totale_personeelskosten = sum([hub.personeelskosten for hub in self._hubs])
         self._kilometerkosten.append(totale_kilometerkosten)
         self._personeelskosten.append(totale_personeelskosten)
-        self._totale_kosten.append(sum(totale_kilometerkosten, totale_personeelskosten))
+        self._totale_kosten.append(sum([totale_kilometerkosten, totale_personeelskosten]))
         
         
-        # print('aantal benodigde voertuigen:')
-        # print('aantal routes:', len(routes))
-        # print('aantal gereden kilometers:', sum([route.total_distance for route in routes]))
-        # print('aantal werkuren chauffeurs:', sum([route.total_time for route in routes])/60)
-        # print('Aantal uren dagdienst, avonddienst en nachtdienst:')
-        # print('Aantal uur dat chauffeur heeft gewacht op start tijdvak:', sum([float(route.waiting_time) for route in routes])/60)
-        # print('Percentage taken die een uitloopmarge van meer dan 20 procent heeft:')
-        # print('Kilometerkosten:', Cost.calculate_cost_distance(sum([route.total_distance for route in routes])))
-        # print('Personeelskosten:')
-        # print('totale kosten:', sum([route.total_cost for route in routes]))
+    def metrieken_to_csv(self) -> None:
+        """
+        Sla de eigenschappen van de Metrieken class op in een CSV-bestand.
+
+        Parameters:
+            None
+        """
+        # Create a dictionary of properties
+        data = {
+            'benodigde_voertuigen': self._benodigde_voertuigen,
+            'aantal_routes': self._aantal_routes,
+            'aantal_kilometers': self._aantal_kilometers,
+            'aantal_werkuren': self._aantal_werkuren,
+            'dagdienst_uren': self._dagdienst_uren,
+            'avonddienst_uren': self._avonddienst_uren,
+            'nachtdienst_uren': self._nachtdienst_uren,
+            # 'wachttijd_uren': self._wachttijd_uren,
+            'kilometerkosten': self._kilometerkosten,
+            'personeelskosten': self._personeelskosten,
+            'totale_kosten': self._totale_kosten
+        }
+
+        # Create a DataFrame from the dictionary
+        df = pd.DataFrame(data)
+
+        # Define the base file name and folder
+        folder = Constants.RESULTS_PATH
+        base_name = "metrieken"
+        extension = ".csv"
+        number = 1
+
+        # Check if the file already exists and add a count if it does
+        while os.path.exists(os.path.join(folder, f"{base_name}_{number}{extension}")):
+            number += 1
+        file_path = os.path.join(folder, f"{base_name}_{number}{extension}")
+
+        # Write the DataFrame to a CSV file
+        with open(file_path, 'w') as f:
+            f.write('sep=;\n')
+            f.close()
+
+        df.to_csv(file_path, index=False, sep=';', mode='a')
+
     
     @property
     def alle_metrieken(self) -> tuple[list[int], list[int], list[float], list[float], list[float], list[float], list[float], list[float], list[float], list[float], list[float]]:
