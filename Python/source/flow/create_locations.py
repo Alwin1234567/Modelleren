@@ -154,7 +154,7 @@ class Create_locations:
                     retour_start = Long_time(retour_start.tijd, 0)
                     retour_end = Long_time(retour_end.tijd, 0)
                     if retour_end < retour_start:
-                        retour_start = Long_time(0)
+                        retour_end.day += 1
 
                 # Create Tijdslot instances
                 tijdslot_ophalen = Tijdslot(ophalen_start, ophalen_end)
@@ -163,6 +163,9 @@ class Create_locations:
                 returntijd = Tijdslot(Long_time(7*24*60), Long_time(7*24*60))
                 if retour_start > ophalen_end:
                     returntijd = tijdslot_brengen
+
+                if hoeveelheid_sets <= 0:
+                    continue
 
                 # Create Taak instances for ophalen and brengen
                 try:
