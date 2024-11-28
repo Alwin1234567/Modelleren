@@ -87,10 +87,20 @@ class Distances:
                     if first_line.startswith('sep='):
                         separator = first_line.split('=')[1]
                         # Read the CSV file into a DataFrame, skipping the first line
-                        stored_df = pd.read_csv(csv_file_path, sep=separator, skiprows=1)
+                        stored_df = pd.read_csv(csv_file_path, sep=separator, skiprows=1, header=0)
                     else:
                         # Default separator if no sep= is found
-                        stored_df = pd.read_csv(csv_file_path, sep=';')
+                        stored_df = pd.read_csv(csv_file_path, sep=';', header=0)
+                
+                # Convert distance and time columns to numeric, coercing errors to NaN if necessary
+                if stored_df['distance'].dtype != float or stored_df['time'].dtype != float:
+                    stored_df['distance'] = pd.to_numeric(stored_df['distance'], errors='coerce')
+                    stored_df['time'] = pd.to_numeric(stored_df['time'], errors='coerce')
+                    stored_df.dropna(inplace=True)
+                    warn("distance and time columns contain non-numeric values", RuntimeWarning)
+
+                # Drop rows with NaN values in distance or time columns
+                stored_df = stored_df.dropna(subset=['distance', 'time'])
 
                 # Iterate over the DataFrame and populate self._distances
                 for _, row in stored_df.iterrows():
@@ -119,9 +129,9 @@ class Distances:
             with open(csv_file_path, 'r') as file:
                 first_line = file.readline().strip()
                 if first_line.startswith('sep='):
-                    existing_df = pd.read_csv(csv_file_path, sep=';', skiprows=1)
+                    existing_df = pd.read_csv(csv_file_path, sep=';', skiprows=1, header=0)
                 else:
-                    existing_df = pd.read_csv(csv_file_path)
+                    existing_df = pd.read_csv(csv_file_path, sep=';', header=0)
         else:
             existing_df = pd.DataFrame(columns=['from', 'to', 'distance', 'time'])
 
