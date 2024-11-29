@@ -180,7 +180,7 @@ class Route:
                 # route moet optijd terug zijn om genoeg tijd te geven voor schoonmaak
                 continue # volgende taak bekijken
             # starttijd bepalen
-            starttijd = max_starttijd + taak.laadtijd
+            starttijd = max_starttijd 
             if starttijd > taak.tijdslot.eindtijd:
                 # tijdvak eindigd voor maximale eindttijd, dus eindtijd tijdslot wordt eindtijd
                 starttijd = taak.tijdslot.eindtijd - taak.laadtijd
