@@ -23,6 +23,8 @@ class Metrieken:
         self._kilometerkosten: list[float] = []
         self._personeelskosten: list[float] = []
         self._totale_kosten: list[float] = []
+        self._uitloopmarges = []
+        self._percentage_uitloopmarge: list[float] = []
         self.add_iteratie()
     
     def alle_routes(self) -> None:
@@ -63,6 +65,18 @@ class Metrieken:
         Parameters:
             None
         """
+        # percentage_uitloopmarge verlengen tot lengte andere lijsten
+        opvullen = [0] * (len(self._benodigde_voertuigen) - len(self._percentage_uitloopmarge))
+        if len(self._benodigde_voertuigen) > len(self._percentage_uitloopmarge):
+            percentage_uitloopmarge = self._percentage_uitloopmarge
+            percentage_uitloopmarge.extend(opvullen)
+            uitloopmarge = self._uitloopmarges
+            uitloopmarge.extend(opvullen)
+        else:
+            percentage_uitloopmarge = self._percentage_uitloopmarge[:len(self._benodigde_voertuigen)]
+            uitloopmarge = self._uitloopmarges[:len(self._benodigde_voertuigen)]
+            warn("Er zijn meer uitloopmarges berekend dan iteraties toegevoegd, dus niet alle uitloopmarges in excel opgeslagen", RuntimeWarning)
+
         # Create a dictionary of properties
         data = {
             'benodigde_voertuigen': self._benodigde_voertuigen,
@@ -72,10 +86,12 @@ class Metrieken:
             'dagdienst_uren': self._dagdienst_uren,
             'avonddienst_uren': self._avonddienst_uren,
             'nachtdienst_uren': self._nachtdienst_uren,
-            # 'wachttijd_uren': self._wachttijd_uren,
+            'wachttijd_uren': self._wachttijd_uren,
             'kilometerkosten': self._kilometerkosten,
             'personeelskosten': self._personeelskosten,
-            'totale_kosten': self._totale_kosten
+            'totale_kosten': self._totale_kosten, 
+            'uitloop_(minuten)': uitloopmarge,
+            'percentage_uitloopmarge': percentage_uitloopmarge
         }
 
         # Create a DataFrame from the dictionary
@@ -138,7 +154,7 @@ class Metrieken:
         """
         return self._kilometerkosten, self._personeelskosten, self._totale_kosten
     
-    def percentage_uitloopmarge(self, uitloopmarge: float) -> float:
+    def percentage_uitloopmarge(self, uitloopmarge: float):
         """
         Geeft het percentage van de taken dat een uitloop van meer dan de uitloopmarge heeft.
 
@@ -153,8 +169,9 @@ class Metrieken:
                 if uitloop >= uitloopmarge:
                     # taak heeft uitloop van meer dan uitloopmarge
                     aantal_uitloopmarge += 1
-        totaal_aantal_taken = len(self._alle_routes)
-        return (aantal_uitloopmarge/totaal_aantal_taken) * 100
+        totaal_aantal_taken = sum([len(route.taken) for route in self._alle_routes])
+        self._uitloopmarges.append(uitloopmarge)
+        self._percentage_uitloopmarge.append((aantal_uitloopmarge/totaal_aantal_taken) * 100)
     
     def uren_per_period(self, route_lijst: list[Route]) -> tuple[float, float, float]:
         """

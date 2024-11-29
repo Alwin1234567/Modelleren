@@ -246,18 +246,18 @@ class Route:
 
     @property
     def start_tijd(self) -> Optional[Long_time]:
-        if not self._taken:
+        if not self.taken:
             return None
-        reistijd_vanaf_hub = self._distances.get_time(self._start_hub, self._taken[0].ziekenhuis)
-        start_tijd = self._taken[0].begintijd_taak - reistijd_vanaf_hub
+        reistijd_vanaf_hub = self._distances.get_time(self._start_hub, self.taken[0].ziekenhuis)
+        start_tijd = self.taken[0].begintijd_taak - reistijd_vanaf_hub
         return start_tijd
     
     @property
     def eind_tijd(self) -> Long_time:
-        if not self._taken:
+        if not self.taken:
             return None
-        reistijd_naar_hub = self._distances.get_time(self._taken[-1].ziekenhuis, self._start_hub)
-        eind_tijd = self._taken[-1].eindtijd_taak + reistijd_naar_hub
+        reistijd_naar_hub = self._distances.get_time(self.taken[-1].ziekenhuis, self._start_hub)
+        eind_tijd = self.taken[-1].eindtijd_taak + reistijd_naar_hub
         return eind_tijd
     
     @property
