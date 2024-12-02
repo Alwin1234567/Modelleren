@@ -76,8 +76,10 @@ def test_opslaan():
     # auto's vullen met routes
     hub.fill_autos()
     metriek = Metrieken([hub])
-    for _ in range(4):
+    for _ in range(100):
         metriek.add_iteratie()
+    metriek.uitloopmarge_histogram
+    metriek.percentage_uitloopmarge((5*60))
     metriek.metrieken_to_csv()
 
 
@@ -88,8 +90,9 @@ def test_metrieken_met_verbeteren():
     metrieken = Metrieken(hubs)
     verbeteringen = Verbeteringen(hubs, initial_heat=0.3, cooling_interval=1, metrieken=metrieken)
     verbeteringen.verbeteringen()
-    for marge in [60, 45, 30, 20, 10, 5, 2, 1]:
-        metrieken.percentage_uitloopmarge(marge)
+    # for marge in [60, 45, 30, 20, 10, 5, 2, 1]:
+    #     metrieken.percentage_uitloopmarge(marge)
+    metrieken.uitloopmarge_histogram
     metrieken.metrieken_to_csv()
     
 
