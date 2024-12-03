@@ -1,4 +1,4 @@
-from Python.source.flow import hyperparameter_tunen
+from source.flow import hyperparameter_tunen
 import pytest
 
 def test_optuna():
