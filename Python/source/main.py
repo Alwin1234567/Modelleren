@@ -1,4 +1,4 @@
-from source.flow import Create_locations, Metrieken, Verbeteringen, store_results
+from flow import Create_locations, Metrieken, Verbeteringen, store_results
 
 def run():
     creator = Create_locations()
