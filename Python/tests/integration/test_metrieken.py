@@ -90,8 +90,11 @@ def test_metrieken_met_verbeteren():
     metrieken = Metrieken(hubs)
     verbeteringen = Verbeteringen(hubs, initial_heat=0.3, cooling_interval=1, metrieken=metrieken)
     verbeteringen.verbeteringen()
-    # for marge in [60, 45, 30, 20, 10, 5, 2, 1]:
-    #     metrieken.percentage_uitloopmarge(marge)
+    # uitlooptijden = [10, 20, 30, 60, 120, 180]
+    # for _ in range(len(uitlooptijden)):
+    #         metrieken.add_iteratie()
+    # for uitloop in uitlooptijden:
+    #     metrieken.percentage_uitloopmarge(uitloop)
     metrieken.uitloopmarge_histogram
     metrieken.metrieken_to_csv()
     
