@@ -11,8 +11,8 @@ def run_optuna():
     # Define the objective function
     def objective(trial):
         # Suggest values for initial_heat and heat_reduction
-        initial_heat = trial.suggest_float('initial_heat', 0.1, 1.0)
-        heat_reduction = trial.suggest_int('heat_reduction', 1, 200)
+        initial_heat = trial.suggest_float('initial_heat', 0.01, 1.0)
+        heat_reduction = trial.suggest_int('heat_reduction', 1, 100)
         
         # Use deepcopy to create a fresh copy of the initial hubs
         hubs = deepcopy(initial_hubs)

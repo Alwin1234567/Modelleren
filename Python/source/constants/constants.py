@@ -45,8 +45,8 @@ class Constants:
     EXCEL_TAKEN_SHEET = "Tijdvakken_en_vraag"
 
     # simulated annealing hitte functie parameters
-    INITIAL_HEAT = 0.5
-    COOLING_INTERVAL = 100
+    INITIAL_HEAT = 0.1
+    COOLING_INTERVAL = 25
 
     # instellingen voor de kosten van de auto
     @staticmethod
