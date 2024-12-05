@@ -88,14 +88,14 @@ def test_metrieken_met_verbeteren():
     create_locations = Create_locations()
     hubs = create_locations.hubs
     metrieken = Metrieken(hubs)
-    verbeteringen = Verbeteringen(hubs, initial_heat=0.3, cooling_interval=1, metrieken=metrieken)
+    verbeteringen = Verbeteringen(hubs, initial_heat=0.19446937, cooling_interval=75, metrieken=metrieken)
     verbeteringen.verbeteringen()
-    # uitlooptijden = [10, 20, 30, 60, 120, 180]
+    uitlooptijden = [10, 20, 30, 60, 120, 180]
     # for _ in range(len(uitlooptijden)):
     #         metrieken.add_iteratie()
-    # for uitloop in uitlooptijden:
-    #     metrieken.percentage_uitloopmarge(uitloop)
-    metrieken.uitloopmarge_histogram
+    for uitloop in uitlooptijden:
+        metrieken.percentage_uitloopmarge(uitloop)
+    # metrieken.uitloopmarge_histogram
     metrieken.metrieken_to_csv()
     
 
