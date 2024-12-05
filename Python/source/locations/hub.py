@@ -8,6 +8,7 @@ from warnings import warn
 from source.constants import Constants
 from datetime import time
 import random
+import numpy as np
 
 class Hub(Location):
 
@@ -111,7 +112,27 @@ class Hub(Location):
             warn("Er wordt een route verwijderd waar nog taken in staan.", RuntimeWarning)
         self._routes.remove(route)
     
-    def split_routes_waittime(self, kans: float = 0) -> None:
+    def accept_route(self, oude_kosten: float, nieuwe_kosten: float, temperatuur: float) -> bool:
+        """
+        Bepaalt of een nieuwe route geaccepteerd wordt op basis van de Metropolis-criteria.
+
+        Parameters:
+            oude_route (Route): De oude route.
+            nieuwe_route (Route): De nieuwe route.
+            temperatuur (float): De temperatuur van het systeem.
+
+        Returns:
+            bool: True als de nieuwe route geaccepteerd wordt, anders False.
+        """
+        if nieuwe_kosten <= oude_kosten:
+            return True
+        else:
+            kans = np.exp((nieuwe_kosten - oude_kosten) / temperatuur)
+            return random.random() < kans
+
+            
+    
+    def split_routes_waittime(self, temperatuur: float = 0) -> None:
         """
         Splits routes in twee op de langste wachttijd als dit goedkoper is
         """
@@ -146,12 +167,11 @@ class Hub(Location):
             distancetime_hub_B = self._distances.get_distance_time(self, taak_B.ziekenhuis)
             cost_hub_B = distancetime_hub_B.cost((taak_B.begintijd_taak - distancetime_hub_B.time).tijd, route.auto_type)
             cost_A_hub_B = cost_A_hub + cost_hub_B
-            
-            if cost_A_hub_B < cost_A_B or random.random() < kans:
+            if self.accept_route(cost_A_B + cost_A_hub_B, temperatuur):
                 # goedkoper om te splitsen, dus splitsing uitvoeren
                 self._split_route(index_longest_waittime, route)
 
-    def split_routes_distance(self, kans: float = 0) -> None:
+    def split_routes_distance(self, temperatuur: float = 0.1) -> None:
         """
         Splits routes in twee op de langste reisafstand als dit goedkoper is
         """
@@ -187,7 +207,7 @@ class Hub(Location):
             cost_hub_B = distancetime_hub_B.cost((taak_B.begintijd_taak - distancetime_hub_B.time).tijd, route.auto_type)
             cost_A_hub_B = cost_A_hub + cost_hub_B
             
-            if cost_A_hub_B < cost_A_B or random.random() < kans:
+            if self.accept_route(cost_A_B + cost_A_hub_B, temperatuur):
                 # goedkoper om te splitsen, dus splitsing uitvoeren
                 self._split_route(route.taken.index(taak_B), route)
 
@@ -218,7 +238,7 @@ class Hub(Location):
                 # alle taken vanaf taak_B verwijderen uit originele route
                 route.remove_taak(taak)
     
-    def combine_routes(self, kans: float = 0) -> None:
+    def combine_routes(self, temperatuur: float = 0) -> None:
         """
         Plak routes aan elkaar als dit goedkoper is
         """
@@ -284,7 +304,7 @@ class Hub(Location):
                 cost_nieuwe_route = distance_cost + time_cost
                 
                 # als goedkoper toestaan of met bepaalde kans verslechteringen toestaan -> uitvoeren
-                if cost_nieuwe_route < cost_oude_routes or random.random() < kans:
+                if self.accept_route(cost_oude_routes, cost_nieuwe_route, temperatuur):
                     # voorste route verschuiven
                     for taak in voorste_route.taken:
                         taak.set_begintijd_taak(taak.begintijd_taak + verschuiving_voorste)
