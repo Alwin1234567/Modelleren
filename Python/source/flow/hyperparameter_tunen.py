@@ -30,7 +30,7 @@ def run_optuna():
 
     # Create a study and optimize the objective function
     study = optuna.create_study(direction='minimize')
-    study.optimize(objective, n_trials=10)
+    study.optimize(objective, n_trials=20)
 
     # Print the best parameters
     print(f"Best parameters: {study.best_params}")

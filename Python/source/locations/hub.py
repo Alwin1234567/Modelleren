@@ -167,7 +167,7 @@ class Hub(Location):
             distancetime_hub_B = self._distances.get_distance_time(self, taak_B.ziekenhuis)
             cost_hub_B = distancetime_hub_B.cost((taak_B.begintijd_taak - distancetime_hub_B.time).tijd, route.auto_type)
             cost_A_hub_B = cost_A_hub + cost_hub_B
-            if self.accept_route(cost_A_B + cost_A_hub_B, temperatuur):
+            if self.accept_route(cost_A_B, cost_A_hub_B, temperatuur):
                 # goedkoper om te splitsen, dus splitsing uitvoeren
                 self._split_route(index_longest_waittime, route)
 
@@ -207,7 +207,7 @@ class Hub(Location):
             cost_hub_B = distancetime_hub_B.cost((taak_B.begintijd_taak - distancetime_hub_B.time).tijd, route.auto_type)
             cost_A_hub_B = cost_A_hub + cost_hub_B
             
-            if self.accept_route(cost_A_B + cost_A_hub_B, temperatuur):
+            if self.accept_route(cost_A_B, cost_A_hub_B, temperatuur):
                 # goedkoper om te splitsen, dus splitsing uitvoeren
                 self._split_route(route.taken.index(taak_B), route)
 
