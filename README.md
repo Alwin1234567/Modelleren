@@ -14,7 +14,7 @@ Volg de onderstaande stappen om Graphhopper te installeren:
 Nu bent u klaar om gebruik te maken van Graphhopper.
 
 ## gebruik cache
-Om te voorkomen dat alle afstanden tussen de verschillende locaties opnieuw moet worden berekent, worden de resultaten in [`cache`](Python/cache) opgeslagen. Een kopie van de cache is te vinden in [`example_cache`](example_cache). Als het bestand [`distance_time.csv`](example_cache/distance_time.csv) wordt gekopieerd naar de [`cache`](Python/cache) folder, is Graphhopper niet nodig voor de huisige dataset.
+Om te voorkomen dat alle afstanden tussen de verschillende locaties opnieuw moet worden berekent, worden de resultaten in [`cache`](Python/cache) opgeslagen. Een kopie van de cache is te vinden in [`example_cache`](example_cache). Als het bestand [`distance_time.csv`](example_cache/distance_time.csv) wordt gekopieerd naar de [`cache`](Python/cache) folder, is Graphhopper niet nodig voor de huidige dataset.
 
 ## Aanpassen van Instellingen
 De instellingen van het programma kunnen worden aangepast in het bestand [`constants.py`](Python/source/constants/constants.py).
