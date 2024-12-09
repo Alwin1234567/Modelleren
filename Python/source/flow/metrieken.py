@@ -154,6 +154,14 @@ class Metrieken:
         """
         return self._kilometerkosten, self._personeelskosten, self._totale_kosten
     
+    @property
+    def uitloopmarge_histogram(self) -> list[float]:
+        """
+        percentage taken per uitloopmarge
+        """
+        for uitloopmarge in range(0, 122, 2):
+            self.percentage_uitloopmarge(uitloopmarge)
+    
     def percentage_uitloopmarge(self, uitloopmarge: float):
         """
         Geeft het percentage van de taken dat een uitloop van meer dan de uitloopmarge heeft.
