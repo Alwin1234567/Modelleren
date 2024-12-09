@@ -6,9 +6,10 @@ import time
 from tqdm import tqdm
 from .metrieken import Metrieken
 from typing import Optional
+from source.constants import Constants
 
 class Verbeteringen:
-    def __init__(self, hubs: list[Hub], initial_heat: float = 1, heat_reduction: float = 0.95, cooling_interval:int = 100, metrieken: Optional[Metrieken] = None) -> None:
+    def __init__(self, hubs: list[Hub], initial_heat: float = Constants.INITIAL_HEAT, heat_reduction: float = 0.95, cooling_interval:int = Constants.COOLING_INTERVAL, metrieken: Optional[Metrieken] = None) -> None:
         """
         Initialiseer de Verbeteringen class en controleer de status en routes van de hubs.
 
@@ -95,7 +96,6 @@ class Verbeteringen:
                 current_cost = hub.cost
                 if current_cost < best_cost:
                     best_cost = current_cost
-                    tqdm.write(f"Hub {hub.name} improved to {current_cost}")
                     best_iteration = self._iteration
                     best_hub = deepcopy(hub)
                 

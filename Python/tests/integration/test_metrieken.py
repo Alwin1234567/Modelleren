@@ -37,6 +37,17 @@ def test_metrieken():
         print('tijden:', route.start_tijd.tijd, route.eind_tijd.tijd, route.total_time)
     print('periodes:', metriek.uren_per_period(hub.routes))
 
+    for _ in range(4):
+        metriek.add_iteratie()
+        hub.split_routes_distance()
+        hub.combine_routes()
+        hub.split_routes_waittime()
+        hub.combine_routes()
+    print(metriek.wachttijd_uren)
+    for marge in [30, 20, 10, 5, 2, 1]:
+        metriek.percentage_uitloopmarge(marge)
+    metriek.metrieken_to_csv()
+
 def test_opslaan():
     hub = Hub("De Meern")
     ziekenhuis1 = Ziekenhuis("Equip Amsterdam", Bak_kar_voorkeur.BAK)
@@ -65,8 +76,10 @@ def test_opslaan():
     # auto's vullen met routes
     hub.fill_autos()
     metriek = Metrieken([hub])
-    for _ in range(4):
+    for _ in range(100):
         metriek.add_iteratie()
+    metriek.uitloopmarge_histogram
+    metriek.percentage_uitloopmarge((5*60))
     metriek.metrieken_to_csv()
 
 
@@ -75,8 +88,14 @@ def test_metrieken_met_verbeteren():
     create_locations = Create_locations()
     hubs = create_locations.hubs
     metrieken = Metrieken(hubs)
-    verbeteringen = Verbeteringen(hubs, initial_heat=0.5, cooling_interval=5, metrieken=metrieken)
+    verbeteringen = Verbeteringen(hubs, initial_heat=0.19446937, cooling_interval=75, metrieken=metrieken)
     verbeteringen.verbeteringen()
+    uitlooptijden = [10, 20, 30, 60, 120, 180]
+    # for _ in range(len(uitlooptijden)):
+    #         metrieken.add_iteratie()
+    for uitloop in uitlooptijden:
+        metrieken.percentage_uitloopmarge(uitloop)
+    # metrieken.uitloopmarge_histogram
     metrieken.metrieken_to_csv()
     
 

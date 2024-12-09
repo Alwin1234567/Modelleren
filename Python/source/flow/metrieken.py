@@ -23,6 +23,8 @@ class Metrieken:
         self._kilometerkosten: list[float] = []
         self._personeelskosten: list[float] = []
         self._totale_kosten: list[float] = []
+        self._uitloopmarges = []
+        self._percentage_uitloopmarge: list[float] = []
         self.add_iteratie()
     
     def alle_routes(self) -> None:
@@ -40,7 +42,7 @@ class Metrieken:
         self._aantal_kilometers.append(sum([hub.gereden_kilometers for hub in self._hubs]))
         aantal_werkuren = sum([hub.totale_tijd for hub in self._hubs])/60
         self._aantal_werkuren.append(aantal_werkuren) # totale tijd is in minuten
-        # self._wachttijd_uren.append(sum([hub.totale_wachttijd for hub in self._hubs])/60) # totale wachttijd is in minuten
+        self._wachttijd_uren.append(sum([hub.totale_wachttijd for hub in self._hubs])/60) # totale wachttijd is in minuten
 
         dagdienst_uren, avonddienst_uren, nachtdienst_uren = self.uren_per_period(self._alle_routes)
         self._dagdienst_uren.append(dagdienst_uren)
@@ -63,6 +65,18 @@ class Metrieken:
         Parameters:
             None
         """
+        # percentage_uitloopmarge verlengen tot lengte andere lijsten
+        opvullen = [0] * (len(self._benodigde_voertuigen) - len(self._percentage_uitloopmarge))
+        if len(self._benodigde_voertuigen) > len(self._percentage_uitloopmarge):
+            percentage_uitloopmarge = self._percentage_uitloopmarge
+            percentage_uitloopmarge.extend(opvullen)
+            uitloopmarge = self._uitloopmarges
+            uitloopmarge.extend(opvullen)
+        else:
+            percentage_uitloopmarge = self._percentage_uitloopmarge[:len(self._benodigde_voertuigen)]
+            uitloopmarge = self._uitloopmarges[:len(self._benodigde_voertuigen)]
+            warn("Er zijn meer uitloopmarges berekend dan iteraties toegevoegd, dus niet alle uitloopmarges in excel opgeslagen", RuntimeWarning)
+
         # Create a dictionary of properties
         data = {
             'benodigde_voertuigen': self._benodigde_voertuigen,
@@ -72,10 +86,12 @@ class Metrieken:
             'dagdienst_uren': self._dagdienst_uren,
             'avonddienst_uren': self._avonddienst_uren,
             'nachtdienst_uren': self._nachtdienst_uren,
-            # 'wachttijd_uren': self._wachttijd_uren,
+            'wachttijd_uren': self._wachttijd_uren,
             'kilometerkosten': self._kilometerkosten,
             'personeelskosten': self._personeelskosten,
-            'totale_kosten': self._totale_kosten
+            'totale_kosten': self._totale_kosten, 
+            'uitloop_(minuten)': uitloopmarge,
+            'percentage_uitloopmarge': percentage_uitloopmarge
         }
 
         # Create a DataFrame from the dictionary
@@ -138,19 +154,37 @@ class Metrieken:
         """
         return self._kilometerkosten, self._personeelskosten, self._totale_kosten
     
-    def percentage_uitloopmarge(self, uitloopmarge: float) -> float:
+    @property
+    def uitloopmarge_histogram(self) -> list[float]:
+        """
+        percentage taken per uitloopmarge
+        """
+        for uitloopmarge in range(0, 122, 2):
+            self.percentage_uitloopmarge(uitloopmarge)
+    
+    def percentage_uitloopmarge(self, uitloopmarge: float):
+        """
+        Geeft het percentage van de taken dat een uitloop van meer dan de uitloopmarge heeft.
+
+        Properties:
+            uitloopmarge (float): Aantal minuten uitloop.
+        """
         self.alle_routes()
-        aantal_uitloopmarge_halfuur: int = 0
+        aantal_uitloopmarge: int = 0
         for route in self._alle_routes:
             for taak in route.taken:
                 uitloop = float(taak.tijdslot.eindtijd - taak.eindtijd_taak)
                 if uitloop >= uitloopmarge:
                     # taak heeft uitloop van meer dan uitloopmarge
-                    aantal_uitloopmarge_halfuur += 1
-        totaal_aantal_taken = len(self._alle_routes)
-        return (aantal_uitloopmarge_halfuur/totaal_aantal_taken) * 100
+                    aantal_uitloopmarge += 1
+        totaal_aantal_taken = sum([len(route.taken) for route in self._alle_routes])
+        self._uitloopmarges.append(uitloopmarge)
+        self._percentage_uitloopmarge.append((aantal_uitloopmarge/totaal_aantal_taken) * 100)
     
     def uren_per_period(self, route_lijst: list[Route]) -> tuple[float, float, float]:
+        """
+        Geeft totaal aantal uren dagdienst, avonddienst en nachtdienst in de meegegeven routes
+        """
         dagdienst = 0
         avonddienst = 0
         nachtdienst = 0

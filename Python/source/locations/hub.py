@@ -530,7 +530,8 @@ class Hub(Location):
         """
         Totale wachttijdtijd van alle routes samen in minuten
         """
-        wachttijd = sum([float(route.total_waiting_time) for route in self._routes])
+        wachttijd = sum([round(float(route.total_waiting_time), 5) for route in self._routes])
+        # wachttijd van elke route afronden om tijden van miliseconden op te vangen als 0
         return wachttijd
     
     @property

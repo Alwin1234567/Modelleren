@@ -38,9 +38,18 @@ class Long_time:
         if isinstance(tijd, time):
             return tijd, dag
         if isinstance(tijd, float):
-            seconden = int((tijd % 1) * 60)
-            minuten = int(tijd % 60)
-            uren = int((tijd // 60) % 24)
+            # tijd afronden op 5 decimalen om milisecondes af te vangen als 0
+            tijd = round(tijd, 5)
+            if tijd < 0 and dag < 0:
+                # absolute waarde van tijd, omdat negatieve tijd wordt opgevangen in de dag
+                seconden = int((abs(tijd) % 1) * 60)
+                minuten = int(abs(tijd) % 60)
+                uren = int((abs(tijd) // 60) % 24)
+            else:
+                seconden = int((tijd % 1) * 60)
+                minuten = int(tijd % 60)
+                uren = int((tijd // 60) % 24)
+
             tempdag = int(tijd // 1440)  # 1440 minutes in a day
             if tempdag != 0:
                 if dag != 0:

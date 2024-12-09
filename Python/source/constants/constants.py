@@ -16,6 +16,39 @@ class Constants:
     WACHTTIJD_TUSSEN_ROUTES = 30 # half uur wachten tussen twee routes voor opvangen vertraging voorgaande routes
     BAKKEN_PER_KAR = 8 # aantal bakken die op de plek van één kar in een bakwagen passen
 
+    MAPS_URL = "http://localhost:8989/route"
+    MAPS_PARAMS = {
+        'profile': 'car',
+        'locale': 'en',
+        'calc_points': 'false'
+    }
+    STARTUP_WAIT_TIME = 5
+
+    # paden naar de benodigde mappen
+    CACHE_PATH = Path(__file__).resolve().parents[2] / 'cache'
+    GRAPHHOPPER_PATH = Path(__file__).resolve().parents[2] / 'graphhopper'
+    LOCATIONS_PATH = Path(__file__).resolve().parents[2] / 'locations_data'
+    RESULTS_PATH = Path(__file__).resolve().parents[2] / 'results'
+    
+    # instellingen voor de kosten van de chauffeur
+    PRIJS_PER_UUR_CHAUFFEUR = 22.75
+    EXTRA_AVOND = 0.3
+    EXTRA_NACHT = 0.5
+    TIJD_DAG = (time(6, 0), time(20, 0))
+    TIJD_AVOND = (time(20, 0), time(0, 0))
+    TIJD_NACHT = (time(0, 0), time(6, 0))
+
+    # bestandsnamen en bladnamen van de Excel-bestanden
+    EXCEL_BESTAND_NAAM = "data_locaties.xlsx"
+    EXCEL_ZIEKENHUIZEN_SHEET = "Algemene_ziekenhuisgegevens"
+    EXCEL_HUB_SHEET = "Algemene_hubgegevens"
+    EXCEL_TAKEN_SHEET = "Tijdvakken_en_vraag"
+
+    # simulated annealing hitte functie parameters
+    INITIAL_HEAT = 0.1
+    COOLING_INTERVAL = 25
+
+    # instellingen voor de kosten van de auto
     @staticmethod
     def prijs_per_km(auto_type: "Auto_type") -> float:
         BRANDSTOFPRIJS = 1.80
@@ -50,27 +83,3 @@ class Constants:
             return 0.5
         else:
             return 0.3
-
-    MAPS_URL = "http://localhost:8989/route"
-    MAPS_PARAMS = {
-        'profile': 'car',
-        'locale': 'en',
-        'calc_points': 'false'
-    }
-    STARTUP_WAIT_TIME = 5
-    CACHE_PATH = Path(__file__).resolve().parents[2] / 'cache'
-    GRAPHHOPPER_PATH = Path(__file__).resolve().parents[2] / 'graphhopper'
-    LOCATIONS_PATH = Path(__file__).resolve().parents[2] / 'locations_data'
-    RESULTS_PATH = Path(__file__).resolve().parents[2] / 'results'
-    
-    PRIJS_PER_UUR_CHAUFFEUR = 22.75
-    EXTRA_AVOND = 0.3
-    EXTRA_NACHT = 0.5
-    TIJD_DAG = (time(6, 0), time(20, 0))
-    TIJD_AVOND = (time(20, 0), time(0, 0))
-    TIJD_NACHT = (time(0, 0), time(6, 0))
-
-    EXCEL_BESTAND_NAAM = "data_locaties.xlsx"
-    EXCEL_ZIEKENHUIZEN_SHEET = "Algemene_ziekenhuisgegevens"
-    EXCEL_HUB_SHEET = "Algemene_hubgegevens"
-    EXCEL_TAKEN_SHEET = "Tijdvakken_en_vraag"

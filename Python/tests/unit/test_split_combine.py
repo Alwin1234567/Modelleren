@@ -1,7 +1,7 @@
 import pytest
 from source.structures import Maps, Taak, Tijdslot, Long_time, Bak_kar_voorkeur
 from source.locations import Hub, Ziekenhuis
-import time
+from source.flow import Metrieken
 
 def test_routes_combineren():
     # locaties maken
@@ -49,12 +49,14 @@ def test_routes_combineren():
         aantal_taken += len(route.taken)
     assert aantal_taken == 10
 
+    metriek = Metrieken([hub])
     # twee keer splitsen
     hub.split_routes_waittime()
+    metriek.add_iteratie()
     hub.split_routes_waittime()
     hub.fill_autos()
-
-    time.sleep(0.2)
+    metriek.add_iteratie()
+    # time.sleep(0.2)
 
     aantal_taken = 0
     for route in hub.routes:
@@ -63,7 +65,7 @@ def test_routes_combineren():
     assert aantal_taken == 10
 
     hub.combine_routes()
-
+    metriek.add_iteratie()
     aantal_taken = 0
     for route in hub.routes:
         #print('route:', route.max_lading(route.auto_type), route.max_lading_vrij(route.auto_type), route.start_tijd.tijd, route.eind_tijd.tijd, (route.eind_tijd - route.start_tijd).tijd, route.verschuiven[0].tijd, route.verschuiven[1].tijd)
@@ -71,6 +73,7 @@ def test_routes_combineren():
     assert aantal_taken == 10
     print(len(hub.routes))
     assert len(hub.routes) == 6
+    print(metriek.wachttijd_uren)
     
 def test_routes_splitsen_distance():
     # locaties maken
