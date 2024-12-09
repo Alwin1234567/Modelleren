@@ -1,0 +1,2228 @@
+sep=;
+from;to;distance;time
+De Meern;A Klinieken;17.951835;20.05575
+A Klinieken;De Meern;18.748105;18.358616666666663
+A Klinieken;Andros Clinics Rijswijk;71.252552;49.909416666666665
+A Klinieken;Annadal kliniek;181.698608;131.73288333333332
+Andros Clinics Rijswijk;A Klinieken;73.246864;50.20719999999999
+Annadal kliniek;A Klinieken;177.418464;137.84065
+De Meern;Andros Clinics Rijswijk;53.563275;36.821016666666665
+De Meern;Annadal kliniek;174.524215;127.21886666666666
+De Meern;Annadal kliniek Poli;174.524215;127.21886666666666
+De Meern;Annatommie Amstelveen;33.869982;27.81553333333333
+De Meern;Annatommie Utrecht;3.928267;4.846683333333333
+De Meern;Arthrex;4.643877000000001;5.961733333333333
+De Meern;Cosmed Bosch en Duin OK;18.562758;21.203566666666667
+De Meern;Cosmed Bosch en Duin Poli;18.562758;21.203566666666667
+De Meern;Denticien;53.795906;38.19475
+De Meern;Dermaclinic Utrecht;8.598807;12.0228
+De Meern;Doctors at soap;8.343729999999999;11.774133333333332
+De Meern;EQA - Velthuis Kliniek Amsterdam;30.043248;24.31853333333333
+De Meern;EQA - Xpert Clinic Hand Amsterdam;30.043248;24.31853333333333
+De Meern;EQA - Xpert Clinic Proctologie Amsterdam;30.043248;24.31853333333333
+De Meern;EQA - Xpert Orthopedie Amsterdam;30.043248;24.31853333333333
+De Meern;EQEI - Velthuis Kliniek Eindhoven;88.31755100000001;61.57121666666667
+De Meern;EQEI - Xpert Clinic Hand Eindhoven;88.31755100000001;61.57121666666667
+De Meern;EQEI - Xpert Clinic Proctologie Eindhoven;88.31755100000001;61.57121666666667
+De Meern;EQEI - Xpert Orthopedie Eindhoven;88.31755100000001;61.57121666666667
+De Meern;EQEI - Xpert Orthopedie Schijndel;64.434998;47.63881666666667
+De Meern;EQEN - Velthuis Kliniek Enschede;138.779137;103.2025
+De Meern;EQEN - Xpert Clinic Hand Enschede;138.779137;103.2025
+De Meern;EQEN - Xpert Clinic Proctologie Enschede;138.779137;103.2025
+De Meern;EQR - Velthuis Kliniek Rotterdam;47.749805;33.713233333333335
+De Meern;EQR - Xpert Clinic Hand Rotterdam;47.749805;33.713233333333335
+De Meern;EQR - Xpert Clinic Proctologie Rotterdam;47.749805;33.713233333333335
+De Meern;EQR - Xpert Orthopedie Rotterdam;47.749805;33.713233333333335
+De Meern;EQRZD - Hand pols Rozendaal;69.871981;48.77543333333333
+De Meern;EQRZD - Orthopedie Rozendaal;69.871981;48.77543333333333
+De Meern;Equip Amsterdam;30.043248;24.31853333333333
+De Meern;Equipe Enschede;30.043248;24.31853333333333
+De Meern;EQV - Velthuis Kliniek Velp;69.871981;48.77543333333333
+De Meern;EQV - Xpert Clinic Hand Velp;70.686532;49.5596
+De Meern;EQV - Xpert Clinic Proctologie Velp;69.871981;48.77543333333333
+De Meern;EQZ - Xpert Clinic Oogzorg Zeist;18.889830000000003;18.59845
+De Meern;EQZW - Xpert Clinic Hand Zwolle;100.139061;73.13796666666667
+De Meern;Esser Clinics;29.549808;21.151733333333333
+De Meern;Flex Clinics;4.979926000000001;7.863766666666667
+De Meern;Haaglanden Clinics;57.490272;41.87675
+De Meern;Kazem;37.28372;43.9596
+De Meern;KNO de Jong;6.135916;8.537966666666668
+De Meern;Medcentric MWCZ;131.694012;95.35011666666666
+De Meern;Medtronic;85.91197100000001;61.49745
+De Meern;Orthoparc Rozendaal;69.871981;48.77543333333333
+De Meern;Pro-Motion;58.868536;40.83488333333333
+De Meern;Retina eye care;20.984635;16.725716666666667
+Andros Clinics Rijswijk;De Meern;54.197935;37.02823333333333
+Andros Clinics Rijswijk;Annadal kliniek;212.469497;156.34046666666666
+Andros Clinics Rijswijk;Annadal kliniek Poli;212.469497;156.34046666666666
+Andros Clinics Rijswijk;Annatommie Amstelveen;51.810348;39.2911
+Andros Clinics Rijswijk;Annatommie Utrecht;56.834142;40.09201666666667
+Andros Clinics Rijswijk;Arthrex;58.239943;40.0548
+Andros Clinics Rijswijk;Cosmed Bosch en Duin OK;73.857787;51.35501666666666
+Andros Clinics Rijswijk;Cosmed Bosch en Duin Poli;73.857787;51.35501666666666
+Andros Clinics Rijswijk;Denticien;1.2844760000000002;1.7232999999999998
+Andros Clinics Rijswijk;Dermaclinic Utrecht;61.504682;47.26813333333334
+Andros Clinics Rijswijk;Doctors at soap;61.249606;47.019466666666666
+Andros Clinics Rijswijk;EQA - Velthuis Kliniek Amsterdam;59.501813;41.40586666666666
+Andros Clinics Rijswijk;EQA - Xpert Clinic Hand Amsterdam;59.501813;41.40586666666666
+Andros Clinics Rijswijk;EQA - Xpert Clinic Proctologie Amsterdam;59.501813;41.40586666666666
+Andros Clinics Rijswijk;EQA - Xpert Orthopedie Amsterdam;59.501813;41.40586666666666
+Andros Clinics Rijswijk;EQEI - Velthuis Kliniek Eindhoven;121.759257;94.88238333333334
+Andros Clinics Rijswijk;EQEI - Xpert Clinic Hand Eindhoven;121.759257;94.88238333333334
+Andros Clinics Rijswijk;EQEI - Xpert Clinic Proctologie Eindhoven;121.759257;94.88238333333334
+Andros Clinics Rijswijk;EQEI - Xpert Orthopedie Eindhoven;121.759257;94.88238333333334
+Andros Clinics Rijswijk;EQEI - Xpert Orthopedie Schijndel;108.653667;81.71123333333334
+Andros Clinics Rijswijk;EQEN - Velthuis Kliniek Enschede;193.004742;134.0904
+Andros Clinics Rijswijk;EQEN - Xpert Clinic Hand Enschede;193.004742;134.0904
+Andros Clinics Rijswijk;EQEN - Xpert Clinic Proctologie Enschede;193.004742;134.0904
+Andros Clinics Rijswijk;EQR - Velthuis Kliniek Rotterdam;22.585296;20.587816666666665
+Andros Clinics Rijswijk;EQR - Xpert Clinic Hand Rotterdam;22.585296;20.587816666666665
+Andros Clinics Rijswijk;EQR - Xpert Clinic Proctologie Rotterdam;22.585296;20.587816666666665
+Andros Clinics Rijswijk;EQR - Xpert Orthopedie Rotterdam;22.585296;20.587816666666665
+Andros Clinics Rijswijk;EQRZD - Hand pols Rozendaal;119.673436;81.49773333333333
+Andros Clinics Rijswijk;EQRZD - Orthopedie Rozendaal;119.673436;81.49773333333333
+Andros Clinics Rijswijk;Equip Amsterdam;59.501813;41.40586666666666
+Andros Clinics Rijswijk;Equipe Enschede;59.501813;41.40586666666666
+Andros Clinics Rijswijk;EQV - Velthuis Kliniek Velp;119.673436;81.49773333333333
+Andros Clinics Rijswijk;EQV - Xpert Clinic Hand Velp;120.487988;82.2819
+Andros Clinics Rijswijk;EQV - Xpert Clinic Proctologie Velp;119.673436;81.49773333333333
+Andros Clinics Rijswijk;EQZ - Xpert Clinic Oogzorg Zeist;73.11543499999999;49.48635
+Andros Clinics Rijswijk;EQZW - Xpert Clinic Hand Zwolle;154.364667;104.02586666666666
+Andros Clinics Rijswijk;Esser Clinics;26.991418000000003;18.959866666666667
+Andros Clinics Rijswijk;Flex Clinics;58.17134;43.5791
+Andros Clinics Rijswijk;Haaglanden Clinics;7.346042000000001;9.73885
+Andros Clinics Rijswijk;Kazem;41.598258;29.61055
+Andros Clinics Rijswijk;KNO de Jong;54.755878;40.35683333333333
+Andros Clinics Rijswijk;Medcentric MWCZ;100.789756;80.6956
+Andros Clinics Rijswijk;Medtronic;123.377292;96.93251666666669
+Andros Clinics Rijswijk;Orthoparc Rozendaal;119.673436;81.49773333333333
+Andros Clinics Rijswijk;Pro-Motion;34.051169;28.697333333333333
+Andros Clinics Rijswijk;Retina eye care;70.78609;49.44801666666667
+Annadal kliniek;De Meern;169.65031;135.23065
+Annadal kliniek;Andros Clinics Rijswijk;212.907175;156.67374999999998
+Annadal kliniek;Annadal kliniek Poli;0.0;0.0
+Annadal kliniek;Annatommie Amstelveen;200.365167;153.57716666666664
+Annadal kliniek;Annatommie Utrecht;168.257536;132.87335
+Annadal kliniek;Arthrex;167.817357;132.48088333333334
+Annadal kliniek;Cosmed Bosch en Duin OK;178.029387;138.98846666666668
+Annadal kliniek;Cosmed Bosch en Duin Poli;178.029387;138.98846666666668
+Annadal kliniek;Denticien;213.767592;157.84393333333335
+Annadal kliniek;Dermaclinic Utrecht;171.82781599999998;135.8667
+Annadal kliniek;Doctors at soap;171.653908;137.22923333333335
+Annadal kliniek;EQA - Velthuis Kliniek Amsterdam;196.538434;150.08016666666666
+Annadal kliniek;EQA - Xpert Clinic Hand Amsterdam;196.538434;150.08016666666666
+Annadal kliniek;EQA - Xpert Clinic Proctologie Amsterdam;196.538434;150.08016666666666
+Annadal kliniek;EQA - Xpert Orthopedie Amsterdam;196.538434;150.08016666666666
+Annadal kliniek;EQEI - Velthuis Kliniek Eindhoven;91.600367;67.49663333333334
+Annadal kliniek;EQEI - Xpert Clinic Hand Eindhoven;91.600367;67.49663333333334
+Annadal kliniek;EQEI - Xpert Clinic Proctologie Eindhoven;91.600367;67.49663333333334
+Annadal kliniek;EQEI - Xpert Orthopedie Eindhoven;91.600367;67.49663333333334
+Annadal kliniek;EQEI - Xpert Orthopedie Schijndel;112.453057;83.71589999999999
+Annadal kliniek;EQEN - Velthuis Kliniek Enschede;235.670645;187.8768
+Annadal kliniek;EQEN - Xpert Clinic Hand Enschede;235.670645;187.8768
+Annadal kliniek;EQEN - Xpert Clinic Proctologie Enschede;235.670645;187.8768
+Annadal kliniek;EQR - Velthuis Kliniek Rotterdam;191.015922;137.03333333333333
+Annadal kliniek;EQR - Xpert Clinic Hand Rotterdam;191.015922;137.03333333333333
+Annadal kliniek;EQR - Xpert Clinic Proctologie Rotterdam;191.015922;137.03333333333333
+Annadal kliniek;EQR - Xpert Orthopedie Rotterdam;191.015922;137.03333333333333
+Annadal kliniek;EQRZD - Hand pols Rozendaal;159.465086;122.64121666666666
+Annadal kliniek;EQRZD - Orthopedie Rozendaal;159.465086;122.64121666666666
+Annadal kliniek;Equip Amsterdam;196.538434;150.08016666666666
+Annadal kliniek;Equipe Enschede;196.538434;150.08016666666666
+Annadal kliniek;EQV - Velthuis Kliniek Velp;159.465086;122.64121666666666
+Annadal kliniek;EQV - Xpert Clinic Hand Velp;158.22372399999998;120.95941666666666
+Annadal kliniek;EQV - Xpert Clinic Proctologie Velp;159.465086;122.64121666666666
+Annadal kliniek;EQZ - Xpert Clinic Oogzorg Zeist;177.287035;137.1198
+Annadal kliniek;EQZW - Xpert Clinic Hand Zwolle;224.014992;165.33858333333333
+Annadal kliniek;Esser Clinics;197.024401;150.69328333333334
+Annadal kliniek;Flex Clinics;171.68792000000002;135.23286666666667
+Annadal kliniek;Haaglanden Clinics;219.740831;164.60658333333333
+Annadal kliniek;Kazem;205.659871;167.61758333333333
+Annadal kliniek;KNO de Jong;176.532853;138.0437
+Annadal kliniek;Medcentric MWCZ;226.780232;155.58248333333333
+Annadal kliniek;Medtronic;89.317058;66.96898333333334
+Annadal kliniek;Orthoparc Rozendaal;159.465086;122.64121666666666
+Annadal kliniek;Pro-Motion;180.74201;130.32988333333333
+Annadal kliniek;Retina eye care;175.22061499999998;137.25675
+Annadal kliniek Poli;De Meern;169.65031;135.23065
+Annadal kliniek Poli;Andros Clinics Rijswijk;212.907175;156.67374999999998
+Annadal kliniek Poli;Annadal kliniek;0.0;0.0
+Annadal kliniek Poli;Annatommie Amstelveen;200.365167;153.57716666666664
+Annadal kliniek Poli;Annatommie Utrecht;168.257536;132.87335
+Annadal kliniek Poli;Arthrex;167.817357;132.48088333333334
+Annadal kliniek Poli;Cosmed Bosch en Duin OK;178.029387;138.98846666666668
+Annadal kliniek Poli;Cosmed Bosch en Duin Poli;178.029387;138.98846666666668
+Annadal kliniek Poli;Denticien;213.767592;157.84393333333335
+Annadal kliniek Poli;Dermaclinic Utrecht;171.82781599999998;135.8667
+Annadal kliniek Poli;Doctors at soap;171.653908;137.22923333333335
+Annadal kliniek Poli;EQA - Velthuis Kliniek Amsterdam;196.538434;150.08016666666666
+Annadal kliniek Poli;EQA - Xpert Clinic Hand Amsterdam;196.538434;150.08016666666666
+Annadal kliniek Poli;EQA - Xpert Clinic Proctologie Amsterdam;196.538434;150.08016666666666
+Annadal kliniek Poli;EQA - Xpert Orthopedie Amsterdam;196.538434;150.08016666666666
+Annadal kliniek Poli;EQEI - Velthuis Kliniek Eindhoven;91.600367;67.49663333333334
+Annadal kliniek Poli;EQEI - Xpert Clinic Hand Eindhoven;91.600367;67.49663333333334
+Annadal kliniek Poli;EQEI - Xpert Clinic Proctologie Eindhoven;91.600367;67.49663333333334
+Annadal kliniek Poli;EQEI - Xpert Orthopedie Eindhoven;91.600367;67.49663333333334
+Annadal kliniek Poli;EQEI - Xpert Orthopedie Schijndel;112.453057;83.71589999999999
+Annadal kliniek Poli;EQEN - Velthuis Kliniek Enschede;235.670645;187.8768
+Annadal kliniek Poli;EQEN - Xpert Clinic Hand Enschede;235.670645;187.8768
+Annadal kliniek Poli;EQEN - Xpert Clinic Proctologie Enschede;235.670645;187.8768
+Annadal kliniek Poli;EQR - Velthuis Kliniek Rotterdam;191.015922;137.03333333333333
+Annadal kliniek Poli;EQR - Xpert Clinic Hand Rotterdam;191.015922;137.03333333333333
+Annadal kliniek Poli;EQR - Xpert Clinic Proctologie Rotterdam;191.015922;137.03333333333333
+Annadal kliniek Poli;EQR - Xpert Orthopedie Rotterdam;191.015922;137.03333333333333
+Annadal kliniek Poli;EQRZD - Hand pols Rozendaal;159.465086;122.64121666666666
+Annadal kliniek Poli;EQRZD - Orthopedie Rozendaal;159.465086;122.64121666666666
+Annadal kliniek Poli;Equip Amsterdam;196.538434;150.08016666666666
+Annadal kliniek Poli;Equipe Enschede;196.538434;150.08016666666666
+Annadal kliniek Poli;EQV - Velthuis Kliniek Velp;159.465086;122.64121666666666
+Annadal kliniek Poli;EQV - Xpert Clinic Hand Velp;158.22372399999998;120.95941666666666
+Annadal kliniek Poli;EQV - Xpert Clinic Proctologie Velp;159.465086;122.64121666666666
+Annadal kliniek Poli;EQZ - Xpert Clinic Oogzorg Zeist;177.287035;137.1198
+Annadal kliniek Poli;EQZW - Xpert Clinic Hand Zwolle;224.014992;165.33858333333333
+Annadal kliniek Poli;Esser Clinics;197.024401;150.69328333333334
+Annadal kliniek Poli;Flex Clinics;171.68792000000002;135.23286666666667
+Annadal kliniek Poli;Haaglanden Clinics;219.740831;164.60658333333333
+Annadal kliniek Poli;Kazem;205.659871;167.61758333333333
+Annadal kliniek Poli;KNO de Jong;176.532853;138.0437
+Annadal kliniek Poli;Medcentric MWCZ;226.780232;155.58248333333333
+Annadal kliniek Poli;Medtronic;89.317058;66.96898333333334
+Annadal kliniek Poli;Orthoparc Rozendaal;159.465086;122.64121666666666
+Annadal kliniek Poli;Pro-Motion;180.74201;130.32988333333333
+Annadal kliniek Poli;Retina eye care;175.22061499999998;137.25675
+Annatommie Amstelveen;De Meern;33.786911999999994;27.58323333333333
+Annatommie Amstelveen;Andros Clinics Rijswijk;52.267363;36.46946666666667
+Annatommie Amstelveen;Annadal kliniek;203.740764;147.59518333333332
+Annatommie Amstelveen;Annadal kliniek Poli;203.740764;147.59518333333332
+Annatommie Amstelveen;Annatommie Utrecht;34.582573;25.991933333333336
+Annatommie Amstelveen;Arthrex;35.298182999999995;27.106983333333336
+Annatommie Amstelveen;Cosmed Bosch en Duin OK;46.261688;38.03585
+Annatommie Amstelveen;Cosmed Bosch en Duin Poli;46.261688;38.03585
+Annatommie Amstelveen;Denticien;52.382257;37.76708333333333
+Annatommie Amstelveen;Dermaclinic Utrecht;36.606657;33.27106666666666
+Annatommie Amstelveen;Doctors at soap;36.125881;32.24085
+Annatommie Amstelveen;EQA - Velthuis Kliniek Amsterdam;7.147239;8.090183333333334
+Annatommie Amstelveen;EQA - Xpert Clinic Hand Amsterdam;7.147239;8.090183333333334
+Annatommie Amstelveen;EQA - Xpert Clinic Proctologie Amsterdam;7.147239;8.090183333333334
+Annatommie Amstelveen;EQA - Xpert Orthopedie Amsterdam;7.147239;8.090183333333334
+Annatommie Amstelveen;EQEI - Velthuis Kliniek Eindhoven;117.5341;81.94753333333333
+Annatommie Amstelveen;EQEI - Xpert Clinic Hand Eindhoven;117.5341;81.94753333333333
+Annatommie Amstelveen;EQEI - Xpert Clinic Proctologie Eindhoven;117.5341;81.94753333333333
+Annatommie Amstelveen;EQEI - Xpert Orthopedie Eindhoven;117.5341;81.94753333333333
+Annatommie Amstelveen;EQEI - Xpert Orthopedie Schijndel;93.651548;68.01513333333334
+Annatommie Amstelveen;EQEN - Velthuis Kliniek Enschede;155.75637400000002;111.12636666666668
+Annatommie Amstelveen;EQEN - Xpert Clinic Hand Enschede;155.75637400000002;111.12636666666668
+Annatommie Amstelveen;EQEN - Xpert Clinic Proctologie Enschede;155.75637400000002;111.12636666666668
+Annatommie Amstelveen;EQR - Velthuis Kliniek Rotterdam;60.000459;58.9685
+Annatommie Amstelveen;EQR - Xpert Clinic Hand Rotterdam;60.000459;58.9685
+Annatommie Amstelveen;EQR - Xpert Clinic Proctologie Rotterdam;60.000459;58.9685
+Annatommie Amstelveen;EQR - Xpert Orthopedie Rotterdam;60.000459;58.9685
+Annatommie Amstelveen;EQRZD - Hand pols Rozendaal;99.506733;69.61705
+Annatommie Amstelveen;EQRZD - Orthopedie Rozendaal;99.506733;69.61705
+Annatommie Amstelveen;Equip Amsterdam;7.147239;8.090183333333334
+Annatommie Amstelveen;Equipe Enschede;7.147239;8.090183333333334
+Annatommie Amstelveen;EQV - Velthuis Kliniek Velp;99.506733;69.61705
+Annatommie Amstelveen;EQV - Xpert Clinic Hand Velp;100.321284;70.40121666666667
+Annatommie Amstelveen;EQV - Xpert Clinic Proctologie Velp;99.506733;69.61705
+Annatommie Amstelveen;EQZ - Xpert Clinic Oogzorg Zeist;48.774161;35.66543333333333
+Annatommie Amstelveen;EQZW - Xpert Clinic Hand Zwolle;107.531674;79.63015
+Annatommie Amstelveen;Esser Clinics;41.639531000000005;45.77365
+Annatommie Amstelveen;Flex Clinics;29.591781;21.92455
+Annatommie Amstelveen;Haaglanden Clinics;53.399448;41.29046666666667
+Annatommie Amstelveen;Kazem;10.919208;12.173383333333334
+Annatommie Amstelveen;KNO de Jong;29.940234;23.444766666666663
+Annatommie Amstelveen;Medcentric MWCZ;143.94466599999998;120.60538333333334
+Annatommie Amstelveen;Medtronic;115.128521;81.87376666666667
+Annatommie Amstelveen;Orthoparc Rozendaal;99.506733;69.61705
+Annatommie Amstelveen;Pro-Motion;71.11919;66.09015000000001
+Annatommie Amstelveen;Retina eye care;50.619387;37.56733333333333
+Annatommie Utrecht;De Meern;4.195912999999999;5.200266666666667
+Annatommie Utrecht;Andros Clinics Rijswijk;56.456452;40.19961666666666
+Annatommie Utrecht;Annadal kliniek;172.25886;127.7796
+Annatommie Utrecht;Annadal kliniek Poli;172.25886;127.7796
+Annatommie Utrecht;Annatommie Amstelveen;34.959696;26.51963333333333
+Annatommie Utrecht;Arthrex;1.2013710000000002;1.7486833333333334
+Annatommie Utrecht;Cosmed Bosch en Duin OK;15.672087;17.710283333333333
+Annatommie Utrecht;Cosmed Bosch en Duin Poli;15.672087;17.710283333333333
+Annatommie Utrecht;Denticien;56.689083;41.57335
+Annatommie Utrecht;Dermaclinic Utrecht;5.708137;8.529516666666668
+Annatommie Utrecht;Doctors at soap;5.453060000000001;8.28085
+Annatommie Utrecht;EQA - Velthuis Kliniek Amsterdam;31.132962;23.02263333333333
+Annatommie Utrecht;EQA - Xpert Clinic Hand Amsterdam;31.132962;23.02263333333333
+Annatommie Utrecht;EQA - Xpert Clinic Proctologie Amsterdam;31.132962;23.02263333333333
+Annatommie Utrecht;EQA - Xpert Orthopedie Amsterdam;31.132962;23.02263333333333
+Annatommie Utrecht;EQEI - Velthuis Kliniek Eindhoven;86.052196;62.13195
+Annatommie Utrecht;EQEI - Xpert Clinic Hand Eindhoven;86.052196;62.13195
+Annatommie Utrecht;EQEI - Xpert Clinic Proctologie Eindhoven;86.052196;62.13195
+Annatommie Utrecht;EQEI - Xpert Orthopedie Eindhoven;86.052196;62.13195
+Annatommie Utrecht;EQEI - Xpert Orthopedie Schijndel;62.16964299999999;48.19955
+Annatommie Utrecht;EQEN - Velthuis Kliniek Enschede;135.888467;99.70921666666666
+Annatommie Utrecht;EQEN - Xpert Clinic Hand Enschede;135.888467;99.70921666666666
+Annatommie Utrecht;EQEN - Xpert Clinic Proctologie Enschede;135.888467;99.70921666666666
+Annatommie Utrecht;EQR - Velthuis Kliniek Rotterdam;50.642982;37.09183333333333
+Annatommie Utrecht;EQR - Xpert Clinic Hand Rotterdam;50.642982;37.09183333333333
+Annatommie Utrecht;EQR - Xpert Clinic Proctologie Rotterdam;50.642982;37.09183333333333
+Annatommie Utrecht;EQR - Xpert Orthopedie Rotterdam;50.642982;37.09183333333333
+Annatommie Utrecht;EQRZD - Hand pols Rozendaal;65.638091;47.20551666666667
+Annatommie Utrecht;EQRZD - Orthopedie Rozendaal;65.638091;47.20551666666667
+Annatommie Utrecht;Equip Amsterdam;31.132962;23.02263333333333
+Annatommie Utrecht;Equipe Enschede;31.132962;23.02263333333333
+Annatommie Utrecht;EQV - Velthuis Kliniek Velp;65.638091;47.20551666666667
+Annatommie Utrecht;EQV - Xpert Clinic Hand Velp;66.45264200000001;47.98968333333333
+Annatommie Utrecht;EQV - Xpert Clinic Proctologie Velp;65.638091;47.20551666666667
+Annatommie Utrecht;EQZ - Xpert Clinic Oogzorg Zeist;15.999159;15.105166666666666
+Annatommie Utrecht;EQZW - Xpert Clinic Hand Zwolle;97.248391;69.64468333333333
+Annatommie Utrecht;Esser Clinics;32.442985;24.53033333333333
+Annatommie Utrecht;Flex Clinics;5.817769;7.588416666666666
+Annatommie Utrecht;Haaglanden Clinics;60.383449;45.25535
+Annatommie Utrecht;Kazem;40.2544;40.56005
+Annatommie Utrecht;KNO de Jong;9.464729;13.09445
+Annatommie Utrecht;Medcentric MWCZ;134.58718900000002;98.72871666666668
+Annatommie Utrecht;Medtronic;83.646616;62.05818333333333
+Annatommie Utrecht;Orthoparc Rozendaal;65.638091;47.20551666666667
+Annatommie Utrecht;Pro-Motion;55.839162;49.578966666666666
+Annatommie Utrecht;Retina eye care;16.750745;15.1558
+Arthrex;De Meern;4.708198;6.05015
+Arthrex;Andros Clinics Rijswijk;56.333352;38.60175
+Arthrex;Annadal kliniek;171.44992800000003;126.90615
+Arthrex;Annadal kliniek Poli;171.44992800000003;126.90615
+Arthrex;Annatommie Amstelveen;35.842398;26.166866666666667
+Arthrex;Annatommie Utrecht;1.165863;1.7023833333333334
+Arthrex;Cosmed Bosch en Duin OK;16.312769;18.727666666666668
+Arthrex;Cosmed Bosch en Duin Poli;16.312769;18.727666666666668
+Arthrex;Denticien;56.565982000000005;39.97548333333334
+Arthrex;Dermaclinic Utrecht;6.3488180000000005;9.5469
+Arthrex;Doctors at soap;6.093742;9.298233333333334
+Arthrex;EQA - Velthuis Kliniek Amsterdam;32.015665;22.669866666666667
+Arthrex;EQA - Xpert Clinic Hand Amsterdam;32.015665;22.669866666666667
+Arthrex;EQA - Xpert Clinic Proctologie Amsterdam;32.015665;22.669866666666667
+Arthrex;EQA - Xpert Orthopedie Amsterdam;32.015665;22.669866666666667
+Arthrex;EQEI - Velthuis Kliniek Eindhoven;85.243264;61.258500000000005
+Arthrex;EQEI - Xpert Clinic Hand Eindhoven;85.243264;61.258500000000005
+Arthrex;EQEI - Xpert Clinic Proctologie Eindhoven;85.243264;61.258500000000005
+Arthrex;EQEI - Xpert Orthopedie Eindhoven;85.243264;61.258500000000005
+Arthrex;EQEI - Xpert Orthopedie Schijndel;61.360711;47.3261
+Arthrex;EQEN - Velthuis Kliniek Enschede;136.529148;100.7266
+Arthrex;EQEN - Xpert Clinic Hand Enschede;136.529148;100.7266
+Arthrex;EQEN - Xpert Clinic Proctologie Enschede;136.529148;100.7266
+Arthrex;EQR - Velthuis Kliniek Rotterdam;50.519882;35.493966666666665
+Arthrex;EQR - Xpert Clinic Hand Rotterdam;50.519882;35.493966666666665
+Arthrex;EQR - Xpert Clinic Proctologie Rotterdam;50.519882;35.493966666666665
+Arthrex;EQR - Xpert Orthopedie Rotterdam;50.519882;35.493966666666665
+Arthrex;EQRZD - Hand pols Rozendaal;64.829159;46.33206666666667
+Arthrex;EQRZD - Orthopedie Rozendaal;64.829159;46.33206666666667
+Arthrex;Equip Amsterdam;32.015665;22.669866666666667
+Arthrex;Equipe Enschede;32.015665;22.669866666666667
+Arthrex;EQV - Velthuis Kliniek Velp;64.829159;46.33206666666667
+Arthrex;EQV - Xpert Clinic Hand Velp;65.643711;47.11623333333333
+Arthrex;EQV - Xpert Clinic Proctologie Velp;64.829159;46.33206666666667
+Arthrex;EQZ - Xpert Clinic Oogzorg Zeist;16.639841;16.12255
+Arthrex;EQZW - Xpert Clinic Hand Zwolle;97.889073;70.66206666666668
+Arthrex;Esser Clinics;32.319883999999995;22.932466666666667
+Arthrex;Flex Clinics;6.330055000000001;8.4383
+Arthrex;Haaglanden Clinics;60.260349000000005;43.65748333333333
+Arthrex;Kazem;41.137102;40.20728333333333
+Arthrex;KNO de Jong;11.99334;10.622233333333332
+Arthrex;Medcentric MWCZ;134.464089;97.13085
+Arthrex;Medtronic;82.837685;61.18473333333333
+Arthrex;Orthoparc Rozendaal;64.829159;46.33206666666667
+Arthrex;Pro-Motion;55.030231;48.70551666666667
+Arthrex;Retina eye care;15.941813;14.28235
+Cosmed Bosch en Duin OK;De Meern;19.369051;20.43638333333333
+Cosmed Bosch en Duin OK;Andros Clinics Rijswijk;71.87349800000001;51.98718333333333
+Cosmed Bosch en Duin OK;Annadal kliniek;182.310514;133.80461666666667
+Cosmed Bosch en Duin OK;Annadal kliniek Poli;182.310514;133.80461666666667
+Cosmed Bosch en Duin OK;Annatommie Amstelveen;44.669102;39.88055
+Cosmed Bosch en Duin OK;Annatommie Utrecht;16.443586;16.893250000000002
+Cosmed Bosch en Duin OK;Arthrex;16.948925;15.404050000000002
+Cosmed Bosch en Duin OK;Cosmed Bosch en Duin Poli;0.0;0.0
+Cosmed Bosch en Duin OK;Denticien;72.106129;53.36091666666667
+Cosmed Bosch en Duin OK;Dermaclinic Utrecht;10.461439;10.223966666666666
+Cosmed Bosch en Duin OK;Doctors at soap;11.320684;12.045
+Cosmed Bosch en Duin OK;EQA - Velthuis Kliniek Amsterdam;40.842369;36.38355
+Cosmed Bosch en Duin OK;EQA - Xpert Clinic Hand Amsterdam;40.842369;36.38355
+Cosmed Bosch en Duin OK;EQA - Xpert Clinic Proctologie Amsterdam;40.842369;36.38355
+Cosmed Bosch en Duin OK;EQA - Xpert Orthopedie Amsterdam;40.842369;36.38355
+Cosmed Bosch en Duin OK;EQEI - Velthuis Kliniek Eindhoven;96.10385;68.15696666666666
+Cosmed Bosch en Duin OK;EQEI - Xpert Clinic Hand Eindhoven;96.10385;68.15696666666666
+Cosmed Bosch en Duin OK;EQEI - Xpert Clinic Proctologie Eindhoven;96.10385;68.15696666666666
+Cosmed Bosch en Duin OK;EQEI - Xpert Orthopedie Eindhoven;96.10385;68.15696666666666
+Cosmed Bosch en Duin OK;EQEI - Xpert Orthopedie Schijndel;72.22129799999999;54.22456666666667
+Cosmed Bosch en Duin OK;EQEN - Velthuis Kliniek Enschede;125.311845;90.22336666666666
+Cosmed Bosch en Duin OK;EQEN - Xpert Clinic Hand Enschede;125.311845;90.22336666666666
+Cosmed Bosch en Duin OK;EQEN - Xpert Clinic Proctologie Enschede;125.311845;90.22336666666666
+Cosmed Bosch en Duin OK;EQR - Velthuis Kliniek Rotterdam;66.060028;48.8794
+Cosmed Bosch en Duin OK;EQR - Xpert Clinic Hand Rotterdam;66.060028;48.8794
+Cosmed Bosch en Duin OK;EQR - Xpert Clinic Proctologie Rotterdam;66.060028;48.8794
+Cosmed Bosch en Duin OK;EQR - Xpert Orthopedie Rotterdam;66.060028;48.8794
+Cosmed Bosch en Duin OK;EQRZD - Hand pols Rozendaal;59.697244;46.521566666666665
+Cosmed Bosch en Duin OK;EQRZD - Orthopedie Rozendaal;59.697244;46.521566666666665
+Cosmed Bosch en Duin OK;Equip Amsterdam;40.842369;36.38355
+Cosmed Bosch en Duin OK;Equipe Enschede;40.842369;36.38355
+Cosmed Bosch en Duin OK;EQV - Velthuis Kliniek Velp;59.697244;46.521566666666665
+Cosmed Bosch en Duin OK;EQV - Xpert Clinic Hand Velp;60.511795;47.305733333333336
+Cosmed Bosch en Duin OK;EQV - Xpert Clinic Proctologie Velp;59.697244;46.521566666666665
+Cosmed Bosch en Duin OK;EQZ - Xpert Clinic Oogzorg Zeist;3.954454;5.317316666666667
+Cosmed Bosch en Duin OK;EQZW - Xpert Clinic Hand Zwolle;86.671769;60.15883333333333
+Cosmed Bosch en Duin OK;Esser Clinics;47.86003;36.3179
+Cosmed Bosch en Duin OK;Flex Clinics;17.415425;20.81338333333333
+Cosmed Bosch en Duin OK;Haaglanden Clinics;75.800495;57.04291666666666
+Cosmed Bosch en Duin OK;Kazem;49.963806;53.920966666666665
+Cosmed Bosch en Duin OK;KNO de Jong;20.089869;24.6702
+Cosmed Bosch en Duin OK;Medcentric MWCZ;148.690652;111.50646666666668
+Cosmed Bosch en Duin OK;Medtronic;93.698271;68.0832
+Cosmed Bosch en Duin OK;Orthoparc Rozendaal;59.697244;46.521566666666665
+Cosmed Bosch en Duin OK;Pro-Motion;68.323046;55.71136666666666
+Cosmed Bosch en Duin OK;Retina eye care;11.482701;14.707016666666668
+Cosmed Bosch en Duin Poli;De Meern;19.369051;20.43638333333333
+Cosmed Bosch en Duin Poli;Andros Clinics Rijswijk;71.87349800000001;51.98718333333333
+Cosmed Bosch en Duin Poli;Annadal kliniek;182.310514;133.80461666666667
+Cosmed Bosch en Duin Poli;Annadal kliniek Poli;182.310514;133.80461666666667
+Cosmed Bosch en Duin Poli;Annatommie Amstelveen;44.669102;39.88055
+Cosmed Bosch en Duin Poli;Annatommie Utrecht;16.443586;16.893250000000002
+Cosmed Bosch en Duin Poli;Arthrex;16.948925;15.404050000000002
+Cosmed Bosch en Duin Poli;Cosmed Bosch en Duin OK;0.0;0.0
+Cosmed Bosch en Duin Poli;Denticien;72.106129;53.36091666666667
+Cosmed Bosch en Duin Poli;Dermaclinic Utrecht;10.461439;10.223966666666666
+Cosmed Bosch en Duin Poli;Doctors at soap;11.320684;12.045
+Cosmed Bosch en Duin Poli;EQA - Velthuis Kliniek Amsterdam;40.842369;36.38355
+Cosmed Bosch en Duin Poli;EQA - Xpert Clinic Hand Amsterdam;40.842369;36.38355
+Cosmed Bosch en Duin Poli;EQA - Xpert Clinic Proctologie Amsterdam;40.842369;36.38355
+Cosmed Bosch en Duin Poli;EQA - Xpert Orthopedie Amsterdam;40.842369;36.38355
+Cosmed Bosch en Duin Poli;EQEI - Velthuis Kliniek Eindhoven;96.10385;68.15696666666666
+Cosmed Bosch en Duin Poli;EQEI - Xpert Clinic Hand Eindhoven;96.10385;68.15696666666666
+Cosmed Bosch en Duin Poli;EQEI - Xpert Clinic Proctologie Eindhoven;96.10385;68.15696666666666
+Cosmed Bosch en Duin Poli;EQEI - Xpert Orthopedie Eindhoven;96.10385;68.15696666666666
+Cosmed Bosch en Duin Poli;EQEI - Xpert Orthopedie Schijndel;72.22129799999999;54.22456666666667
+Cosmed Bosch en Duin Poli;EQEN - Velthuis Kliniek Enschede;125.311845;90.22336666666666
+Cosmed Bosch en Duin Poli;EQEN - Xpert Clinic Hand Enschede;125.311845;90.22336666666666
+Cosmed Bosch en Duin Poli;EQEN - Xpert Clinic Proctologie Enschede;125.311845;90.22336666666666
+Cosmed Bosch en Duin Poli;EQR - Velthuis Kliniek Rotterdam;66.060028;48.8794
+Cosmed Bosch en Duin Poli;EQR - Xpert Clinic Hand Rotterdam;66.060028;48.8794
+Cosmed Bosch en Duin Poli;EQR - Xpert Clinic Proctologie Rotterdam;66.060028;48.8794
+Cosmed Bosch en Duin Poli;EQR - Xpert Orthopedie Rotterdam;66.060028;48.8794
+Cosmed Bosch en Duin Poli;EQRZD - Hand pols Rozendaal;59.697244;46.521566666666665
+Cosmed Bosch en Duin Poli;EQRZD - Orthopedie Rozendaal;59.697244;46.521566666666665
+Cosmed Bosch en Duin Poli;Equip Amsterdam;40.842369;36.38355
+Cosmed Bosch en Duin Poli;Equipe Enschede;40.842369;36.38355
+Cosmed Bosch en Duin Poli;EQV - Velthuis Kliniek Velp;59.697244;46.521566666666665
+Cosmed Bosch en Duin Poli;EQV - Xpert Clinic Hand Velp;60.511795;47.305733333333336
+Cosmed Bosch en Duin Poli;EQV - Xpert Clinic Proctologie Velp;59.697244;46.521566666666665
+Cosmed Bosch en Duin Poli;EQZ - Xpert Clinic Oogzorg Zeist;3.954454;5.317316666666667
+Cosmed Bosch en Duin Poli;EQZW - Xpert Clinic Hand Zwolle;86.671769;60.15883333333333
+Cosmed Bosch en Duin Poli;Esser Clinics;47.86003;36.3179
+Cosmed Bosch en Duin Poli;Flex Clinics;17.415425;20.81338333333333
+Cosmed Bosch en Duin Poli;Haaglanden Clinics;75.800495;57.04291666666666
+Cosmed Bosch en Duin Poli;Kazem;49.963806;53.920966666666665
+Cosmed Bosch en Duin Poli;KNO de Jong;20.089869;24.6702
+Cosmed Bosch en Duin Poli;Medcentric MWCZ;148.690652;111.50646666666668
+Cosmed Bosch en Duin Poli;Medtronic;93.698271;68.0832
+Cosmed Bosch en Duin Poli;Orthoparc Rozendaal;59.697244;46.521566666666665
+Cosmed Bosch en Duin Poli;Pro-Motion;68.323046;55.71136666666666
+Cosmed Bosch en Duin Poli;Retina eye care;11.482701;14.707016666666668
+Denticien;De Meern;53.807805;37.535516666666666
+Denticien;Andros Clinics Rijswijk;1.222475;1.61265
+Denticien;Annadal kliniek;213.353146;157.51116666666667
+Denticien;Annadal kliniek Poli;213.353146;157.51116666666667
+Denticien;Annatommie Amstelveen;51.224118;39.66766666666667
+Denticien;Annatommie Utrecht;56.444012;40.5993
+Denticien;Arthrex;57.849812;40.56208333333333
+Denticien;Cosmed Bosch en Duin OK;73.467657;51.8623
+Denticien;Cosmed Bosch en Duin Poli;73.467657;51.8623
+Denticien;Dermaclinic Utrecht;61.114552;47.775416666666665
+Denticien;Doctors at soap;60.859475;47.52675
+Denticien;EQA - Velthuis Kliniek Amsterdam;58.915583;41.78243333333333
+Denticien;EQA - Xpert Clinic Hand Amsterdam;58.915583;41.78243333333333
+Denticien;EQA - Xpert Clinic Proctologie Amsterdam;58.915583;41.78243333333333
+Denticien;EQA - Xpert Orthopedie Amsterdam;58.915583;41.78243333333333
+Denticien;EQEI - Velthuis Kliniek Eindhoven;122.642906;96.05308333333332
+Denticien;EQEI - Xpert Clinic Hand Eindhoven;122.642906;96.05308333333332
+Denticien;EQEI - Xpert Clinic Proctologie Eindhoven;122.642906;96.05308333333332
+Denticien;EQEI - Xpert Orthopedie Eindhoven;122.642906;96.05308333333332
+Denticien;EQEI - Xpert Orthopedie Schijndel;109.537316;82.88193333333334
+Denticien;EQEN - Velthuis Kliniek Enschede;192.614612;134.59768333333332
+Denticien;EQEN - Xpert Clinic Hand Enschede;192.614612;134.59768333333332
+Denticien;EQEN - Xpert Clinic Proctologie Enschede;192.614612;134.59768333333332
+Denticien;EQR - Velthuis Kliniek Rotterdam;23.468945;21.758516666666665
+Denticien;EQR - Xpert Clinic Hand Rotterdam;23.468945;21.758516666666665
+Denticien;EQR - Xpert Clinic Proctologie Rotterdam;23.468945;21.758516666666665
+Denticien;EQR - Xpert Orthopedie Rotterdam;23.468945;21.758516666666665
+Denticien;EQRZD - Hand pols Rozendaal;119.283306;82.00501666666668
+Denticien;EQRZD - Orthopedie Rozendaal;119.283306;82.00501666666668
+Denticien;Equip Amsterdam;58.915583;41.78243333333333
+Denticien;Equipe Enschede;58.915583;41.78243333333333
+Denticien;EQV - Velthuis Kliniek Velp;119.283306;82.00501666666668
+Denticien;EQV - Xpert Clinic Hand Velp;120.097857;82.78918333333333
+Denticien;EQV - Xpert Clinic Proctologie Velp;119.283306;82.00501666666668
+Denticien;EQZ - Xpert Clinic Oogzorg Zeist;72.72530400000001;49.993633333333335
+Denticien;EQZW - Xpert Clinic Hand Zwolle;153.974536;104.53315
+Denticien;Esser Clinics;26.601288;19.46715
+Denticien;Flex Clinics;57.78121;44.08638333333333
+Denticien;Haaglanden Clinics;6.233877000000001;8.306333333333333
+Denticien;Kazem;41.012027;29.98711666666667
+Denticien;KNO de Jong;54.365748;40.86411666666667
+Denticien;Medcentric MWCZ;101.673405;81.8663
+Denticien;Medtronic;124.26094;98.10321666666668
+Denticien;Orthoparc Rozendaal;119.283306;82.00501666666668
+Denticien;Pro-Motion;34.934818;29.868033333333337
+Denticien;Retina eye care;70.39596;49.9553
+Dermaclinic Utrecht;De Meern;8.743233;12.215733333333333
+Dermaclinic Utrecht;Andros Clinics Rijswijk;61.003772;47.21508333333334
+Dermaclinic Utrecht;Annadal kliniek;174.69893299999998;129.66975
+Dermaclinic Utrecht;Annadal kliniek Poli;174.69893299999998;129.66975
+Dermaclinic Utrecht;Annatommie Amstelveen;36.621143;33.20373333333333
+Dermaclinic Utrecht;Annatommie Utrecht;5.817768;8.6726
+Dermaclinic Utrecht;Arthrex;6.812589;9.538183333333334
+Dermaclinic Utrecht;Cosmed Bosch en Duin OK;10.414768;10.146833333333332
+Dermaclinic Utrecht;Cosmed Bosch en Duin Poli;10.414768;10.146833333333332
+Dermaclinic Utrecht;Denticien;61.236403;48.588816666666666
+Dermaclinic Utrecht;Doctors at soap;1.4139670000000002;3.011983333333333
+Dermaclinic Utrecht;EQA - Velthuis Kliniek Amsterdam;32.794409;29.70673333333333
+Dermaclinic Utrecht;EQA - Xpert Clinic Hand Amsterdam;32.794409;29.70673333333333
+Dermaclinic Utrecht;EQA - Xpert Clinic Proctologie Amsterdam;32.794409;29.70673333333333
+Dermaclinic Utrecht;EQA - Xpert Orthopedie Amsterdam;32.794409;29.70673333333333
+Dermaclinic Utrecht;EQEI - Velthuis Kliniek Eindhoven;88.49227;64.0221
+Dermaclinic Utrecht;EQEI - Xpert Clinic Hand Eindhoven;88.49227;64.0221
+Dermaclinic Utrecht;EQEI - Xpert Clinic Proctologie Eindhoven;88.49227;64.0221
+Dermaclinic Utrecht;EQEI - Xpert Orthopedie Eindhoven;88.49227;64.0221
+Dermaclinic Utrecht;EQEI - Xpert Orthopedie Schijndel;64.609717;50.0897
+Dermaclinic Utrecht;EQEN - Velthuis Kliniek Enschede;131.406297;94.15663333333332
+Dermaclinic Utrecht;EQEN - Xpert Clinic Hand Enschede;131.406297;94.15663333333332
+Dermaclinic Utrecht;EQEN - Xpert Clinic Proctologie Enschede;131.406297;94.15663333333332
+Dermaclinic Utrecht;EQR - Velthuis Kliniek Rotterdam;55.190302;44.1073
+Dermaclinic Utrecht;EQR - Xpert Clinic Hand Rotterdam;55.190302;44.1073
+Dermaclinic Utrecht;EQR - Xpert Clinic Proctologie Rotterdam;55.190302;44.1073
+Dermaclinic Utrecht;EQR - Xpert Orthopedie Rotterdam;55.190302;44.1073
+Dermaclinic Utrecht;EQRZD - Hand pols Rozendaal;62.987179;47.55478333333333
+Dermaclinic Utrecht;EQRZD - Orthopedie Rozendaal;62.987179;47.55478333333333
+Dermaclinic Utrecht;Equip Amsterdam;32.794409;29.70673333333333
+Dermaclinic Utrecht;Equipe Enschede;32.794409;29.70673333333333
+Dermaclinic Utrecht;EQV - Velthuis Kliniek Velp;62.987179;47.55478333333333
+Dermaclinic Utrecht;EQV - Xpert Clinic Hand Velp;63.801730000000006;48.33895
+Dermaclinic Utrecht;EQV - Xpert Clinic Proctologie Velp;62.987179;47.55478333333333
+Dermaclinic Utrecht;EQZ - Xpert Clinic Oogzorg Zeist;9.856108;9.77435
+Dermaclinic Utrecht;EQZW - Xpert Clinic Hand Zwolle;92.766221;64.0921
+Dermaclinic Utrecht;Esser Clinics;36.990304;31.5458
+Dermaclinic Utrecht;Flex Clinics;7.508707;11.780366666666668
+Dermaclinic Utrecht;Haaglanden Clinics;64.930769;52.27081666666666
+Dermaclinic Utrecht;Kazem;41.915847;47.24415
+Dermaclinic Utrecht;KNO de Jong;10.183151;15.637183333333333
+Dermaclinic Utrecht;Medcentric MWCZ;139.13450899999998;105.74418333333332
+Dermaclinic Utrecht;Medtronic;86.08669;63.94833333333334
+Dermaclinic Utrecht;Orthoparc Rozendaal;62.987179;47.55478333333333
+Dermaclinic Utrecht;Pro-Motion;59.054534;53.86466666666667
+Dermaclinic Utrecht;Retina eye care;14.099833;15.505066666666666
+Doctors at soap;De Meern;8.581131;12.265916666666667
+Doctors at soap;Andros Clinics Rijswijk;60.841671000000005;47.26526666666667
+Doctors at soap;Annadal kliniek;174.827622;131.44653333333335
+Doctors at soap;Annadal kliniek Poli;174.827622;131.44653333333335
+Doctors at soap;Annatommie Amstelveen;36.721829;33.7352
+Doctors at soap;Annatommie Utrecht;5.655666;8.722783333333332
+Doctors at soap;Arthrex;6.728934000000001;9.690683333333334
+Doctors at soap;Cosmed Bosch en Duin OK;11.144304;11.710166666666668
+Doctors at soap;Cosmed Bosch en Duin Poli;11.144304;11.710166666666668
+Doctors at soap;Denticien;61.074301;48.639
+Doctors at soap;Dermaclinic Utrecht;0.729537;1.5633333333333332
+Doctors at soap;EQA - Velthuis Kliniek Amsterdam;32.895095999999995;30.2382
+Doctors at soap;EQA - Xpert Clinic Hand Amsterdam;32.895095999999995;30.2382
+Doctors at soap;EQA - Xpert Clinic Proctologie Amsterdam;32.895095999999995;30.2382
+Doctors at soap;EQA - Xpert Orthopedie Amsterdam;32.895095999999995;30.2382
+Doctors at soap;EQEI - Velthuis Kliniek Eindhoven;88.620958;65.79888333333334
+Doctors at soap;EQEI - Xpert Clinic Hand Eindhoven;88.620958;65.79888333333334
+Doctors at soap;EQEI - Xpert Clinic Proctologie Eindhoven;88.620958;65.79888333333334
+Doctors at soap;EQEI - Xpert Orthopedie Eindhoven;88.620958;65.79888333333334
+Doctors at soap;EQEI - Xpert Orthopedie Schijndel;64.738405;51.866483333333335
+Doctors at soap;EQEN - Velthuis Kliniek Enschede;132.135834;95.71996666666668
+Doctors at soap;EQEN - Xpert Clinic Hand Enschede;132.135834;95.71996666666668
+Doctors at soap;EQEN - Xpert Clinic Proctologie Enschede;132.135834;95.71996666666668
+Doctors at soap;EQR - Velthuis Kliniek Rotterdam;55.028201;44.15748333333333
+Doctors at soap;EQR - Xpert Clinic Hand Rotterdam;55.028201;44.15748333333333
+Doctors at soap;EQR - Xpert Clinic Proctologie Rotterdam;55.028201;44.15748333333333
+Doctors at soap;EQR - Xpert Orthopedie Rotterdam;55.028201;44.15748333333333
+Doctors at soap;EQRZD - Hand pols Rozendaal;63.71671499999999;49.118116666666666
+Doctors at soap;EQRZD - Orthopedie Rozendaal;63.71671499999999;49.118116666666666
+Doctors at soap;Equip Amsterdam;32.895095999999995;30.2382
+Doctors at soap;Equipe Enschede;32.895095999999995;30.2382
+Doctors at soap;EQV - Velthuis Kliniek Velp;63.71671499999999;49.118116666666666
+Doctors at soap;EQV - Xpert Clinic Hand Velp;64.531267;49.90228333333334
+Doctors at soap;EQV - Xpert Clinic Proctologie Velp;63.71671499999999;49.118116666666666
+Doctors at soap;EQZ - Xpert Clinic Oogzorg Zeist;10.585645;11.337683333333333
+Doctors at soap;EQZW - Xpert Clinic Hand Zwolle;93.495758;65.65543333333333
+Doctors at soap;Esser Clinics;36.828203;31.595983333333333
+Doctors at soap;Flex Clinics;7.609394;12.311833333333334
+Doctors at soap;Haaglanden Clinics;64.76866799999999;52.321000000000005
+Doctors at soap;Kazem;42.016533;47.77561666666666
+Doctors at soap;KNO de Jong;10.283838;16.16865
+Doctors at soap;Medcentric MWCZ;138.972408;105.79436666666668
+Doctors at soap;Medtronic;86.215379;65.72511666666666
+Doctors at soap;Orthoparc Rozendaal;63.71671499999999;49.118116666666666
+Doctors at soap;Pro-Motion;59.183223;55.64145
+Doctors at soap;Retina eye care;14.829369;17.0684
+EQA - Velthuis Kliniek Amsterdam;De Meern;29.680318;23.86211666666667
+EQA - Velthuis Kliniek Amsterdam;Andros Clinics Rijswijk;59.444897;40.50675
+EQA - Velthuis Kliniek Amsterdam;Annadal kliniek;199.63417;143.87406666666666
+EQA - Velthuis Kliniek Amsterdam;Annadal kliniek Poli;199.63417;143.87406666666666
+EQA - Velthuis Kliniek Amsterdam;Annatommie Amstelveen;8.200833000000001;7.935216666666666
+EQA - Velthuis Kliniek Amsterdam;Annatommie Utrecht;30.475979;22.27081666666667
+EQA - Velthuis Kliniek Amsterdam;Arthrex;31.191589;23.38586666666667
+EQA - Velthuis Kliniek Amsterdam;Cosmed Bosch en Duin OK;42.178917;33.776466666666664
+EQA - Velthuis Kliniek Amsterdam;Cosmed Bosch en Duin Poli;42.178917;33.776466666666664
+EQA - Velthuis Kliniek Amsterdam;Denticien;59.559791;41.80436666666667
+EQA - Velthuis Kliniek Amsterdam;Dermaclinic Utrecht;32.500063;29.549950000000003
+EQA - Velthuis Kliniek Amsterdam;Doctors at soap;32.019287;28.51973333333333
+EQA - Velthuis Kliniek Amsterdam;EQA - Xpert Clinic Hand Amsterdam;0.0;0.0
+EQA - Velthuis Kliniek Amsterdam;EQA - Xpert Clinic Proctologie Amsterdam;0.0;0.0
+EQA - Velthuis Kliniek Amsterdam;EQA - Xpert Orthopedie Amsterdam;0.0;0.0
+EQA - Velthuis Kliniek Amsterdam;EQEI - Velthuis Kliniek Eindhoven;113.427507;78.22641666666667
+EQA - Velthuis Kliniek Amsterdam;EQEI - Xpert Clinic Hand Eindhoven;113.427507;78.22641666666667
+EQA - Velthuis Kliniek Amsterdam;EQEI - Xpert Clinic Proctologie Eindhoven;113.427507;78.22641666666667
+EQA - Velthuis Kliniek Amsterdam;EQEI - Xpert Orthopedie Eindhoven;113.427507;78.22641666666667
+EQA - Velthuis Kliniek Amsterdam;EQEI - Xpert Orthopedie Schijndel;89.544954;64.29401666666666
+EQA - Velthuis Kliniek Amsterdam;EQEN - Velthuis Kliniek Enschede;148.40142;104.91908333333336
+EQA - Velthuis Kliniek Amsterdam;EQEN - Xpert Clinic Hand Enschede;148.40142;104.91908333333336
+EQA - Velthuis Kliniek Amsterdam;EQEN - Xpert Clinic Proctologie Enschede;148.40142;104.91908333333336
+EQA - Velthuis Kliniek Amsterdam;EQR - Velthuis Kliniek Rotterdam;66.79907399999999;51.9779
+EQA - Velthuis Kliniek Amsterdam;EQR - Xpert Clinic Hand Rotterdam;66.79907399999999;51.9779
+EQA - Velthuis Kliniek Amsterdam;EQR - Xpert Clinic Proctologie Rotterdam;66.79907399999999;51.9779
+EQA - Velthuis Kliniek Amsterdam;EQR - Xpert Orthopedie Rotterdam;66.79907399999999;51.9779
+EQA - Velthuis Kliniek Amsterdam;EQRZD - Hand pols Rozendaal;92.090248;68.28685
+EQA - Velthuis Kliniek Amsterdam;EQRZD - Orthopedie Rozendaal;92.090248;68.28685
+EQA - Velthuis Kliniek Amsterdam;Equip Amsterdam;0.0;0.0
+EQA - Velthuis Kliniek Amsterdam;Equipe Enschede;0.0;0.0
+EQA - Velthuis Kliniek Amsterdam;EQV - Velthuis Kliniek Velp;92.090248;68.28685
+EQA - Velthuis Kliniek Amsterdam;EQV - Xpert Clinic Hand Velp;92.904799;69.07101666666668
+EQA - Velthuis Kliniek Amsterdam;EQV - Xpert Clinic Proctologie Velp;92.090248;68.28685
+EQA - Velthuis Kliniek Amsterdam;EQZ - Xpert Clinic Oogzorg Zeist;44.667567000000005;31.94431666666667
+EQA - Velthuis Kliniek Amsterdam;EQZW - Xpert Clinic Hand Zwolle;100.17672;73.42286666666668
+EQA - Velthuis Kliniek Amsterdam;Esser Clinics;48.599076;39.4164
+EQA - Velthuis Kliniek Amsterdam;Flex Clinics;25.485187000000003;18.203433333333333
+EQA - Velthuis Kliniek Amsterdam;Haaglanden Clinics;60.576982;45.32775
+EQA - Velthuis Kliniek Amsterdam;Kazem;19.330109;16.225533333333335
+EQA - Velthuis Kliniek Amsterdam;KNO de Jong;25.83364;19.723650000000003
+EQA - Velthuis Kliniek Amsterdam;Medcentric MWCZ;150.743281;113.61478333333334
+EQA - Velthuis Kliniek Amsterdam;Medtronic;111.021927;78.15265
+EQA - Velthuis Kliniek Amsterdam;Orthoparc Rozendaal;92.090248;68.28685
+EQA - Velthuis Kliniek Amsterdam;Pro-Motion;77.91780499999999;59.09955
+EQA - Velthuis Kliniek Amsterdam;Retina eye care;46.512793;33.84621666666666
+EQA - Xpert Clinic Hand Amsterdam;De Meern;29.680318;23.86211666666667
+EQA - Xpert Clinic Hand Amsterdam;Andros Clinics Rijswijk;59.444897;40.50675
+EQA - Xpert Clinic Hand Amsterdam;Annadal kliniek;199.63417;143.87406666666666
+EQA - Xpert Clinic Hand Amsterdam;Annadal kliniek Poli;199.63417;143.87406666666666
+EQA - Xpert Clinic Hand Amsterdam;Annatommie Amstelveen;8.200833000000001;7.935216666666666
+EQA - Xpert Clinic Hand Amsterdam;Annatommie Utrecht;30.475979;22.27081666666667
+EQA - Xpert Clinic Hand Amsterdam;Arthrex;31.191589;23.38586666666667
+EQA - Xpert Clinic Hand Amsterdam;Cosmed Bosch en Duin OK;42.178917;33.776466666666664
+EQA - Xpert Clinic Hand Amsterdam;Cosmed Bosch en Duin Poli;42.178917;33.776466666666664
+EQA - Xpert Clinic Hand Amsterdam;Denticien;59.559791;41.80436666666667
+EQA - Xpert Clinic Hand Amsterdam;Dermaclinic Utrecht;32.500063;29.549950000000003
+EQA - Xpert Clinic Hand Amsterdam;Doctors at soap;32.019287;28.51973333333333
+EQA - Xpert Clinic Hand Amsterdam;EQA - Velthuis Kliniek Amsterdam;0.0;0.0
+EQA - Xpert Clinic Hand Amsterdam;EQA - Xpert Clinic Proctologie Amsterdam;0.0;0.0
+EQA - Xpert Clinic Hand Amsterdam;EQA - Xpert Orthopedie Amsterdam;0.0;0.0
+EQA - Xpert Clinic Hand Amsterdam;EQEI - Velthuis Kliniek Eindhoven;113.427507;78.22641666666667
+EQA - Xpert Clinic Hand Amsterdam;EQEI - Xpert Clinic Hand Eindhoven;113.427507;78.22641666666667
+EQA - Xpert Clinic Hand Amsterdam;EQEI - Xpert Clinic Proctologie Eindhoven;113.427507;78.22641666666667
+EQA - Xpert Clinic Hand Amsterdam;EQEI - Xpert Orthopedie Eindhoven;113.427507;78.22641666666667
+EQA - Xpert Clinic Hand Amsterdam;EQEI - Xpert Orthopedie Schijndel;89.544954;64.29401666666666
+EQA - Xpert Clinic Hand Amsterdam;EQEN - Velthuis Kliniek Enschede;148.40142;104.91908333333336
+EQA - Xpert Clinic Hand Amsterdam;EQEN - Xpert Clinic Hand Enschede;148.40142;104.91908333333336
+EQA - Xpert Clinic Hand Amsterdam;EQEN - Xpert Clinic Proctologie Enschede;148.40142;104.91908333333336
+EQA - Xpert Clinic Hand Amsterdam;EQR - Velthuis Kliniek Rotterdam;66.79907399999999;51.9779
+EQA - Xpert Clinic Hand Amsterdam;EQR - Xpert Clinic Hand Rotterdam;66.79907399999999;51.9779
+EQA - Xpert Clinic Hand Amsterdam;EQR - Xpert Clinic Proctologie Rotterdam;66.79907399999999;51.9779
+EQA - Xpert Clinic Hand Amsterdam;EQR - Xpert Orthopedie Rotterdam;66.79907399999999;51.9779
+EQA - Xpert Clinic Hand Amsterdam;EQRZD - Hand pols Rozendaal;92.090248;68.28685
+EQA - Xpert Clinic Hand Amsterdam;EQRZD - Orthopedie Rozendaal;92.090248;68.28685
+EQA - Xpert Clinic Hand Amsterdam;Equip Amsterdam;0.0;0.0
+EQA - Xpert Clinic Hand Amsterdam;Equipe Enschede;0.0;0.0
+EQA - Xpert Clinic Hand Amsterdam;EQV - Velthuis Kliniek Velp;92.090248;68.28685
+EQA - Xpert Clinic Hand Amsterdam;EQV - Xpert Clinic Hand Velp;92.904799;69.07101666666668
+EQA - Xpert Clinic Hand Amsterdam;EQV - Xpert Clinic Proctologie Velp;92.090248;68.28685
+EQA - Xpert Clinic Hand Amsterdam;EQZ - Xpert Clinic Oogzorg Zeist;44.667567000000005;31.94431666666667
+EQA - Xpert Clinic Hand Amsterdam;EQZW - Xpert Clinic Hand Zwolle;100.17672;73.42286666666668
+EQA - Xpert Clinic Hand Amsterdam;Esser Clinics;48.599076;39.4164
+EQA - Xpert Clinic Hand Amsterdam;Flex Clinics;25.485187000000003;18.203433333333333
+EQA - Xpert Clinic Hand Amsterdam;Haaglanden Clinics;60.576982;45.32775
+EQA - Xpert Clinic Hand Amsterdam;Kazem;19.330109;16.225533333333335
+EQA - Xpert Clinic Hand Amsterdam;KNO de Jong;25.83364;19.723650000000003
+EQA - Xpert Clinic Hand Amsterdam;Medcentric MWCZ;150.743281;113.61478333333334
+EQA - Xpert Clinic Hand Amsterdam;Medtronic;111.021927;78.15265
+EQA - Xpert Clinic Hand Amsterdam;Orthoparc Rozendaal;92.090248;68.28685
+EQA - Xpert Clinic Hand Amsterdam;Pro-Motion;77.91780499999999;59.09955
+EQA - Xpert Clinic Hand Amsterdam;Retina eye care;46.512793;33.84621666666666
+EQA - Xpert Clinic Proctologie Amsterdam;De Meern;29.680318;23.86211666666667
+EQA - Xpert Clinic Proctologie Amsterdam;Andros Clinics Rijswijk;59.444897;40.50675
+EQA - Xpert Clinic Proctologie Amsterdam;Annadal kliniek;199.63417;143.87406666666666
+EQA - Xpert Clinic Proctologie Amsterdam;Annadal kliniek Poli;199.63417;143.87406666666666
+EQA - Xpert Clinic Proctologie Amsterdam;Annatommie Amstelveen;8.200833000000001;7.935216666666666
+EQA - Xpert Clinic Proctologie Amsterdam;Annatommie Utrecht;30.475979;22.27081666666667
+EQA - Xpert Clinic Proctologie Amsterdam;Arthrex;31.191589;23.38586666666667
+EQA - Xpert Clinic Proctologie Amsterdam;Cosmed Bosch en Duin OK;42.178917;33.776466666666664
+EQA - Xpert Clinic Proctologie Amsterdam;Cosmed Bosch en Duin Poli;42.178917;33.776466666666664
+EQA - Xpert Clinic Proctologie Amsterdam;Denticien;59.559791;41.80436666666667
+EQA - Xpert Clinic Proctologie Amsterdam;Dermaclinic Utrecht;32.500063;29.549950000000003
+EQA - Xpert Clinic Proctologie Amsterdam;Doctors at soap;32.019287;28.51973333333333
+EQA - Xpert Clinic Proctologie Amsterdam;EQA - Velthuis Kliniek Amsterdam;0.0;0.0
+EQA - Xpert Clinic Proctologie Amsterdam;EQA - Xpert Clinic Hand Amsterdam;0.0;0.0
+EQA - Xpert Clinic Proctologie Amsterdam;EQA - Xpert Orthopedie Amsterdam;0.0;0.0
+EQA - Xpert Clinic Proctologie Amsterdam;EQEI - Velthuis Kliniek Eindhoven;113.427507;78.22641666666667
+EQA - Xpert Clinic Proctologie Amsterdam;EQEI - Xpert Clinic Hand Eindhoven;113.427507;78.22641666666667
+EQA - Xpert Clinic Proctologie Amsterdam;EQEI - Xpert Clinic Proctologie Eindhoven;113.427507;78.22641666666667
+EQA - Xpert Clinic Proctologie Amsterdam;EQEI - Xpert Orthopedie Eindhoven;113.427507;78.22641666666667
+EQA - Xpert Clinic Proctologie Amsterdam;EQEI - Xpert Orthopedie Schijndel;89.544954;64.29401666666666
+EQA - Xpert Clinic Proctologie Amsterdam;EQEN - Velthuis Kliniek Enschede;148.40142;104.91908333333336
+EQA - Xpert Clinic Proctologie Amsterdam;EQEN - Xpert Clinic Hand Enschede;148.40142;104.91908333333336
+EQA - Xpert Clinic Proctologie Amsterdam;EQEN - Xpert Clinic Proctologie Enschede;148.40142;104.91908333333336
+EQA - Xpert Clinic Proctologie Amsterdam;EQR - Velthuis Kliniek Rotterdam;66.79907399999999;51.9779
+EQA - Xpert Clinic Proctologie Amsterdam;EQR - Xpert Clinic Hand Rotterdam;66.79907399999999;51.9779
+EQA - Xpert Clinic Proctologie Amsterdam;EQR - Xpert Clinic Proctologie Rotterdam;66.79907399999999;51.9779
+EQA - Xpert Clinic Proctologie Amsterdam;EQR - Xpert Orthopedie Rotterdam;66.79907399999999;51.9779
+EQA - Xpert Clinic Proctologie Amsterdam;EQRZD - Hand pols Rozendaal;92.090248;68.28685
+EQA - Xpert Clinic Proctologie Amsterdam;EQRZD - Orthopedie Rozendaal;92.090248;68.28685
+EQA - Xpert Clinic Proctologie Amsterdam;Equip Amsterdam;0.0;0.0
+EQA - Xpert Clinic Proctologie Amsterdam;Equipe Enschede;0.0;0.0
+EQA - Xpert Clinic Proctologie Amsterdam;EQV - Velthuis Kliniek Velp;92.090248;68.28685
+EQA - Xpert Clinic Proctologie Amsterdam;EQV - Xpert Clinic Hand Velp;92.904799;69.07101666666668
+EQA - Xpert Clinic Proctologie Amsterdam;EQV - Xpert Clinic Proctologie Velp;92.090248;68.28685
+EQA - Xpert Clinic Proctologie Amsterdam;EQZ - Xpert Clinic Oogzorg Zeist;44.667567000000005;31.94431666666667
+EQA - Xpert Clinic Proctologie Amsterdam;EQZW - Xpert Clinic Hand Zwolle;100.17672;73.42286666666668
+EQA - Xpert Clinic Proctologie Amsterdam;Esser Clinics;48.599076;39.4164
+EQA - Xpert Clinic Proctologie Amsterdam;Flex Clinics;25.485187000000003;18.203433333333333
+EQA - Xpert Clinic Proctologie Amsterdam;Haaglanden Clinics;60.576982;45.32775
+EQA - Xpert Clinic Proctologie Amsterdam;Kazem;19.330109;16.225533333333335
+EQA - Xpert Clinic Proctologie Amsterdam;KNO de Jong;25.83364;19.723650000000003
+EQA - Xpert Clinic Proctologie Amsterdam;Medcentric MWCZ;150.743281;113.61478333333334
+EQA - Xpert Clinic Proctologie Amsterdam;Medtronic;111.021927;78.15265
+EQA - Xpert Clinic Proctologie Amsterdam;Orthoparc Rozendaal;92.090248;68.28685
+EQA - Xpert Clinic Proctologie Amsterdam;Pro-Motion;77.91780499999999;59.09955
+EQA - Xpert Clinic Proctologie Amsterdam;Retina eye care;46.512793;33.84621666666666
+EQA - Xpert Orthopedie Amsterdam;De Meern;29.680318;23.86211666666667
+EQA - Xpert Orthopedie Amsterdam;Andros Clinics Rijswijk;59.444897;40.50675
+EQA - Xpert Orthopedie Amsterdam;Annadal kliniek;199.63417;143.87406666666666
+EQA - Xpert Orthopedie Amsterdam;Annadal kliniek Poli;199.63417;143.87406666666666
+EQA - Xpert Orthopedie Amsterdam;Annatommie Amstelveen;8.200833000000001;7.935216666666666
+EQA - Xpert Orthopedie Amsterdam;Annatommie Utrecht;30.475979;22.27081666666667
+EQA - Xpert Orthopedie Amsterdam;Arthrex;31.191589;23.38586666666667
+EQA - Xpert Orthopedie Amsterdam;Cosmed Bosch en Duin OK;42.178917;33.776466666666664
+EQA - Xpert Orthopedie Amsterdam;Cosmed Bosch en Duin Poli;42.178917;33.776466666666664
+EQA - Xpert Orthopedie Amsterdam;Denticien;59.559791;41.80436666666667
+EQA - Xpert Orthopedie Amsterdam;Dermaclinic Utrecht;32.500063;29.549950000000003
+EQA - Xpert Orthopedie Amsterdam;Doctors at soap;32.019287;28.51973333333333
+EQA - Xpert Orthopedie Amsterdam;EQA - Velthuis Kliniek Amsterdam;0.0;0.0
+EQA - Xpert Orthopedie Amsterdam;EQA - Xpert Clinic Hand Amsterdam;0.0;0.0
+EQA - Xpert Orthopedie Amsterdam;EQA - Xpert Clinic Proctologie Amsterdam;0.0;0.0
+EQA - Xpert Orthopedie Amsterdam;EQEI - Velthuis Kliniek Eindhoven;113.427507;78.22641666666667
+EQA - Xpert Orthopedie Amsterdam;EQEI - Xpert Clinic Hand Eindhoven;113.427507;78.22641666666667
+EQA - Xpert Orthopedie Amsterdam;EQEI - Xpert Clinic Proctologie Eindhoven;113.427507;78.22641666666667
+EQA - Xpert Orthopedie Amsterdam;EQEI - Xpert Orthopedie Eindhoven;113.427507;78.22641666666667
+EQA - Xpert Orthopedie Amsterdam;EQEI - Xpert Orthopedie Schijndel;89.544954;64.29401666666666
+EQA - Xpert Orthopedie Amsterdam;EQEN - Velthuis Kliniek Enschede;148.40142;104.91908333333336
+EQA - Xpert Orthopedie Amsterdam;EQEN - Xpert Clinic Hand Enschede;148.40142;104.91908333333336
+EQA - Xpert Orthopedie Amsterdam;EQEN - Xpert Clinic Proctologie Enschede;148.40142;104.91908333333336
+EQA - Xpert Orthopedie Amsterdam;EQR - Velthuis Kliniek Rotterdam;66.79907399999999;51.9779
+EQA - Xpert Orthopedie Amsterdam;EQR - Xpert Clinic Hand Rotterdam;66.79907399999999;51.9779
+EQA - Xpert Orthopedie Amsterdam;EQR - Xpert Clinic Proctologie Rotterdam;66.79907399999999;51.9779
+EQA - Xpert Orthopedie Amsterdam;EQR - Xpert Orthopedie Rotterdam;66.79907399999999;51.9779
+EQA - Xpert Orthopedie Amsterdam;EQRZD - Hand pols Rozendaal;92.090248;68.28685
+EQA - Xpert Orthopedie Amsterdam;EQRZD - Orthopedie Rozendaal;92.090248;68.28685
+EQA - Xpert Orthopedie Amsterdam;Equip Amsterdam;0.0;0.0
+EQA - Xpert Orthopedie Amsterdam;Equipe Enschede;0.0;0.0
+EQA - Xpert Orthopedie Amsterdam;EQV - Velthuis Kliniek Velp;92.090248;68.28685
+EQA - Xpert Orthopedie Amsterdam;EQV - Xpert Clinic Hand Velp;92.904799;69.07101666666668
+EQA - Xpert Orthopedie Amsterdam;EQV - Xpert Clinic Proctologie Velp;92.090248;68.28685
+EQA - Xpert Orthopedie Amsterdam;EQZ - Xpert Clinic Oogzorg Zeist;44.667567000000005;31.94431666666667
+EQA - Xpert Orthopedie Amsterdam;EQZW - Xpert Clinic Hand Zwolle;100.17672;73.42286666666668
+EQA - Xpert Orthopedie Amsterdam;Esser Clinics;48.599076;39.4164
+EQA - Xpert Orthopedie Amsterdam;Flex Clinics;25.485187000000003;18.203433333333333
+EQA - Xpert Orthopedie Amsterdam;Haaglanden Clinics;60.576982;45.32775
+EQA - Xpert Orthopedie Amsterdam;Kazem;19.330109;16.225533333333335
+EQA - Xpert Orthopedie Amsterdam;KNO de Jong;25.83364;19.723650000000003
+EQA - Xpert Orthopedie Amsterdam;Medcentric MWCZ;150.743281;113.61478333333334
+EQA - Xpert Orthopedie Amsterdam;Medtronic;111.021927;78.15265
+EQA - Xpert Orthopedie Amsterdam;Orthoparc Rozendaal;92.090248;68.28685
+EQA - Xpert Orthopedie Amsterdam;Pro-Motion;77.91780499999999;59.09955
+EQA - Xpert Orthopedie Amsterdam;Retina eye care;46.512793;33.84621666666666
+EQEI - Velthuis Kliniek Eindhoven;De Meern;87.006824;63.24073333333333
+EQEI - Velthuis Kliniek Eindhoven;Andros Clinics Rijswijk;122.113975;95.04495
+EQEI - Velthuis Kliniek Eindhoven;Annadal kliniek;91.377828;67.48973333333333
+EQEI - Velthuis Kliniek Eindhoven;Annadal kliniek Poli;91.377828;67.48973333333333
+EQEI - Velthuis Kliniek Eindhoven;Annatommie Amstelveen;117.721681;81.58725
+EQEI - Velthuis Kliniek Eindhoven;Annatommie Utrecht;85.61405;60.88343333333333
+EQEI - Velthuis Kliniek Eindhoven;Arthrex;85.173871;60.490966666666665
+EQEI - Velthuis Kliniek Eindhoven;Cosmed Bosch en Duin OK;95.385901;66.99855
+EQEI - Velthuis Kliniek Eindhoven;Cosmed Bosch en Duin Poli;95.385901;66.99855
+EQEI - Velthuis Kliniek Eindhoven;Denticien;122.974392;96.21513333333334
+EQEI - Velthuis Kliniek Eindhoven;Dermaclinic Utrecht;89.184331;63.876783333333336
+EQEI - Velthuis Kliniek Eindhoven;Doctors at soap;89.010422;65.23931666666667
+EQEI - Velthuis Kliniek Eindhoven;EQA - Velthuis Kliniek Amsterdam;113.894948;78.09025
+EQEI - Velthuis Kliniek Eindhoven;EQA - Xpert Clinic Hand Amsterdam;113.894948;78.09025
+EQEI - Velthuis Kliniek Eindhoven;EQA - Xpert Clinic Proctologie Amsterdam;113.894948;78.09025
+EQEI - Velthuis Kliniek Eindhoven;EQA - Xpert Orthopedie Amsterdam;113.894948;78.09025
+EQEI - Velthuis Kliniek Eindhoven;EQEI - Xpert Clinic Hand Eindhoven;0.0;0.0
+EQEI - Velthuis Kliniek Eindhoven;EQEI - Xpert Clinic Proctologie Eindhoven;0.0;0.0
+EQEI - Velthuis Kliniek Eindhoven;EQEI - Xpert Orthopedie Eindhoven;0.0;0.0
+EQEI - Velthuis Kliniek Eindhoven;EQEI - Xpert Orthopedie Schijndel;26.562382000000003;23.30695
+EQEI - Velthuis Kliniek Eindhoven;EQEN - Velthuis Kliniek Enschede;173.94097;124.0855
+EQEI - Velthuis Kliniek Eindhoven;EQEN - Xpert Clinic Hand Enschede;173.94097;124.0855
+EQEI - Velthuis Kliniek Eindhoven;EQEN - Xpert Clinic Proctologie Enschede;173.94097;124.0855
+EQEI - Velthuis Kliniek Eindhoven;EQR - Velthuis Kliniek Rotterdam;100.222722;75.40453333333333
+EQEI - Velthuis Kliniek Eindhoven;EQR - Xpert Clinic Hand Rotterdam;100.222722;75.40453333333333
+EQEI - Velthuis Kliniek Eindhoven;EQR - Xpert Clinic Proctologie Rotterdam;100.222722;75.40453333333333
+EQEI - Velthuis Kliniek Eindhoven;EQR - Xpert Orthopedie Rotterdam;100.222722;75.40453333333333
+EQEI - Velthuis Kliniek Eindhoven;EQRZD - Hand pols Rozendaal;90.550161;69.89625
+EQEI - Velthuis Kliniek Eindhoven;EQRZD - Orthopedie Rozendaal;90.550161;69.89625
+EQEI - Velthuis Kliniek Eindhoven;Equip Amsterdam;113.894948;78.09025
+EQEI - Velthuis Kliniek Eindhoven;Equipe Enschede;113.894948;78.09025
+EQEI - Velthuis Kliniek Eindhoven;EQV - Velthuis Kliniek Velp;90.550161;69.89625
+EQEI - Velthuis Kliniek Eindhoven;EQV - Xpert Clinic Hand Velp;89.308799;68.21445
+EQEI - Velthuis Kliniek Eindhoven;EQV - Xpert Clinic Proctologie Velp;90.550161;69.89625
+EQEI - Velthuis Kliniek Eindhoven;EQZ - Xpert Clinic Oogzorg Zeist;94.643549;65.12988333333334
+EQEI - Velthuis Kliniek Eindhoven;EQZW - Xpert Clinic Hand Zwolle;154.542421;107.43088333333334
+EQEI - Velthuis Kliniek Eindhoven;Esser Clinics;114.380915;78.70336666666667
+EQEI - Velthuis Kliniek Eindhoven;Flex Clinics;89.044434;63.24295
+EQEI - Velthuis Kliniek Eindhoven;Haaglanden Clinics;128.947631;102.97778333333332
+EQEI - Velthuis Kliniek Eindhoven;Kazem;123.016385;95.62766666666668
+EQEI - Velthuis Kliniek Eindhoven;KNO de Jong;93.889367;66.05378333333333
+EQEI - Velthuis Kliniek Eindhoven;Medcentric MWCZ;135.987032;93.95368333333332
+EQEI - Velthuis Kliniek Eindhoven;Medtronic;4.020424;5.649633333333333
+EQEI - Velthuis Kliniek Eindhoven;Orthoparc Rozendaal;90.550161;69.89625
+EQEI - Velthuis Kliniek Eindhoven;Pro-Motion;89.94881;68.70108333333333
+EQEI - Velthuis Kliniek Eindhoven;Retina eye care;92.577129;65.26683333333334
+EQEI - Xpert Clinic Hand Eindhoven;De Meern;87.006824;63.24073333333333
+EQEI - Xpert Clinic Hand Eindhoven;Andros Clinics Rijswijk;122.113975;95.04495
+EQEI - Xpert Clinic Hand Eindhoven;Annadal kliniek;91.377828;67.48973333333333
+EQEI - Xpert Clinic Hand Eindhoven;Annadal kliniek Poli;91.377828;67.48973333333333
+EQEI - Xpert Clinic Hand Eindhoven;Annatommie Amstelveen;117.721681;81.58725
+EQEI - Xpert Clinic Hand Eindhoven;Annatommie Utrecht;85.61405;60.88343333333333
+EQEI - Xpert Clinic Hand Eindhoven;Arthrex;85.173871;60.490966666666665
+EQEI - Xpert Clinic Hand Eindhoven;Cosmed Bosch en Duin OK;95.385901;66.99855
+EQEI - Xpert Clinic Hand Eindhoven;Cosmed Bosch en Duin Poli;95.385901;66.99855
+EQEI - Xpert Clinic Hand Eindhoven;Denticien;122.974392;96.21513333333334
+EQEI - Xpert Clinic Hand Eindhoven;Dermaclinic Utrecht;89.184331;63.876783333333336
+EQEI - Xpert Clinic Hand Eindhoven;Doctors at soap;89.010422;65.23931666666667
+EQEI - Xpert Clinic Hand Eindhoven;EQA - Velthuis Kliniek Amsterdam;113.894948;78.09025
+EQEI - Xpert Clinic Hand Eindhoven;EQA - Xpert Clinic Hand Amsterdam;113.894948;78.09025
+EQEI - Xpert Clinic Hand Eindhoven;EQA - Xpert Clinic Proctologie Amsterdam;113.894948;78.09025
+EQEI - Xpert Clinic Hand Eindhoven;EQA - Xpert Orthopedie Amsterdam;113.894948;78.09025
+EQEI - Xpert Clinic Hand Eindhoven;EQEI - Velthuis Kliniek Eindhoven;0.0;0.0
+EQEI - Xpert Clinic Hand Eindhoven;EQEI - Xpert Clinic Proctologie Eindhoven;0.0;0.0
+EQEI - Xpert Clinic Hand Eindhoven;EQEI - Xpert Orthopedie Eindhoven;0.0;0.0
+EQEI - Xpert Clinic Hand Eindhoven;EQEI - Xpert Orthopedie Schijndel;26.562382000000003;23.30695
+EQEI - Xpert Clinic Hand Eindhoven;EQEN - Velthuis Kliniek Enschede;173.94097;124.0855
+EQEI - Xpert Clinic Hand Eindhoven;EQEN - Xpert Clinic Hand Enschede;173.94097;124.0855
+EQEI - Xpert Clinic Hand Eindhoven;EQEN - Xpert Clinic Proctologie Enschede;173.94097;124.0855
+EQEI - Xpert Clinic Hand Eindhoven;EQR - Velthuis Kliniek Rotterdam;100.222722;75.40453333333333
+EQEI - Xpert Clinic Hand Eindhoven;EQR - Xpert Clinic Hand Rotterdam;100.222722;75.40453333333333
+EQEI - Xpert Clinic Hand Eindhoven;EQR - Xpert Clinic Proctologie Rotterdam;100.222722;75.40453333333333
+EQEI - Xpert Clinic Hand Eindhoven;EQR - Xpert Orthopedie Rotterdam;100.222722;75.40453333333333
+EQEI - Xpert Clinic Hand Eindhoven;EQRZD - Hand pols Rozendaal;90.550161;69.89625
+EQEI - Xpert Clinic Hand Eindhoven;EQRZD - Orthopedie Rozendaal;90.550161;69.89625
+EQEI - Xpert Clinic Hand Eindhoven;Equip Amsterdam;113.894948;78.09025
+EQEI - Xpert Clinic Hand Eindhoven;Equipe Enschede;113.894948;78.09025
+EQEI - Xpert Clinic Hand Eindhoven;EQV - Velthuis Kliniek Velp;90.550161;69.89625
+EQEI - Xpert Clinic Hand Eindhoven;EQV - Xpert Clinic Hand Velp;89.308799;68.21445
+EQEI - Xpert Clinic Hand Eindhoven;EQV - Xpert Clinic Proctologie Velp;90.550161;69.89625
+EQEI - Xpert Clinic Hand Eindhoven;EQZ - Xpert Clinic Oogzorg Zeist;94.643549;65.12988333333334
+EQEI - Xpert Clinic Hand Eindhoven;EQZW - Xpert Clinic Hand Zwolle;154.542421;107.43088333333334
+EQEI - Xpert Clinic Hand Eindhoven;Esser Clinics;114.380915;78.70336666666667
+EQEI - Xpert Clinic Hand Eindhoven;Flex Clinics;89.044434;63.24295
+EQEI - Xpert Clinic Hand Eindhoven;Haaglanden Clinics;128.947631;102.97778333333332
+EQEI - Xpert Clinic Hand Eindhoven;Kazem;123.016385;95.62766666666668
+EQEI - Xpert Clinic Hand Eindhoven;KNO de Jong;93.889367;66.05378333333333
+EQEI - Xpert Clinic Hand Eindhoven;Medcentric MWCZ;135.987032;93.95368333333332
+EQEI - Xpert Clinic Hand Eindhoven;Medtronic;4.020424;5.649633333333333
+EQEI - Xpert Clinic Hand Eindhoven;Orthoparc Rozendaal;90.550161;69.89625
+EQEI - Xpert Clinic Hand Eindhoven;Pro-Motion;89.94881;68.70108333333333
+EQEI - Xpert Clinic Hand Eindhoven;Retina eye care;92.577129;65.26683333333334
+EQEI - Xpert Clinic Proctologie Eindhoven;De Meern;87.006824;63.24073333333333
+EQEI - Xpert Clinic Proctologie Eindhoven;Andros Clinics Rijswijk;122.113975;95.04495
+EQEI - Xpert Clinic Proctologie Eindhoven;Annadal kliniek;91.377828;67.48973333333333
+EQEI - Xpert Clinic Proctologie Eindhoven;Annadal kliniek Poli;91.377828;67.48973333333333
+EQEI - Xpert Clinic Proctologie Eindhoven;Annatommie Amstelveen;117.721681;81.58725
+EQEI - Xpert Clinic Proctologie Eindhoven;Annatommie Utrecht;85.61405;60.88343333333333
+EQEI - Xpert Clinic Proctologie Eindhoven;Arthrex;85.173871;60.490966666666665
+EQEI - Xpert Clinic Proctologie Eindhoven;Cosmed Bosch en Duin OK;95.385901;66.99855
+EQEI - Xpert Clinic Proctologie Eindhoven;Cosmed Bosch en Duin Poli;95.385901;66.99855
+EQEI - Xpert Clinic Proctologie Eindhoven;Denticien;122.974392;96.21513333333334
+EQEI - Xpert Clinic Proctologie Eindhoven;Dermaclinic Utrecht;89.184331;63.876783333333336
+EQEI - Xpert Clinic Proctologie Eindhoven;Doctors at soap;89.010422;65.23931666666667
+EQEI - Xpert Clinic Proctologie Eindhoven;EQA - Velthuis Kliniek Amsterdam;113.894948;78.09025
+EQEI - Xpert Clinic Proctologie Eindhoven;EQA - Xpert Clinic Hand Amsterdam;113.894948;78.09025
+EQEI - Xpert Clinic Proctologie Eindhoven;EQA - Xpert Clinic Proctologie Amsterdam;113.894948;78.09025
+EQEI - Xpert Clinic Proctologie Eindhoven;EQA - Xpert Orthopedie Amsterdam;113.894948;78.09025
+EQEI - Xpert Clinic Proctologie Eindhoven;EQEI - Velthuis Kliniek Eindhoven;0.0;0.0
+EQEI - Xpert Clinic Proctologie Eindhoven;EQEI - Xpert Clinic Hand Eindhoven;0.0;0.0
+EQEI - Xpert Clinic Proctologie Eindhoven;EQEI - Xpert Orthopedie Eindhoven;0.0;0.0
+EQEI - Xpert Clinic Proctologie Eindhoven;EQEI - Xpert Orthopedie Schijndel;26.562382000000003;23.30695
+EQEI - Xpert Clinic Proctologie Eindhoven;EQEN - Velthuis Kliniek Enschede;173.94097;124.0855
+EQEI - Xpert Clinic Proctologie Eindhoven;EQEN - Xpert Clinic Hand Enschede;173.94097;124.0855
+EQEI - Xpert Clinic Proctologie Eindhoven;EQEN - Xpert Clinic Proctologie Enschede;173.94097;124.0855
+EQEI - Xpert Clinic Proctologie Eindhoven;EQR - Velthuis Kliniek Rotterdam;100.222722;75.40453333333333
+EQEI - Xpert Clinic Proctologie Eindhoven;EQR - Xpert Clinic Hand Rotterdam;100.222722;75.40453333333333
+EQEI - Xpert Clinic Proctologie Eindhoven;EQR - Xpert Clinic Proctologie Rotterdam;100.222722;75.40453333333333
+EQEI - Xpert Clinic Proctologie Eindhoven;EQR - Xpert Orthopedie Rotterdam;100.222722;75.40453333333333
+EQEI - Xpert Clinic Proctologie Eindhoven;EQRZD - Hand pols Rozendaal;90.550161;69.89625
+EQEI - Xpert Clinic Proctologie Eindhoven;EQRZD - Orthopedie Rozendaal;90.550161;69.89625
+EQEI - Xpert Clinic Proctologie Eindhoven;Equip Amsterdam;113.894948;78.09025
+EQEI - Xpert Clinic Proctologie Eindhoven;Equipe Enschede;113.894948;78.09025
+EQEI - Xpert Clinic Proctologie Eindhoven;EQV - Velthuis Kliniek Velp;90.550161;69.89625
+EQEI - Xpert Clinic Proctologie Eindhoven;EQV - Xpert Clinic Hand Velp;89.308799;68.21445
+EQEI - Xpert Clinic Proctologie Eindhoven;EQV - Xpert Clinic Proctologie Velp;90.550161;69.89625
+EQEI - Xpert Clinic Proctologie Eindhoven;EQZ - Xpert Clinic Oogzorg Zeist;94.643549;65.12988333333334
+EQEI - Xpert Clinic Proctologie Eindhoven;EQZW - Xpert Clinic Hand Zwolle;154.542421;107.43088333333334
+EQEI - Xpert Clinic Proctologie Eindhoven;Esser Clinics;114.380915;78.70336666666667
+EQEI - Xpert Clinic Proctologie Eindhoven;Flex Clinics;89.044434;63.24295
+EQEI - Xpert Clinic Proctologie Eindhoven;Haaglanden Clinics;128.947631;102.97778333333332
+EQEI - Xpert Clinic Proctologie Eindhoven;Kazem;123.016385;95.62766666666668
+EQEI - Xpert Clinic Proctologie Eindhoven;KNO de Jong;93.889367;66.05378333333333
+EQEI - Xpert Clinic Proctologie Eindhoven;Medcentric MWCZ;135.987032;93.95368333333332
+EQEI - Xpert Clinic Proctologie Eindhoven;Medtronic;4.020424;5.649633333333333
+EQEI - Xpert Clinic Proctologie Eindhoven;Orthoparc Rozendaal;90.550161;69.89625
+EQEI - Xpert Clinic Proctologie Eindhoven;Pro-Motion;89.94881;68.70108333333333
+EQEI - Xpert Clinic Proctologie Eindhoven;Retina eye care;92.577129;65.26683333333334
+EQEI - Xpert Orthopedie Eindhoven;De Meern;87.006824;63.24073333333333
+EQEI - Xpert Orthopedie Eindhoven;Andros Clinics Rijswijk;122.113975;95.04495
+EQEI - Xpert Orthopedie Eindhoven;Annadal kliniek;91.377828;67.48973333333333
+EQEI - Xpert Orthopedie Eindhoven;Annadal kliniek Poli;91.377828;67.48973333333333
+EQEI - Xpert Orthopedie Eindhoven;Annatommie Amstelveen;117.721681;81.58725
+EQEI - Xpert Orthopedie Eindhoven;Annatommie Utrecht;85.61405;60.88343333333333
+EQEI - Xpert Orthopedie Eindhoven;Arthrex;85.173871;60.490966666666665
+EQEI - Xpert Orthopedie Eindhoven;Cosmed Bosch en Duin OK;95.385901;66.99855
+EQEI - Xpert Orthopedie Eindhoven;Cosmed Bosch en Duin Poli;95.385901;66.99855
+EQEI - Xpert Orthopedie Eindhoven;Denticien;122.974392;96.21513333333334
+EQEI - Xpert Orthopedie Eindhoven;Dermaclinic Utrecht;89.184331;63.876783333333336
+EQEI - Xpert Orthopedie Eindhoven;Doctors at soap;89.010422;65.23931666666667
+EQEI - Xpert Orthopedie Eindhoven;EQA - Velthuis Kliniek Amsterdam;113.894948;78.09025
+EQEI - Xpert Orthopedie Eindhoven;EQA - Xpert Clinic Hand Amsterdam;113.894948;78.09025
+EQEI - Xpert Orthopedie Eindhoven;EQA - Xpert Clinic Proctologie Amsterdam;113.894948;78.09025
+EQEI - Xpert Orthopedie Eindhoven;EQA - Xpert Orthopedie Amsterdam;113.894948;78.09025
+EQEI - Xpert Orthopedie Eindhoven;EQEI - Velthuis Kliniek Eindhoven;0.0;0.0
+EQEI - Xpert Orthopedie Eindhoven;EQEI - Xpert Clinic Hand Eindhoven;0.0;0.0
+EQEI - Xpert Orthopedie Eindhoven;EQEI - Xpert Clinic Proctologie Eindhoven;0.0;0.0
+EQEI - Xpert Orthopedie Eindhoven;EQEI - Xpert Orthopedie Schijndel;26.562382000000003;23.30695
+EQEI - Xpert Orthopedie Eindhoven;EQEN - Velthuis Kliniek Enschede;173.94097;124.0855
+EQEI - Xpert Orthopedie Eindhoven;EQEN - Xpert Clinic Hand Enschede;173.94097;124.0855
+EQEI - Xpert Orthopedie Eindhoven;EQEN - Xpert Clinic Proctologie Enschede;173.94097;124.0855
+EQEI - Xpert Orthopedie Eindhoven;EQR - Velthuis Kliniek Rotterdam;100.222722;75.40453333333333
+EQEI - Xpert Orthopedie Eindhoven;EQR - Xpert Clinic Hand Rotterdam;100.222722;75.40453333333333
+EQEI - Xpert Orthopedie Eindhoven;EQR - Xpert Clinic Proctologie Rotterdam;100.222722;75.40453333333333
+EQEI - Xpert Orthopedie Eindhoven;EQR - Xpert Orthopedie Rotterdam;100.222722;75.40453333333333
+EQEI - Xpert Orthopedie Eindhoven;EQRZD - Hand pols Rozendaal;90.550161;69.89625
+EQEI - Xpert Orthopedie Eindhoven;EQRZD - Orthopedie Rozendaal;90.550161;69.89625
+EQEI - Xpert Orthopedie Eindhoven;Equip Amsterdam;113.894948;78.09025
+EQEI - Xpert Orthopedie Eindhoven;Equipe Enschede;113.894948;78.09025
+EQEI - Xpert Orthopedie Eindhoven;EQV - Velthuis Kliniek Velp;90.550161;69.89625
+EQEI - Xpert Orthopedie Eindhoven;EQV - Xpert Clinic Hand Velp;89.308799;68.21445
+EQEI - Xpert Orthopedie Eindhoven;EQV - Xpert Clinic Proctologie Velp;90.550161;69.89625
+EQEI - Xpert Orthopedie Eindhoven;EQZ - Xpert Clinic Oogzorg Zeist;94.643549;65.12988333333334
+EQEI - Xpert Orthopedie Eindhoven;EQZW - Xpert Clinic Hand Zwolle;154.542421;107.43088333333334
+EQEI - Xpert Orthopedie Eindhoven;Esser Clinics;114.380915;78.70336666666667
+EQEI - Xpert Orthopedie Eindhoven;Flex Clinics;89.044434;63.24295
+EQEI - Xpert Orthopedie Eindhoven;Haaglanden Clinics;128.947631;102.97778333333332
+EQEI - Xpert Orthopedie Eindhoven;Kazem;123.016385;95.62766666666668
+EQEI - Xpert Orthopedie Eindhoven;KNO de Jong;93.889367;66.05378333333333
+EQEI - Xpert Orthopedie Eindhoven;Medcentric MWCZ;135.987032;93.95368333333332
+EQEI - Xpert Orthopedie Eindhoven;Medtronic;4.020424;5.649633333333333
+EQEI - Xpert Orthopedie Eindhoven;Orthoparc Rozendaal;90.550161;69.89625
+EQEI - Xpert Orthopedie Eindhoven;Pro-Motion;89.94881;68.70108333333333
+EQEI - Xpert Orthopedie Eindhoven;Retina eye care;92.577129;65.26683333333334
+EQEI - Xpert Orthopedie Schijndel;De Meern;63.431086;49.02516666666667
+EQEI - Xpert Orthopedie Schijndel;Andros Clinics Rijswijk;110.039431;81.87676666666667
+EQEI - Xpert Orthopedie Schijndel;Annadal kliniek;112.714861;83.92446666666666
+EQEI - Xpert Orthopedie Schijndel;Annadal kliniek Poli;112.714861;83.92446666666666
+EQEI - Xpert Orthopedie Schijndel;Annatommie Amstelveen;94.145943;67.37168333333334
+EQEI - Xpert Orthopedie Schijndel;Annatommie Utrecht;62.038312;46.66786666666667
+EQEI - Xpert Orthopedie Schijndel;Arthrex;61.598133;46.2754
+EQEI - Xpert Orthopedie Schijndel;Cosmed Bosch en Duin OK;71.810163;52.78298333333333
+EQEI - Xpert Orthopedie Schijndel;Cosmed Bosch en Duin Poli;71.810163;52.78298333333333
+EQEI - Xpert Orthopedie Schijndel;Denticien;110.899847;83.04695
+EQEI - Xpert Orthopedie Schijndel;Dermaclinic Utrecht;65.608592;49.66121666666666
+EQEI - Xpert Orthopedie Schijndel;Doctors at soap;65.434684;51.02375
+EQEI - Xpert Orthopedie Schijndel;EQA - Velthuis Kliniek Amsterdam;90.31921;63.87468333333334
+EQEI - Xpert Orthopedie Schijndel;EQA - Xpert Clinic Hand Amsterdam;90.31921;63.87468333333334
+EQEI - Xpert Orthopedie Schijndel;EQA - Xpert Clinic Proctologie Amsterdam;90.31921;63.87468333333334
+EQEI - Xpert Orthopedie Schijndel;EQA - Xpert Orthopedie Amsterdam;90.31921;63.87468333333334
+EQEI - Xpert Orthopedie Schijndel;EQEI - Velthuis Kliniek Eindhoven;26.781584;23.46581666666667
+EQEI - Xpert Orthopedie Schijndel;EQEI - Xpert Clinic Hand Eindhoven;26.781584;23.46581666666667
+EQEI - Xpert Orthopedie Schijndel;EQEI - Xpert Clinic Proctologie Eindhoven;26.781584;23.46581666666667
+EQEI - Xpert Orthopedie Schijndel;EQEI - Xpert Orthopedie Eindhoven;26.781584;23.46581666666667
+EQEI - Xpert Orthopedie Schijndel;EQEN - Velthuis Kliniek Enschede;150.774276;115.13795
+EQEI - Xpert Orthopedie Schijndel;EQEN - Xpert Clinic Hand Enschede;150.774276;115.13795
+EQEI - Xpert Orthopedie Schijndel;EQEN - Xpert Clinic Proctologie Enschede;150.774276;115.13795
+EQEI - Xpert Orthopedie Schijndel;EQR - Velthuis Kliniek Rotterdam;88.148178;62.23635
+EQEI - Xpert Orthopedie Schijndel;EQR - Xpert Clinic Hand Rotterdam;88.148178;62.23635
+EQEI - Xpert Orthopedie Schijndel;EQR - Xpert Clinic Proctologie Rotterdam;88.148178;62.23635
+EQEI - Xpert Orthopedie Schijndel;EQR - Xpert Orthopedie Rotterdam;88.148178;62.23635
+EQEI - Xpert Orthopedie Schijndel;EQRZD - Hand pols Rozendaal;67.383466;60.9487
+EQEI - Xpert Orthopedie Schijndel;EQRZD - Orthopedie Rozendaal;67.383466;60.9487
+EQEI - Xpert Orthopedie Schijndel;Equip Amsterdam;90.31921;63.87468333333334
+EQEI - Xpert Orthopedie Schijndel;Equipe Enschede;90.31921;63.87468333333334
+EQEI - Xpert Orthopedie Schijndel;EQV - Velthuis Kliniek Velp;67.383466;60.9487
+EQEI - Xpert Orthopedie Schijndel;EQV - Xpert Clinic Hand Velp;66.142105;59.2669
+EQEI - Xpert Orthopedie Schijndel;EQV - Xpert Clinic Proctologie Velp;67.383466;60.9487
+EQEI - Xpert Orthopedie Schijndel;EQZ - Xpert Clinic Oogzorg Zeist;71.067811;50.91431666666666
+EQEI - Xpert Orthopedie Schijndel;EQZW - Xpert Clinic Hand Zwolle;131.375727;98.48333333333332
+EQEI - Xpert Orthopedie Schijndel;Esser Clinics;90.805177;64.48780000000001
+EQEI - Xpert Orthopedie Schijndel;Flex Clinics;65.46869600000001;49.02738333333333
+EQEI - Xpert Orthopedie Schijndel;Haaglanden Clinics;118.745642;85.21281666666667
+EQEI - Xpert Orthopedie Schijndel;Kazem;99.440647;81.4121
+EQEI - Xpert Orthopedie Schijndel;KNO de Jong;70.313629;51.83821666666667
+EQEI - Xpert Orthopedie Schijndel;Medcentric MWCZ;134.804601;101.09908333333333
+EQEI - Xpert Orthopedie Schijndel;Medtronic;23.857584;20.43443333333333
+EQEI - Xpert Orthopedie Schijndel;Orthoparc Rozendaal;67.383466;60.9487
+EQEI - Xpert Orthopedie Schijndel;Pro-Motion;81.33329499999999;61.529700000000005
+EQEI - Xpert Orthopedie Schijndel;Retina eye care;69.001391;51.05126666666667
+EQEN - Velthuis Kliniek Enschede;De Meern;139.968818;105.2954
+EQEN - Velthuis Kliniek Enschede;Andros Clinics Rijswijk;192.47326500000003;136.8462
+EQEN - Velthuis Kliniek Enschede;Annadal kliniek;236.506039;187.549
+EQEN - Velthuis Kliniek Enschede;Annadal kliniek Poli;236.506039;187.549
+EQEN - Velthuis Kliniek Enschede;Annatommie Amstelveen;156.397942;111.88045
+EQEN - Velthuis Kliniek Enschede;Annatommie Utrecht;137.043353;101.75226666666669
+EQEN - Velthuis Kliniek Enschede;Arthrex;137.54869200000002;100.26306666666666
+EQEN - Velthuis Kliniek Enschede;Cosmed Bosch en Duin OK;126.455864;91.88958333333332
+EQEN - Velthuis Kliniek Enschede;Cosmed Bosch en Duin Poli;126.455864;91.88958333333332
+EQEN - Velthuis Kliniek Enschede;Denticien;192.705896;138.21993333333333
+EQEN - Velthuis Kliniek Enschede;Dermaclinic Utrecht;132.750486;96.34558333333332
+EQEN - Velthuis Kliniek Enschede;Doctors at soap;133.60973199999998;98.16661666666668
+EQEN - Velthuis Kliniek Enschede;EQA - Velthuis Kliniek Amsterdam;149.406512;105.89726666666668
+EQEN - Velthuis Kliniek Enschede;EQA - Xpert Clinic Hand Amsterdam;149.406512;105.89726666666668
+EQEN - Velthuis Kliniek Enschede;EQA - Xpert Clinic Proctologie Amsterdam;149.406512;105.89726666666668
+EQEN - Velthuis Kliniek Enschede;EQA - Xpert Orthopedie Amsterdam;149.406512;105.89726666666668
+EQEN - Velthuis Kliniek Enschede;EQEI - Velthuis Kliniek Eindhoven;167.312068;133.9059
+EQEN - Velthuis Kliniek Enschede;EQEI - Xpert Clinic Hand Eindhoven;167.312068;133.9059
+EQEN - Velthuis Kliniek Enschede;EQEI - Xpert Clinic Proctologie Eindhoven;167.312068;133.9059
+EQEN - Velthuis Kliniek Enschede;EQEI - Xpert Orthopedie Eindhoven;167.312068;133.9059
+EQEN - Velthuis Kliniek Enschede;EQEI - Xpert Orthopedie Schijndel;143.05976199999998;123.99015
+EQEN - Velthuis Kliniek Enschede;EQEN - Xpert Clinic Hand Enschede;0.0;0.0
+EQEN - Velthuis Kliniek Enschede;EQEN - Xpert Clinic Proctologie Enschede;0.0;0.0
+EQEN - Velthuis Kliniek Enschede;EQR - Velthuis Kliniek Rotterdam;186.659795;133.73841666666667
+EQEN - Velthuis Kliniek Enschede;EQR - Xpert Clinic Hand Rotterdam;186.659795;133.73841666666667
+EQEN - Velthuis Kliniek Enschede;EQR - Xpert Clinic Proctologie Rotterdam;186.659795;133.73841666666667
+EQEN - Velthuis Kliniek Enschede;EQR - Xpert Orthopedie Rotterdam;186.659795;133.73841666666667
+EQEN - Velthuis Kliniek Enschede;EQRZD - Hand pols Rozendaal;75.87270600000001;72.77106666666667
+EQEN - Velthuis Kliniek Enschede;EQRZD - Orthopedie Rozendaal;75.87270600000001;72.77106666666667
+EQEN - Velthuis Kliniek Enschede;Equip Amsterdam;149.406512;105.89726666666668
+EQEN - Velthuis Kliniek Enschede;Equipe Enschede;149.406512;105.89726666666668
+EQEN - Velthuis Kliniek Enschede;EQV - Velthuis Kliniek Velp;75.87270600000001;72.77106666666667
+EQEN - Velthuis Kliniek Enschede;EQV - Xpert Clinic Hand Velp;75.694673;72.40393333333333
+EQEN - Velthuis Kliniek Enschede;EQV - Xpert Clinic Proctologie Velp;75.87270600000001;72.77106666666667
+EQEN - Velthuis Kliniek Enschede;EQZ - Xpert Clinic Oogzorg Zeist;123.52501;89.17793333333334
+EQEN - Velthuis Kliniek Enschede;EQZW - Xpert Clinic Hand Zwolle;65.076851;54.91781666666667
+EQEN - Velthuis Kliniek Enschede;Esser Clinics;168.459798;121.17691666666666
+EQEN - Velthuis Kliniek Enschede;Flex Clinics;139.823439;105.41951666666668
+EQEN - Velthuis Kliniek Enschede;Haaglanden Clinics;196.400262;141.90193333333335
+EQEN - Velthuis Kliniek Enschede;Kazem;168.026318;120.15483333333331
+EQEN - Velthuis Kliniek Enschede;KNO de Jong;142.497883;109.27633333333333
+EQEN - Velthuis Kliniek Enschede;Medcentric MWCZ;269.299459;196.37151666666665
+EQEN - Velthuis Kliniek Enschede;Medtronic;164.388068;130.87451666666666
+EQEN - Velthuis Kliniek Enschede;Orthoparc Rozendaal;75.87270600000001;72.77106666666667
+EQEN - Velthuis Kliniek Enschede;Pro-Motion;188.931853;140.57641666666666
+EQEN - Velthuis Kliniek Enschede;Retina eye care;127.049941;95.25351666666668
+EQEN - Xpert Clinic Hand Enschede;De Meern;139.968818;105.2954
+EQEN - Xpert Clinic Hand Enschede;Andros Clinics Rijswijk;192.47326500000003;136.8462
+EQEN - Xpert Clinic Hand Enschede;Annadal kliniek;236.506039;187.549
+EQEN - Xpert Clinic Hand Enschede;Annadal kliniek Poli;236.506039;187.549
+EQEN - Xpert Clinic Hand Enschede;Annatommie Amstelveen;156.397942;111.88045
+EQEN - Xpert Clinic Hand Enschede;Annatommie Utrecht;137.043353;101.75226666666669
+EQEN - Xpert Clinic Hand Enschede;Arthrex;137.54869200000002;100.26306666666666
+EQEN - Xpert Clinic Hand Enschede;Cosmed Bosch en Duin OK;126.455864;91.88958333333332
+EQEN - Xpert Clinic Hand Enschede;Cosmed Bosch en Duin Poli;126.455864;91.88958333333332
+EQEN - Xpert Clinic Hand Enschede;Denticien;192.705896;138.21993333333333
+EQEN - Xpert Clinic Hand Enschede;Dermaclinic Utrecht;132.750486;96.34558333333332
+EQEN - Xpert Clinic Hand Enschede;Doctors at soap;133.60973199999998;98.16661666666668
+EQEN - Xpert Clinic Hand Enschede;EQA - Velthuis Kliniek Amsterdam;149.406512;105.89726666666668
+EQEN - Xpert Clinic Hand Enschede;EQA - Xpert Clinic Hand Amsterdam;149.406512;105.89726666666668
+EQEN - Xpert Clinic Hand Enschede;EQA - Xpert Clinic Proctologie Amsterdam;149.406512;105.89726666666668
+EQEN - Xpert Clinic Hand Enschede;EQA - Xpert Orthopedie Amsterdam;149.406512;105.89726666666668
+EQEN - Xpert Clinic Hand Enschede;EQEI - Velthuis Kliniek Eindhoven;167.312068;133.9059
+EQEN - Xpert Clinic Hand Enschede;EQEI - Xpert Clinic Hand Eindhoven;167.312068;133.9059
+EQEN - Xpert Clinic Hand Enschede;EQEI - Xpert Clinic Proctologie Eindhoven;167.312068;133.9059
+EQEN - Xpert Clinic Hand Enschede;EQEI - Xpert Orthopedie Eindhoven;167.312068;133.9059
+EQEN - Xpert Clinic Hand Enschede;EQEI - Xpert Orthopedie Schijndel;143.05976199999998;123.99015
+EQEN - Xpert Clinic Hand Enschede;EQEN - Velthuis Kliniek Enschede;0.0;0.0
+EQEN - Xpert Clinic Hand Enschede;EQEN - Xpert Clinic Proctologie Enschede;0.0;0.0
+EQEN - Xpert Clinic Hand Enschede;EQR - Velthuis Kliniek Rotterdam;186.659795;133.73841666666667
+EQEN - Xpert Clinic Hand Enschede;EQR - Xpert Clinic Hand Rotterdam;186.659795;133.73841666666667
+EQEN - Xpert Clinic Hand Enschede;EQR - Xpert Clinic Proctologie Rotterdam;186.659795;133.73841666666667
+EQEN - Xpert Clinic Hand Enschede;EQR - Xpert Orthopedie Rotterdam;186.659795;133.73841666666667
+EQEN - Xpert Clinic Hand Enschede;EQRZD - Hand pols Rozendaal;75.87270600000001;72.77106666666667
+EQEN - Xpert Clinic Hand Enschede;EQRZD - Orthopedie Rozendaal;75.87270600000001;72.77106666666667
+EQEN - Xpert Clinic Hand Enschede;Equip Amsterdam;149.406512;105.89726666666668
+EQEN - Xpert Clinic Hand Enschede;Equipe Enschede;149.406512;105.89726666666668
+EQEN - Xpert Clinic Hand Enschede;EQV - Velthuis Kliniek Velp;75.87270600000001;72.77106666666667
+EQEN - Xpert Clinic Hand Enschede;EQV - Xpert Clinic Hand Velp;75.694673;72.40393333333333
+EQEN - Xpert Clinic Hand Enschede;EQV - Xpert Clinic Proctologie Velp;75.87270600000001;72.77106666666667
+EQEN - Xpert Clinic Hand Enschede;EQZ - Xpert Clinic Oogzorg Zeist;123.52501;89.17793333333334
+EQEN - Xpert Clinic Hand Enschede;EQZW - Xpert Clinic Hand Zwolle;65.076851;54.91781666666667
+EQEN - Xpert Clinic Hand Enschede;Esser Clinics;168.459798;121.17691666666666
+EQEN - Xpert Clinic Hand Enschede;Flex Clinics;139.823439;105.41951666666668
+EQEN - Xpert Clinic Hand Enschede;Haaglanden Clinics;196.400262;141.90193333333335
+EQEN - Xpert Clinic Hand Enschede;Kazem;168.026318;120.15483333333331
+EQEN - Xpert Clinic Hand Enschede;KNO de Jong;142.497883;109.27633333333333
+EQEN - Xpert Clinic Hand Enschede;Medcentric MWCZ;269.299459;196.37151666666665
+EQEN - Xpert Clinic Hand Enschede;Medtronic;164.388068;130.87451666666666
+EQEN - Xpert Clinic Hand Enschede;Orthoparc Rozendaal;75.87270600000001;72.77106666666667
+EQEN - Xpert Clinic Hand Enschede;Pro-Motion;188.931853;140.57641666666666
+EQEN - Xpert Clinic Hand Enschede;Retina eye care;127.049941;95.25351666666668
+EQEN - Xpert Clinic Proctologie Enschede;De Meern;139.968818;105.2954
+EQEN - Xpert Clinic Proctologie Enschede;Andros Clinics Rijswijk;192.47326500000003;136.8462
+EQEN - Xpert Clinic Proctologie Enschede;Annadal kliniek;236.506039;187.549
+EQEN - Xpert Clinic Proctologie Enschede;Annadal kliniek Poli;236.506039;187.549
+EQEN - Xpert Clinic Proctologie Enschede;Annatommie Amstelveen;156.397942;111.88045
+EQEN - Xpert Clinic Proctologie Enschede;Annatommie Utrecht;137.043353;101.75226666666669
+EQEN - Xpert Clinic Proctologie Enschede;Arthrex;137.54869200000002;100.26306666666666
+EQEN - Xpert Clinic Proctologie Enschede;Cosmed Bosch en Duin OK;126.455864;91.88958333333332
+EQEN - Xpert Clinic Proctologie Enschede;Cosmed Bosch en Duin Poli;126.455864;91.88958333333332
+EQEN - Xpert Clinic Proctologie Enschede;Denticien;192.705896;138.21993333333333
+EQEN - Xpert Clinic Proctologie Enschede;Dermaclinic Utrecht;132.750486;96.34558333333332
+EQEN - Xpert Clinic Proctologie Enschede;Doctors at soap;133.60973199999998;98.16661666666668
+EQEN - Xpert Clinic Proctologie Enschede;EQA - Velthuis Kliniek Amsterdam;149.406512;105.89726666666668
+EQEN - Xpert Clinic Proctologie Enschede;EQA - Xpert Clinic Hand Amsterdam;149.406512;105.89726666666668
+EQEN - Xpert Clinic Proctologie Enschede;EQA - Xpert Clinic Proctologie Amsterdam;149.406512;105.89726666666668
+EQEN - Xpert Clinic Proctologie Enschede;EQA - Xpert Orthopedie Amsterdam;149.406512;105.89726666666668
+EQEN - Xpert Clinic Proctologie Enschede;EQEI - Velthuis Kliniek Eindhoven;167.312068;133.9059
+EQEN - Xpert Clinic Proctologie Enschede;EQEI - Xpert Clinic Hand Eindhoven;167.312068;133.9059
+EQEN - Xpert Clinic Proctologie Enschede;EQEI - Xpert Clinic Proctologie Eindhoven;167.312068;133.9059
+EQEN - Xpert Clinic Proctologie Enschede;EQEI - Xpert Orthopedie Eindhoven;167.312068;133.9059
+EQEN - Xpert Clinic Proctologie Enschede;EQEI - Xpert Orthopedie Schijndel;143.05976199999998;123.99015
+EQEN - Xpert Clinic Proctologie Enschede;EQEN - Velthuis Kliniek Enschede;0.0;0.0
+EQEN - Xpert Clinic Proctologie Enschede;EQEN - Xpert Clinic Hand Enschede;0.0;0.0
+EQEN - Xpert Clinic Proctologie Enschede;EQR - Velthuis Kliniek Rotterdam;186.659795;133.73841666666667
+EQEN - Xpert Clinic Proctologie Enschede;EQR - Xpert Clinic Hand Rotterdam;186.659795;133.73841666666667
+EQEN - Xpert Clinic Proctologie Enschede;EQR - Xpert Clinic Proctologie Rotterdam;186.659795;133.73841666666667
+EQEN - Xpert Clinic Proctologie Enschede;EQR - Xpert Orthopedie Rotterdam;186.659795;133.73841666666667
+EQEN - Xpert Clinic Proctologie Enschede;EQRZD - Hand pols Rozendaal;75.87270600000001;72.77106666666667
+EQEN - Xpert Clinic Proctologie Enschede;EQRZD - Orthopedie Rozendaal;75.87270600000001;72.77106666666667
+EQEN - Xpert Clinic Proctologie Enschede;Equip Amsterdam;149.406512;105.89726666666668
+EQEN - Xpert Clinic Proctologie Enschede;Equipe Enschede;149.406512;105.89726666666668
+EQEN - Xpert Clinic Proctologie Enschede;EQV - Velthuis Kliniek Velp;75.87270600000001;72.77106666666667
+EQEN - Xpert Clinic Proctologie Enschede;EQV - Xpert Clinic Hand Velp;75.694673;72.40393333333333
+EQEN - Xpert Clinic Proctologie Enschede;EQV - Xpert Clinic Proctologie Velp;75.87270600000001;72.77106666666667
+EQEN - Xpert Clinic Proctologie Enschede;EQZ - Xpert Clinic Oogzorg Zeist;123.52501;89.17793333333334
+EQEN - Xpert Clinic Proctologie Enschede;EQZW - Xpert Clinic Hand Zwolle;65.076851;54.91781666666667
+EQEN - Xpert Clinic Proctologie Enschede;Esser Clinics;168.459798;121.17691666666666
+EQEN - Xpert Clinic Proctologie Enschede;Flex Clinics;139.823439;105.41951666666668
+EQEN - Xpert Clinic Proctologie Enschede;Haaglanden Clinics;196.400262;141.90193333333335
+EQEN - Xpert Clinic Proctologie Enschede;Kazem;168.026318;120.15483333333331
+EQEN - Xpert Clinic Proctologie Enschede;KNO de Jong;142.497883;109.27633333333333
+EQEN - Xpert Clinic Proctologie Enschede;Medcentric MWCZ;269.299459;196.37151666666665
+EQEN - Xpert Clinic Proctologie Enschede;Medtronic;164.388068;130.87451666666666
+EQEN - Xpert Clinic Proctologie Enschede;Orthoparc Rozendaal;75.87270600000001;72.77106666666667
+EQEN - Xpert Clinic Proctologie Enschede;Pro-Motion;188.931853;140.57641666666666
+EQEN - Xpert Clinic Proctologie Enschede;Retina eye care;127.049941;95.25351666666668
+EQR - Velthuis Kliniek Rotterdam;De Meern;47.576391;33.32366666666667
+EQR - Velthuis Kliniek Rotterdam;Andros Clinics Rijswijk;23.237135;21.785633333333333
+EQR - Velthuis Kliniek Rotterdam;Annadal kliniek;191.469294;138.24923333333334
+EQR - Velthuis Kliniek Rotterdam;Annadal kliniek Poli;191.469294;138.24923333333334
+EQR - Velthuis Kliniek Rotterdam;Annatommie Amstelveen;59.461128;58.74785
+EQR - Velthuis Kliniek Rotterdam;Annatommie Utrecht;50.212598;36.38745
+EQR - Velthuis Kliniek Rotterdam;Arthrex;51.618399;36.350233333333335
+EQR - Velthuis Kliniek Rotterdam;Cosmed Bosch en Duin OK;67.236243;47.65045
+EQR - Velthuis Kliniek Rotterdam;Cosmed Bosch en Duin Poli;67.236243;47.65045
+EQR - Velthuis Kliniek Rotterdam;Denticien;24.097552;22.955816666666667
+EQR - Velthuis Kliniek Rotterdam;Dermaclinic Utrecht;54.883138;43.56356666666667
+EQR - Velthuis Kliniek Rotterdam;Doctors at soap;54.628062;43.3149
+EQR - Velthuis Kliniek Rotterdam;EQA - Velthuis Kliniek Amsterdam;67.21183500000001;52.395966666666666
+EQR - Velthuis Kliniek Rotterdam;EQA - Xpert Clinic Hand Amsterdam;67.21183500000001;52.395966666666666
+EQR - Velthuis Kliniek Rotterdam;EQA - Xpert Clinic Proctologie Amsterdam;67.21183500000001;52.395966666666666
+EQR - Velthuis Kliniek Rotterdam;EQA - Xpert Orthopedie Amsterdam;67.21183500000001;52.395966666666666
+EQR - Velthuis Kliniek Rotterdam;EQEI - Velthuis Kliniek Eindhoven;100.759054;76.79115
+EQR - Velthuis Kliniek Rotterdam;EQEI - Xpert Clinic Hand Eindhoven;100.759054;76.79115
+EQR - Velthuis Kliniek Rotterdam;EQEI - Xpert Clinic Proctologie Eindhoven;100.759054;76.79115
+EQR - Velthuis Kliniek Rotterdam;EQEI - Xpert Orthopedie Eindhoven;100.759054;76.79115
+EQR - Velthuis Kliniek Rotterdam;EQEI - Xpert Orthopedie Schijndel;87.65346400000001;63.62
+EQR - Velthuis Kliniek Rotterdam;EQEN - Velthuis Kliniek Enschede;186.383198;130.38583333333332
+EQR - Velthuis Kliniek Rotterdam;EQEN - Xpert Clinic Hand Enschede;186.383198;130.38583333333332
+EQR - Velthuis Kliniek Rotterdam;EQEN - Xpert Clinic Proctologie Enschede;186.383198;130.38583333333332
+EQR - Velthuis Kliniek Rotterdam;EQR - Xpert Clinic Hand Rotterdam;0.0;0.0
+EQR - Velthuis Kliniek Rotterdam;EQR - Xpert Clinic Proctologie Rotterdam;0.0;0.0
+EQR - Velthuis Kliniek Rotterdam;EQR - Xpert Orthopedie Rotterdam;0.0;0.0
+EQR - Velthuis Kliniek Rotterdam;EQRZD - Hand pols Rozendaal;113.051892;77.79316666666666
+EQR - Velthuis Kliniek Rotterdam;EQRZD - Orthopedie Rozendaal;113.051892;77.79316666666666
+EQR - Velthuis Kliniek Rotterdam;Equip Amsterdam;67.21183500000001;52.395966666666666
+EQR - Velthuis Kliniek Rotterdam;Equipe Enschede;67.21183500000001;52.395966666666666
+EQR - Velthuis Kliniek Rotterdam;EQV - Velthuis Kliniek Velp;113.051892;77.79316666666666
+EQR - Velthuis Kliniek Rotterdam;EQV - Xpert Clinic Hand Velp;113.866444;78.57733333333334
+EQR - Velthuis Kliniek Rotterdam;EQV - Xpert Clinic Proctologie Velp;113.051892;77.79316666666666
+EQR - Velthuis Kliniek Rotterdam;EQZ - Xpert Clinic Oogzorg Zeist;66.493891;45.78178333333334
+EQR - Velthuis Kliniek Rotterdam;EQZW - Xpert Clinic Hand Zwolle;147.743123;100.3213
+EQR - Velthuis Kliniek Rotterdam;Esser Clinics;20.369874;15.2553
+EQR - Velthuis Kliniek Rotterdam;Flex Clinics;51.549796;39.87453333333334
+EQR - Velthuis Kliniek Rotterdam;Haaglanden Clinics;30.070791;29.718466666666664
+EQR - Velthuis Kliniek Rotterdam;Kazem;54.913902;50.55626666666667
+EQR - Velthuis Kliniek Rotterdam;KNO de Jong;48.134334;36.65226666666667
+EQR - Velthuis Kliniek Rotterdam;Medcentric MWCZ;85.876442;65.12133333333334
+EQR - Velthuis Kliniek Rotterdam;Medtronic;102.377089;78.84128333333334
+EQR - Velthuis Kliniek Rotterdam;Orthoparc Rozendaal;113.051892;77.79316666666666
+EQR - Velthuis Kliniek Rotterdam;Pro-Motion;13.050966;10.6061
+EQR - Velthuis Kliniek Rotterdam;Retina eye care;64.164546;45.74345
+EQR - Xpert Clinic Hand Rotterdam;De Meern;47.576391;33.32366666666667
+EQR - Xpert Clinic Hand Rotterdam;Andros Clinics Rijswijk;23.237135;21.785633333333333
+EQR - Xpert Clinic Hand Rotterdam;Annadal kliniek;191.469294;138.24923333333334
+EQR - Xpert Clinic Hand Rotterdam;Annadal kliniek Poli;191.469294;138.24923333333334
+EQR - Xpert Clinic Hand Rotterdam;Annatommie Amstelveen;59.461128;58.74785
+EQR - Xpert Clinic Hand Rotterdam;Annatommie Utrecht;50.212598;36.38745
+EQR - Xpert Clinic Hand Rotterdam;Arthrex;51.618399;36.350233333333335
+EQR - Xpert Clinic Hand Rotterdam;Cosmed Bosch en Duin OK;67.236243;47.65045
+EQR - Xpert Clinic Hand Rotterdam;Cosmed Bosch en Duin Poli;67.236243;47.65045
+EQR - Xpert Clinic Hand Rotterdam;Denticien;24.097552;22.955816666666667
+EQR - Xpert Clinic Hand Rotterdam;Dermaclinic Utrecht;54.883138;43.56356666666667
+EQR - Xpert Clinic Hand Rotterdam;Doctors at soap;54.628062;43.3149
+EQR - Xpert Clinic Hand Rotterdam;EQA - Velthuis Kliniek Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Clinic Hand Rotterdam;EQA - Xpert Clinic Hand Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Clinic Hand Rotterdam;EQA - Xpert Clinic Proctologie Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Clinic Hand Rotterdam;EQA - Xpert Orthopedie Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Clinic Hand Rotterdam;EQEI - Velthuis Kliniek Eindhoven;100.759054;76.79115
+EQR - Xpert Clinic Hand Rotterdam;EQEI - Xpert Clinic Hand Eindhoven;100.759054;76.79115
+EQR - Xpert Clinic Hand Rotterdam;EQEI - Xpert Clinic Proctologie Eindhoven;100.759054;76.79115
+EQR - Xpert Clinic Hand Rotterdam;EQEI - Xpert Orthopedie Eindhoven;100.759054;76.79115
+EQR - Xpert Clinic Hand Rotterdam;EQEI - Xpert Orthopedie Schijndel;87.65346400000001;63.62
+EQR - Xpert Clinic Hand Rotterdam;EQEN - Velthuis Kliniek Enschede;186.383198;130.38583333333332
+EQR - Xpert Clinic Hand Rotterdam;EQEN - Xpert Clinic Hand Enschede;186.383198;130.38583333333332
+EQR - Xpert Clinic Hand Rotterdam;EQEN - Xpert Clinic Proctologie Enschede;186.383198;130.38583333333332
+EQR - Xpert Clinic Hand Rotterdam;EQR - Velthuis Kliniek Rotterdam;0.0;0.0
+EQR - Xpert Clinic Hand Rotterdam;EQR - Xpert Clinic Proctologie Rotterdam;0.0;0.0
+EQR - Xpert Clinic Hand Rotterdam;EQR - Xpert Orthopedie Rotterdam;0.0;0.0
+EQR - Xpert Clinic Hand Rotterdam;EQRZD - Hand pols Rozendaal;113.051892;77.79316666666666
+EQR - Xpert Clinic Hand Rotterdam;EQRZD - Orthopedie Rozendaal;113.051892;77.79316666666666
+EQR - Xpert Clinic Hand Rotterdam;Equip Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Clinic Hand Rotterdam;Equipe Enschede;67.21183500000001;52.395966666666666
+EQR - Xpert Clinic Hand Rotterdam;EQV - Velthuis Kliniek Velp;113.051892;77.79316666666666
+EQR - Xpert Clinic Hand Rotterdam;EQV - Xpert Clinic Hand Velp;113.866444;78.57733333333334
+EQR - Xpert Clinic Hand Rotterdam;EQV - Xpert Clinic Proctologie Velp;113.051892;77.79316666666666
+EQR - Xpert Clinic Hand Rotterdam;EQZ - Xpert Clinic Oogzorg Zeist;66.493891;45.78178333333334
+EQR - Xpert Clinic Hand Rotterdam;EQZW - Xpert Clinic Hand Zwolle;147.743123;100.3213
+EQR - Xpert Clinic Hand Rotterdam;Esser Clinics;20.369874;15.2553
+EQR - Xpert Clinic Hand Rotterdam;Flex Clinics;51.549796;39.87453333333334
+EQR - Xpert Clinic Hand Rotterdam;Haaglanden Clinics;30.070791;29.718466666666664
+EQR - Xpert Clinic Hand Rotterdam;Kazem;54.913902;50.55626666666667
+EQR - Xpert Clinic Hand Rotterdam;KNO de Jong;48.134334;36.65226666666667
+EQR - Xpert Clinic Hand Rotterdam;Medcentric MWCZ;85.876442;65.12133333333334
+EQR - Xpert Clinic Hand Rotterdam;Medtronic;102.377089;78.84128333333334
+EQR - Xpert Clinic Hand Rotterdam;Orthoparc Rozendaal;113.051892;77.79316666666666
+EQR - Xpert Clinic Hand Rotterdam;Pro-Motion;13.050966;10.6061
+EQR - Xpert Clinic Hand Rotterdam;Retina eye care;64.164546;45.74345
+EQR - Xpert Clinic Proctologie Rotterdam;De Meern;47.576391;33.32366666666667
+EQR - Xpert Clinic Proctologie Rotterdam;Andros Clinics Rijswijk;23.237135;21.785633333333333
+EQR - Xpert Clinic Proctologie Rotterdam;Annadal kliniek;191.469294;138.24923333333334
+EQR - Xpert Clinic Proctologie Rotterdam;Annadal kliniek Poli;191.469294;138.24923333333334
+EQR - Xpert Clinic Proctologie Rotterdam;Annatommie Amstelveen;59.461128;58.74785
+EQR - Xpert Clinic Proctologie Rotterdam;Annatommie Utrecht;50.212598;36.38745
+EQR - Xpert Clinic Proctologie Rotterdam;Arthrex;51.618399;36.350233333333335
+EQR - Xpert Clinic Proctologie Rotterdam;Cosmed Bosch en Duin OK;67.236243;47.65045
+EQR - Xpert Clinic Proctologie Rotterdam;Cosmed Bosch en Duin Poli;67.236243;47.65045
+EQR - Xpert Clinic Proctologie Rotterdam;Denticien;24.097552;22.955816666666667
+EQR - Xpert Clinic Proctologie Rotterdam;Dermaclinic Utrecht;54.883138;43.56356666666667
+EQR - Xpert Clinic Proctologie Rotterdam;Doctors at soap;54.628062;43.3149
+EQR - Xpert Clinic Proctologie Rotterdam;EQA - Velthuis Kliniek Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Clinic Proctologie Rotterdam;EQA - Xpert Clinic Hand Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Clinic Proctologie Rotterdam;EQA - Xpert Clinic Proctologie Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Clinic Proctologie Rotterdam;EQA - Xpert Orthopedie Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Clinic Proctologie Rotterdam;EQEI - Velthuis Kliniek Eindhoven;100.759054;76.79115
+EQR - Xpert Clinic Proctologie Rotterdam;EQEI - Xpert Clinic Hand Eindhoven;100.759054;76.79115
+EQR - Xpert Clinic Proctologie Rotterdam;EQEI - Xpert Clinic Proctologie Eindhoven;100.759054;76.79115
+EQR - Xpert Clinic Proctologie Rotterdam;EQEI - Xpert Orthopedie Eindhoven;100.759054;76.79115
+EQR - Xpert Clinic Proctologie Rotterdam;EQEI - Xpert Orthopedie Schijndel;87.65346400000001;63.62
+EQR - Xpert Clinic Proctologie Rotterdam;EQEN - Velthuis Kliniek Enschede;186.383198;130.38583333333332
+EQR - Xpert Clinic Proctologie Rotterdam;EQEN - Xpert Clinic Hand Enschede;186.383198;130.38583333333332
+EQR - Xpert Clinic Proctologie Rotterdam;EQEN - Xpert Clinic Proctologie Enschede;186.383198;130.38583333333332
+EQR - Xpert Clinic Proctologie Rotterdam;EQR - Velthuis Kliniek Rotterdam;0.0;0.0
+EQR - Xpert Clinic Proctologie Rotterdam;EQR - Xpert Clinic Hand Rotterdam;0.0;0.0
+EQR - Xpert Clinic Proctologie Rotterdam;EQR - Xpert Orthopedie Rotterdam;0.0;0.0
+EQR - Xpert Clinic Proctologie Rotterdam;EQRZD - Hand pols Rozendaal;113.051892;77.79316666666666
+EQR - Xpert Clinic Proctologie Rotterdam;EQRZD - Orthopedie Rozendaal;113.051892;77.79316666666666
+EQR - Xpert Clinic Proctologie Rotterdam;Equip Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Clinic Proctologie Rotterdam;Equipe Enschede;67.21183500000001;52.395966666666666
+EQR - Xpert Clinic Proctologie Rotterdam;EQV - Velthuis Kliniek Velp;113.051892;77.79316666666666
+EQR - Xpert Clinic Proctologie Rotterdam;EQV - Xpert Clinic Hand Velp;113.866444;78.57733333333334
+EQR - Xpert Clinic Proctologie Rotterdam;EQV - Xpert Clinic Proctologie Velp;113.051892;77.79316666666666
+EQR - Xpert Clinic Proctologie Rotterdam;EQZ - Xpert Clinic Oogzorg Zeist;66.493891;45.78178333333334
+EQR - Xpert Clinic Proctologie Rotterdam;EQZW - Xpert Clinic Hand Zwolle;147.743123;100.3213
+EQR - Xpert Clinic Proctologie Rotterdam;Esser Clinics;20.369874;15.2553
+EQR - Xpert Clinic Proctologie Rotterdam;Flex Clinics;51.549796;39.87453333333334
+EQR - Xpert Clinic Proctologie Rotterdam;Haaglanden Clinics;30.070791;29.718466666666664
+EQR - Xpert Clinic Proctologie Rotterdam;Kazem;54.913902;50.55626666666667
+EQR - Xpert Clinic Proctologie Rotterdam;KNO de Jong;48.134334;36.65226666666667
+EQR - Xpert Clinic Proctologie Rotterdam;Medcentric MWCZ;85.876442;65.12133333333334
+EQR - Xpert Clinic Proctologie Rotterdam;Medtronic;102.377089;78.84128333333334
+EQR - Xpert Clinic Proctologie Rotterdam;Orthoparc Rozendaal;113.051892;77.79316666666666
+EQR - Xpert Clinic Proctologie Rotterdam;Pro-Motion;13.050966;10.6061
+EQR - Xpert Clinic Proctologie Rotterdam;Retina eye care;64.164546;45.74345
+EQR - Xpert Orthopedie Rotterdam;De Meern;47.576391;33.32366666666667
+EQR - Xpert Orthopedie Rotterdam;Andros Clinics Rijswijk;23.237135;21.785633333333333
+EQR - Xpert Orthopedie Rotterdam;Annadal kliniek;191.469294;138.24923333333334
+EQR - Xpert Orthopedie Rotterdam;Annadal kliniek Poli;191.469294;138.24923333333334
+EQR - Xpert Orthopedie Rotterdam;Annatommie Amstelveen;59.461128;58.74785
+EQR - Xpert Orthopedie Rotterdam;Annatommie Utrecht;50.212598;36.38745
+EQR - Xpert Orthopedie Rotterdam;Arthrex;51.618399;36.350233333333335
+EQR - Xpert Orthopedie Rotterdam;Cosmed Bosch en Duin OK;67.236243;47.65045
+EQR - Xpert Orthopedie Rotterdam;Cosmed Bosch en Duin Poli;67.236243;47.65045
+EQR - Xpert Orthopedie Rotterdam;Denticien;24.097552;22.955816666666667
+EQR - Xpert Orthopedie Rotterdam;Dermaclinic Utrecht;54.883138;43.56356666666667
+EQR - Xpert Orthopedie Rotterdam;Doctors at soap;54.628062;43.3149
+EQR - Xpert Orthopedie Rotterdam;EQA - Velthuis Kliniek Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Orthopedie Rotterdam;EQA - Xpert Clinic Hand Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Orthopedie Rotterdam;EQA - Xpert Clinic Proctologie Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Orthopedie Rotterdam;EQA - Xpert Orthopedie Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Orthopedie Rotterdam;EQEI - Velthuis Kliniek Eindhoven;100.759054;76.79115
+EQR - Xpert Orthopedie Rotterdam;EQEI - Xpert Clinic Hand Eindhoven;100.759054;76.79115
+EQR - Xpert Orthopedie Rotterdam;EQEI - Xpert Clinic Proctologie Eindhoven;100.759054;76.79115
+EQR - Xpert Orthopedie Rotterdam;EQEI - Xpert Orthopedie Eindhoven;100.759054;76.79115
+EQR - Xpert Orthopedie Rotterdam;EQEI - Xpert Orthopedie Schijndel;87.65346400000001;63.62
+EQR - Xpert Orthopedie Rotterdam;EQEN - Velthuis Kliniek Enschede;186.383198;130.38583333333332
+EQR - Xpert Orthopedie Rotterdam;EQEN - Xpert Clinic Hand Enschede;186.383198;130.38583333333332
+EQR - Xpert Orthopedie Rotterdam;EQEN - Xpert Clinic Proctologie Enschede;186.383198;130.38583333333332
+EQR - Xpert Orthopedie Rotterdam;EQR - Velthuis Kliniek Rotterdam;0.0;0.0
+EQR - Xpert Orthopedie Rotterdam;EQR - Xpert Clinic Hand Rotterdam;0.0;0.0
+EQR - Xpert Orthopedie Rotterdam;EQR - Xpert Clinic Proctologie Rotterdam;0.0;0.0
+EQR - Xpert Orthopedie Rotterdam;EQRZD - Hand pols Rozendaal;113.051892;77.79316666666666
+EQR - Xpert Orthopedie Rotterdam;EQRZD - Orthopedie Rozendaal;113.051892;77.79316666666666
+EQR - Xpert Orthopedie Rotterdam;Equip Amsterdam;67.21183500000001;52.395966666666666
+EQR - Xpert Orthopedie Rotterdam;Equipe Enschede;67.21183500000001;52.395966666666666
+EQR - Xpert Orthopedie Rotterdam;EQV - Velthuis Kliniek Velp;113.051892;77.79316666666666
+EQR - Xpert Orthopedie Rotterdam;EQV - Xpert Clinic Hand Velp;113.866444;78.57733333333334
+EQR - Xpert Orthopedie Rotterdam;EQV - Xpert Clinic Proctologie Velp;113.051892;77.79316666666666
+EQR - Xpert Orthopedie Rotterdam;EQZ - Xpert Clinic Oogzorg Zeist;66.493891;45.78178333333334
+EQR - Xpert Orthopedie Rotterdam;EQZW - Xpert Clinic Hand Zwolle;147.743123;100.3213
+EQR - Xpert Orthopedie Rotterdam;Esser Clinics;20.369874;15.2553
+EQR - Xpert Orthopedie Rotterdam;Flex Clinics;51.549796;39.87453333333334
+EQR - Xpert Orthopedie Rotterdam;Haaglanden Clinics;30.070791;29.718466666666664
+EQR - Xpert Orthopedie Rotterdam;Kazem;54.913902;50.55626666666667
+EQR - Xpert Orthopedie Rotterdam;KNO de Jong;48.134334;36.65226666666667
+EQR - Xpert Orthopedie Rotterdam;Medcentric MWCZ;85.876442;65.12133333333334
+EQR - Xpert Orthopedie Rotterdam;Medtronic;102.377089;78.84128333333334
+EQR - Xpert Orthopedie Rotterdam;Orthoparc Rozendaal;113.051892;77.79316666666666
+EQR - Xpert Orthopedie Rotterdam;Pro-Motion;13.050966;10.6061
+EQR - Xpert Orthopedie Rotterdam;Retina eye care;64.164546;45.74345
+EQRZD - Hand pols Rozendaal;De Meern;68.125159;50.2755
+EQRZD - Hand pols Rozendaal;Andros Clinics Rijswijk;119.156774;81.3341
+EQRZD - Hand pols Rozendaal;Annadal kliniek;160.090682;123.35293333333334
+EQRZD - Hand pols Rozendaal;Annadal kliniek Poli;160.090682;123.35293333333334
+EQRZD - Hand pols Rozendaal;Annatommie Amstelveen;98.680523;68.93896666666666
+EQRZD - Hand pols Rozendaal;Annatommie Utrecht;64.665355;46.03541666666667
+EQRZD - Hand pols Rozendaal;Arthrex;64.225176;45.642950000000006
+EQRZD - Hand pols Rozendaal;Cosmed Bosch en Duin OK;59.552951;46.55155
+EQRZD - Hand pols Rozendaal;Cosmed Bosch en Duin Poli;59.552951;46.55155
+EQRZD - Hand pols Rozendaal;Denticien;119.389405;82.70783333333334
+EQRZD - Hand pols Rozendaal;Dermaclinic Utrecht;62.783973;47.4918
+EQRZD - Hand pols Rozendaal;Doctors at soap;63.295781000000005;49.26478333333333
+EQRZD - Hand pols Rozendaal;EQA - Velthuis Kliniek Amsterdam;94.853789;65.44196666666667
+EQRZD - Hand pols Rozendaal;EQA - Xpert Clinic Hand Amsterdam;94.853789;65.44196666666667
+EQRZD - Hand pols Rozendaal;EQA - Xpert Clinic Proctologie Amsterdam;94.853789;65.44196666666667
+EQRZD - Hand pols Rozendaal;EQA - Xpert Orthopedie Amsterdam;94.853789;65.44196666666667
+EQRZD - Hand pols Rozendaal;EQEI - Velthuis Kliniek Eindhoven;90.896711;69.70983333333334
+EQRZD - Hand pols Rozendaal;EQEI - Xpert Clinic Hand Eindhoven;90.896711;69.70983333333334
+EQRZD - Hand pols Rozendaal;EQEI - Xpert Clinic Proctologie Eindhoven;90.896711;69.70983333333334
+EQRZD - Hand pols Rozendaal;EQEI - Xpert Orthopedie Eindhoven;90.896711;69.70983333333334
+EQRZD - Hand pols Rozendaal;EQEI - Xpert Orthopedie Schijndel;66.64440499999999;59.79408333333333
+EQRZD - Hand pols Rozendaal;EQEN - Velthuis Kliniek Enschede;75.798992;72.93395000000001
+EQRZD - Hand pols Rozendaal;EQEN - Xpert Clinic Hand Enschede;75.798992;72.93395000000001
+EQRZD - Hand pols Rozendaal;EQEN - Xpert Clinic Proctologie Enschede;75.798992;72.93395000000001
+EQRZD - Hand pols Rozendaal;EQR - Velthuis Kliniek Rotterdam;113.343304;78.22631666666666
+EQRZD - Hand pols Rozendaal;EQR - Xpert Clinic Hand Rotterdam;113.343304;78.22631666666666
+EQRZD - Hand pols Rozendaal;EQR - Xpert Clinic Proctologie Rotterdam;113.343304;78.22631666666666
+EQRZD - Hand pols Rozendaal;EQR - Xpert Orthopedie Rotterdam;113.343304;78.22631666666666
+EQRZD - Hand pols Rozendaal;EQRZD - Orthopedie Rozendaal;0.0;0.0
+EQRZD - Hand pols Rozendaal;Equip Amsterdam;94.853789;65.44196666666667
+EQRZD - Hand pols Rozendaal;Equipe Enschede;94.853789;65.44196666666667
+EQRZD - Hand pols Rozendaal;EQV - Velthuis Kliniek Velp;0.0;0.0
+EQRZD - Hand pols Rozendaal;EQV - Xpert Clinic Hand Velp;1.536443;2.7294666666666667
+EQRZD - Hand pols Rozendaal;EQV - Xpert Clinic Proctologie Velp;0.0;0.0
+EQRZD - Hand pols Rozendaal;EQZ - Xpert Clinic Oogzorg Zeist;55.850531;43.1969
+EQRZD - Hand pols Rozendaal;EQZW - Xpert Clinic Hand Zwolle;69.304345;49.024233333333335
+EQRZD - Hand pols Rozendaal;Esser Clinics;95.143307;65.66481666666667
+EQRZD - Hand pols Rozendaal;Flex Clinics;69.986531;50.5835
+EQRZD - Hand pols Rozendaal;Haaglanden Clinics;123.083771;86.38983333333334
+EQRZD - Hand pols Rozendaal;Kazem;103.975226;82.97938333333333
+EQRZD - Hand pols Rozendaal;KNO de Jong;74.83146400000001;53.39433333333333
+EQRZD - Hand pols Rozendaal;Medcentric MWCZ;190.196132;138.26623333333333
+EQRZD - Hand pols Rozendaal;Medtronic;87.97271;66.67845
+EQRZD - Hand pols Rozendaal;Orthoparc Rozendaal;0.0;0.0
+EQRZD - Hand pols Rozendaal;Pro-Motion;109.828526;82.47113333333333
+EQRZD - Hand pols Rozendaal;Retina eye care;53.102837;39.0258
+EQRZD - Orthopedie Rozendaal;De Meern;68.125159;50.2755
+EQRZD - Orthopedie Rozendaal;Andros Clinics Rijswijk;119.156774;81.3341
+EQRZD - Orthopedie Rozendaal;Annadal kliniek;160.090682;123.35293333333334
+EQRZD - Orthopedie Rozendaal;Annadal kliniek Poli;160.090682;123.35293333333334
+EQRZD - Orthopedie Rozendaal;Annatommie Amstelveen;98.680523;68.93896666666666
+EQRZD - Orthopedie Rozendaal;Annatommie Utrecht;64.665355;46.03541666666667
+EQRZD - Orthopedie Rozendaal;Arthrex;64.225176;45.642950000000006
+EQRZD - Orthopedie Rozendaal;Cosmed Bosch en Duin OK;59.552951;46.55155
+EQRZD - Orthopedie Rozendaal;Cosmed Bosch en Duin Poli;59.552951;46.55155
+EQRZD - Orthopedie Rozendaal;Denticien;119.389405;82.70783333333334
+EQRZD - Orthopedie Rozendaal;Dermaclinic Utrecht;62.783973;47.4918
+EQRZD - Orthopedie Rozendaal;Doctors at soap;63.295781000000005;49.26478333333333
+EQRZD - Orthopedie Rozendaal;EQA - Velthuis Kliniek Amsterdam;94.853789;65.44196666666667
+EQRZD - Orthopedie Rozendaal;EQA - Xpert Clinic Hand Amsterdam;94.853789;65.44196666666667
+EQRZD - Orthopedie Rozendaal;EQA - Xpert Clinic Proctologie Amsterdam;94.853789;65.44196666666667
+EQRZD - Orthopedie Rozendaal;EQA - Xpert Orthopedie Amsterdam;94.853789;65.44196666666667
+EQRZD - Orthopedie Rozendaal;EQEI - Velthuis Kliniek Eindhoven;90.896711;69.70983333333334
+EQRZD - Orthopedie Rozendaal;EQEI - Xpert Clinic Hand Eindhoven;90.896711;69.70983333333334
+EQRZD - Orthopedie Rozendaal;EQEI - Xpert Clinic Proctologie Eindhoven;90.896711;69.70983333333334
+EQRZD - Orthopedie Rozendaal;EQEI - Xpert Orthopedie Eindhoven;90.896711;69.70983333333334
+EQRZD - Orthopedie Rozendaal;EQEI - Xpert Orthopedie Schijndel;66.64440499999999;59.79408333333333
+EQRZD - Orthopedie Rozendaal;EQEN - Velthuis Kliniek Enschede;75.798992;72.93395000000001
+EQRZD - Orthopedie Rozendaal;EQEN - Xpert Clinic Hand Enschede;75.798992;72.93395000000001
+EQRZD - Orthopedie Rozendaal;EQEN - Xpert Clinic Proctologie Enschede;75.798992;72.93395000000001
+EQRZD - Orthopedie Rozendaal;EQR - Velthuis Kliniek Rotterdam;113.343304;78.22631666666666
+EQRZD - Orthopedie Rozendaal;EQR - Xpert Clinic Hand Rotterdam;113.343304;78.22631666666666
+EQRZD - Orthopedie Rozendaal;EQR - Xpert Clinic Proctologie Rotterdam;113.343304;78.22631666666666
+EQRZD - Orthopedie Rozendaal;EQR - Xpert Orthopedie Rotterdam;113.343304;78.22631666666666
+EQRZD - Orthopedie Rozendaal;EQRZD - Hand pols Rozendaal;0.0;0.0
+EQRZD - Orthopedie Rozendaal;Equip Amsterdam;94.853789;65.44196666666667
+EQRZD - Orthopedie Rozendaal;Equipe Enschede;94.853789;65.44196666666667
+EQRZD - Orthopedie Rozendaal;EQV - Velthuis Kliniek Velp;0.0;0.0
+EQRZD - Orthopedie Rozendaal;EQV - Xpert Clinic Hand Velp;1.536443;2.7294666666666667
+EQRZD - Orthopedie Rozendaal;EQV - Xpert Clinic Proctologie Velp;0.0;0.0
+EQRZD - Orthopedie Rozendaal;EQZ - Xpert Clinic Oogzorg Zeist;55.850531;43.1969
+EQRZD - Orthopedie Rozendaal;EQZW - Xpert Clinic Hand Zwolle;69.304345;49.024233333333335
+EQRZD - Orthopedie Rozendaal;Esser Clinics;95.143307;65.66481666666667
+EQRZD - Orthopedie Rozendaal;Flex Clinics;69.986531;50.5835
+EQRZD - Orthopedie Rozendaal;Haaglanden Clinics;123.083771;86.38983333333334
+EQRZD - Orthopedie Rozendaal;Kazem;103.975226;82.97938333333333
+EQRZD - Orthopedie Rozendaal;KNO de Jong;74.83146400000001;53.39433333333333
+EQRZD - Orthopedie Rozendaal;Medcentric MWCZ;190.196132;138.26623333333333
+EQRZD - Orthopedie Rozendaal;Medtronic;87.97271;66.67845
+EQRZD - Orthopedie Rozendaal;Orthoparc Rozendaal;0.0;0.0
+EQRZD - Orthopedie Rozendaal;Pro-Motion;109.828526;82.47113333333333
+EQRZD - Orthopedie Rozendaal;Retina eye care;53.102837;39.0258
+Equip Amsterdam;De Meern;29.680318;23.86211666666667
+Equip Amsterdam;Andros Clinics Rijswijk;59.444897;40.50675
+Equip Amsterdam;Annadal kliniek;199.63417;143.87406666666666
+Equip Amsterdam;Annadal kliniek Poli;199.63417;143.87406666666666
+Equip Amsterdam;Annatommie Amstelveen;8.200833000000001;7.935216666666666
+Equip Amsterdam;Annatommie Utrecht;30.475979;22.27081666666667
+Equip Amsterdam;Arthrex;31.191589;23.38586666666667
+Equip Amsterdam;Cosmed Bosch en Duin OK;42.178917;33.776466666666664
+Equip Amsterdam;Cosmed Bosch en Duin Poli;42.178917;33.776466666666664
+Equip Amsterdam;Denticien;59.559791;41.80436666666667
+Equip Amsterdam;Dermaclinic Utrecht;32.500063;29.549950000000003
+Equip Amsterdam;Doctors at soap;32.019287;28.51973333333333
+Equip Amsterdam;EQA - Velthuis Kliniek Amsterdam;0.0;0.0
+Equip Amsterdam;EQA - Xpert Clinic Hand Amsterdam;0.0;0.0
+Equip Amsterdam;EQA - Xpert Clinic Proctologie Amsterdam;0.0;0.0
+Equip Amsterdam;EQA - Xpert Orthopedie Amsterdam;0.0;0.0
+Equip Amsterdam;EQEI - Velthuis Kliniek Eindhoven;113.427507;78.22641666666667
+Equip Amsterdam;EQEI - Xpert Clinic Hand Eindhoven;113.427507;78.22641666666667
+Equip Amsterdam;EQEI - Xpert Clinic Proctologie Eindhoven;113.427507;78.22641666666667
+Equip Amsterdam;EQEI - Xpert Orthopedie Eindhoven;113.427507;78.22641666666667
+Equip Amsterdam;EQEI - Xpert Orthopedie Schijndel;89.544954;64.29401666666666
+Equip Amsterdam;EQEN - Velthuis Kliniek Enschede;148.40142;104.91908333333336
+Equip Amsterdam;EQEN - Xpert Clinic Hand Enschede;148.40142;104.91908333333336
+Equip Amsterdam;EQEN - Xpert Clinic Proctologie Enschede;148.40142;104.91908333333336
+Equip Amsterdam;EQR - Velthuis Kliniek Rotterdam;66.79907399999999;51.9779
+Equip Amsterdam;EQR - Xpert Clinic Hand Rotterdam;66.79907399999999;51.9779
+Equip Amsterdam;EQR - Xpert Clinic Proctologie Rotterdam;66.79907399999999;51.9779
+Equip Amsterdam;EQR - Xpert Orthopedie Rotterdam;66.79907399999999;51.9779
+Equip Amsterdam;EQRZD - Hand pols Rozendaal;92.090248;68.28685
+Equip Amsterdam;EQRZD - Orthopedie Rozendaal;92.090248;68.28685
+Equip Amsterdam;Equipe Enschede;0.0;0.0
+Equip Amsterdam;EQV - Velthuis Kliniek Velp;92.090248;68.28685
+Equip Amsterdam;EQV - Xpert Clinic Hand Velp;92.904799;69.07101666666668
+Equip Amsterdam;EQV - Xpert Clinic Proctologie Velp;92.090248;68.28685
+Equip Amsterdam;EQZ - Xpert Clinic Oogzorg Zeist;44.667567000000005;31.94431666666667
+Equip Amsterdam;EQZW - Xpert Clinic Hand Zwolle;100.17672;73.42286666666668
+Equip Amsterdam;Esser Clinics;48.599076;39.4164
+Equip Amsterdam;Flex Clinics;25.485187000000003;18.203433333333333
+Equip Amsterdam;Haaglanden Clinics;60.576982;45.32775
+Equip Amsterdam;Kazem;19.330109;16.225533333333335
+Equip Amsterdam;KNO de Jong;25.83364;19.723650000000003
+Equip Amsterdam;Medcentric MWCZ;150.743281;113.61478333333334
+Equip Amsterdam;Medtronic;111.021927;78.15265
+Equip Amsterdam;Orthoparc Rozendaal;92.090248;68.28685
+Equip Amsterdam;Pro-Motion;77.91780499999999;59.09955
+Equip Amsterdam;Retina eye care;46.512793;33.84621666666666
+Equipe Enschede;De Meern;29.680318;23.86211666666667
+Equipe Enschede;Andros Clinics Rijswijk;59.444897;40.50675
+Equipe Enschede;Annadal kliniek;199.63417;143.87406666666666
+Equipe Enschede;Annadal kliniek Poli;199.63417;143.87406666666666
+Equipe Enschede;Annatommie Amstelveen;8.200833000000001;7.935216666666666
+Equipe Enschede;Annatommie Utrecht;30.475979;22.27081666666667
+Equipe Enschede;Arthrex;31.191589;23.38586666666667
+Equipe Enschede;Cosmed Bosch en Duin OK;42.178917;33.776466666666664
+Equipe Enschede;Cosmed Bosch en Duin Poli;42.178917;33.776466666666664
+Equipe Enschede;Denticien;59.559791;41.80436666666667
+Equipe Enschede;Dermaclinic Utrecht;32.500063;29.549950000000003
+Equipe Enschede;Doctors at soap;32.019287;28.51973333333333
+Equipe Enschede;EQA - Velthuis Kliniek Amsterdam;0.0;0.0
+Equipe Enschede;EQA - Xpert Clinic Hand Amsterdam;0.0;0.0
+Equipe Enschede;EQA - Xpert Clinic Proctologie Amsterdam;0.0;0.0
+Equipe Enschede;EQA - Xpert Orthopedie Amsterdam;0.0;0.0
+Equipe Enschede;EQEI - Velthuis Kliniek Eindhoven;113.427507;78.22641666666667
+Equipe Enschede;EQEI - Xpert Clinic Hand Eindhoven;113.427507;78.22641666666667
+Equipe Enschede;EQEI - Xpert Clinic Proctologie Eindhoven;113.427507;78.22641666666667
+Equipe Enschede;EQEI - Xpert Orthopedie Eindhoven;113.427507;78.22641666666667
+Equipe Enschede;EQEI - Xpert Orthopedie Schijndel;89.544954;64.29401666666666
+Equipe Enschede;EQEN - Velthuis Kliniek Enschede;148.40142;104.91908333333336
+Equipe Enschede;EQEN - Xpert Clinic Hand Enschede;148.40142;104.91908333333336
+Equipe Enschede;EQEN - Xpert Clinic Proctologie Enschede;148.40142;104.91908333333336
+Equipe Enschede;EQR - Velthuis Kliniek Rotterdam;66.79907399999999;51.9779
+Equipe Enschede;EQR - Xpert Clinic Hand Rotterdam;66.79907399999999;51.9779
+Equipe Enschede;EQR - Xpert Clinic Proctologie Rotterdam;66.79907399999999;51.9779
+Equipe Enschede;EQR - Xpert Orthopedie Rotterdam;66.79907399999999;51.9779
+Equipe Enschede;EQRZD - Hand pols Rozendaal;92.090248;68.28685
+Equipe Enschede;EQRZD - Orthopedie Rozendaal;92.090248;68.28685
+Equipe Enschede;Equip Amsterdam;0.0;0.0
+Equipe Enschede;EQV - Velthuis Kliniek Velp;92.090248;68.28685
+Equipe Enschede;EQV - Xpert Clinic Hand Velp;92.904799;69.07101666666668
+Equipe Enschede;EQV - Xpert Clinic Proctologie Velp;92.090248;68.28685
+Equipe Enschede;EQZ - Xpert Clinic Oogzorg Zeist;44.667567000000005;31.94431666666667
+Equipe Enschede;EQZW - Xpert Clinic Hand Zwolle;100.17672;73.42286666666668
+Equipe Enschede;Esser Clinics;48.599076;39.4164
+Equipe Enschede;Flex Clinics;25.485187000000003;18.203433333333333
+Equipe Enschede;Haaglanden Clinics;60.576982;45.32775
+Equipe Enschede;Kazem;19.330109;16.225533333333335
+Equipe Enschede;KNO de Jong;25.83364;19.723650000000003
+Equipe Enschede;Medcentric MWCZ;150.743281;113.61478333333334
+Equipe Enschede;Medtronic;111.021927;78.15265
+Equipe Enschede;Orthoparc Rozendaal;92.090248;68.28685
+Equipe Enschede;Pro-Motion;77.91780499999999;59.09955
+Equipe Enschede;Retina eye care;46.512793;33.84621666666666
+EQV - Velthuis Kliniek Velp;De Meern;68.125159;50.2755
+EQV - Velthuis Kliniek Velp;Andros Clinics Rijswijk;119.156774;81.3341
+EQV - Velthuis Kliniek Velp;Annadal kliniek;160.090682;123.35293333333334
+EQV - Velthuis Kliniek Velp;Annadal kliniek Poli;160.090682;123.35293333333334
+EQV - Velthuis Kliniek Velp;Annatommie Amstelveen;98.680523;68.93896666666666
+EQV - Velthuis Kliniek Velp;Annatommie Utrecht;64.665355;46.03541666666667
+EQV - Velthuis Kliniek Velp;Arthrex;64.225176;45.642950000000006
+EQV - Velthuis Kliniek Velp;Cosmed Bosch en Duin OK;59.552951;46.55155
+EQV - Velthuis Kliniek Velp;Cosmed Bosch en Duin Poli;59.552951;46.55155
+EQV - Velthuis Kliniek Velp;Denticien;119.389405;82.70783333333334
+EQV - Velthuis Kliniek Velp;Dermaclinic Utrecht;62.783973;47.4918
+EQV - Velthuis Kliniek Velp;Doctors at soap;63.295781000000005;49.26478333333333
+EQV - Velthuis Kliniek Velp;EQA - Velthuis Kliniek Amsterdam;94.853789;65.44196666666667
+EQV - Velthuis Kliniek Velp;EQA - Xpert Clinic Hand Amsterdam;94.853789;65.44196666666667
+EQV - Velthuis Kliniek Velp;EQA - Xpert Clinic Proctologie Amsterdam;94.853789;65.44196666666667
+EQV - Velthuis Kliniek Velp;EQA - Xpert Orthopedie Amsterdam;94.853789;65.44196666666667
+EQV - Velthuis Kliniek Velp;EQEI - Velthuis Kliniek Eindhoven;90.896711;69.70983333333334
+EQV - Velthuis Kliniek Velp;EQEI - Xpert Clinic Hand Eindhoven;90.896711;69.70983333333334
+EQV - Velthuis Kliniek Velp;EQEI - Xpert Clinic Proctologie Eindhoven;90.896711;69.70983333333334
+EQV - Velthuis Kliniek Velp;EQEI - Xpert Orthopedie Eindhoven;90.896711;69.70983333333334
+EQV - Velthuis Kliniek Velp;EQEI - Xpert Orthopedie Schijndel;66.64440499999999;59.79408333333333
+EQV - Velthuis Kliniek Velp;EQEN - Velthuis Kliniek Enschede;75.798992;72.93395000000001
+EQV - Velthuis Kliniek Velp;EQEN - Xpert Clinic Hand Enschede;75.798992;72.93395000000001
+EQV - Velthuis Kliniek Velp;EQEN - Xpert Clinic Proctologie Enschede;75.798992;72.93395000000001
+EQV - Velthuis Kliniek Velp;EQR - Velthuis Kliniek Rotterdam;113.343304;78.22631666666666
+EQV - Velthuis Kliniek Velp;EQR - Xpert Clinic Hand Rotterdam;113.343304;78.22631666666666
+EQV - Velthuis Kliniek Velp;EQR - Xpert Clinic Proctologie Rotterdam;113.343304;78.22631666666666
+EQV - Velthuis Kliniek Velp;EQR - Xpert Orthopedie Rotterdam;113.343304;78.22631666666666
+EQV - Velthuis Kliniek Velp;EQRZD - Hand pols Rozendaal;0.0;0.0
+EQV - Velthuis Kliniek Velp;EQRZD - Orthopedie Rozendaal;0.0;0.0
+EQV - Velthuis Kliniek Velp;Equip Amsterdam;94.853789;65.44196666666667
+EQV - Velthuis Kliniek Velp;Equipe Enschede;94.853789;65.44196666666667
+EQV - Velthuis Kliniek Velp;EQV - Xpert Clinic Hand Velp;1.536443;2.7294666666666667
+EQV - Velthuis Kliniek Velp;EQV - Xpert Clinic Proctologie Velp;0.0;0.0
+EQV - Velthuis Kliniek Velp;EQZ - Xpert Clinic Oogzorg Zeist;55.850531;43.1969
+EQV - Velthuis Kliniek Velp;EQZW - Xpert Clinic Hand Zwolle;69.304345;49.024233333333335
+EQV - Velthuis Kliniek Velp;Esser Clinics;95.143307;65.66481666666667
+EQV - Velthuis Kliniek Velp;Flex Clinics;69.986531;50.5835
+EQV - Velthuis Kliniek Velp;Haaglanden Clinics;123.083771;86.38983333333334
+EQV - Velthuis Kliniek Velp;Kazem;103.975226;82.97938333333333
+EQV - Velthuis Kliniek Velp;KNO de Jong;74.83146400000001;53.39433333333333
+EQV - Velthuis Kliniek Velp;Medcentric MWCZ;190.196132;138.26623333333333
+EQV - Velthuis Kliniek Velp;Medtronic;87.97271;66.67845
+EQV - Velthuis Kliniek Velp;Orthoparc Rozendaal;0.0;0.0
+EQV - Velthuis Kliniek Velp;Pro-Motion;109.828526;82.47113333333333
+EQV - Velthuis Kliniek Velp;Retina eye care;53.102837;39.0258
+EQV - Xpert Clinic Hand Velp;De Meern;68.96748299999999;51.09588333333333
+EQV - Xpert Clinic Hand Velp;Andros Clinics Rijswijk;119.999099;82.15448333333333
+EQV - Xpert Clinic Hand Velp;Annadal kliniek;158.828645;121.76126666666669
+EQV - Xpert Clinic Hand Velp;Annadal kliniek Poli;158.828645;121.76126666666669
+EQV - Xpert Clinic Hand Velp;Annatommie Amstelveen;99.522847;69.75935
+EQV - Xpert Clinic Hand Velp;Annatommie Utrecht;65.507679;46.8558
+EQV - Xpert Clinic Hand Velp;Arthrex;65.067501;46.46333333333334
+EQV - Xpert Clinic Hand Velp;Cosmed Bosch en Duin OK;60.395275;47.37193333333333
+EQV - Xpert Clinic Hand Velp;Cosmed Bosch en Duin Poli;60.395275;47.37193333333333
+EQV - Xpert Clinic Hand Velp;Denticien;120.231729;83.52821666666667
+EQV - Xpert Clinic Hand Velp;Dermaclinic Utrecht;63.626297;48.31218333333334
+EQV - Xpert Clinic Hand Velp;Doctors at soap;64.138106;50.085166666666666
+EQV - Xpert Clinic Hand Velp;EQA - Velthuis Kliniek Amsterdam;95.696114;66.26235
+EQV - Xpert Clinic Hand Velp;EQA - Xpert Clinic Hand Amsterdam;95.696114;66.26235
+EQV - Xpert Clinic Hand Velp;EQA - Xpert Clinic Proctologie Amsterdam;95.696114;66.26235
+EQV - Xpert Clinic Hand Velp;EQA - Xpert Orthopedie Amsterdam;95.696114;66.26235
+EQV - Xpert Clinic Hand Velp;EQEI - Velthuis Kliniek Eindhoven;89.634674;68.11816666666667
+EQV - Xpert Clinic Hand Velp;EQEI - Xpert Clinic Hand Eindhoven;89.634674;68.11816666666667
+EQV - Xpert Clinic Hand Velp;EQEI - Xpert Clinic Proctologie Eindhoven;89.634674;68.11816666666667
+EQV - Xpert Clinic Hand Velp;EQEI - Xpert Orthopedie Eindhoven;89.634674;68.11816666666667
+EQV - Xpert Clinic Hand Velp;EQEI - Xpert Orthopedie Schijndel;65.382368;58.20241666666666
+EQV - Xpert Clinic Hand Velp;EQEN - Velthuis Kliniek Enschede;75.53634100000001;72.4564
+EQV - Xpert Clinic Hand Velp;EQEN - Xpert Clinic Hand Enschede;75.53634100000001;72.4564
+EQV - Xpert Clinic Hand Velp;EQEN - Xpert Clinic Proctologie Enschede;75.53634100000001;72.4564
+EQV - Xpert Clinic Hand Velp;EQR - Velthuis Kliniek Rotterdam;114.185629;79.0467
+EQV - Xpert Clinic Hand Velp;EQR - Xpert Clinic Hand Rotterdam;114.185629;79.0467
+EQV - Xpert Clinic Hand Velp;EQR - Xpert Clinic Proctologie Rotterdam;114.185629;79.0467
+EQV - Xpert Clinic Hand Velp;EQR - Xpert Orthopedie Rotterdam;114.185629;79.0467
+EQV - Xpert Clinic Hand Velp;EQRZD - Hand pols Rozendaal;1.525062;2.714716666666667
+EQV - Xpert Clinic Hand Velp;EQRZD - Orthopedie Rozendaal;1.525062;2.714716666666667
+EQV - Xpert Clinic Hand Velp;Equip Amsterdam;95.696114;66.26235
+EQV - Xpert Clinic Hand Velp;Equipe Enschede;95.696114;66.26235
+EQV - Xpert Clinic Hand Velp;EQV - Velthuis Kliniek Velp;1.525062;2.714716666666667
+EQV - Xpert Clinic Hand Velp;EQV - Xpert Clinic Proctologie Velp;1.525062;2.714716666666667
+EQV - Xpert Clinic Hand Velp;EQZ - Xpert Clinic Oogzorg Zeist;56.692856;44.01728333333333
+EQV - Xpert Clinic Hand Velp;EQZW - Xpert Clinic Hand Zwolle;70.14667;49.84461666666667
+EQV - Xpert Clinic Hand Velp;Esser Clinics;95.985631;66.4852
+EQV - Xpert Clinic Hand Velp;Flex Clinics;70.828856;51.40388333333333
+EQV - Xpert Clinic Hand Velp;Haaglanden Clinics;123.926096;87.21021666666667
+EQV - Xpert Clinic Hand Velp;Kazem;104.817551;83.79976666666667
+EQV - Xpert Clinic Hand Velp;KNO de Jong;75.673789;54.21471666666666
+EQV - Xpert Clinic Hand Velp;Medcentric MWCZ;188.934095;136.67456666666666
+EQV - Xpert Clinic Hand Velp;Medtronic;86.710673;65.08678333333333
+EQV - Xpert Clinic Hand Velp;Orthoparc Rozendaal;1.525062;2.714716666666667
+EQV - Xpert Clinic Hand Velp;Pro-Motion;108.566489;80.87946666666667
+EQV - Xpert Clinic Hand Velp;Retina eye care;53.945161;39.846183333333336
+EQV - Xpert Clinic Proctologie Velp;De Meern;68.125159;50.2755
+EQV - Xpert Clinic Proctologie Velp;Andros Clinics Rijswijk;119.156774;81.3341
+EQV - Xpert Clinic Proctologie Velp;Annadal kliniek;160.090682;123.35293333333334
+EQV - Xpert Clinic Proctologie Velp;Annadal kliniek Poli;160.090682;123.35293333333334
+EQV - Xpert Clinic Proctologie Velp;Annatommie Amstelveen;98.680523;68.93896666666666
+EQV - Xpert Clinic Proctologie Velp;Annatommie Utrecht;64.665355;46.03541666666667
+EQV - Xpert Clinic Proctologie Velp;Arthrex;64.225176;45.642950000000006
+EQV - Xpert Clinic Proctologie Velp;Cosmed Bosch en Duin OK;59.552951;46.55155
+EQV - Xpert Clinic Proctologie Velp;Cosmed Bosch en Duin Poli;59.552951;46.55155
+EQV - Xpert Clinic Proctologie Velp;Denticien;119.389405;82.70783333333334
+EQV - Xpert Clinic Proctologie Velp;Dermaclinic Utrecht;62.783973;47.4918
+EQV - Xpert Clinic Proctologie Velp;Doctors at soap;63.295781000000005;49.26478333333333
+EQV - Xpert Clinic Proctologie Velp;EQA - Velthuis Kliniek Amsterdam;94.853789;65.44196666666667
+EQV - Xpert Clinic Proctologie Velp;EQA - Xpert Clinic Hand Amsterdam;94.853789;65.44196666666667
+EQV - Xpert Clinic Proctologie Velp;EQA - Xpert Clinic Proctologie Amsterdam;94.853789;65.44196666666667
+EQV - Xpert Clinic Proctologie Velp;EQA - Xpert Orthopedie Amsterdam;94.853789;65.44196666666667
+EQV - Xpert Clinic Proctologie Velp;EQEI - Velthuis Kliniek Eindhoven;90.896711;69.70983333333334
+EQV - Xpert Clinic Proctologie Velp;EQEI - Xpert Clinic Hand Eindhoven;90.896711;69.70983333333334
+EQV - Xpert Clinic Proctologie Velp;EQEI - Xpert Clinic Proctologie Eindhoven;90.896711;69.70983333333334
+EQV - Xpert Clinic Proctologie Velp;EQEI - Xpert Orthopedie Eindhoven;90.896711;69.70983333333334
+EQV - Xpert Clinic Proctologie Velp;EQEI - Xpert Orthopedie Schijndel;66.64440499999999;59.79408333333333
+EQV - Xpert Clinic Proctologie Velp;EQEN - Velthuis Kliniek Enschede;75.798992;72.93395000000001
+EQV - Xpert Clinic Proctologie Velp;EQEN - Xpert Clinic Hand Enschede;75.798992;72.93395000000001
+EQV - Xpert Clinic Proctologie Velp;EQEN - Xpert Clinic Proctologie Enschede;75.798992;72.93395000000001
+EQV - Xpert Clinic Proctologie Velp;EQR - Velthuis Kliniek Rotterdam;113.343304;78.22631666666666
+EQV - Xpert Clinic Proctologie Velp;EQR - Xpert Clinic Hand Rotterdam;113.343304;78.22631666666666
+EQV - Xpert Clinic Proctologie Velp;EQR - Xpert Clinic Proctologie Rotterdam;113.343304;78.22631666666666
+EQV - Xpert Clinic Proctologie Velp;EQR - Xpert Orthopedie Rotterdam;113.343304;78.22631666666666
+EQV - Xpert Clinic Proctologie Velp;EQRZD - Hand pols Rozendaal;0.0;0.0
+EQV - Xpert Clinic Proctologie Velp;EQRZD - Orthopedie Rozendaal;0.0;0.0
+EQV - Xpert Clinic Proctologie Velp;Equip Amsterdam;94.853789;65.44196666666667
+EQV - Xpert Clinic Proctologie Velp;Equipe Enschede;94.853789;65.44196666666667
+EQV - Xpert Clinic Proctologie Velp;EQV - Velthuis Kliniek Velp;0.0;0.0
+EQV - Xpert Clinic Proctologie Velp;EQV - Xpert Clinic Hand Velp;1.536443;2.7294666666666667
+EQV - Xpert Clinic Proctologie Velp;EQZ - Xpert Clinic Oogzorg Zeist;55.850531;43.1969
+EQV - Xpert Clinic Proctologie Velp;EQZW - Xpert Clinic Hand Zwolle;69.304345;49.024233333333335
+EQV - Xpert Clinic Proctologie Velp;Esser Clinics;95.143307;65.66481666666667
+EQV - Xpert Clinic Proctologie Velp;Flex Clinics;69.986531;50.5835
+EQV - Xpert Clinic Proctologie Velp;Haaglanden Clinics;123.083771;86.38983333333334
+EQV - Xpert Clinic Proctologie Velp;Kazem;103.975226;82.97938333333333
+EQV - Xpert Clinic Proctologie Velp;KNO de Jong;74.83146400000001;53.39433333333333
+EQV - Xpert Clinic Proctologie Velp;Medcentric MWCZ;190.196132;138.26623333333333
+EQV - Xpert Clinic Proctologie Velp;Medtronic;87.97271;66.67845
+EQV - Xpert Clinic Proctologie Velp;Orthoparc Rozendaal;0.0;0.0
+EQV - Xpert Clinic Proctologie Velp;Pro-Motion;109.828526;82.47113333333333
+EQV - Xpert Clinic Proctologie Velp;Retina eye care;53.102837;39.0258
+EQZ - Xpert Clinic Oogzorg Zeist;De Meern;18.81838;20.04573333333333
+EQZ - Xpert Clinic Oogzorg Zeist;Andros Clinics Rijswijk;71.322827;51.59653333333333
+EQZ - Xpert Clinic Oogzorg Zeist;Annadal kliniek;181.759843;133.41396666666665
+EQZ - Xpert Clinic Oogzorg Zeist;Annadal kliniek Poli;181.759843;133.41396666666665
+EQZ - Xpert Clinic Oogzorg Zeist;Annatommie Amstelveen;47.786766;36.8263
+EQZ - Xpert Clinic Oogzorg Zeist;Annatommie Utrecht;15.892915;16.502599999999997
+EQZ - Xpert Clinic Oogzorg Zeist;Arthrex;16.398254;15.0134
+EQZ - Xpert Clinic Oogzorg Zeist;Cosmed Bosch en Duin OK;4.031423;5.199116666666667
+EQZ - Xpert Clinic Oogzorg Zeist;Cosmed Bosch en Duin Poli;4.031423;5.199116666666667
+EQZ - Xpert Clinic Oogzorg Zeist;Denticien;71.55545699999999;52.97026666666667
+EQZ - Xpert Clinic Oogzorg Zeist;Dermaclinic Utrecht;9.910767;9.833316666666668
+EQZ - Xpert Clinic Oogzorg Zeist;Doctors at soap;10.770013;11.65435
+EQZ - Xpert Clinic Oogzorg Zeist;EQA - Velthuis Kliniek Amsterdam;43.960033;33.3293
+EQZ - Xpert Clinic Oogzorg Zeist;EQA - Xpert Clinic Hand Amsterdam;43.960033;33.3293
+EQZ - Xpert Clinic Oogzorg Zeist;EQA - Xpert Clinic Proctologie Amsterdam;43.960033;33.3293
+EQZ - Xpert Clinic Oogzorg Zeist;EQA - Xpert Orthopedie Amsterdam;43.960033;33.3293
+EQZ - Xpert Clinic Oogzorg Zeist;EQEI - Velthuis Kliniek Eindhoven;95.553179;67.76631666666667
+EQZ - Xpert Clinic Oogzorg Zeist;EQEI - Xpert Clinic Hand Eindhoven;95.553179;67.76631666666667
+EQZ - Xpert Clinic Oogzorg Zeist;EQEI - Xpert Clinic Proctologie Eindhoven;95.553179;67.76631666666667
+EQZ - Xpert Clinic Oogzorg Zeist;EQEI - Xpert Orthopedie Eindhoven;95.553179;67.76631666666667
+EQZ - Xpert Clinic Oogzorg Zeist;EQEI - Xpert Orthopedie Schijndel;71.670626;53.83391666666667
+EQZ - Xpert Clinic Oogzorg Zeist;EQEN - Velthuis Kliniek Enschede;122.170975;87.35596666666667
+EQZ - Xpert Clinic Oogzorg Zeist;EQEN - Xpert Clinic Hand Enschede;122.170975;87.35596666666667
+EQZ - Xpert Clinic Oogzorg Zeist;EQEN - Xpert Clinic Proctologie Enschede;122.170975;87.35596666666667
+EQZ - Xpert Clinic Oogzorg Zeist;EQR - Velthuis Kliniek Rotterdam;65.50935700000001;48.48875
+EQZ - Xpert Clinic Oogzorg Zeist;EQR - Xpert Clinic Hand Rotterdam;65.50935700000001;48.48875
+EQZ - Xpert Clinic Oogzorg Zeist;EQR - Xpert Clinic Proctologie Rotterdam;65.50935700000001;48.48875
+EQZ - Xpert Clinic Oogzorg Zeist;EQR - Xpert Orthopedie Rotterdam;65.50935700000001;48.48875
+EQZ - Xpert Clinic Oogzorg Zeist;EQRZD - Hand pols Rozendaal;56.556373;43.65416666666667
+EQZ - Xpert Clinic Oogzorg Zeist;EQRZD - Orthopedie Rozendaal;56.556373;43.65416666666667
+EQZ - Xpert Clinic Oogzorg Zeist;Equip Amsterdam;43.960033;33.3293
+EQZ - Xpert Clinic Oogzorg Zeist;Equipe Enschede;43.960033;33.3293
+EQZ - Xpert Clinic Oogzorg Zeist;EQV - Velthuis Kliniek Velp;56.556373;43.65416666666667
+EQZ - Xpert Clinic Oogzorg Zeist;EQV - Xpert Clinic Hand Velp;57.370925;44.43833333333334
+EQZ - Xpert Clinic Oogzorg Zeist;EQV - Xpert Clinic Proctologie Velp;56.556373;43.65416666666667
+EQZ - Xpert Clinic Oogzorg Zeist;EQZW - Xpert Clinic Hand Zwolle;83.530899;57.29143333333333
+EQZ - Xpert Clinic Oogzorg Zeist;Esser Clinics;47.30935899999999;35.92725
+EQZ - Xpert Clinic Oogzorg Zeist;Flex Clinics;16.864754;20.422733333333333
+EQZ - Xpert Clinic Oogzorg Zeist;Haaglanden Clinics;75.24982399999999;56.65226666666667
+EQZ - Xpert Clinic Oogzorg Zeist;Kazem;53.08147;50.86671666666667
+EQZ - Xpert Clinic Oogzorg Zeist;KNO de Jong;19.539198;24.27955
+EQZ - Xpert Clinic Oogzorg Zeist;Medcentric MWCZ;148.139981;111.11581666666666
+EQZ - Xpert Clinic Oogzorg Zeist;Medtronic;93.1476;67.69255
+EQZ - Xpert Clinic Oogzorg Zeist;Orthoparc Rozendaal;56.556373;43.65416666666667
+EQZ - Xpert Clinic Oogzorg Zeist;Pro-Motion;67.772375;55.32071666666666
+EQZ - Xpert Clinic Oogzorg Zeist;Retina eye care;8.102569;12.874633333333332
+EQZW - Xpert Clinic Hand Zwolle;De Meern;100.173444;73.24988333333334
+EQZW - Xpert Clinic Hand Zwolle;Andros Clinics Rijswijk;152.67789100000002;104.80068333333334
+EQZW - Xpert Clinic Hand Zwolle;Annadal kliniek;225.867763;166.34053333333335
+EQZW - Xpert Clinic Hand Zwolle;Annadal kliniek Poli;225.867763;166.34053333333335
+EQZW - Xpert Clinic Hand Zwolle;Annatommie Amstelveen;107.432714;79.62745
+EQZW - Xpert Clinic Hand Zwolle;Annatommie Utrecht;97.247979;69.70675
+EQZW - Xpert Clinic Hand Zwolle;Arthrex;97.753318;68.21755
+EQZW - Xpert Clinic Hand Zwolle;Cosmed Bosch en Duin OK;86.66049000000001;59.84406666666666
+EQZW - Xpert Clinic Hand Zwolle;Cosmed Bosch en Duin Poli;86.66049000000001;59.84406666666666
+EQZW - Xpert Clinic Hand Zwolle;Denticien;152.910522;106.17441666666669
+EQZW - Xpert Clinic Hand Zwolle;Dermaclinic Utrecht;92.955112;64.30006666666667
+EQZW - Xpert Clinic Hand Zwolle;Doctors at soap;93.814357;66.1211
+EQZW - Xpert Clinic Hand Zwolle;EQA - Velthuis Kliniek Amsterdam;100.441284;73.64426666666667
+EQZW - Xpert Clinic Hand Zwolle;EQA - Xpert Clinic Hand Amsterdam;100.441284;73.64426666666667
+EQZW - Xpert Clinic Hand Zwolle;EQA - Xpert Clinic Proctologie Amsterdam;100.441284;73.64426666666667
+EQZW - Xpert Clinic Hand Zwolle;EQA - Xpert Orthopedie Amsterdam;100.441284;73.64426666666667
+EQZW - Xpert Clinic Hand Zwolle;EQEI - Velthuis Kliniek Eindhoven;155.747679;108.07891666666666
+EQZW - Xpert Clinic Hand Zwolle;EQEI - Xpert Clinic Hand Eindhoven;155.747679;108.07891666666666
+EQZW - Xpert Clinic Hand Zwolle;EQEI - Xpert Clinic Proctologie Eindhoven;155.747679;108.07891666666666
+EQZW - Xpert Clinic Hand Zwolle;EQEI - Xpert Orthopedie Eindhoven;155.747679;108.07891666666666
+EQZW - Xpert Clinic Hand Zwolle;EQEI - Xpert Orthopedie Schijndel;131.495373;98.16316666666668
+EQZW - Xpert Clinic Hand Zwolle;EQEN - Velthuis Kliniek Enschede;64.423108;54.714416666666665
+EQZW - Xpert Clinic Hand Zwolle;EQEN - Xpert Clinic Hand Enschede;64.423108;54.714416666666665
+EQZW - Xpert Clinic Hand Zwolle;EQEN - Xpert Clinic Proctologie Enschede;64.423108;54.714416666666665
+EQZW - Xpert Clinic Hand Zwolle;EQR - Velthuis Kliniek Rotterdam;146.864421;101.6929
+EQZW - Xpert Clinic Hand Zwolle;EQR - Xpert Clinic Hand Rotterdam;146.864421;101.6929
+EQZW - Xpert Clinic Hand Zwolle;EQR - Xpert Clinic Proctologie Rotterdam;146.864421;101.6929
+EQZW - Xpert Clinic Hand Zwolle;EQR - Xpert Orthopedie Rotterdam;146.864421;101.6929
+EQZW - Xpert Clinic Hand Zwolle;EQRZD - Hand pols Rozendaal;70.24342600000001;49.34428333333334
+EQZW - Xpert Clinic Hand Zwolle;EQRZD - Orthopedie Rozendaal;70.24342600000001;49.34428333333334
+EQZW - Xpert Clinic Hand Zwolle;Equip Amsterdam;100.441284;73.64426666666667
+EQZW - Xpert Clinic Hand Zwolle;Equipe Enschede;100.441284;73.64426666666667
+EQZW - Xpert Clinic Hand Zwolle;EQV - Velthuis Kliniek Velp;70.24342600000001;49.34428333333334
+EQZW - Xpert Clinic Hand Zwolle;EQV - Xpert Clinic Hand Velp;71.057977;50.12845
+EQZW - Xpert Clinic Hand Zwolle;EQV - Xpert Clinic Proctologie Velp;70.24342600000001;49.34428333333334
+EQZW - Xpert Clinic Hand Zwolle;EQZ - Xpert Clinic Oogzorg Zeist;83.729635;57.13241666666667
+EQZW - Xpert Clinic Hand Zwolle;Esser Clinics;128.664424;89.1314
+EQZW - Xpert Clinic Hand Zwolle;Flex Clinics;100.028065;73.374
+EQZW - Xpert Clinic Hand Zwolle;Haaglanden Clinics;156.60488800000002;109.85641666666668
+EQZW - Xpert Clinic Hand Zwolle;Kazem;119.061089;87.90183333333333
+EQZW - Xpert Clinic Hand Zwolle;KNO de Jong;102.702509;77.23081666666667
+EQZW - Xpert Clinic Hand Zwolle;Medcentric MWCZ;229.504085;164.326
+EQZW - Xpert Clinic Hand Zwolle;Medtronic;152.823678;105.04753333333332
+EQZW - Xpert Clinic Hand Zwolle;Orthoparc Rozendaal;70.24342600000001;49.34428333333334
+EQZW - Xpert Clinic Hand Zwolle;Pro-Motion;149.13647899999998;108.5309
+EQZW - Xpert Clinic Hand Zwolle;Retina eye care;87.254567;63.208
+Esser Clinics;De Meern;29.451202;20.700166666666668
+Esser Clinics;Andros Clinics Rijswijk;26.946593;19.525033333333333
+Esser Clinics;Annadal kliniek;199.578936;143.6131
+Esser Clinics;Annadal kliniek Poli;199.578936;143.6131
+Esser Clinics;Annatommie Amstelveen;41.726411;45.916066666666666
+Esser Clinics;Annatommie Utrecht;32.087409;23.76395
+Esser Clinics;Arthrex;33.493209;23.72673333333333
+Esser Clinics;Cosmed Bosch en Duin OK;49.111053;35.02695000000001
+Esser Clinics;Cosmed Bosch en Duin Poli;49.111053;35.02695000000001
+Esser Clinics;Denticien;27.179224;20.898766666666667
+Esser Clinics;Dermaclinic Utrecht;36.757948;30.940066666666667
+Esser Clinics;Doctors at soap;36.502872;30.6914
+Esser Clinics;EQA - Velthuis Kliniek Amsterdam;49.086646;39.772466666666666
+Esser Clinics;EQA - Xpert Clinic Hand Amsterdam;49.086646;39.772466666666666
+Esser Clinics;EQA - Xpert Clinic Proctologie Amsterdam;49.086646;39.772466666666666
+Esser Clinics;EQA - Xpert Orthopedie Amsterdam;49.086646;39.772466666666666
+Esser Clinics;EQEI - Velthuis Kliniek Eindhoven;113.372272;77.96544999999999
+Esser Clinics;EQEI - Xpert Clinic Hand Eindhoven;113.372272;77.96544999999999
+Esser Clinics;EQEI - Xpert Clinic Proctologie Eindhoven;113.372272;77.96544999999999
+Esser Clinics;EQEI - Xpert Orthopedie Eindhoven;113.372272;77.96544999999999
+Esser Clinics;EQEI - Xpert Orthopedie Schijndel;89.48972;64.03305
+Esser Clinics;EQEN - Velthuis Kliniek Enschede;168.258009;117.76233333333332
+Esser Clinics;EQEN - Xpert Clinic Hand Enschede;168.258009;117.76233333333332
+Esser Clinics;EQEN - Xpert Clinic Proctologie Enschede;168.258009;117.76233333333332
+Esser Clinics;EQR - Velthuis Kliniek Rotterdam;21.172814;17.065383333333333
+Esser Clinics;EQR - Xpert Clinic Hand Rotterdam;21.172814;17.065383333333333
+Esser Clinics;EQR - Xpert Clinic Proctologie Rotterdam;21.172814;17.065383333333333
+Esser Clinics;EQR - Xpert Orthopedie Rotterdam;21.172814;17.065383333333333
+Esser Clinics;EQRZD - Hand pols Rozendaal;94.926703;65.16966666666666
+Esser Clinics;EQRZD - Orthopedie Rozendaal;94.926703;65.16966666666666
+Esser Clinics;Equip Amsterdam;49.086646;39.772466666666666
+Esser Clinics;Equipe Enschede;49.086646;39.772466666666666
+Esser Clinics;EQV - Velthuis Kliniek Velp;94.926703;65.16966666666666
+Esser Clinics;EQV - Xpert Clinic Hand Velp;95.741254;65.95383333333334
+Esser Clinics;EQV - Xpert Clinic Proctologie Velp;94.926703;65.16966666666666
+Esser Clinics;EQZ - Xpert Clinic Oogzorg Zeist;48.368701;33.15828333333334
+Esser Clinics;EQZW - Xpert Clinic Hand Zwolle;129.617933;87.6978
+Esser Clinics;Flex Clinics;33.424607;27.25103333333333
+Esser Clinics;Haaglanden Clinics;30.87359;24.580766666666666
+Esser Clinics;Kazem;37.179184;37.72448333333333
+Esser Clinics;KNO de Jong;30.009145;24.02876666666667
+Esser Clinics;Medcentric MWCZ;105.117021;78.70226666666667
+Esser Clinics;Medtronic;110.966693;77.89168333333333
+Esser Clinics;Orthoparc Rozendaal;94.926703;65.16966666666666
+Esser Clinics;Pro-Motion;32.291545;24.18703333333333
+Esser Clinics;Retina eye care;46.039357;33.11995
+Flex Clinics;De Meern;4.470187;7.208033333333334
+Flex Clinics;Andros Clinics Rijswijk;56.64376600000001;42.5495
+Flex Clinics;Annadal kliniek;174.71054999999998;128.63623333333334
+Flex Clinics;Annadal kliniek Poli;174.71054999999998;128.63623333333334
+Flex Clinics;Annatommie Amstelveen;29.763167000000003;22.27215
+Flex Clinics;Annatommie Utrecht;5.015869;6.5424
+Flex Clinics;Arthrex;5.73148;7.65745
+Flex Clinics;Cosmed Bosch en Duin OK;16.331866;21.6083
+Flex Clinics;Cosmed Bosch en Duin Poli;16.331866;21.6083
+Flex Clinics;Denticien;56.876396;43.92323333333333
+Flex Clinics;Dermaclinic Utrecht;7.014876;11.346516666666668
+Flex Clinics;Doctors at soap;6.5341000000000005;10.3163
+Flex Clinics;EQA - Velthuis Kliniek Amsterdam;25.936434;18.77515
+Flex Clinics;EQA - Xpert Clinic Hand Amsterdam;25.936434;18.77515
+Flex Clinics;EQA - Xpert Clinic Proctologie Amsterdam;25.936434;18.77515
+Flex Clinics;EQA - Xpert Orthopedie Amsterdam;25.936434;18.77515
+Flex Clinics;EQEI - Velthuis Kliniek Eindhoven;88.503886;62.98858333333333
+Flex Clinics;EQEI - Xpert Clinic Hand Eindhoven;88.503886;62.98858333333333
+Flex Clinics;EQEI - Xpert Clinic Proctologie Eindhoven;88.503886;62.98858333333333
+Flex Clinics;EQEI - Xpert Orthopedie Eindhoven;88.503886;62.98858333333333
+Flex Clinics;EQEI - Xpert Orthopedie Schijndel;64.62133299999999;49.05618333333334
+Flex Clinics;EQEN - Velthuis Kliniek Enschede;138.26498999999998;103.9931
+Flex Clinics;EQEN - Xpert Clinic Hand Enschede;138.26498999999998;103.9931
+Flex Clinics;EQEN - Xpert Clinic Proctologie Enschede;138.26498999999998;103.9931
+Flex Clinics;EQR - Velthuis Kliniek Rotterdam;50.830296;39.44171666666667
+Flex Clinics;EQR - Xpert Clinic Hand Rotterdam;50.830296;39.44171666666667
+Flex Clinics;EQR - Xpert Clinic Proctologie Rotterdam;50.830296;39.44171666666667
+Flex Clinics;EQR - Xpert Orthopedie Rotterdam;50.830296;39.44171666666667
+Flex Clinics;EQRZD - Hand pols Rozendaal;70.47260899999999;50.65555
+Flex Clinics;EQRZD - Orthopedie Rozendaal;70.47260899999999;50.65555
+Flex Clinics;Equip Amsterdam;25.936434;18.77515
+Flex Clinics;Equipe Enschede;25.936434;18.77515
+Flex Clinics;EQV - Velthuis Kliniek Velp;70.47260899999999;50.65555
+Flex Clinics;EQV - Xpert Clinic Hand Velp;71.287161;51.43971666666666
+Flex Clinics;EQV - Xpert Clinic Proctologie Velp;70.47260899999999;50.65555
+Flex Clinics;EQZ - Xpert Clinic Oogzorg Zeist;17.088981;19.76675
+Flex Clinics;EQZW - Xpert Clinic Hand Zwolle;99.624914;73.92856666666667
+Flex Clinics;Esser Clinics;32.630298;26.88021666666667
+Flex Clinics;Haaglanden Clinics;60.570763;47.60523333333333
+Flex Clinics;Kazem;35.057871;36.31256666666666
+Flex Clinics;KNO de Jong;4.685654;6.818216666666667
+Flex Clinics;Medcentric MWCZ;134.774503;101.0786
+Flex Clinics;Medtronic;86.098307;62.91481666666667
+Flex Clinics;Orthoparc Rozendaal;70.47260899999999;50.65555
+Flex Clinics;Pro-Motion;58.290853000000006;50.4356
+Flex Clinics;Retina eye care;21.585263;18.605833333333333
+Haaglanden Clinics;De Meern;57.731072;41.2044
+Haaglanden Clinics;Andros Clinics Rijswijk;7.453475999999999;9.783816666666668
+Haaglanden Clinics;Annadal kliniek;219.550164;164.63081666666668
+Haaglanden Clinics;Annadal kliniek Poli;219.550164;164.63081666666668
+Haaglanden Clinics;Annatommie Amstelveen;52.453069000000006;43.43943333333333
+Haaglanden Clinics;Annatommie Utrecht;60.367279;44.26818333333333
+Haaglanden Clinics;Arthrex;61.773079;44.23096666666667
+Haaglanden Clinics;Cosmed Bosch en Duin OK;77.390924;55.53118333333334
+Haaglanden Clinics;Cosmed Bosch en Duin Poli;77.390924;55.53118333333334
+Haaglanden Clinics;Denticien;6.352501;8.395683333333332
+Haaglanden Clinics;Dermaclinic Utrecht;65.037819;51.4443
+Haaglanden Clinics;Doctors at soap;64.782742;51.19563333333333
+Haaglanden Clinics;EQA - Velthuis Kliniek Amsterdam;60.144534;45.5542
+Haaglanden Clinics;EQA - Xpert Clinic Hand Amsterdam;60.144534;45.5542
+Haaglanden Clinics;EQA - Xpert Clinic Proctologie Amsterdam;60.144534;45.5542
+Haaglanden Clinics;EQA - Xpert Orthopedie Amsterdam;60.144534;45.5542
+Haaglanden Clinics;EQEI - Velthuis Kliniek Eindhoven;128.839924;103.17273333333333
+Haaglanden Clinics;EQEI - Xpert Clinic Hand Eindhoven;128.839924;103.17273333333333
+Haaglanden Clinics;EQEI - Xpert Clinic Proctologie Eindhoven;128.839924;103.17273333333333
+Haaglanden Clinics;EQEI - Xpert Orthopedie Eindhoven;128.839924;103.17273333333333
+Haaglanden Clinics;EQEI - Xpert Orthopedie Schijndel;117.76959;84.53728333333333
+Haaglanden Clinics;EQEN - Velthuis Kliniek Enschede;196.537879;138.26656666666668
+Haaglanden Clinics;EQEN - Xpert Clinic Hand Enschede;196.537879;138.26656666666668
+Haaglanden Clinics;EQEN - Xpert Clinic Proctologie Enschede;196.537879;138.26656666666668
+Haaglanden Clinics;EQR - Velthuis Kliniek Rotterdam;29.665963;28.87816666666667
+Haaglanden Clinics;EQR - Xpert Clinic Hand Rotterdam;29.665963;28.87816666666667
+Haaglanden Clinics;EQR - Xpert Clinic Proctologie Rotterdam;29.665963;28.87816666666667
+Haaglanden Clinics;EQR - Xpert Orthopedie Rotterdam;29.665963;28.87816666666667
+Haaglanden Clinics;EQRZD - Hand pols Rozendaal;123.206573;85.6739
+Haaglanden Clinics;EQRZD - Orthopedie Rozendaal;123.206573;85.6739
+Haaglanden Clinics;Equip Amsterdam;60.144534;45.5542
+Haaglanden Clinics;Equipe Enschede;60.144534;45.5542
+Haaglanden Clinics;EQV - Velthuis Kliniek Velp;123.206573;85.6739
+Haaglanden Clinics;EQV - Xpert Clinic Hand Velp;124.021125;86.45806666666667
+Haaglanden Clinics;EQV - Xpert Clinic Proctologie Velp;123.206573;85.6739
+Haaglanden Clinics;EQZ - Xpert Clinic Oogzorg Zeist;76.648572;53.66251666666667
+Haaglanden Clinics;EQZW - Xpert Clinic Hand Zwolle;157.897803;108.20203333333332
+Haaglanden Clinics;Esser Clinics;30.524555;23.136033333333334
+Haaglanden Clinics;Flex Clinics;61.704477;47.75526666666666
+Haaglanden Clinics;Kazem;42.240979;33.75888333333333
+Haaglanden Clinics;KNO de Jong;58.289015;44.533
+Haaglanden Clinics;Medcentric MWCZ;107.870423;88.98595
+Haaglanden Clinics;Medtronic;130.457958;105.22286666666668
+Haaglanden Clinics;Orthoparc Rozendaal;123.206573;85.6739
+Haaglanden Clinics;Pro-Motion;41.131836;36.98768333333333
+Haaglanden Clinics;Retina eye care;74.319227;53.624183333333335
+Kazem;De Meern;39.261496;41.103100000000005
+Kazem;Andros Clinics Rijswijk;41.687417;29.554
+Kazem;Annadal kliniek;209.106093;161.84631666666667
+Kazem;Annadal kliniek Poli;209.106093;161.84631666666667
+Kazem;Annatommie Amstelveen;10.864656;12.12425
+Kazem;Annatommie Utrecht;39.947902;40.24306666666666
+Kazem;Arthrex;40.663512;41.35811666666667
+Kazem;Cosmed Bosch en Duin OK;50.533835;53.89546666666667
+Kazem;Cosmed Bosch en Duin Poli;50.533835;53.89546666666667
+Kazem;Denticien;41.80231;30.851616666666665
+Kazem;Dermaclinic Utrecht;40.238253;49.502100000000006
+Kazem;Doctors at soap;39.757477;48.47188333333334
+Kazem;EQA - Velthuis Kliniek Amsterdam;17.767063999999998;19.47598333333333
+Kazem;EQA - Xpert Clinic Hand Amsterdam;17.767063999999998;19.47598333333333
+Kazem;EQA - Xpert Clinic Proctologie Amsterdam;17.767063999999998;19.47598333333333
+Kazem;EQA - Xpert Orthopedie Amsterdam;17.767063999999998;19.47598333333333
+Kazem;EQEI - Velthuis Kliniek Eindhoven;122.899429;96.19866666666668
+Kazem;EQEI - Xpert Clinic Hand Eindhoven;122.899429;96.19866666666668
+Kazem;EQEI - Xpert Clinic Proctologie Eindhoven;122.899429;96.19866666666668
+Kazem;EQEI - Xpert Orthopedie Eindhoven;122.899429;96.19866666666668
+Kazem;EQEI - Xpert Orthopedie Schijndel;99.016876;82.26626666666667
+Kazem;EQEN - Velthuis Kliniek Enschede;162.048443;126.93323333333332
+Kazem;EQEN - Xpert Clinic Hand Enschede;162.048443;126.93323333333332
+Kazem;EQEN - Xpert Clinic Proctologie Enschede;162.048443;126.93323333333332
+Kazem;EQR - Velthuis Kliniek Rotterdam;55.532159;51.06036666666667
+Kazem;EQR - Xpert Clinic Hand Rotterdam;55.532159;51.06036666666667
+Kazem;EQR - Xpert Clinic Proctologie Rotterdam;55.532159;51.06036666666667
+Kazem;EQR - Xpert Orthopedie Rotterdam;55.532159;51.06036666666667
+Kazem;EQRZD - Hand pols Rozendaal;104.872061;83.86818333333333
+Kazem;EQRZD - Orthopedie Rozendaal;104.872061;83.86818333333333
+Kazem;Equip Amsterdam;17.767063999999998;19.47598333333333
+Kazem;Equipe Enschede;17.767063999999998;19.47598333333333
+Kazem;EQV - Velthuis Kliniek Velp;104.872061;83.86818333333333
+Kazem;EQV - Xpert Clinic Hand Velp;105.686613;84.65235
+Kazem;EQV - Xpert Clinic Proctologie Velp;104.872061;83.86818333333333
+Kazem;EQZ - Xpert Clinic Oogzorg Zeist;54.13949;49.91656666666667
+Kazem;EQZW - Xpert Clinic Hand Zwolle;118.151499;91.01595
+Kazem;Esser Clinics;37.17123;37.86551666666666
+Kazem;Flex Clinics;34.95711;36.17568333333334
+Kazem;Haaglanden Clinics;42.819502;34.375
+Kazem;KNO de Jong;31.201781;36.961016666666666
+Kazem;Medcentric MWCZ;141.22726500000002;108.52008333333332
+Kazem;Medtronic;120.49385;96.1249
+Kazem;Orthoparc Rozendaal;104.872061;83.86818333333333
+Kazem;Pro-Motion;66.65089;58.18201666666666
+Kazem;Retina eye care;55.984715;51.81846666666667
+KNO de Jong;De Meern;6.213136;8.6407
+KNO de Jong;Andros Clinics Rijswijk;53.913409;39.58616666666667
+KNO de Jong;Annadal kliniek;177.603324;134.00058333333334
+KNO de Jong;Annadal kliniek Poli;177.603324;134.00058333333334
+KNO de Jong;Annatommie Amstelveen;30.14829;23.841283333333333
+KNO de Jong;Annatommie Utrecht;10.476402;10.418866666666666
+KNO de Jong;Arthrex;11.192013;11.533916666666666
+KNO de Jong;Cosmed Bosch en Duin OK;19.595749;26.239316666666664
+KNO de Jong;Cosmed Bosch en Duin Poli;19.595749;26.239316666666664
+KNO de Jong;Denticien;54.14604;40.9599
+KNO de Jong;Dermaclinic Utrecht;10.278759;15.977533333333334
+KNO de Jong;Doctors at soap;9.797984;14.947316666666667
+KNO de Jong;EQA - Velthuis Kliniek Amsterdam;26.321556;20.344283333333333
+KNO de Jong;EQA - Xpert Clinic Hand Amsterdam;26.321556;20.344283333333333
+KNO de Jong;EQA - Xpert Clinic Proctologie Amsterdam;26.321556;20.344283333333333
+KNO de Jong;EQA - Xpert Orthopedie Amsterdam;26.321556;20.344283333333333
+KNO de Jong;EQEI - Velthuis Kliniek Eindhoven;91.39666;68.35293333333334
+KNO de Jong;EQEI - Xpert Clinic Hand Eindhoven;91.39666;68.35293333333334
+KNO de Jong;EQEI - Xpert Clinic Proctologie Eindhoven;91.39666;68.35293333333334
+KNO de Jong;EQEI - Xpert Orthopedie Eindhoven;91.39666;68.35293333333334
+KNO de Jong;EQEI - Xpert Orthopedie Schijndel;67.51410700000001;54.42053333333333
+KNO de Jong;EQEN - Velthuis Kliniek Enschede;141.528873;108.62411666666668
+KNO de Jong;EQEN - Xpert Clinic Hand Enschede;141.528873;108.62411666666668
+KNO de Jong;EQEN - Xpert Clinic Proctologie Enschede;141.528873;108.62411666666668
+KNO de Jong;EQR - Velthuis Kliniek Rotterdam;48.099939;36.47838333333333
+KNO de Jong;EQR - Xpert Clinic Hand Rotterdam;48.099939;36.47838333333333
+KNO de Jong;EQR - Xpert Clinic Proctologie Rotterdam;48.099939;36.47838333333333
+KNO de Jong;EQR - Xpert Orthopedie Rotterdam;48.099939;36.47838333333333
+KNO de Jong;EQRZD - Hand pols Rozendaal;72.95109;55.55715
+KNO de Jong;EQRZD - Orthopedie Rozendaal;72.95109;55.55715
+KNO de Jong;Equip Amsterdam;26.321556;20.344283333333333
+KNO de Jong;Equipe Enschede;26.321556;20.344283333333333
+KNO de Jong;EQV - Velthuis Kliniek Velp;72.95109;55.55715
+KNO de Jong;EQV - Xpert Clinic Hand Velp;73.76564200000001;56.34131666666666
+KNO de Jong;EQV - Xpert Clinic Proctologie Velp;72.95109;55.55715
+KNO de Jong;EQZ - Xpert Clinic Oogzorg Zeist;20.352865;24.397766666666666
+KNO de Jong;EQZW - Xpert Clinic Hand Zwolle;102.888798;78.55958333333334
+KNO de Jong;Esser Clinics;29.899942;23.91688333333333
+KNO de Jong;Flex Clinics;5.485609999999999;6.351483333333333
+KNO de Jong;Haaglanden Clinics;57.840406;44.6419
+KNO de Jong;Kazem;31.102533;36.8343
+KNO de Jong;Medcentric MWCZ;132.044147;98.11526666666668
+KNO de Jong;Medtronic;88.99108100000001;68.27916666666667
+KNO de Jong;Orthoparc Rozendaal;72.95109;55.55715
+KNO de Jong;Pro-Motion;59.21867;43.600033333333336
+KNO de Jong;Retina eye care;24.063744;23.50743333333333
+Medcentric MWCZ;De Meern;129.933706;96.4427
+Medcentric MWCZ;Andros Clinics Rijswijk;100.879576;80.93675
+Medcentric MWCZ;Annadal kliniek;222.859815;159.93035
+Medcentric MWCZ;Annadal kliniek Poli;222.859815;159.93035
+Medcentric MWCZ;Annatommie Amstelveen;141.818443;121.86688333333332
+Medcentric MWCZ;Annatommie Utrecht;132.569913;99.50648333333334
+Medcentric MWCZ;Arthrex;133.975714;99.46926666666668
+Medcentric MWCZ;Cosmed Bosch en Duin OK;147.506393;110.54536666666668
+Medcentric MWCZ;Cosmed Bosch en Duin Poli;147.506393;110.54536666666668
+Medcentric MWCZ;Denticien;101.739993;82.10693333333333
+Medcentric MWCZ;Dermaclinic Utrecht;137.240453;106.6826
+Medcentric MWCZ;Doctors at soap;136.985377;106.43393333333331
+Medcentric MWCZ;EQA - Velthuis Kliniek Amsterdam;149.569151;115.515
+Medcentric MWCZ;EQA - Xpert Clinic Hand Amsterdam;149.569151;115.515
+Medcentric MWCZ;EQA - Xpert Clinic Proctologie Amsterdam;149.569151;115.515
+Medcentric MWCZ;EQA - Xpert Orthopedie Amsterdam;149.569151;115.515
+Medcentric MWCZ;EQEI - Velthuis Kliniek Eindhoven;132.149575;98.47226666666668
+Medcentric MWCZ;EQEI - Xpert Clinic Hand Eindhoven;132.149575;98.47226666666668
+Medcentric MWCZ;EQEI - Xpert Clinic Proctologie Eindhoven;132.149575;98.47226666666668
+Medcentric MWCZ;EQEI - Xpert Orthopedie Eindhoven;132.149575;98.47226666666668
+Medcentric MWCZ;EQEI - Xpert Orthopedie Schijndel;134.47102600000002;99.47693333333332
+Medcentric MWCZ;EQEN - Velthuis Kliniek Enschede;266.653348;193.28075
+Medcentric MWCZ;EQEN - Xpert Clinic Hand Enschede;266.653348;193.28075
+Medcentric MWCZ;EQEN - Xpert Clinic Proctologie Enschede;266.653348;193.28075
+Medcentric MWCZ;EQR - Velthuis Kliniek Rotterdam;83.979668;65.98145000000001
+Medcentric MWCZ;EQR - Xpert Clinic Hand Rotterdam;83.979668;65.98145000000001
+Medcentric MWCZ;EQR - Xpert Clinic Proctologie Rotterdam;83.979668;65.98145000000001
+Medcentric MWCZ;EQR - Xpert Orthopedie Rotterdam;83.979668;65.98145000000001
+Medcentric MWCZ;EQRZD - Hand pols Rozendaal;189.694427;139.1402
+Medcentric MWCZ;EQRZD - Orthopedie Rozendaal;189.694427;139.1402
+Medcentric MWCZ;Equip Amsterdam;149.569151;115.515
+Medcentric MWCZ;Equipe Enschede;149.569151;115.515
+Medcentric MWCZ;EQV - Velthuis Kliniek Velp;189.694427;139.1402
+Medcentric MWCZ;EQV - Xpert Clinic Hand Velp;188.453065;137.4584
+Medcentric MWCZ;EQV - Xpert Clinic Proctologie Velp;189.694427;139.1402
+Medcentric MWCZ;EQZ - Xpert Clinic Oogzorg Zeist;146.764041;108.6767
+Medcentric MWCZ;EQZW - Xpert Clinic Hand Zwolle;228.013273;163.21621666666667
+Medcentric MWCZ;Esser Clinics;102.727189;78.37433333333334
+Medcentric MWCZ;Flex Clinics;133.90711199999998;102.99356666666668
+Medcentric MWCZ;Haaglanden Clinics;107.713233;88.86958333333334
+Medcentric MWCZ;Kazem;139.879736;107.60771666666666
+Medcentric MWCZ;KNO de Jong;130.49165;99.7713
+Medcentric MWCZ;Medtronic;133.76761;100.5224
+Medcentric MWCZ;Orthoparc Rozendaal;189.694427;139.1402
+Medcentric MWCZ;Pro-Motion;82.228863;65.21166666666666
+Medcentric MWCZ;Retina eye care;144.69762;108.81365
+Medtronic;De Meern;84.46556;63.377500000000005
+Medtronic;Andros Clinics Rijswijk;123.433778;96.64573333333333
+Medtronic;Annadal kliniek;88.96700100000001;66.49083333333333
+Medtronic;Annadal kliniek Poli;88.96700100000001;66.49083333333333
+Medtronic;Annatommie Amstelveen;115.180418;81.72401666666666
+Medtronic;Annatommie Utrecht;83.072786;61.0202
+Medtronic;Arthrex;82.63260799999999;60.62773333333334
+Medtronic;Cosmed Bosch en Duin OK;92.844638;67.13531666666667
+Medtronic;Cosmed Bosch en Duin Poli;92.844638;67.13531666666667
+Medtronic;Denticien;124.294194;97.81591666666668
+Medtronic;Dermaclinic Utrecht;86.643067;64.01355
+Medtronic;Doctors at soap;86.469159;65.37608333333334
+Medtronic;EQA - Velthuis Kliniek Amsterdam;111.353685;78.22701666666667
+Medtronic;EQA - Xpert Clinic Hand Amsterdam;111.353685;78.22701666666667
+Medtronic;EQA - Xpert Clinic Proctologie Amsterdam;111.353685;78.22701666666667
+Medtronic;EQA - Xpert Orthopedie Amsterdam;111.353685;78.22701666666667
+Medtronic;EQEI - Velthuis Kliniek Eindhoven;4.017075;5.584883333333334
+Medtronic;EQEI - Xpert Clinic Hand Eindhoven;4.017075;5.584883333333334
+Medtronic;EQEI - Xpert Clinic Proctologie Eindhoven;4.017075;5.584883333333334
+Medtronic;EQEI - Xpert Orthopedie Eindhoven;4.017075;5.584883333333334
+Medtronic;EQEI - Xpert Orthopedie Schijndel;23.422825;20.08138333333333
+Medtronic;EQEN - Velthuis Kliniek Enschede;170.801414;120.85993333333332
+Medtronic;EQEN - Xpert Clinic Hand Enschede;170.801414;120.85993333333332
+Medtronic;EQEN - Xpert Clinic Proctologie Enschede;170.801414;120.85993333333332
+Medtronic;EQR - Velthuis Kliniek Rotterdam;101.542525;77.00531666666667
+Medtronic;EQR - Xpert Clinic Hand Rotterdam;101.542525;77.00531666666667
+Medtronic;EQR - Xpert Clinic Proctologie Rotterdam;101.542525;77.00531666666667
+Medtronic;EQR - Xpert Orthopedie Rotterdam;101.542525;77.00531666666667
+Medtronic;EQRZD - Hand pols Rozendaal;87.410604;66.67068333333333
+Medtronic;EQRZD - Orthopedie Rozendaal;87.410604;66.67068333333333
+Medtronic;Equip Amsterdam;111.353685;78.22701666666667
+Medtronic;Equipe Enschede;111.353685;78.22701666666667
+Medtronic;EQV - Velthuis Kliniek Velp;87.410604;66.67068333333333
+Medtronic;EQV - Xpert Clinic Hand Velp;86.169242;64.98888333333333
+Medtronic;EQV - Xpert Clinic Proctologie Velp;87.410604;66.67068333333333
+Medtronic;EQZ - Xpert Clinic Oogzorg Zeist;92.102286;65.26665
+Medtronic;EQZW - Xpert Clinic Hand Zwolle;151.402865;104.20531666666668
+Medtronic;Esser Clinics;111.839652;78.84013333333334
+Medtronic;Flex Clinics;86.50317100000001;63.37971666666667
+Medtronic;Haaglanden Clinics;130.26743399999998;104.57856666666666
+Medtronic;Kazem;120.475122;95.76443333333332
+Medtronic;KNO de Jong;91.348104;66.19055
+Medtronic;Medcentric MWCZ;137.30683499999998;95.55446666666668
+Medtronic;Orthoparc Rozendaal;87.410604;66.67068333333333
+Medtronic;Pro-Motion;91.268613;70.30186666666667
+Medtronic;Retina eye care;90.035865;65.4036
+Orthoparc Rozendaal;De Meern;68.125159;50.2755
+Orthoparc Rozendaal;Andros Clinics Rijswijk;119.156774;81.3341
+Orthoparc Rozendaal;Annadal kliniek;160.090682;123.35293333333334
+Orthoparc Rozendaal;Annadal kliniek Poli;160.090682;123.35293333333334
+Orthoparc Rozendaal;Annatommie Amstelveen;98.680523;68.93896666666666
+Orthoparc Rozendaal;Annatommie Utrecht;64.665355;46.03541666666667
+Orthoparc Rozendaal;Arthrex;64.225176;45.642950000000006
+Orthoparc Rozendaal;Cosmed Bosch en Duin OK;59.552951;46.55155
+Orthoparc Rozendaal;Cosmed Bosch en Duin Poli;59.552951;46.55155
+Orthoparc Rozendaal;Denticien;119.389405;82.70783333333334
+Orthoparc Rozendaal;Dermaclinic Utrecht;62.783973;47.4918
+Orthoparc Rozendaal;Doctors at soap;63.295781000000005;49.26478333333333
+Orthoparc Rozendaal;EQA - Velthuis Kliniek Amsterdam;94.853789;65.44196666666667
+Orthoparc Rozendaal;EQA - Xpert Clinic Hand Amsterdam;94.853789;65.44196666666667
+Orthoparc Rozendaal;EQA - Xpert Clinic Proctologie Amsterdam;94.853789;65.44196666666667
+Orthoparc Rozendaal;EQA - Xpert Orthopedie Amsterdam;94.853789;65.44196666666667
+Orthoparc Rozendaal;EQEI - Velthuis Kliniek Eindhoven;90.896711;69.70983333333334
+Orthoparc Rozendaal;EQEI - Xpert Clinic Hand Eindhoven;90.896711;69.70983333333334
+Orthoparc Rozendaal;EQEI - Xpert Clinic Proctologie Eindhoven;90.896711;69.70983333333334
+Orthoparc Rozendaal;EQEI - Xpert Orthopedie Eindhoven;90.896711;69.70983333333334
+Orthoparc Rozendaal;EQEI - Xpert Orthopedie Schijndel;66.64440499999999;59.79408333333333
+Orthoparc Rozendaal;EQEN - Velthuis Kliniek Enschede;75.798992;72.93395000000001
+Orthoparc Rozendaal;EQEN - Xpert Clinic Hand Enschede;75.798992;72.93395000000001
+Orthoparc Rozendaal;EQEN - Xpert Clinic Proctologie Enschede;75.798992;72.93395000000001
+Orthoparc Rozendaal;EQR - Velthuis Kliniek Rotterdam;113.343304;78.22631666666666
+Orthoparc Rozendaal;EQR - Xpert Clinic Hand Rotterdam;113.343304;78.22631666666666
+Orthoparc Rozendaal;EQR - Xpert Clinic Proctologie Rotterdam;113.343304;78.22631666666666
+Orthoparc Rozendaal;EQR - Xpert Orthopedie Rotterdam;113.343304;78.22631666666666
+Orthoparc Rozendaal;EQRZD - Hand pols Rozendaal;0.0;0.0
+Orthoparc Rozendaal;EQRZD - Orthopedie Rozendaal;0.0;0.0
+Orthoparc Rozendaal;Equip Amsterdam;94.853789;65.44196666666667
+Orthoparc Rozendaal;Equipe Enschede;94.853789;65.44196666666667
+Orthoparc Rozendaal;EQV - Velthuis Kliniek Velp;0.0;0.0
+Orthoparc Rozendaal;EQV - Xpert Clinic Hand Velp;1.536443;2.7294666666666667
+Orthoparc Rozendaal;EQV - Xpert Clinic Proctologie Velp;0.0;0.0
+Orthoparc Rozendaal;EQZ - Xpert Clinic Oogzorg Zeist;55.850531;43.1969
+Orthoparc Rozendaal;EQZW - Xpert Clinic Hand Zwolle;69.304345;49.024233333333335
+Orthoparc Rozendaal;Esser Clinics;95.143307;65.66481666666667
+Orthoparc Rozendaal;Flex Clinics;69.986531;50.5835
+Orthoparc Rozendaal;Haaglanden Clinics;123.083771;86.38983333333334
+Orthoparc Rozendaal;Kazem;103.975226;82.97938333333333
+Orthoparc Rozendaal;KNO de Jong;74.83146400000001;53.39433333333333
+Orthoparc Rozendaal;Medcentric MWCZ;190.196132;138.26623333333333
+Orthoparc Rozendaal;Medtronic;87.97271;66.67845
+Orthoparc Rozendaal;Pro-Motion;109.828526;82.47113333333333
+Orthoparc Rozendaal;Retina eye care;53.102837;39.0258
+Pro-Motion;De Meern;58.977585;40.36853333333333
+Pro-Motion;Andros Clinics Rijswijk;34.918933;29.55045
+Pro-Motion;Annadal kliniek;179.92418;130.022
+Pro-Motion;Annadal kliniek Poli;179.92418;130.022
+Pro-Motion;Annatommie Amstelveen;70.862322;65.79271666666666
+Pro-Motion;Annatommie Utrecht;57.153585;46.49258333333333
+Pro-Motion;Arthrex;56.713407;46.100116666666665
+Pro-Motion;Cosmed Bosch en Duin OK;69.663134;52.6837
+Pro-Motion;Cosmed Bosch en Duin Poli;69.663134;52.6837
+Pro-Motion;Denticien;35.77935;30.72063333333333
+Pro-Motion;Dermaclinic Utrecht;60.698354;51.33331666666666
+Pro-Motion;Doctors at soap;60.524446000000005;52.69585
+Pro-Motion;EQA - Velthuis Kliniek Amsterdam;78.61303;59.44083333333333
+Pro-Motion;EQA - Xpert Clinic Hand Amsterdam;78.61303;59.44083333333333
+Pro-Motion;EQA - Xpert Clinic Proctologie Amsterdam;78.61303;59.44083333333333
+Pro-Motion;EQA - Xpert Orthopedie Amsterdam;78.61303;59.44083333333333
+Pro-Motion;EQEI - Velthuis Kliniek Eindhoven;89.21394000000001;68.56391666666667
+Pro-Motion;EQEI - Xpert Clinic Hand Eindhoven;89.21394000000001;68.56391666666667
+Pro-Motion;EQEI - Xpert Clinic Proctologie Eindhoven;89.21394000000001;68.56391666666667
+Pro-Motion;EQEI - Xpert Orthopedie Eindhoven;89.21394000000001;68.56391666666667
+Pro-Motion;EQEI - Xpert Orthopedie Schijndel;81.612465;59.000616666666666
+Pro-Motion;EQEN - Velthuis Kliniek Enschede;188.810089;135.41908333333333
+Pro-Motion;EQEN - Xpert Clinic Hand Enschede;188.810089;135.41908333333333
+Pro-Motion;EQEN - Xpert Clinic Proctologie Enschede;188.810089;135.41908333333333
+Pro-Motion;EQR - Velthuis Kliniek Rotterdam;13.02768;9.910033333333333
+Pro-Motion;EQR - Xpert Clinic Hand Rotterdam;13.02768;9.910033333333333
+Pro-Motion;EQR - Xpert Clinic Proctologie Rotterdam;13.02768;9.910033333333333
+Pro-Motion;EQR - Xpert Orthopedie Rotterdam;13.02768;9.910033333333333
+Pro-Motion;EQRZD - Hand pols Rozendaal;111.851168;81.27853333333334
+Pro-Motion;EQRZD - Orthopedie Rozendaal;111.851168;81.27853333333334
+Pro-Motion;Equip Amsterdam;78.61303;59.44083333333333
+Pro-Motion;Equipe Enschede;78.61303;59.44083333333333
+Pro-Motion;EQV - Velthuis Kliniek Velp;111.851168;81.27853333333334
+Pro-Motion;EQV - Xpert Clinic Hand Velp;110.609806;79.59673333333333
+Pro-Motion;EQV - Xpert Clinic Proctologie Velp;111.851168;81.27853333333334
+Pro-Motion;EQZ - Xpert Clinic Oogzorg Zeist;68.920782;50.81503333333333
+Pro-Motion;EQZW - Xpert Clinic Hand Zwolle;150.170014;105.35455
+Pro-Motion;Esser Clinics;31.771068;22.300166666666662
+Pro-Motion;Flex Clinics;60.58397;48.8521
+Pro-Motion;Haaglanden Clinics;41.752589;37.48328333333333
+Pro-Motion;Kazem;66.31509600000001;57.60113333333334
+Pro-Motion;KNO de Jong;59.535528;43.69713333333333
+Pro-Motion;Medcentric MWCZ;82.563867;65.55768333333333
+Pro-Motion;Medtronic;90.831975;70.61404999999999
+Pro-Motion;Orthoparc Rozendaal;111.851168;81.27853333333334
+Pro-Motion;Retina eye care;66.85436100000001;50.95198333333334
+Retina eye care;De Meern;19.022466;17.880499999999998
+Retina eye care;Andros Clinics Rijswijk;70.05408100000001;48.9391
+Retina eye care;Annadal kliniek;179.632985;132.03836666666666
+Retina eye care;Annadal kliniek Poli;179.632985;132.03836666666666
+Retina eye care;Annatommie Amstelveen;49.577829;36.54396666666666
+Retina eye care;Annatommie Utrecht;15.562662;13.640416666666663
+Retina eye care;Arthrex;15.122483;13.24795
+Retina eye care;Cosmed Bosch en Duin OK;11.173268;14.050416666666669
+Retina eye care;Cosmed Bosch en Duin Poli;11.173268;14.050416666666669
+Retina eye care;Denticien;70.286712;50.31283333333333
+Retina eye care;Dermaclinic Utrecht;13.681279;15.0968
+Retina eye care;Doctors at soap;14.193088;16.869783333333334
+Retina eye care;EQA - Velthuis Kliniek Amsterdam;45.751096;33.04696666666667
+Retina eye care;EQA - Xpert Clinic Hand Amsterdam;45.751096;33.04696666666667
+Retina eye care;EQA - Xpert Clinic Proctologie Amsterdam;45.751096;33.04696666666667
+Retina eye care;EQA - Xpert Orthopedie Amsterdam;45.751096;33.04696666666667
+Retina eye care;EQEI - Velthuis Kliniek Eindhoven;93.426321;66.39071666666668
+Retina eye care;EQEI - Xpert Clinic Hand Eindhoven;93.426321;66.39071666666668
+Retina eye care;EQEI - Xpert Clinic Proctologie Eindhoven;93.426321;66.39071666666668
+Retina eye care;EQEI - Xpert Orthopedie Eindhoven;93.426321;66.39071666666668
+Retina eye care;EQEI - Xpert Orthopedie Schijndel;69.543769;52.45831666666666
+Retina eye care;EQEN - Velthuis Kliniek Enschede;126.684246;94.63945
+Retina eye care;EQEN - Xpert Clinic Hand Enschede;126.684246;94.63945
+Retina eye care;EQEN - Xpert Clinic Proctologie Enschede;126.684246;94.63945
+Retina eye care;EQR - Velthuis Kliniek Rotterdam;64.240611;45.831316666666666
+Retina eye care;EQR - Xpert Clinic Hand Rotterdam;64.240611;45.831316666666666
+Retina eye care;EQR - Xpert Clinic Proctologie Rotterdam;64.240611;45.831316666666666
+Retina eye care;EQR - Xpert Orthopedie Rotterdam;64.240611;45.831316666666666
+Retina eye care;EQRZD - Hand pols Rozendaal;52.680666;38.50806666666666
+Retina eye care;EQRZD - Orthopedie Rozendaal;52.680666;38.50806666666666
+Retina eye care;Equip Amsterdam;45.751096;33.04696666666667
+Retina eye care;Equipe Enschede;45.751096;33.04696666666667
+Retina eye care;EQV - Velthuis Kliniek Velp;52.680666;38.50806666666666
+Retina eye care;EQV - Xpert Clinic Hand Velp;53.495217;39.292233333333336
+Retina eye care;EQV - Xpert Clinic Proctologie Velp;52.680666;38.50806666666666
+Retina eye care;EQZ - Xpert Clinic Oogzorg Zeist;8.144065;11.921283333333331
+Retina eye care;EQZW - Xpert Clinic Hand Zwolle;88.04417;64.57491666666667
+Retina eye care;Esser Clinics;46.040613;33.26981666666667
+Retina eye care;Flex Clinics;20.883838;18.1885
+Retina eye care;Haaglanden Clinics;73.981078;53.99483333333333
+Retina eye care;Kazem;54.872533;50.584383333333335
+Retina eye care;KNO de Jong;25.728771;20.999333333333333
+Retina eye care;Medcentric MWCZ;146.01312299999998;109.74021666666664
+Retina eye care;Medtronic;91.020742;66.31694999999999
+Retina eye care;Orthoparc Rozendaal;52.680666;38.50806666666666
+Retina eye care;Pro-Motion;65.64551700000001;53.94511666666666
+Capelle;Bergman Cl. Arnhem;106.576184;77.19458333333334
+Bergman Cl. Arnhem;Capelle;106.486665;78.05698333333333
+Maastricht;A Klinieken;178.08144399999998;136.28470000000002
+Maastricht;MKA groep ADRZ;226.377261;151.92701666666665
+Maastricht;MKA groep KA;190.190415;129.7594
+Maastricht;MKA groep MPS;251.05875;170.19761666666668
+Maastricht;MKA groep Roosendaal;175.66243400000002;122.2903
+Maastricht;MKA groep Terneuzen;257.999324;175.02816666666666
+Maastricht;MKA groep VKZ;198.326123;144.08561666666668
+A Klinieken;Maastricht;182.577998;130.27186666666665
+A Klinieken;MKA groep ADRZ;149.08440299999998;104.64321666666666
+A Klinieken;MKA groep KA;112.897557;82.4756
+A Klinieken;MKA groep MPS;169.08693;128.74193333333332
+A Klinieken;MKA groep Roosendaal;104.019454;74.1187
+A Klinieken;MKA groep Terneuzen;180.706466;127.74436666666666
+A Klinieken;MKA groep VKZ;66.618801;47.47383333333333
+MKA groep ADRZ;Maastricht;222.882026;156.10465000000002
+MKA groep ADRZ;A Klinieken;148.37392000000003;104.98931666666668
+MKA groep ADRZ;MKA groep KA;40.407479;31.385466666666662
+MKA groep ADRZ;MKA groep MPS;26.833496;21.0286
+MKA groep ADRZ;MKA groep Roosendaal;53.683191;40.15298333333333
+MKA groep ADRZ;MKA groep Terneuzen;33.77407;25.85915
+MKA groep ADRZ;MKA groep VKZ;88.95958;74.47041666666668
+MKA groep KA;Maastricht;186.839562;134.07941666666667
+MKA groep KA;A Klinieken;112.331456;82.96408333333333
+MKA groep KA;MKA groep ADRZ;40.023169;31.5195
+MKA groep KA;MKA groep MPS;64.70465800000001;49.7901
+MKA groep KA;MKA groep Roosendaal;17.640728;18.12775
+MKA groep KA;MKA groep Terneuzen;71.64523200000001;54.62065
+MKA groep KA;MKA groep VKZ;62.715961;54.81475
+MKA groep MPS;Maastricht;244.88947;171.79923333333332
+MKA groep MPS;A Klinieken;165.547638;126.64195
+MKA groep MPS;MKA groep ADRZ;24.822624;19.087316666666663
+MKA groep MPS;MKA groep KA;62.414923;47.08005
+MKA groep MPS;MKA groep Roosendaal;75.690636;55.847566666666665
+MKA groep MPS;MKA groep Terneuzen;32.801164;26.09088333333333
+MKA groep MPS;MKA groep VKZ;98.018591;92.28401666666667
+MKA groep Roosendaal;Maastricht;172.493409;126.62251666666666
+MKA groep Roosendaal;A Klinieken;102.775009;74.62296666666666
+MKA groep Roosendaal;MKA groep ADRZ;54.153963000000005;40.49073333333333
+MKA groep Roosendaal;MKA groep KA;17.967118;18.323116666666667
+MKA groep Roosendaal;MKA groep MPS;78.835453;58.76133333333333
+MKA groep Roosendaal;MKA groep Terneuzen;85.776027;63.591883333333335
+MKA groep Roosendaal;MKA groep VKZ;57.365010000000005;54.95066666666666
+MKA groep Terneuzen;Maastricht;253.429725;178.23501666666667
+MKA groep Terneuzen;A Klinieken;178.921619;127.11968333333331
+MKA groep Terneuzen;MKA groep ADRZ;33.362879;25.5231
+MKA groep Terneuzen;MKA groep KA;70.955178;53.51583333333333
+MKA groep Terneuzen;MKA groep MPS;35.367118999999995;28.8565
+MKA groep Terneuzen;MKA groep Roosendaal;84.230891;62.283350000000006
+MKA groep Terneuzen;MKA groep VKZ;117.900108;93.6001
+MKA groep VKZ;Maastricht;198.054755;144.70871666666665
+MKA groep VKZ;A Klinieken;68.859462;48.41748333333333
+MKA groep VKZ;MKA groep ADRZ;88.972921;74.47166666666666
+MKA groep VKZ;MKA groep KA;62.841354;55.30305
+MKA groep VKZ;MKA groep MPS;100.118777;95.13121666666666
+MKA groep VKZ;MKA groep Roosendaal;58.084025;55.9761
+MKA groep VKZ;MKA groep Terneuzen;118.009558;93.94515
