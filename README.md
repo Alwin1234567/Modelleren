@@ -36,4 +36,4 @@ Volg de onderstaande stappen om de vereiste bibliotheken te installeren in een v
 In de map [`source/flow`](Python/source/flow) staat [`hyperparameter_tunen.py`](Python/source/flow/hyperparameter_tunen.py) U kunt de hyperparameters voor de hitte functie van simuated anealing bepalen door dit bestand uit te voeren.
 
 ## Het Programma Uitvoeren
-In de hoofdmap bevindt zich het bestand [`run_alles.py`](Python/run_alles.py). U kunt het programma uitvoeren door dit bestand te starten.
+In de hoofdmap bevindt zich het bestand [`run_alles.bat`](Python/run_alles.bat). U kunt het programma uitvoeren door dit bestand te starten.
